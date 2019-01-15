@@ -6,7 +6,7 @@
 |:---:| --- |
 | Ashi | --- |
 | Dylan | --- |
-| Isi | --- |
+| Isi | ![alt text](team-photos/isi.png) |
 | Shelby | --- |
 | Zoe | --- |
 
