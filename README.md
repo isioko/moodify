@@ -4,7 +4,7 @@
 
 | Member | Photograph |
 |:---:| --- |
-| Ashi | --- |
+| Ashi | ![alt text](team-photos/ashi.png) |
 | Dylan | --- |
 | Isi | ![alt text](team-photos/isi.png) |
 | Shelby | --- |
