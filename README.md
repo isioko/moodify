@@ -5,9 +5,9 @@
 | Member | Photograph |
 |:---:| --- |
 | Ashi | ![alt text](team-photos/ashi.png) |
-| Dylan | --- |
+| Dylan | ![alt text](team-photos/dylan.jpeg) |
 | Isi | ![alt text](team-photos/isi.png) |
-| Shelby | ![alt text](team-photos/Shelby.jpeg) |
+| Shelby | ![alt text](team-photos/shelby.jpeg) |
 | Zoe | --- |
 
 ## Team Skills Matrix
