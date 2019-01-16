@@ -10,6 +10,11 @@
 | Shelby | ![alt text](team-photos/shelby.png) |
 | Zoe | --- |
 
+
+| Ashi | Dylan | Isi | Shelby | Zoe |
+| --- | --- | --- | --- | --- |
+| ![alt text](team-photos/ashi.png) | ![alt text](team-photos/dylan.png) | ![alt text](team-photos/isi.png) | ![alt text](team-photos/shelby.png) | --- |
+
 ## Team Skills Matrix
 
 | Member | Skills | Personal Traits | Desired Growth | Weaknesses |
