@@ -8,7 +8,7 @@
 | Dylan | ![alt text](team-photos/dylan.png) |
 | Isi | ![alt text](team-photos/isi.png) |
 | Shelby | ![alt text](team-photos/shelby.png) |
-| Zoe | --- |
+| Zoe | ![alt text](team-photos/zoe.jpg) |
 
 
 | Ashi | Dylan | Isi | Shelby | Zoe |
