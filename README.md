@@ -8,12 +8,12 @@
 | Dylan | ![alt text](team-photos/dylan.png) |
 | Isi | ![alt text](team-photos/isi.png) |
 | Shelby | ![alt text](team-photos/shelby.png) |
-| Zoe | ![alt text](team-photos/zo.jpg) |
+| Zoe | ![alt text](team-photos/zoe.png) |
 
 
 | Ashi | Dylan | Isi | Shelby | Zoe |
 | --- | --- | --- | --- | --- |
-| ![alt text](team-photos/ashi.png) | ![alt text](team-photos/dylan.png) | ![alt text](team-photos/isi.png) | ![alt text](team-photos/shelby.png) | ![alt text](team-photos/zo.jpg) |
+| ![alt text](team-photos/ashi.png) | ![alt text](team-photos/dylan.png) | ![alt text](team-photos/isi.png) | ![alt text](team-photos/shelby.png) | ![alt text](team-photos/zoe.png) |
 
 ## Team Skills Matrix
 
