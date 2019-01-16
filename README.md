@@ -19,7 +19,7 @@
 
 ## Team Communication
 
-1. Text
+1. Slack
 
 2. Email
 
