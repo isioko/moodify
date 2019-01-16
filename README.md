@@ -7,7 +7,7 @@
 | Ashi | ![alt text](team-photos/ashi.png) |
 | Dylan | --- |
 | Isi | ![alt text](team-photos/isi.png) |
-| Shelby | ![alt text](team-photos/shelby.jpeg) |
+| Shelby | ![alt text](team-photos/Shelby.jpeg) |
 | Zoe | --- |
 
 ## Team Skills Matrix
