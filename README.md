@@ -14,7 +14,7 @@
 | Dylan | UX/UI, Design, Needfinding | Open-minded, cooperative, motivated | Front end, mobile/web development | Confidence, experience building full product |
 | Isi | AI/ML, Data Science, Python, Illustrator/Photoshop | Hard-working, cooperative, easy-going | Building a full system from scratch, web development | Front end, web/app development, clearly elaborating thoughts |
 | Shelby | --- | --- | --- | --- |
-| Zoe | Databases, Java, Object oriented design, some ML | Organized, collaborative, initiative-taking, hard-working | front end/ scripting, ios, more AI | Confidence, perspective/patience |
+| Zoe | Databases, Java, Object oriented design, some ML | Organized, collaborative, initiative-taking, hard-working | front end/ scripting, ios, more AI | Confidence, music knowledge (relevant if we go that direction) |
 
 
 ## Team Communication
