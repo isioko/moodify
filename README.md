@@ -10,7 +10,7 @@
 
 | Member | Skills | Personal Traits | Desired Growth | Weaknesses |
 |:---:| --- | --- | --- | --- |
-| Ashi | --- | --- | --- | --- |
+| Ashi | Python, WebDev, Testing | Extroverted, optimistic, hard-working | AI/ML, rapid prototyping | Consistency in work sessions, sleep |
 | Dylan | UX/UI, Design, Needfinding | Open-minded, cooperative, motivated | Front end, mobile/web development | Confidence, experience building full product |
 | Isi | AI/ML, Data Science, Python, Illustrator/Photoshop | Hard-working, cooperative, easy-going | Building a full system from scratch, web development | Front end, web/app development, clearly elaborating thoughts |
 | Shelby | AI/ML, Data Science, Python, Illustrator/Photoshop | dog person | Web development | dog person |
