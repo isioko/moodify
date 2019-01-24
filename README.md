@@ -33,4 +33,4 @@
 
 ## SGM Form
 
-[Google Form](https://goo.gl/forms/ZzoZQtrTO1qZPxPJ2)
+[Google Form](https://docs.google.com/forms/d/e/1FAIpQLSe8deyBZFaX0HOXE5-4cS2L4s1Uiksq0lLBqDyfmdt8Dr7hIQ/viewform?usp=sf_link)
