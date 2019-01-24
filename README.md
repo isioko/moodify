@@ -1,4 +1,4 @@
-# Moodify
+# moodify
 
 ## Team Members
 
