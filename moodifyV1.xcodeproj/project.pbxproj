@@ -1,0 +1,417 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		4CCA57A42202AF2500F231A7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CCA57A32202AF2500F231A7 /* AppDelegate.swift */; };
+		4CCA57A62202AF2500F231A7 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CCA57A52202AF2500F231A7 /* ViewController.swift */; };
+		4CCA57A92202AF2500F231A7 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4CCA57A72202AF2500F231A7 /* Main.storyboard */; };
+		4CCA57AB2202AF2700F231A7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4CCA57AA2202AF2700F231A7 /* Assets.xcassets */; };
+		4CCA57AE2202AF2700F231A7 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4CCA57AC2202AF2700F231A7 /* LaunchScreen.storyboard */; };
+		4CCA57B62202AF9000F231A7 /* SpotifyiOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4CCA57B52202AF9000F231A7 /* SpotifyiOS.framework */; settings = {ATTRIBUTES = (Required, ); }; };
+		4CCA57D42202C24300F231A7 /* ConnectButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CCA57D32202C24300F231A7 /* ConnectButton.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		4CB7561D2203F92E00032B51 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Main.strings; sourceTree = "<group>"; };
+		4CCA57A02202AF2500F231A7 /* moodifyV1.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = moodifyV1.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		4CCA57A32202AF2500F231A7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		4CCA57A52202AF2500F231A7 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		4CCA57A82202AF2500F231A7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		4CCA57AA2202AF2700F231A7 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		4CCA57AD2202AF2700F231A7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		4CCA57AF2202AF2700F231A7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		4CCA57B52202AF9000F231A7 /* SpotifyiOS.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = SpotifyiOS.framework; sourceTree = "<group>"; };
+		4CCA57B72202B05000F231A7 /* moodifyV1-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "moodifyV1-Bridging-Header.h"; sourceTree = "<group>"; };
+		4CCA57B82202B52D00F231A7 /* SPTAppRemotePlaybackOptions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SPTAppRemotePlaybackOptions.h; sourceTree = "<group>"; };
+		4CCA57B92202B52D00F231A7 /* SPTMacros.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SPTMacros.h; sourceTree = "<group>"; };
+		4CCA57BA2202B52E00F231A7 /* SPTAppRemoteUserCapabilities.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SPTAppRemoteUserCapabilities.h; sourceTree = "<group>"; };
+		4CCA57BB2202B52E00F231A7 /* SPTAppRemoteConnectionParams.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SPTAppRemoteConnectionParams.h; sourceTree = "<group>"; };
+		4CCA57BC2202B52E00F231A7 /* SPTScope.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SPTScope.h; sourceTree = "<group>"; };
+		4CCA57BD2202B52E00F231A7 /* SPTAppRemotePlayerState.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SPTAppRemotePlayerState.h; sourceTree = "<group>"; };
+		4CCA57BE2202B52E00F231A7 /* SPTConfiguration.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SPTConfiguration.h; sourceTree = "<group>"; };
+		4CCA57BF2202B52F00F231A7 /* SPTAppRemotePlaybackRestrictions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SPTAppRemotePlaybackRestrictions.h; sourceTree = "<group>"; };
+		4CCA57C02202B52F00F231A7 /* SPTAppRemote.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SPTAppRemote.h; sourceTree = "<group>"; };
+		4CCA57C12202B52F00F231A7 /* SPTAppRemoteContentAPI.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SPTAppRemoteContentAPI.h; sourceTree = "<group>"; };
+		4CCA57C22202B52F00F231A7 /* SPTSession.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SPTSession.h; sourceTree = "<group>"; };
+		4CCA57C32202B52F00F231A7 /* SpotifyiOS.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SpotifyiOS.h; sourceTree = "<group>"; };
+		4CCA57C42202B53000F231A7 /* SPTAppRemoteImageRepresentable.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SPTAppRemoteImageRepresentable.h; sourceTree = "<group>"; };
+		4CCA57C52202B53000F231A7 /* SPTAppRemoteTrack.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SPTAppRemoteTrack.h; sourceTree = "<group>"; };
+		4CCA57C62202B53000F231A7 /* SPTAppRemoteCommon.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SPTAppRemoteCommon.h; sourceTree = "<group>"; };
+		4CCA57C72202B53000F231A7 /* SPTLogin.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SPTLogin.h; sourceTree = "<group>"; };
+		4CCA57C82202B53100F231A7 /* SPTAppRemotePlayerAPI.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SPTAppRemotePlayerAPI.h; sourceTree = "<group>"; };
+		4CCA57C92202B53100F231A7 /* SPTAppRemoteAlbum.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SPTAppRemoteAlbum.h; sourceTree = "<group>"; };
+		4CCA57CA2202B53100F231A7 /* SPTSessionManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SPTSessionManager.h; sourceTree = "<group>"; };
+		4CCA57CB2202B53100F231A7 /* SPTAppRemoteArtist.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SPTAppRemoteArtist.h; sourceTree = "<group>"; };
+		4CCA57CC2202B53200F231A7 /* SPTAppRemoteImageAPI.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SPTAppRemoteImageAPI.h; sourceTree = "<group>"; };
+		4CCA57CD2202B53200F231A7 /* SPTAppRemoteUserAPI.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SPTAppRemoteUserAPI.h; sourceTree = "<group>"; };
+		4CCA57CE2202B53200F231A7 /* SpotifyAppRemote.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SpotifyAppRemote.h; sourceTree = "<group>"; };
+		4CCA57CF2202B53200F231A7 /* SPTAppRemoteContentItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SPTAppRemoteContentItem.h; sourceTree = "<group>"; };
+		4CCA57D02202B53300F231A7 /* SPTAppRemoteLibraryState.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SPTAppRemoteLibraryState.h; sourceTree = "<group>"; };
+		4CCA57D12202B53300F231A7 /* SPTError.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SPTError.h; sourceTree = "<group>"; };
+		4CCA57D22202B53300F231A7 /* SPTAppRemotePodcastPlaybackSpeed.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SPTAppRemotePodcastPlaybackSpeed.h; sourceTree = "<group>"; };
+		4CCA57D32202C24300F231A7 /* ConnectButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConnectButton.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		4CCA579D2202AF2500F231A7 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4CCA57B62202AF9000F231A7 /* SpotifyiOS.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		4CCA57972202AF2500F231A7 = {
+			isa = PBXGroup;
+			children = (
+				4CCA57A22202AF2500F231A7 /* moodifyV1 */,
+				4CCA57A12202AF2500F231A7 /* Products */,
+				4CCA57B52202AF9000F231A7 /* SpotifyiOS.framework */,
+			);
+			sourceTree = "<group>";
+		};
+		4CCA57A12202AF2500F231A7 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				4CCA57A02202AF2500F231A7 /* moodifyV1.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		4CCA57A22202AF2500F231A7 /* moodifyV1 */ = {
+			isa = PBXGroup;
+			children = (
+				4CCA57A32202AF2500F231A7 /* AppDelegate.swift */,
+				4CCA57A52202AF2500F231A7 /* ViewController.swift */,
+				4CCA57A72202AF2500F231A7 /* Main.storyboard */,
+				4CCA57B72202B05000F231A7 /* moodifyV1-Bridging-Header.h */,
+				4CCA57AA2202AF2700F231A7 /* Assets.xcassets */,
+				4CCA57AC2202AF2700F231A7 /* LaunchScreen.storyboard */,
+				4CCA57AF2202AF2700F231A7 /* Info.plist */,
+				4CCA57CE2202B53200F231A7 /* SpotifyAppRemote.h */,
+				4CCA57D32202C24300F231A7 /* ConnectButton.swift */,
+				4CCA57C32202B52F00F231A7 /* SpotifyiOS.h */,
+				4CCA57C02202B52F00F231A7 /* SPTAppRemote.h */,
+				4CCA57C92202B53100F231A7 /* SPTAppRemoteAlbum.h */,
+				4CCA57CB2202B53100F231A7 /* SPTAppRemoteArtist.h */,
+				4CCA57C62202B53000F231A7 /* SPTAppRemoteCommon.h */,
+				4CCA57BB2202B52E00F231A7 /* SPTAppRemoteConnectionParams.h */,
+				4CCA57C12202B52F00F231A7 /* SPTAppRemoteContentAPI.h */,
+				4CCA57CF2202B53200F231A7 /* SPTAppRemoteContentItem.h */,
+				4CCA57CC2202B53200F231A7 /* SPTAppRemoteImageAPI.h */,
+				4CCA57C42202B53000F231A7 /* SPTAppRemoteImageRepresentable.h */,
+				4CCA57D02202B53300F231A7 /* SPTAppRemoteLibraryState.h */,
+				4CCA57B82202B52D00F231A7 /* SPTAppRemotePlaybackOptions.h */,
+				4CCA57BF2202B52F00F231A7 /* SPTAppRemotePlaybackRestrictions.h */,
+				4CCA57C82202B53100F231A7 /* SPTAppRemotePlayerAPI.h */,
+				4CCA57BD2202B52E00F231A7 /* SPTAppRemotePlayerState.h */,
+				4CCA57D22202B53300F231A7 /* SPTAppRemotePodcastPlaybackSpeed.h */,
+				4CCA57C52202B53000F231A7 /* SPTAppRemoteTrack.h */,
+				4CCA57CD2202B53200F231A7 /* SPTAppRemoteUserAPI.h */,
+				4CCA57BA2202B52E00F231A7 /* SPTAppRemoteUserCapabilities.h */,
+				4CCA57BE2202B52E00F231A7 /* SPTConfiguration.h */,
+				4CCA57D12202B53300F231A7 /* SPTError.h */,
+				4CCA57C72202B53000F231A7 /* SPTLogin.h */,
+				4CCA57B92202B52D00F231A7 /* SPTMacros.h */,
+				4CCA57BC2202B52E00F231A7 /* SPTScope.h */,
+				4CCA57C22202B52F00F231A7 /* SPTSession.h */,
+				4CCA57CA2202B53100F231A7 /* SPTSessionManager.h */,
+			);
+			path = moodifyV1;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		4CCA579F2202AF2500F231A7 /* moodifyV1 */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 4CCA57B22202AF2700F231A7 /* Build configuration list for PBXNativeTarget "moodifyV1" */;
+			buildPhases = (
+				4CCA579C2202AF2500F231A7 /* Sources */,
+				4CCA579D2202AF2500F231A7 /* Frameworks */,
+				4CCA579E2202AF2500F231A7 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = moodifyV1;
+			productName = moodifyV1;
+			productReference = 4CCA57A02202AF2500F231A7 /* moodifyV1.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		4CCA57982202AF2500F231A7 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0940;
+				LastUpgradeCheck = 0940;
+				ORGANIZATIONNAME = "Shelby Marcus";
+				TargetAttributes = {
+					4CCA579F2202AF2500F231A7 = {
+						CreatedOnToolsVersion = 9.4.1;
+					};
+				};
+			};
+			buildConfigurationList = 4CCA579B2202AF2500F231A7 /* Build configuration list for PBXProject "moodifyV1" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 4CCA57972202AF2500F231A7;
+			productRefGroup = 4CCA57A12202AF2500F231A7 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				4CCA579F2202AF2500F231A7 /* moodifyV1 */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		4CCA579E2202AF2500F231A7 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4CCA57AE2202AF2700F231A7 /* LaunchScreen.storyboard in Resources */,
+				4CCA57AB2202AF2700F231A7 /* Assets.xcassets in Resources */,
+				4CCA57A92202AF2500F231A7 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		4CCA579C2202AF2500F231A7 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4CCA57D42202C24300F231A7 /* ConnectButton.swift in Sources */,
+				4CCA57A62202AF2500F231A7 /* ViewController.swift in Sources */,
+				4CCA57A42202AF2500F231A7 /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		4CCA57A72202AF2500F231A7 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				4CCA57A82202AF2500F231A7 /* Base */,
+				4CB7561D2203F92E00032B51 /* en */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		4CCA57AC2202AF2700F231A7 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				4CCA57AD2202AF2700F231A7 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		4CCA57B02202AF2700F231A7 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.4;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		4CCA57B12202AF2700F231A7 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.4;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		4CCA57B32202AF2700F231A7 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 3DZD66GQPU;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
+				INFOPLIST_FILE = moodifyV1/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				OTHER_LDFLAGS = "-ObjC";
+				PRODUCT_BUNDLE_IDENTIFIER = edu.stanford.shelbym.moodifyV1;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "moodifyV1/moodifyV1-Bridging-Header.h";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		4CCA57B42202AF2700F231A7 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 3DZD66GQPU;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
+				INFOPLIST_FILE = moodifyV1/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				OTHER_LDFLAGS = "-ObjC";
+				PRODUCT_BUNDLE_IDENTIFIER = edu.stanford.shelbym.moodifyV1;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "moodifyV1/moodifyV1-Bridging-Header.h";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		4CCA579B2202AF2500F231A7 /* Build configuration list for PBXProject "moodifyV1" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				4CCA57B02202AF2700F231A7 /* Debug */,
+				4CCA57B12202AF2700F231A7 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		4CCA57B22202AF2700F231A7 /* Build configuration list for PBXNativeTarget "moodifyV1" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				4CCA57B32202AF2700F231A7 /* Debug */,
+				4CCA57B42202AF2700F231A7 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 4CCA57982202AF2500F231A7 /* Project object */;
+}
