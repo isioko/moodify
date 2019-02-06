@@ -11,9 +11,15 @@ import Foundation
 class Entry {
     public var entryText: String
     public var spotifyID: String
+    public var entryDate: String
     
+
     init(){
         self.entryText = ""
-        self.spotifyID = "" 
+        self.spotifyID = ""
+        let date = Date()
+        let formatter = DateFormatter()
+        formatter.dateFormat = "MM-dd-yyyy"
+        self.entryDate = formatter.string(from: date)
     }
 }

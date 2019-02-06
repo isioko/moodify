@@ -7,3 +7,11 @@
 //
 
 import Foundation
+
+//class Song{
+//    var spotifyID = String
+//    
+//    init() {
+//        self.spotifyID = ""
+//    }
+//}

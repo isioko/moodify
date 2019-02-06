@@ -7,3 +7,11 @@
 //
 
 import Foundation
+
+class Entries{
+    var entries_list: [Entry]
+    init() {
+        entries_list = []
+    }
+    
+}

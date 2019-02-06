@@ -7,3 +7,18 @@
 //
 
 import Foundation
+import UIKit
+
+class EntryViewCell:UICollectionViewCell{
+    static let reuseIdentifier = "entryCell"
+    
+    @IBOutlet weak var entryLabel: UILabel!
+    @IBOutlet weak var dateLabel: UILabel!
+    @IBOutlet weak var relativeDateLabel: UILabel!
+    
+    func displayContent(entry: Entry){
+        entryLabel.text = entry.entryText
+        dateLabel.text = entry.entryDate
+        
+    }
+}
