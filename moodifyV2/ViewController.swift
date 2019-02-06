@@ -16,9 +16,11 @@ class ViewController: UIViewController {
     @IBOutlet weak var userNameLabel:      UILabel!
     @IBOutlet weak var mailLabel:          UILabel!
     
+    let blueColor = UIColor(red: 102/225, green: 140/225, blue: 225/225, alpha: 1)
+
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.view.backgroundColor = #colorLiteral(red: 1, green: 0.4255437488, blue: 0.873636913, alpha: 1)
+        self.view.backgroundColor = blueColor
         customizeProfilePictureView()
         
         // Authorize our app for the Spotify account if there is no token

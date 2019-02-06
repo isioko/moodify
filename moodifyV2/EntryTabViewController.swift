@@ -16,12 +16,18 @@ class EntryTabViewController:UIViewController,UICollectionViewDelegate,UICollect
     
     let gradient = CAGradientLayer()
     
+    // Colors for gradient
+    let pinkColor = UIColor(red: 255/225, green: 102/225, blue: 102/225, alpha: 1).cgColor
+    let purpleColor = UIColor(red: 179/225, green: 102/225, blue: 225/225, alpha: 1).cgColor
+    let blueColor = UIColor(red: 102/225, green: 140/225, blue: 225/225, alpha: 1).cgColor
+    
     @IBOutlet weak var plusButton: UIButton!
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(true)
         //add gradient to background
         gradient.frame = gradientView.bounds
-        gradient.colors = [UIColor.magenta.cgColor, UIColor.blue.cgColor]
+        //gradient.colors = [UIColor.magenta.cgColor, UIColor.blue.cgColor]
+        gradient.colors = [pinkColor, purpleColor, blueColor]
         gradientView.layer.insertSublayer(gradient, at: 0)
         gradientView.addSubview(plusButton)
         entryCollectionView.reloadData()
@@ -61,10 +67,13 @@ class EntryTabViewController:UIViewController,UICollectionViewDelegate,UICollect
     {
         return entries.entries_list.count
     }
+    
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "entryCell", for: indexPath) as! EntryViewCell
         let entry = entries.entries_list[indexPath.row]
         cell.displayContent(entry: entry)
+        //cell.layer.cornerRadius = 2.0
+        
         return cell
     }
 
@@ -74,7 +83,7 @@ class EntryTabViewController:UIViewController,UICollectionViewDelegate,UICollect
                 wevc.updated_entries = entries
                 wevc.delegate = self
             }
-        }else if segue.identifier == "viewEntrySegue"{
+        } else if segue.identifier == "viewEntrySegue" {
             if let devc = segue.destination as? DisplayEntryViewController {
 
                 let entry_cell = sender as! UICollectionViewCell

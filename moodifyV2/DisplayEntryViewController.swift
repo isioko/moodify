@@ -14,6 +14,7 @@ class DisplayEntryViewController: UIViewController{
     @IBOutlet weak var gradientView: UIView!
     @IBOutlet weak var entryTextView: UITextView!
     public var entry_to_display = Entry.init()
+    
     let gradient = CAGradientLayer()
 
     @IBOutlet weak var doneButton: UIButton!
@@ -34,5 +35,4 @@ class DisplayEntryViewController: UIViewController{
         gradientView.addSubview(entryTextView)
         gradientView.addSubview(doneButton)
     }
-    
 }

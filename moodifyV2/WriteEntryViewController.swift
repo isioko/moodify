@@ -31,13 +31,21 @@ UITextFieldDelegate, UITextViewDelegate{
         return false
     }
     
+    // Colors for gradient
+    let pinkColor = UIColor(red: 255/225, green: 102/225, blue: 102/225, alpha: 1).cgColor
+    let purpleColor = UIColor(red: 179/225, green: 102/225, blue: 225/225, alpha: 1).cgColor
+    let blueColor = UIColor(red: 102/225, green: 140/225, blue: 225/225, alpha: 1).cgColor
+    
     @IBOutlet weak var doneButton: UIButton!
     @IBOutlet weak var saveButton: UIButton!
+    
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(true)
         gradient.frame = gradientView.bounds
-        gradient.colors = [UIColor.magenta.cgColor, UIColor.blue.cgColor]
+        //gradient.colors = [UIColor.magenta.cgColor, UIColor.blue.cgColor]
+        gradient.colors = [pinkColor, purpleColor, blueColor]
         gradientView.layer.insertSublayer(gradient, at: 0)
+        
         gradientView.addSubview(doneButton)
         gradientView.addSubview(saveButton)
         gradientView.addSubview(entryTextView)
@@ -46,6 +54,9 @@ UITextFieldDelegate, UITextViewDelegate{
     override func viewDidLoad() {
         super.viewDidLoad()
 //        newEntryTextField.delegate = self
+        entryTextView.layer.cornerRadius = 8
+        entryTextView.clipsToBounds = true
+        
         entryTextView.delegate = self
     }
     
@@ -56,8 +67,6 @@ UITextFieldDelegate, UITextViewDelegate{
         }
         return true
     }
-    
-
     
 //    func textFieldShouldEndEditing(textField: UITextField!) -> Bool {  //delegate method
 //        return false
@@ -79,5 +88,4 @@ UITextFieldDelegate, UITextViewDelegate{
             alreadySavedEntry = true
         }
     }
-
 }

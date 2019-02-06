@@ -14,7 +14,7 @@ class Entry {
     public var entryDate: String
     
 
-    init(){
+    init() {
         self.entryText = ""
         self.spotifyID = ""
         let date = Date()

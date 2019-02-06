@@ -80,9 +80,12 @@ UITableViewDataSource, UITableViewDelegate{
         }
     }
 
-    
     @objc func reloadTheData(){
         trackTableView.reloadData()
+    }
+    
+    @IBAction func clickBackButton(_ sender: UIButton) {
+        
     }
     
 }

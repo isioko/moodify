@@ -19,6 +19,5 @@ class EntryViewCell:UICollectionViewCell{
     func displayContent(entry: Entry){
         entryLabel.text = entry.entryText
         dateLabel.text = entry.entryDate
-        
     }
 }
