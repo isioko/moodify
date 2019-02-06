@@ -491,6 +491,12 @@ public class SpotifyManager {
     }
     /** JSON Structs End */
     
+    func contains(a:[(String, String, String)], v:(String, String, String)) -> Bool {
+        let (c1, c2, c3) = v
+        for (v1, v2, v3) in a { if v1 == c1 && v2 == c2 && v3 == c3 { return true } }
+        return false
+    }
+    
     public func getRecentPlayed(completionBlock: @escaping ([(String, String, String)]) -> Void) -> Void {
         let auth = self.token!.tokenType + " " + self.token!.accessToken
         
@@ -524,16 +530,25 @@ public class SpotifyManager {
                 for Item in json_response.items {
                     var track: (String, String, String)
                     
-                    print("-------------------------TRACK-------------------------")
-                    print("Name:", Item.track.name)
-                    print("Time:", Item.playedAt)
+                    //print("-------------------------TRACK-------------------------")
+                    //print("Name:", Item.track.name)
+                    //print("Time:", Item.playedAt)
                     
-                    track.0 = Item.track.name
+                    let trackName = Item.track.name
+                    track.0 = trackName
                     
                     var artistsString = ""
+                    
+                    let numArtists = Item.track.artists.count
+                    var numArtistsInString = 0
                     for Artist in Item.track.artists {
-                        print("Artist:", Artist.name)
-                        artistsString += Artist.name + " "
+                        numArtistsInString += 1
+                        //print("Artist:", Artist.name)
+                        artistsString += Artist.name
+                        if numArtistsInString != numArtists {
+                            artistsString += ", "
+                        }
+                        //print(artistsString)
                     }
                     track.1 = artistsString
                     
@@ -546,7 +561,9 @@ public class SpotifyManager {
                     let image = Item.track.album.images[0]
                     track.2 = image.url
                     
-                    tracks.append(track)
+                    if !self.contains(a: tracks, v: track) {
+                        tracks.append(track)
+                    }
                 }
                 completionBlock(tracks) 
             } catch {

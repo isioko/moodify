@@ -18,6 +18,7 @@ UITableViewDataSource, UITableViewDelegate{
     @IBAction func reloadData(_ sender: UIButton) {
         trackTableView.reloadData()
     }
+    
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "trackTableViewCell", for: indexPath) as! TrackTableViewCell
         let track = todays_tracks[indexPath.row]
@@ -35,34 +36,50 @@ UITableViewDataSource, UITableViewDelegate{
     }
     
     override func viewDidLoad() {
-        spotifyManager.getRecentPlayed { (tracks) in
-            for track in tracks{
-                let track_name = track.0
-                let artist_name = track.1
-                let image_url = track.2
-                let new_track = Track()
-                new_track.trackName = track_name
-                new_track.artistName = artist_name
-                let url = URL(string: image_url)
-                do{
-                    let data = try Data(contentsOf: url!)
-                    let image = UIImage(data: data)
-                    new_track.trackArtworkImage = image
-                }catch{
-                    print("error")
-                }
-                self.todays_tracks.append(new_track)
-            }
-        }
         trackTableView.dataSource = self
         trackTableView.delegate = self
+        
+        displayTracks()
     }
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(true)
-        trackTableView!.reloadData()
-        perform(#selector(reloadTheData), with: nil, afterDelay: 0.1)
     }
+    
+    func displayTracks() {
+        spotifyManager.getRecentPlayed { (tracks) in
+            let group = DispatchGroup()
+            tracks.forEach { track in
+                group.enter()
+                
+                let track_name = track.0
+                let artist_name = track.1
+                let image_url = track.2
+                
+                let new_track = Track()
+                new_track.trackName = track_name
+                new_track.artistName = artist_name
+                
+                let url = URL(string: image_url)
+                do {
+                    let data = try Data(contentsOf: url!)
+                    let image = UIImage(data: data)
+                    new_track.trackArtworkImage = image
+                } catch {
+                    print("error")
+                }
+                
+                self.todays_tracks.append(new_track)
+                
+                group.leave()
+            }
+            
+            group.notify(queue: .main) {
+                self.trackTableView.reloadData()
+            }
+        }
+    }
+
     
     @objc func reloadTheData(){
         trackTableView.reloadData()
