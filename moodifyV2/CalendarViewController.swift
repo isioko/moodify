@@ -30,6 +30,8 @@ class CalendarViewController: UIViewController{
     }
     
     @IBAction func ClickRecentlyPlayedTracks(_ sender: UIButton) {
-        spotifyManager.getRecentPlayed()
+        spotifyManager.getRecentPlayed { (tracks) in
+            print(tracks.count)
+        }
     }
 }

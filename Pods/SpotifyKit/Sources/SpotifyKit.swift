@@ -491,7 +491,7 @@ public class SpotifyManager {
     }
     /** JSON Structs End */
     
-    public func getRecentPlayed() {
+    public func getRecentPlayed(completionBlock: @escaping ([(String, String, String)]) -> Void) -> Void {
         let auth = self.token!.tokenType + " " + self.token!.accessToken
         
         let url = URL(string: "https://api.spotify.com/v1/me/player/recently-played?limit=50")
@@ -515,23 +515,40 @@ public class SpotifyManager {
             
             let decoder = JSONDecoder()
             
+            
             do {
                 let json_response = try decoder.decode(RecentlyPlayed.self, from: data)
                 
+                var tracks = [(String, String, String)]()
+                
                 for Item in json_response.items {
+                    var track: (String, String, String)
+                    
                     print("-------------------------TRACK-------------------------")
                     print("Name:", Item.track.name)
                     print("Time:", Item.playedAt)
                     
+                    track.0 = Item.track.name
+                    
+                    var artistsString = ""
                     for Artist in Item.track.artists {
                         print("Artist:", Artist.name)
+                        artistsString += Artist.name + " "
                     }
+                    track.1 = artistsString
                     
-                    for Image in Item.track.album.images {
-                        print("Artwork", Image.url)
-                        break // to just get the first image
-                    }
+//                    for Image in Item.track.album.images {
+//                        print("Artwork", Image.url)
+//                        track.2 = Image.url
+//                        break // to just get the first image
+//                    }
+                    
+                    let image = Item.track.album.images[0]
+                    track.2 = image.url
+                    
+                    tracks.append(track)
                 }
+                completionBlock(tracks) 
             } catch {
                 print(error)
             }

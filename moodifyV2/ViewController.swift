@@ -26,7 +26,7 @@ class ViewController: UIViewController {
         // spotifyManager.authorize()
         
         // Deauthorize just for development to start a new Spotify session
-        spotifyManager.deauthorize()
+        //spotifyManager.deauthorize()
         
         
         //loadUser()
