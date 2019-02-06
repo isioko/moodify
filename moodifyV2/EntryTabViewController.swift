@@ -13,7 +13,6 @@ class EntryTabViewController:UIViewController,UICollectionViewDelegate,UICollect
     var entries = Entries.init()
     var writeEntry: WriteEntryViewController?
     @IBOutlet weak var gradientView: UIView!
-    
     let gradient = CAGradientLayer()
     
     // Colors for gradient
@@ -32,8 +31,10 @@ class EntryTabViewController:UIViewController,UICollectionViewDelegate,UICollect
         gradientView.addSubview(plusButton)
         entryCollectionView.reloadData()
         entryCollectionView.collectionViewLayout.invalidateLayout()
-
+        
+        
     }
+    
     
     @IBAction func backFromModal(_ segue: UIStoryboardSegue){
         self.tabBarController?.selectedIndex = 0

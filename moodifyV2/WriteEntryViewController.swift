@@ -22,7 +22,7 @@ UITextFieldDelegate, UITextViewDelegate{
     let gradient = CAGradientLayer()
     @IBOutlet weak var gradientView: UIView!
     var alreadySavedEntry = false
-    
+    public var todays_tracks = [Track]()
     @IBOutlet weak var entryTextView: UITextView!
     // MARK - UITextFieldDelegate
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
@@ -39,26 +39,56 @@ UITextFieldDelegate, UITextViewDelegate{
     @IBOutlet weak var doneButton: UIButton!
     @IBOutlet weak var saveButton: UIButton!
     
+    override func viewDidLoad() {
+        super.viewDidLoad()
+//        displayTracks()
+        entryTextView.layer.cornerRadius = 8
+        entryTextView.clipsToBounds = true
+        entryTextView.delegate = self
+    }
+    
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(true)
+        displayTracks()
         gradient.frame = gradientView.bounds
-        //gradient.colors = [UIColor.magenta.cgColor, UIColor.blue.cgColor]
         gradient.colors = [pinkColor, purpleColor, blueColor]
         gradientView.layer.insertSublayer(gradient, at: 0)
-        
         gradientView.addSubview(doneButton)
         gradientView.addSubview(saveButton)
         gradientView.addSubview(entryTextView)
     }
     
-    override func viewDidLoad() {
-        super.viewDidLoad()
-//        newEntryTextField.delegate = self
-        entryTextView.layer.cornerRadius = 8
-        entryTextView.clipsToBounds = true
-        
-        entryTextView.delegate = self
+    func displayTracks() {
+        spotifyManager.getRecentPlayed { (tracks) in
+            let group = DispatchGroup()
+            tracks.forEach { track in
+                group.enter()
+                
+                let track_name = track.0
+                let artist_name = track.1
+                let image_url = track.2
+                
+                let new_track = Track()
+                new_track.trackName = track_name
+                new_track.artistName = artist_name
+                
+                let url = URL(string: image_url)
+                do {
+                    let data = try Data(contentsOf: url!)
+                    let image = UIImage(data: data)
+                    new_track.trackArtworkImage = image
+                } catch {
+                    print("error")
+                }
+                
+                self.todays_tracks.append(new_track)
+                
+                group.leave()
+            }
+            
+        }
     }
+
     
     func textView(_ textView: UITextView, shouldChangeTextIn range: NSRange, replacementText text: String) -> Bool {
         if(text == "\n") {
@@ -68,15 +98,6 @@ UITextFieldDelegate, UITextViewDelegate{
         return true
     }
     
-//    func textFieldShouldEndEditing(textField: UITextField!) -> Bool {  //delegate method
-//        return false
-//    }
-//
-//    func textFieldShouldReturn(textField: UITextField!) -> Bool {   //delegate method
-//        textField.resignFirstResponder()
-//        return true
-//    }
-
     @IBAction func clickSave(_ sender: UIButton) {
         if let entry_text = entryTextView.text{
             new_entry.entryText = entry_text
@@ -88,4 +109,13 @@ UITextFieldDelegate, UITextViewDelegate{
             alreadySavedEntry = true
         }
     }
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "chooseMusicSegue" {
+            if let drpvc = segue.destination as? DisplayRecentlyPlayedViewController{
+                drpvc.todays_tracks = todays_tracks
+//                wevc.delegate = self
+            }
+        }
+    }
+    
 }
