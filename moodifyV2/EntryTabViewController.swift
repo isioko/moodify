@@ -14,7 +14,7 @@ class EntryTabViewController:UIViewController,UICollectionViewDelegate,UICollect
     var writeEntry: WriteEntryViewController?
     @IBOutlet weak var gradientView: UIView!
     let gradient = CAGradientLayer()
-    
+    public var todays_tracks = [Track]()
     // Colors for gradient
     let pinkColor = UIColor(red: 255/225, green: 102/225, blue: 102/225, alpha: 1).cgColor
     let purpleColor = UIColor(red: 179/225, green: 102/225, blue: 225/225, alpha: 1).cgColor
@@ -77,12 +77,47 @@ class EntryTabViewController:UIViewController,UICollectionViewDelegate,UICollect
         
         return cell
     }
+    
+    override func viewDidLoad() {
+        displayTracks()
+    }
 
+    func displayTracks() {
+        spotifyManager.getRecentPlayed { (tracks) in
+            let group = DispatchGroup()
+            tracks.forEach { track in
+                group.enter()
+                
+                let track_name = track.0
+                let artist_name = track.1
+                let image_url = track.2
+                
+                let new_track = Track()
+                new_track.trackName = track_name
+                new_track.artistName = artist_name
+                
+                let url = URL(string: image_url)
+                do {
+                    let data = try Data(contentsOf: url!)
+                    let image = UIImage(data: data)
+                    new_track.trackArtworkImage = image
+                } catch {
+                    print("error")
+                }
+                
+                self.todays_tracks.append(new_track)
+                
+                group.leave()
+            }
+            
+        }
+    }
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "writeEntrySegue" {
             if let wevc = segue.destination as? WriteEntryViewController{
                 wevc.updated_entries = entries
                 wevc.delegate = self
+                wevc.todays_tracks = self.todays_tracks
             }
         } else if segue.identifier == "viewEntrySegue" {
             if let devc = segue.destination as? DisplayEntryViewController {
@@ -92,8 +127,7 @@ class EntryTabViewController:UIViewController,UICollectionViewDelegate,UICollect
                 let entry_clicked = self.entries.entries_list[indexPath!.row]
                 devc.entry_to_display = entry_clicked
             }
-            
-            
+        } else if segue.identifier == ""{
             
         }
     }

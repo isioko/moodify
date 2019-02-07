@@ -58,10 +58,15 @@ UITableViewDataSource, UITableViewDelegate{
         gradient.frame = gradientView.bounds
         gradient.colors = [pinkColor, purpleColor, blueColor]
         gradientView.layer.insertSublayer(gradient, at: 0)
-        
         gradientView.addSubview(trackTableView)
-//        gradientView.addSubview(backButton)
         trackTableView.reloadData()
     }
     
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "backToWriteEntrySegue" {
+            if let wevc = segue.destination as? WriteEntryViewController{
+                wevc.todays_tracks = self.todays_tracks
+            }
+        }
+    }
 }

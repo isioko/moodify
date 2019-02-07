@@ -383,9 +383,11 @@
                                     <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ixu-lK-2Fd">
                                         <rect key="frame" x="17" y="44" width="34" height="30"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <state key="normal" title="Back"/>
+                                        <state key="normal" title="Back">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
                                         <connections>
-                                            <segue destination="fEb-oX-jyH" kind="show" id="4gZ-eP-sVl"/>
+                                            <segue destination="fEb-oX-jyH" kind="show" identifier="backToWriteEntrySegue" id="4gZ-eP-sVl"/>
                                         </connections>
                                     </button>
                                 </subviews>
@@ -426,7 +428,6 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="cfa-5L-5Fx"/>
         <segue reference="4gZ-eP-sVl"/>
     </inferredMetricsTieBreakers>
 </document>

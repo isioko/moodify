@@ -41,7 +41,6 @@ UITextFieldDelegate, UITextViewDelegate{
     
     override func viewDidLoad() {
         super.viewDidLoad()
-//        displayTracks()
         entryTextView.layer.cornerRadius = 8
         entryTextView.clipsToBounds = true
         entryTextView.delegate = self
@@ -49,7 +48,6 @@ UITextFieldDelegate, UITextViewDelegate{
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(true)
-        displayTracks()
         gradient.frame = gradientView.bounds
         gradient.colors = [pinkColor, purpleColor, blueColor]
         gradientView.layer.insertSublayer(gradient, at: 0)
@@ -57,38 +55,6 @@ UITextFieldDelegate, UITextViewDelegate{
         gradientView.addSubview(saveButton)
         gradientView.addSubview(entryTextView)
     }
-    
-    func displayTracks() {
-        spotifyManager.getRecentPlayed { (tracks) in
-            let group = DispatchGroup()
-            tracks.forEach { track in
-                group.enter()
-                
-                let track_name = track.0
-                let artist_name = track.1
-                let image_url = track.2
-                
-                let new_track = Track()
-                new_track.trackName = track_name
-                new_track.artistName = artist_name
-                
-                let url = URL(string: image_url)
-                do {
-                    let data = try Data(contentsOf: url!)
-                    let image = UIImage(data: data)
-                    new_track.trackArtworkImage = image
-                } catch {
-                    print("error")
-                }
-                
-                self.todays_tracks.append(new_track)
-                
-                group.leave()
-            }
-            
-        }
-    }
-
     
     func textView(_ textView: UITextView, shouldChangeTextIn range: NSRange, replacementText text: String) -> Bool {
         if(text == "\n") {
@@ -113,7 +79,6 @@ UITextFieldDelegate, UITextViewDelegate{
         if segue.identifier == "chooseMusicSegue" {
             if let drpvc = segue.destination as? DisplayRecentlyPlayedViewController{
                 drpvc.todays_tracks = todays_tracks
-//                wevc.delegate = self
             }
         }
     }
