@@ -8,6 +8,7 @@
 
 import UIKit
 import Foundation
+
 class Track {
     public var trackName: String
     public var artistName: String

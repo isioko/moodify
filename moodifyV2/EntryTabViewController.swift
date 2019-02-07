@@ -109,7 +109,7 @@ class EntryTabViewController:UIViewController,UICollectionViewDelegate,UICollect
                 
                 group.leave()
             }
-            
+            print("DONE TRACKS")
         }
     }
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {

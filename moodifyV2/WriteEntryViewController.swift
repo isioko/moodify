@@ -14,16 +14,20 @@ protocol SaveNewEntryDelegate {
     func updateNewEntry(entry: Entry)
 }
 
-class WriteEntryViewController:UIViewController,
-UITextFieldDelegate, UITextViewDelegate{
-    public var new_entry = Entry.init()
-    public var updated_entries = Entries.init()
+class WriteEntryViewController:UIViewController, UITextFieldDelegate, UITextViewDelegate {
     var delegate:SaveNewEntryDelegate?
+    
     let gradient = CAGradientLayer()
     @IBOutlet weak var gradientView: UIView!
+    @IBOutlet weak var entryTextView: UITextView!
+    
     var alreadySavedEntry = false
     public var todays_tracks = [Track]()
-    @IBOutlet weak var entryTextView: UITextView!
+    public var new_entry = Entry.init()
+    public var updated_entries = Entries.init()
+    //public var selectedTracks = [Track]() // added this
+    public var selectedRows:[Bool] = [] // added this
+    
     // MARK - UITextFieldDelegate
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         textField.resignFirstResponder()
@@ -44,6 +48,12 @@ UITextFieldDelegate, UITextViewDelegate{
         entryTextView.layer.cornerRadius = 8
         entryTextView.clipsToBounds = true
         entryTextView.delegate = self
+        
+        if selectedRows.count == 0 {
+            for _ in 1...todays_tracks.count {
+                selectedRows.append(false)
+            }
+        }
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -54,6 +64,7 @@ UITextFieldDelegate, UITextViewDelegate{
         gradientView.addSubview(doneButton)
         gradientView.addSubview(saveButton)
         gradientView.addSubview(entryTextView)
+        print(selectedRows) // aded this
     }
     
     func textView(_ textView: UITextView, shouldChangeTextIn range: NSRange, replacementText text: String) -> Bool {
@@ -75,10 +86,12 @@ UITextFieldDelegate, UITextViewDelegate{
             alreadySavedEntry = true
         }
     }
+    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "chooseMusicSegue" {
             if let drpvc = segue.destination as? DisplayRecentlyPlayedViewController{
                 drpvc.todays_tracks = todays_tracks
+                drpvc.selectedRows = selectedRows
             }
         }
     }
