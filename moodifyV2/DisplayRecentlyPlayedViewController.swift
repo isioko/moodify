@@ -41,14 +41,6 @@ UITableViewDataSource, UITableViewDelegate{
         cell.selectedBackgroundView = bgColorView
     }
     
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        
-        let cell = tableView.dequeueReusableCell(withIdentifier: "trackTableViewCell", for: indexPath) as! TrackTableViewCell
-        let track = todays_tracks[indexPath.row]
-        songsForEntry.append(track)
-        cell.backgroundColor = pinkColorUI
-    }
-    
     public var todays_tracks = [Track()]
     
     @IBOutlet weak var trackTableView: UITableView!{
@@ -62,6 +54,19 @@ UITableViewDataSource, UITableViewDelegate{
         trackTableView.dataSource = self
         trackTableView.delegate = self
         trackTableView.reloadData()
+    }
+    
+
+    private func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "trackTableViewCell", for: indexPath) as! TrackTableViewCell
+        let track = todays_tracks[indexPath.row]
+        songsForEntry.append(track)
+        cell.reload()
+    }
+    
+    private func tableView(_ tableView: UITableView, didDeselectRowAt indexPath: IndexPath) {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "trackTableViewCell", for: indexPath) as! TrackTableViewCell
+        cell.contentView.backgroundColor = UIColor.clear
     }
     
     let pinkColorUI = UIColor(red: 255/225, green: 102/225, blue: 102/225, alpha: 1)
