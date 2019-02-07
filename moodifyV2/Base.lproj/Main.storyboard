@@ -60,12 +60,59 @@
                         <outlet property="mailLabel" destination="FPc-cz-iu8" id="JjF-UW-pBb"/>
                         <outlet property="profilePictureView" destination="8e5-j8-HM7" id="UCZ-Bb-bmm"/>
                         <outlet property="userNameLabel" destination="4ok-Iy-qC3" id="WKh-HG-Mcq"/>
-                        <segue destination="ItK-aK-vma" kind="presentation" identifier="loadAppSegue" id="DIr-NK-11M"/>
+                        <segue destination="IOf-FR-uyr" kind="presentation" identifier="loadAppSegue" id="L5T-tc-1gU"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1220" y="-137.18140929535232"/>
+            <point key="canvasLocation" x="473" y="-189"/>
+        </scene>
+        <!--Authorize View Controller-->
+        <scene sceneID="aZp-Wg-xKm">
+            <objects>
+                <viewController id="IOf-FR-uyr" customClass="AuthorizeViewController" customModule="moodifyV2" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="OOH-cl-DPk">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ded-tI-R8C">
+                                <rect key="frame" x="132" y="327" width="95" height="40"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="23"/>
+                                <state key="normal" title="Authorize"/>
+                                <connections>
+                                    <action selector="authorizeAppp:" destination="IOf-FR-uyr" eventType="touchUpInside" id="MMY-jJ-YoN"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7PF-3e-POH">
+                                <rect key="frame" x="126" y="402" width="106" height="36"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <state key="normal" title="Deauthorize"/>
+                                <connections>
+                                    <action selector="deauthorizeApp:" destination="IOf-FR-uyr" eventType="touchUpInside" id="QS6-a4-0HC"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SuS-t7-Jot">
+                                <rect key="frame" x="156" y="514" width="46" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <state key="normal" title="Next"/>
+                                <connections>
+                                    <segue destination="ItK-aK-vma" kind="show" id="ObI-ba-yg9"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="5l4-vO-fzW"/>
+                    </view>
+                    <connections>
+                        <outlet property="authorizeApp" destination="ded-tI-R8C" id="91X-9k-y8y"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="W8c-Rr-ICC" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1281" y="-550"/>
         </scene>
         <!--Calendar-->
         <scene sceneID="jND-eu-z0K">
@@ -78,24 +125,6 @@
                             <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="QEX-0P-89z">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gdV-7W-bWA">
-                                        <rect key="frame" x="154" y="329" width="66" height="30"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <state key="normal" title="Authorize"/>
-                                        <connections>
-                                            <action selector="ClickAuthorizeButton:" destination="K3t-s3-0fX" eventType="touchUpInside" id="gri-Yi-eZY"/>
-                                        </connections>
-                                    </button>
-                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EZe-5N-c2x">
-                                        <rect key="frame" x="94" y="474" width="187" height="30"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <state key="normal" title="Get Recently Played Tracks"/>
-                                        <connections>
-                                            <action selector="ClickRecentlyPlayedTracks:" destination="K3t-s3-0fX" eventType="touchUpInside" id="Lvr-L3-M3G"/>
-                                        </connections>
-                                    </button>
-                                </subviews>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </view>
                         </subviews>
@@ -104,10 +133,7 @@
                     </view>
                     <tabBarItem key="tabBarItem" title="Calendar" id="10I-0o-pXl"/>
                     <connections>
-                        <outlet property="AuthorizeButton" destination="gdV-7W-bWA" id="XhX-bW-WFV"/>
-                        <outlet property="authorizeButton" destination="gdV-7W-bWA" id="kOL-q0-rxf"/>
                         <outlet property="gradientView" destination="QEX-0P-89z" id="rjV-6C-X4G"/>
-                        <outlet property="recentlyPlayedButton" destination="EZe-5N-c2x" id="5Zw-Dj-Rhq"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="BLY-XP-Kid" userLabel="First Responder" sceneMemberID="firstResponder"/>

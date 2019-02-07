@@ -22,16 +22,6 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         self.view.backgroundColor = blueColor
         customizeProfilePictureView()
-        
-        // Authorize our app for the Spotify account if there is no token
-        // This opens a browser window from which the user can authenticate into his account
-        // spotifyManager.authorize()
-        
-        // Deauthorize just for development to start a new Spotify session
-        //spotifyManager.deauthorize()
-        
-        
-        //loadUser()
         perform(#selector(timeToMoveOn), with: nil, afterDelay: 2)
         
     }

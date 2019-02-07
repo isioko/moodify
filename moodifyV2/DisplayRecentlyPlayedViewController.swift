@@ -12,7 +12,7 @@ import UIKit
 class DisplayRecentlyPlayedViewController: UIViewController,
 UITableViewDataSource, UITableViewDelegate{
     let gradient = CAGradientLayer()
-
+    public var songsForEntry = [Track]()
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return todays_tracks.count
     }
@@ -29,8 +29,24 @@ UITableViewDataSource, UITableViewDelegate{
         let cell = tableView.dequeueReusableCell(withIdentifier: "trackTableViewCell", for: indexPath) as! TrackTableViewCell
         let track = todays_tracks[indexPath.row]
         cell.displayTrack(track: track)
-        cell.backgroundColor = UIColor.clear
         return cell
+    }
+    
+    func tableView(_ tableView: UITableView, didHighlightRowAt indexPath: IndexPath) {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "trackTableViewCell", for: indexPath) as! TrackTableViewCell
+        let track = todays_tracks[indexPath.row]
+        songsForEntry.append(track)
+        let bgColorView = UIView()
+        bgColorView.backgroundColor = pinkColorUI
+        cell.selectedBackgroundView = bgColorView
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
+        let cell = tableView.dequeueReusableCell(withIdentifier: "trackTableViewCell", for: indexPath) as! TrackTableViewCell
+        let track = todays_tracks[indexPath.row]
+        songsForEntry.append(track)
+        cell.backgroundColor = pinkColorUI
     }
     
     public var todays_tracks = [Track()]
@@ -46,9 +62,9 @@ UITableViewDataSource, UITableViewDelegate{
         trackTableView.dataSource = self
         trackTableView.delegate = self
         trackTableView.reloadData()
-
     }
     
+    let pinkColorUI = UIColor(red: 255/225, green: 102/225, blue: 102/225, alpha: 1)
     let pinkColor = UIColor(red: 255/225, green: 102/225, blue: 102/225, alpha: 1).cgColor
     let purpleColor = UIColor(red: 179/225, green: 102/225, blue: 225/225, alpha: 1).cgColor
     let blueColor = UIColor(red: 102/225, green: 140/225, blue: 225/225, alpha: 1).cgColor

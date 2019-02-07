@@ -15,6 +15,7 @@
 		4C3C641A220AA9C800ED4364 /* Track.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C3C6419220AA9C800ED4364 /* Track.swift */; };
 		4C48A9BD2207C07C0073DF63 /* Entry.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C48A9BC2207C07C0073DF63 /* Entry.swift */; };
 		4C48A9C22207C1690073DF63 /* Song.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C48A9C12207C1690073DF63 /* Song.swift */; };
+		4C6B3DCE220BFA2800C79C61 /* AuthorizeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C6B3DCD220BFA2800C79C61 /* AuthorizeViewController.swift */; };
 		4CD7A9302207F3F700991F89 /* UIImageView+Download.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CD7A92F2207F3F700991F89 /* UIImageView+Download.swift */; };
 		4CF6E9A82208024000836FC6 /* HomePageTabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CF6E9A72208024000836FC6 /* HomePageTabBarViewController.swift */; };
 		4CF6E9AA220804DE00836FC6 /* EntryViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CF6E9A9220804DE00836FC6 /* EntryViewCell.swift */; };
@@ -36,6 +37,7 @@
 		4C3C6419220AA9C800ED4364 /* Track.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Track.swift; sourceTree = "<group>"; };
 		4C48A9BC2207C07C0073DF63 /* Entry.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Entry.swift; sourceTree = "<group>"; };
 		4C48A9C12207C1690073DF63 /* Song.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Song.swift; sourceTree = "<group>"; };
+		4C6B3DCD220BFA2800C79C61 /* AuthorizeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthorizeViewController.swift; sourceTree = "<group>"; };
 		4CD7A92F2207F3F700991F89 /* UIImageView+Download.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImageView+Download.swift"; sourceTree = "<group>"; };
 		4CF6E9A72208024000836FC6 /* HomePageTabBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomePageTabBarViewController.swift; sourceTree = "<group>"; };
 		4CF6E9A9220804DE00836FC6 /* EntryViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EntryViewCell.swift; sourceTree = "<group>"; };
@@ -109,6 +111,7 @@
 				4C3C6411220A7E8A00ED4364 /* CalendarViewController.swift */,
 				6A0C5FA82204179800666370 /* ViewController.swift */,
 				4C3C6417220AA8B000ED4364 /* TrackTableViewCell.swift */,
+				4C6B3DCD220BFA2800C79C61 /* AuthorizeViewController.swift */,
 				6A0C5FAA2204179800666370 /* Main.storyboard */,
 				4C48A9BE2207C1430073DF63 /* Model */,
 				6A0C5FAD2204179A00666370 /* Assets.xcassets */,
@@ -259,6 +262,7 @@
 			files = (
 				4CF6E9A82208024000836FC6 /* HomePageTabBarViewController.swift in Sources */,
 				4C48A9C22207C1690073DF63 /* Song.swift in Sources */,
+				4C6B3DCE220BFA2800C79C61 /* AuthorizeViewController.swift in Sources */,
 				4CF6E9B4220819EF00836FC6 /* Entries.swift in Sources */,
 				4C3C6412220A7E8A00ED4364 /* CalendarViewController.swift in Sources */,
 				4C3C6416220AA83E00ED4364 /* DisplayRecentlyPlayedViewController.swift in Sources */,
