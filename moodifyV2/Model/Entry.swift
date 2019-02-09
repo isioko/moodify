@@ -12,7 +12,7 @@ class Entry {
     public var entryText: String
     public var spotifyID: String
     public var entryDate: String
-    
+    public var associatedTracks = [Track]()
 
     init() {
         self.entryText = ""

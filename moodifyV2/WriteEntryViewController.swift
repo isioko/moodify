@@ -9,13 +9,8 @@
 import Foundation
 import UIKit
 
-protocol SaveNewEntryDelegate {
-    func saveNewEntry(entry: Entry)
-    func updateNewEntry(entry: Entry)
-}
 
 class WriteEntryViewController:UIViewController, UITextFieldDelegate, UITextViewDelegate {
-    var delegate:SaveNewEntryDelegate?
     
     let gradient = CAGradientLayer()
     @IBOutlet weak var gradientView: UIView!
@@ -25,6 +20,7 @@ class WriteEntryViewController:UIViewController, UITextFieldDelegate, UITextView
     public var todays_tracks = [Track]()
     public var new_entry = Entry.init()
     public var updated_entries = Entries.init()
+    public var selectedTracks = [Track]()
     public var selectedRows:[Bool] = [] // added this
     
     // MARK - UITextFieldDelegate
@@ -33,15 +29,14 @@ class WriteEntryViewController:UIViewController, UITextFieldDelegate, UITextView
         self.view.endEditing(true)
         return false
     }
+    @IBOutlet weak var cancelButton: UIButton!
+    @IBOutlet weak var addButton: UIButton!
     
     // Colors for gradient
     let pinkColor = UIColor(red: 255/225, green: 102/225, blue: 102/225, alpha: 1).cgColor
     let purpleColor = UIColor(red: 179/225, green: 102/225, blue: 225/225, alpha: 1).cgColor
     let blueColor = UIColor(red: 102/225, green: 140/225, blue: 225/225, alpha: 1).cgColor
-    
-    @IBOutlet weak var doneButton: UIButton!
-    @IBOutlet weak var saveButton: UIButton!
-    
+        
     override func viewDidLoad() {
         super.viewDidLoad()
         entryTextView.layer.cornerRadius = 8
@@ -51,13 +46,10 @@ class WriteEntryViewController:UIViewController, UITextFieldDelegate, UITextView
         if todays_tracks.count == 0 {
             displayTracks()
         }
-        
-        
     }
     
     func displayTracks() {
         var doneTracks = false
-        
         spotifyManager.getRecentPlayed { (tracks) in
             let alert = UIAlertController(title: nil, message: "Please wait...", preferredStyle: .alert)
             
@@ -111,11 +103,12 @@ class WriteEntryViewController:UIViewController, UITextFieldDelegate, UITextView
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(true)
+        entryTextView.text = new_entry.entryText
         gradient.frame = gradientView.bounds
         gradient.colors = [pinkColor, purpleColor, blueColor]
         gradientView.layer.insertSublayer(gradient, at: 0)
-        gradientView.addSubview(doneButton)
-        gradientView.addSubview(saveButton)
+        gradientView.addSubview(addButton)
+        gradientView.addSubview(cancelButton)
         gradientView.addSubview(entryTextView)
         print(selectedRows) // aded this
     }
@@ -128,16 +121,11 @@ class WriteEntryViewController:UIViewController, UITextFieldDelegate, UITextView
         return true
     }
     
-    @IBAction func clickSave(_ sender: UIButton) {
+    @IBAction func clickAdd(_ sender: UIButton) {
         if let entry_text = entryTextView.text{
             new_entry.entryText = entry_text
         }
-        if(alreadySavedEntry){
-            delegate?.updateNewEntry(entry: new_entry)
-        }else{
-            delegate?.saveNewEntry(entry: new_entry)
-            alreadySavedEntry = true
-        }
+        new_entry.associatedTracks = selectedTracks
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -145,6 +133,13 @@ class WriteEntryViewController:UIViewController, UITextFieldDelegate, UITextView
             if let drpvc = segue.destination as? DisplayRecentlyPlayedViewController{
                 drpvc.todays_tracks = todays_tracks
                 drpvc.selectedRows = selectedRows
+                if let entry_text = entryTextView.text{
+                    drpvc.entryText = entry_text
+                }
+            }
+        }else if segue.identifier == "showEntriesSegue"{
+            if let etvc = segue.destination as? EntryTabViewController{
+                etvc.newEntry = new_entry
             }
         }
     }

@@ -15,7 +15,7 @@ class DisplayRecentlyPlayedViewController: UIViewController, UITableViewDataSour
     let pinkColor = UIColor(red: 255/225, green: 102/225, blue: 102/225, alpha: 1).cgColor
     let purpleColor = UIColor(red: 179/225, green: 102/225, blue: 225/225, alpha: 1).cgColor
     let blueColor = UIColor(red: 102/225, green: 140/225, blue: 225/225, alpha: 1).cgColor
-    
+    public var entryText = ""
     @IBOutlet weak var gradientView: UIView!
     @IBOutlet weak var aBackButton: UIButton!
     
@@ -28,10 +28,6 @@ class DisplayRecentlyPlayedViewController: UIViewController, UITableViewDataSour
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return todays_tracks.count
-    }
-    
-    @IBAction func reloadData(_ sender: UIButton) {
-        trackTableView.reloadData()
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -148,7 +144,9 @@ class DisplayRecentlyPlayedViewController: UIViewController, UITableViewDataSour
                 for i in 0..<selectedTracks.count {
                     print(selectedTracks[i].trackName)
                 }
+                wevc.selectedTracks = selectedTracks
                 wevc.selectedRows = self.selectedRows
+                wevc.new_entry.entryText = self.entryText
             }
         }
     }
