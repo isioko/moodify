@@ -153,14 +153,14 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <subviews>
                                     <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" editable="NO" text="something" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="DXh-7g-6PQ">
-                                        <rect key="frame" x="33" y="149" width="310" height="201"/>
+                                        <rect key="frame" x="33" y="182" width="310" height="158"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                         <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                     </textView>
                                     <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="Glf-qG-kf4">
-                                        <rect key="frame" x="33" y="373" width="308" height="449"/>
+                                        <rect key="frame" x="33" y="366" width="308" height="456"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="BcB-cO-AN4">
@@ -222,6 +222,13 @@
                                             <segue destination="tXn-6T-E1W" kind="show" id="IzP-kF-08C"/>
                                         </connections>
                                     </button>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Location" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PXW-Jn-EUm">
+                                        <rect key="frame" x="33" y="134" width="310" height="33"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
                                 </subviews>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </view>
@@ -234,6 +241,7 @@
                         <outlet property="doneButton" destination="CS7-M9-ZqV" id="cp0-PY-S7v"/>
                         <outlet property="entryTextView" destination="DXh-7g-6PQ" id="LXA-4F-RmG"/>
                         <outlet property="gradientView" destination="2h8-FG-4mY" id="bKK-cA-lh2"/>
+                        <outlet property="locationLabel" destination="PXW-Jn-EUm" id="DkO-m3-Uep"/>
                         <outlet property="trackCollectionView" destination="Glf-qG-kf4" id="5dw-C0-KOz"/>
                     </connections>
                 </viewController>
@@ -387,6 +395,13 @@
                                             <segue destination="tXn-6T-E1W" kind="show" id="ESi-eA-wPO"/>
                                         </connections>
                                     </button>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DKj-NU-Anf">
+                                        <rect key="frame" x="64" y="126" width="249" height="35"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
                                 </subviews>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </view>
@@ -402,6 +417,7 @@
                         <outlet property="cancelButton" destination="OfG-MC-ZnX" id="0yj-Gn-M6u"/>
                         <outlet property="entryTextView" destination="vtf-f6-WlO" id="gp6-ZI-gOP"/>
                         <outlet property="gradientView" destination="TQ0-UN-7fs" id="drP-g4-ZOM"/>
+                        <outlet property="locationLabel" destination="DKj-NU-Anf" id="W1e-bO-mxI"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2gI-g0-9b0" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -509,6 +525,7 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
+        <segue reference="fna-Md-nNg"/>
         <segue reference="fwe-Sq-vFa"/>
         <segue reference="IzP-kF-08C"/>
     </inferredMetricsTieBreakers>

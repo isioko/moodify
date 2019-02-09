@@ -8,9 +8,10 @@
 
 import Foundation
 import UIKit
+import MapKit
+import CoreLocation
 
-
-class WriteEntryViewController:UIViewController, UITextFieldDelegate, UITextViewDelegate {
+class WriteEntryViewController:UIViewController, UITextFieldDelegate, UITextViewDelegate,CLLocationManagerDelegate {
     
     let gradient = CAGradientLayer()
     @IBOutlet weak var gradientView: UIView!
@@ -42,11 +43,78 @@ class WriteEntryViewController:UIViewController, UITextFieldDelegate, UITextView
         entryTextView.layer.cornerRadius = 8
         entryTextView.clipsToBounds = true
         entryTextView.delegate = self
-        
+        locationManager.delegate = self
         if todays_tracks.count == 0 {
             displayTracks()
         }
+        loadLocation()
     }
+    func loadLocation(){
+        self.locationManager.requestAlwaysAuthorization()
+        
+        // For use in foreground
+        self.locationManager.requestWhenInUseAuthorization()
+        
+        if CLLocationManager.locationServicesEnabled() {
+            locationManager.delegate = self
+            locationManager.desiredAccuracy = kCLLocationAccuracyNearestTenMeters
+            locationManager.requestAlwaysAuthorization()
+            locationManager.startUpdatingLocation()
+            if location != ""{
+                locationManager.stopUpdatingLocation()
+                locationLabel.text = location
+            }
+        }
+    }
+    
+    @IBOutlet weak var locationLabel: UILabel!
+    
+    //https://stackoverflow.com/questions/25296691/get-users-current-location-coordinates
+    let locationManager = CLLocationManager()
+    public var location = ""
+
+    func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
+        guard let locValue: CLLocationCoordinate2D = manager.location?.coordinate else { return }
+        print("locations = \(locValue.latitude) \(locValue.longitude)")
+        lookUpCurrentLocation(completionHandler: {completionHandler in
+            if let completionHandler = completionHandler{
+                if let new_location = completionHandler.locality{
+                    self.location = new_location
+                }
+            }
+        }
+        )
+        if location != ""{
+        locationLabel.text = location
+        }
+    }
+    
+    //https://developer.apple.com/documentation/corelocation/converting_between_coordinates_and_user-friendly_place_names
+    func lookUpCurrentLocation(completionHandler: @escaping (CLPlacemark?)
+        -> Void ) {
+        // Use the last reported location.
+        if let lastLocation = self.locationManager.location {
+            let geocoder = CLGeocoder()
+            
+            // Look up the location and pass it to the completion handler
+            geocoder.reverseGeocodeLocation(lastLocation,
+                                            completionHandler: { (placemarks, error) in
+                                                if error == nil {
+                                                    let firstLocation = placemarks?[0]
+                                                    completionHandler(firstLocation)
+                                                }
+                                                else {
+                                                    // An error occurred during geocoding.
+                                                    completionHandler(nil)
+                                                }
+            })
+        }
+        else {
+            // No location was available.
+            completionHandler(nil)
+        }
+    }
+
     
     func displayTracks() {
         var doneTracks = false
@@ -103,6 +171,7 @@ class WriteEntryViewController:UIViewController, UITextFieldDelegate, UITextView
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(true)
+        loadLocation()
         entryTextView.text = new_entry.entryText
         gradient.frame = gradientView.bounds
         gradient.colors = [pinkColor, purpleColor, blueColor]
@@ -110,7 +179,6 @@ class WriteEntryViewController:UIViewController, UITextFieldDelegate, UITextView
         gradientView.addSubview(addButton)
         gradientView.addSubview(cancelButton)
         gradientView.addSubview(entryTextView)
-        print(selectedRows) // aded this
     }
     
     func textView(_ textView: UITextView, shouldChangeTextIn range: NSRange, replacementText text: String) -> Bool {
@@ -124,6 +192,9 @@ class WriteEntryViewController:UIViewController, UITextFieldDelegate, UITextView
     @IBAction func clickAdd(_ sender: UIButton) {
         if let entry_text = entryTextView.text{
             new_entry.entryText = entry_text
+        }
+        if let location = locationLabel.text{
+            new_entry.location = "@" + location
         }
         new_entry.associatedTracks = selectedTracks
     }
@@ -143,5 +214,4 @@ class WriteEntryViewController:UIViewController, UITextFieldDelegate, UITextView
             }
         }
     }
-    
 }

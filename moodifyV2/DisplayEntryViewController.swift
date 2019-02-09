@@ -21,7 +21,7 @@ class DisplayEntryViewController: UIViewController, UICollectionViewDelegate, UI
     public var entry_to_display = Entry.init()
     public var selectedTracks = [Track]()
     @IBOutlet weak var dateLabel: UILabel!
-    
+    @IBOutlet weak var locationLabel: UILabel!
     override func viewDidLoad() {
         super.viewDidLoad()
         trackCollectionView.dataSource = self
@@ -29,7 +29,7 @@ class DisplayEntryViewController: UIViewController, UICollectionViewDelegate, UI
         trackCollectionView.reloadData()
         entryTextView.text = entry_to_display.entryText
         dateLabel.text = entry_to_display.entryDate
-        print("viewDidload:",selectedTracks.count)
+        locationLabel.text = entry_to_display.location
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -40,7 +40,6 @@ class DisplayEntryViewController: UIViewController, UICollectionViewDelegate, UI
         gradientView.layer.insertSublayer(gradient, at: 0)
         gradientView.addSubview(entryTextView)
         gradientView.addSubview(doneButton)
-        print("viewDidAppear:",selectedTracks.count)
     }
     
     // Collection View
