@@ -14,7 +14,7 @@ class EntryTabViewController:UIViewController,UICollectionViewDelegate,UICollect
     var writeEntry: WriteEntryViewController?
     @IBOutlet weak var gradientView: UIView!
     let gradient = CAGradientLayer()
-    public var todays_tracks = [Track]()
+    //public var todays_tracks = [Track]()
     // Colors for gradient
     let pinkColor = UIColor(red: 255/225, green: 102/225, blue: 102/225, alpha: 1).cgColor
     let purpleColor = UIColor(red: 179/225, green: 102/225, blue: 225/225, alpha: 1).cgColor
@@ -79,45 +79,66 @@ class EntryTabViewController:UIViewController,UICollectionViewDelegate,UICollect
     }
     
     override func viewDidLoad() {
-        displayTracks()
+        //displayTracks()
     }
 
-    func displayTracks() {
-        spotifyManager.getRecentPlayed { (tracks) in
-            let group = DispatchGroup()
-            tracks.forEach { track in
-                group.enter()
-                
-                let track_name = track.0
-                let artist_name = track.1
-                let image_url = track.2
-                
-                let new_track = Track()
-                new_track.trackName = track_name
-                new_track.artistName = artist_name
-                
-                let url = URL(string: image_url)
-                do {
-                    let data = try Data(contentsOf: url!)
-                    let image = UIImage(data: data)
-                    new_track.trackArtworkImage = image
-                } catch {
-                    print("error")
-                }
-                
-                self.todays_tracks.append(new_track)
-                
-                group.leave()
-            }
-            print("DONE TRACKS")
-        }
-    }
+//    func displayTracks() {
+//        var doneTracks = false
+//
+//        spotifyManager.getRecentPlayed { (tracks) in
+//            let alert = UIAlertController(title: nil, message: "Please wait...", preferredStyle: .alert)
+//
+//            let loadingIndicator = UIActivityIndicatorView(frame: CGRect(x: 10, y: 5, width: 50, height: 50))
+//            if !doneTracks {
+//                loadingIndicator.hidesWhenStopped = true
+//                loadingIndicator.style = UIActivityIndicatorView.Style.gray
+//                loadingIndicator.startAnimating();
+//
+//                alert.view.addSubview(loadingIndicator)
+//                self.present(alert, animated: true, completion: nil)
+//            }
+//
+//            let group = DispatchGroup()
+//            tracks.forEach { track in
+//                group.enter()
+//
+//                let track_name = track.0
+//                let artist_name = track.1
+//                let image_url = track.2
+//
+//                let new_track = Track()
+//                new_track.trackName = track_name
+//                new_track.artistName = artist_name
+//
+//                let url = URL(string: image_url)
+//                do {
+//                    let data = try Data(contentsOf: url!)
+//                    let image = UIImage(data: data)
+//                    new_track.trackArtworkImage = image
+//                } catch {
+//                    print("error")
+//                }
+//
+//                self.todays_tracks.append(new_track)
+//
+//                group.leave()
+//            }
+//            doneTracks = true
+//
+//            print("DONE TRACKS")
+//            if doneTracks {
+//                print("CALLED DISMISS")
+//                self.dismiss(animated: false, completion: nil)
+//            }
+//        }
+//    }
+    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "writeEntrySegue" {
             if let wevc = segue.destination as? WriteEntryViewController{
                 wevc.updated_entries = entries
                 wevc.delegate = self
-                wevc.todays_tracks = self.todays_tracks
+                //wevc.todays_tracks = self.todays_tracks
             }
         } else if segue.identifier == "viewEntrySegue" {
             if let devc = segue.destination as? DisplayEntryViewController {

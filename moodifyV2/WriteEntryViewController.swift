@@ -25,7 +25,6 @@ class WriteEntryViewController:UIViewController, UITextFieldDelegate, UITextView
     public var todays_tracks = [Track]()
     public var new_entry = Entry.init()
     public var updated_entries = Entries.init()
-    //public var selectedTracks = [Track]() // added this
     public var selectedRows:[Bool] = [] // added this
     
     // MARK - UITextFieldDelegate
@@ -49,9 +48,63 @@ class WriteEntryViewController:UIViewController, UITextFieldDelegate, UITextView
         entryTextView.clipsToBounds = true
         entryTextView.delegate = self
         
-        if selectedRows.count == 0 {
-            for _ in 1...todays_tracks.count {
-                selectedRows.append(false)
+        if todays_tracks.count == 0 {
+            displayTracks()
+        }
+        
+        
+    }
+    
+    func displayTracks() {
+        var doneTracks = false
+        
+        spotifyManager.getRecentPlayed { (tracks) in
+            let alert = UIAlertController(title: nil, message: "Please wait...", preferredStyle: .alert)
+            
+            let loadingIndicator = UIActivityIndicatorView(frame: CGRect(x: 10, y: 5, width: 50, height: 50))
+            if !doneTracks {
+                loadingIndicator.hidesWhenStopped = true
+                loadingIndicator.style = UIActivityIndicatorView.Style.gray
+                loadingIndicator.startAnimating();
+                
+                alert.view.addSubview(loadingIndicator)
+                self.present(alert, animated: true, completion: nil)
+            }
+            
+            let group = DispatchGroup()
+            tracks.forEach { track in
+                group.enter()
+                
+                let track_name = track.0
+                let artist_name = track.1
+                let image_url = track.2
+                
+                let new_track = Track()
+                new_track.trackName = track_name
+                new_track.artistName = artist_name
+                
+                let url = URL(string: image_url)
+                do {
+                    let data = try Data(contentsOf: url!)
+                    let image = UIImage(data: data)
+                    new_track.trackArtworkImage = image
+                } catch {
+                    print("error")
+                }
+                
+                self.todays_tracks.append(new_track)
+                
+                group.leave()
+            }
+            doneTracks = true
+            
+            if doneTracks {
+                if self.selectedRows.count == 0 {
+                    for _ in 1...self.todays_tracks.count {
+                        self.selectedRows.append(false)
+                    }
+                }
+                self.dismiss(animated: false, completion: nil)
             }
         }
     }

@@ -20,10 +20,11 @@ class DisplayRecentlyPlayedViewController: UIViewController, UITableViewDataSour
     @IBOutlet weak var aBackButton: UIButton!
     
     let gradient = CAGradientLayer()
-    public var songsForEntry = [Track]()
     
     public var selectedRows:[Bool] = [] 
     var selectedTracks:[Track] = []
+    
+    public var todays_tracks = [Track()]
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return todays_tracks.count
@@ -39,7 +40,6 @@ class DisplayRecentlyPlayedViewController: UIViewController, UITableViewDataSour
         cell.displayTrack(track: track)
         
         if selectedRows[indexPath.row] {
-            // row selected
             cell.accessoryType = .checkmark
         } else {
             cell.accessoryType = .none
@@ -49,10 +49,8 @@ class DisplayRecentlyPlayedViewController: UIViewController, UITableViewDataSour
         return cell
     }
     
-    public var todays_tracks = [Track()]
-    
     @IBOutlet weak var trackTableView: UITableView!{
-        didSet{
+        didSet {
             trackTableView.dataSource = self
             trackTableView.delegate = self
         }
@@ -62,11 +60,57 @@ class DisplayRecentlyPlayedViewController: UIViewController, UITableViewDataSour
         trackTableView.dataSource = self
         trackTableView.delegate = self
         trackTableView.reloadData()
+    }
+    
+    func displayTracks() {
+        var doneTracks = false
         
-        // commented this out 
-//        for _ in 1...todays_tracks.count {
-//            selectedRows.append(false)
-//        }
+        spotifyManager.getRecentPlayed { (tracks) in
+            let alert = UIAlertController(title: nil, message: "Please wait...", preferredStyle: .alert)
+            
+            let loadingIndicator = UIActivityIndicatorView(frame: CGRect(x: 10, y: 5, width: 50, height: 50))
+            if !doneTracks {
+                loadingIndicator.hidesWhenStopped = true
+                loadingIndicator.style = UIActivityIndicatorView.Style.gray
+                loadingIndicator.startAnimating();
+                
+                alert.view.addSubview(loadingIndicator)
+                self.present(alert, animated: true, completion: nil)
+            }
+            
+            let group = DispatchGroup()
+            tracks.forEach { track in
+                group.enter()
+                
+                let track_name = track.0
+                let artist_name = track.1
+                let image_url = track.2
+                
+                let new_track = Track()
+                new_track.trackName = track_name
+                new_track.artistName = artist_name
+                
+                let url = URL(string: image_url)
+                do {
+                    let data = try Data(contentsOf: url!)
+                    let image = UIImage(data: data)
+                    new_track.trackArtworkImage = image
+                } catch {
+                    print("error")
+                }
+                
+                self.todays_tracks.append(new_track)
+                
+                group.leave()
+            }
+            doneTracks = true
+            
+            print("DONE TRACKS")
+            if doneTracks {
+                print("CALLED DISMISS")
+                self.dismiss(animated: false, completion: nil)
+            }
+        }
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
