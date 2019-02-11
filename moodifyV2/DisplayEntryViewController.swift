@@ -22,13 +22,16 @@ class DisplayEntryViewController: UIViewController, UICollectionViewDelegate, UI
     public var selectedTracks = [Track]()
     @IBOutlet weak var dateLabel: UILabel!
     @IBOutlet weak var locationLabel: UILabel!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         trackCollectionView.dataSource = self
         trackCollectionView.delegate = self
         trackCollectionView.reloadData()
         entryTextView.text = entry_to_display.entryText
-        dateLabel.text = entry_to_display.entryDate
+        let formatter = DateFormatter()
+        formatter.dateFormat = "MM-dd-yyyy"
+        dateLabel.text = formatter.string(from: entry_to_display.entryDate)
         locationLabel.text = entry_to_display.location
     }
     

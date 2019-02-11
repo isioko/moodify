@@ -247,7 +247,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4su-YD-Wjg" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3685.5999999999999" y="-1000.4926108374385"/>
+            <point key="canvasLocation" x="3903" y="-1173"/>
         </scene>
         <!--Entries-->
         <scene sceneID="jkz-wv-zyf">
@@ -298,15 +298,22 @@
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Date" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3EU-cy-6Y7">
-                                                            <rect key="frame" x="207" y="9" width="101" height="21"/>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Entry text" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="F19-sD-2CL">
+                                                            <rect key="frame" x="13" y="45" width="301" height="35"/>
                                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Entry text" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="F19-sD-2CL">
-                                                            <rect key="frame" x="13" y="45" width="301" height="35"/>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Location" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gUX-ro-Gfr">
+                                                            <rect key="frame" x="117" y="9" width="125" height="21"/>
+                                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                            <nil key="textColor"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Date" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3EU-cy-6Y7">
+                                                            <rect key="frame" x="226" y="9" width="101" height="21"/>
                                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                             <nil key="textColor"/>
@@ -318,6 +325,7 @@
                                                 <connections>
                                                     <outlet property="dateLabel" destination="3EU-cy-6Y7" id="Imw-49-yll"/>
                                                     <outlet property="entryLabel" destination="F19-sD-2CL" id="m78-du-gSo"/>
+                                                    <outlet property="locationLabel" destination="gUX-ro-Gfr" id="duZ-Gc-YJt"/>
                                                     <outlet property="relativeDateLabel" destination="Jkq-8r-83p" id="tp1-zA-QFP"/>
                                                     <segue destination="QU1-nM-dcV" kind="presentation" identifier="viewEntrySegue" id="fna-Md-nNg"/>
                                                 </connections>
@@ -525,7 +533,7 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="4gZ-eP-sVl"/>
-        <segue reference="IzP-kF-08C"/>
+        <segue reference="fwe-Sq-vFa"/>
+        <segue reference="tTK-eY-M5o"/>
     </inferredMetricsTieBreakers>
 </document>

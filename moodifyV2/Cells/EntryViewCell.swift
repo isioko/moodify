@@ -15,9 +15,13 @@ class EntryViewCell:UICollectionViewCell{
     @IBOutlet weak var entryLabel: UILabel!
     @IBOutlet weak var dateLabel: UILabel!
     @IBOutlet weak var relativeDateLabel: UILabel!
+    @IBOutlet weak var locationLabel: UILabel!
     
     func displayContent(entry: Entry){
         entryLabel.text = entry.entryText
-        dateLabel.text = entry.entryDate
+        let formatter = DateFormatter()
+        formatter.dateFormat = "MM-dd-yyyy"
+        dateLabel.text = formatter.string(from: entry.entryDate)
+        locationLabel.text = entry.location
     }
 }

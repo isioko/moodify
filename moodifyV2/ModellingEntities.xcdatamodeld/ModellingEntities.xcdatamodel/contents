@@ -1,18 +1,18 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="14460.32" systemVersion="18C54" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
-    <entity name="EntryEnt" representedClassName="EntryEnt" syncable="YES">
+    <entity name="EntryEntity" representedClassName="EntryEntity" syncable="YES">
         <attribute name="date" optional="YES" attributeType="Date" usesScalarValueType="NO" syncable="YES"/>
         <attribute name="location" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="text" optional="YES" attributeType="String" syncable="YES"/>
-        <relationship name="assocTracks" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="TrackEnt" syncable="YES"/>
+        <relationship name="assocTracks" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="TrackEntity" syncable="YES"/>
     </entity>
-    <entity name="TrackEnt" representedClassName="TrackEnt" syncable="YES" codeGenerationType="class">
+    <entity name="TrackEntity" representedClassName="TrackEntity" syncable="YES" codeGenerationType="class">
         <attribute name="artistName" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="coverArt" optional="YES" attributeType="Binary" syncable="YES"/>
         <attribute name="trackName" optional="YES" attributeType="String" syncable="YES"/>
     </entity>
     <elements>
-        <element name="EntryEnt" positionX="-45" positionY="0" width="128" height="105"/>
-        <element name="TrackEnt" positionX="-18" positionY="54" width="128" height="90"/>
+        <element name="EntryEntity" positionX="-45" positionY="0" width="128" height="105"/>
+        <element name="TrackEntity" positionX="-18" positionY="54" width="128" height="90"/>
     </elements>
 </model>
