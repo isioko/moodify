@@ -12,9 +12,9 @@ import UIKit
 class DisplayRecentlyPlayedViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
     // Gradient Color Constants
     let pinkColorUI = UIColor(red: 255/225, green: 102/225, blue: 102/225, alpha: 1)
-    let pinkColor = UIColor(red: 255/225, green: 102/225, blue: 102/225, alpha: 1).cgColor
+    let pinkColor = UIColor(red: 250/225, green: 104/225, blue: 104/225, alpha: 1).cgColor
     let purpleColor = UIColor(red: 179/225, green: 102/225, blue: 225/225, alpha: 1).cgColor
-    let blueColor = UIColor(red: 102/225, green: 140/225, blue: 225/225, alpha: 1).cgColor
+    let blueColor = UIColor(red: 85/225, green: 127/225, blue: 242/225, alpha: 1).cgColor
     public var entryText = ""
     @IBOutlet weak var gradientView: UIView!
     @IBOutlet weak var aBackButton: UIButton!

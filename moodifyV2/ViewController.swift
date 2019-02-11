@@ -10,18 +10,23 @@ import Alamofire
 
 class ViewController: UIViewController {
     
-    // MARK: Outlets
+    @IBOutlet weak var gradientView: UIView!
+    let gradient = CAGradientLayer()
     
-    @IBOutlet weak var profilePictureView: UIImageView!
-    @IBOutlet weak var userNameLabel:      UILabel!
-    @IBOutlet weak var mailLabel:          UILabel!
+    @IBOutlet weak var moodifyLogo: UIImageView!
     
-    let blueColor = UIColor(red: 102/225, green: 140/225, blue: 225/225, alpha: 1)
-
+    // Colors for gradient
+    let pinkColor = UIColor(red: 250/225, green: 104/225, blue: 104/225, alpha: 1).cgColor
+    let purpleColor = UIColor(red: 179/225, green: 102/225, blue: 225/225, alpha: 1).cgColor
+    let blueColor = UIColor(red: 85/225, green: 127/225, blue: 242/225, alpha: 1).cgColor
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.view.backgroundColor = blueColor
-        customizeProfilePictureView()
+        //self.view.backgroundColor = blueColor
+        gradient.frame = gradientView.bounds
+        gradient.colors = [pinkColor, purpleColor, blueColor]
+        gradientView.layer.insertSublayer(gradient, at: 0)
+        moodifyLogo.image = UIImage(named: "moodify-start-logo-01.png")
         perform(#selector(timeToMoveOn), with: nil, afterDelay: 2)
         
     }
@@ -30,32 +35,8 @@ class ViewController: UIViewController {
         self.performSegue(withIdentifier: "loadAppSegue", sender: self)
     }
     
-    func customizeProfilePictureView() {
-        // Add a circular layer around profile picture
-        profilePictureView.layer.cornerRadius = profilePictureView.frame.size.width / 2
-        profilePictureView.clipsToBounds      = true
-    }
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
     }
-    
-    // MARK: Load UI
-    
-    func loadUser() {
-        spotifyManager.myProfile { [weak self] profile in
-            // Set user name
-            self?.userNameLabel.text = profile.name
-            
-            // Set mail
-            self?.mailLabel.text = profile.email ?? ""
-            
-            // Set image
-            if let imageURL = URL(string: profile.artUri) {
-                self?.profilePictureView.download(from: imageURL)
-            }
-        }
-    }
-    
-    
 }

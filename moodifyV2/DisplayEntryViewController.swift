@@ -11,15 +11,18 @@ import UIKit
 
 class DisplayEntryViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource{
     // Colors for gradient
-    let pinkColor = UIColor(red: 255/225, green: 102/225, blue: 102/225, alpha: 1).cgColor
+    let pinkColor = UIColor(red: 250/225, green: 104/225, blue: 104/225, alpha: 1).cgColor
     let purpleColor = UIColor(red: 179/225, green: 102/225, blue: 225/225, alpha: 1).cgColor
-    let blueColor = UIColor(red: 102/225, green: 140/225, blue: 225/225, alpha: 1).cgColor
+    let blueColor = UIColor(red: 85/225, green: 127/225, blue: 242/225, alpha: 1).cgColor
     let gradient = CAGradientLayer()
     @IBOutlet weak var gradientView: UIView!
+    
     @IBOutlet weak var doneButton: UIButton!
     @IBOutlet weak var entryTextView: UITextView!
+    
     public var entry_to_display = Entry.init()
     public var selectedTracks = [Track]()
+    
     @IBOutlet weak var dateLabel: UILabel!
     @IBOutlet weak var locationLabel: UILabel!
     
@@ -28,9 +31,12 @@ class DisplayEntryViewController: UIViewController, UICollectionViewDelegate, UI
         trackCollectionView.dataSource = self
         trackCollectionView.delegate = self
         trackCollectionView.reloadData()
+        
         entryTextView.text = entry_to_display.entryText
+        
         let formatter = DateFormatter()
-        formatter.dateFormat = "MM-dd-yyyy"
+        formatter.dateFormat = "MMMM dd, yyyy"
+        
         dateLabel.text = formatter.string(from: entry_to_display.entryDate)
         locationLabel.text = entry_to_display.location
     }
@@ -64,4 +70,5 @@ class DisplayEntryViewController: UIViewController, UICollectionViewDelegate, UI
         cell.displayTrack(track: track)
         return cell
     }
+    
 }
