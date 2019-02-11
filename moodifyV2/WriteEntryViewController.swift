@@ -13,7 +13,6 @@ import CoreLocation
 
 class WriteEntryViewController:UIViewController, UITextFieldDelegate, UITextViewDelegate,CLLocationManagerDelegate {
     
-    // Variables
     let gradient = CAGradientLayer()
     @IBOutlet weak var gradientView: UIView!
     @IBOutlet weak var entryTextView: UITextView!
