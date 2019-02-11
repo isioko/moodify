@@ -141,6 +141,7 @@ class DisplayRecentlyPlayedViewController: UIViewController, UITableViewDataSour
             if let wevc = segue.destination as? WriteEntryViewController {
                 wevc.todays_tracks = self.todays_tracks
                 populateSelectedTracks()
+                
                 for i in 0..<selectedTracks.count {
                     print(selectedTracks[i].trackName)
                 }
@@ -150,4 +151,6 @@ class DisplayRecentlyPlayedViewController: UIViewController, UITableViewDataSour
             }
         }
     }
+    
+    
 }
