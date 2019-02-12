@@ -17,6 +17,9 @@ class WriteEntryViewController:UIViewController, UITextFieldDelegate, UITextView
     @IBOutlet weak var gradientView: UIView!
     @IBOutlet weak var entryTextView: UITextView!
     
+    @IBOutlet weak var tracksForEntryView: UIView!
+    @IBOutlet weak var locationView: UIView!
+    
     var alreadySavedEntry = false
     public var todays_tracks = [Track]()
     public var new_entry = Entry.init()
@@ -40,8 +43,15 @@ class WriteEntryViewController:UIViewController, UITextFieldDelegate, UITextView
         
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        // Make all views have rounded edges
         entryTextView.layer.cornerRadius = 8
         entryTextView.clipsToBounds = true
+        tracksForEntryView.layer.cornerRadius = 8
+        tracksForEntryView.clipsToBounds = true
+        locationView.layer.cornerRadius = 8
+        locationView.clipsToBounds = true
+        
         entryTextView.delegate = self
         locationManager.delegate = self
         if todays_tracks.count == 0 {
@@ -49,6 +59,7 @@ class WriteEntryViewController:UIViewController, UITextFieldDelegate, UITextView
         }
         loadLocation()
     }
+    
     func loadLocation(){
         self.locationManager.requestAlwaysAuthorization()
         
