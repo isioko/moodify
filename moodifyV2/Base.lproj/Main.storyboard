@@ -44,7 +44,7 @@
                     <connections>
                         <outlet property="gradientView" destination="kQJ-Pd-87m" id="4z3-TK-1OK"/>
                         <outlet property="moodifyLogo" destination="3CI-Dn-Q36" id="bHO-17-3Cc"/>
-                        <segue destination="IOf-FR-uyr" kind="presentation" identifier="loadAppSegue" id="L5T-tc-1gU"/>
+                        <segue destination="IOf-FR-uyr" kind="show" identifier="loadAppSegue" id="L5T-tc-1gU"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -59,44 +59,55 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ded-tI-R8C">
-                                <rect key="frame" x="132" y="327" width="95" height="40"/>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Hzt-dk-wAH" userLabel="Gradient View">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="23"/>
-                                <state key="normal" title="Authorize"/>
-                                <connections>
-                                    <action selector="authorizeAppp:" destination="IOf-FR-uyr" eventType="touchUpInside" id="MMY-jJ-YoN"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7PF-3e-POH">
-                                <rect key="frame" x="126" y="402" width="106" height="36"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
-                                <state key="normal" title="Deauthorize"/>
-                                <connections>
-                                    <action selector="deauthorizeApp:" destination="IOf-FR-uyr" eventType="touchUpInside" id="QS6-a4-0HC"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SuS-t7-Jot">
-                                <rect key="frame" x="156" y="514" width="46" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
-                                <state key="normal" title="Next"/>
-                                <connections>
-                                    <segue destination="6VG-jr-GIa" kind="show" id="W3D-q5-a1G"/>
-                                </connections>
-                            </button>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7PF-3e-POH">
+                                        <rect key="frame" x="151" y="579" width="79" height="37"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" name="Hind-Regular" family="Hind" pointSize="15"/>
+                                        <state key="normal" title="Deauthorize"/>
+                                        <connections>
+                                            <action selector="deauthorizeApp:" destination="IOf-FR-uyr" eventType="touchUpInside" id="QS6-a4-0HC"/>
+                                        </connections>
+                                    </button>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="moodify-start-logo-01.png" translatesAutoresizingMaskIntoConstraints="NO" id="YNo-hC-skH">
+                                        <rect key="frame" x="57" y="170" width="260" height="123"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    </imageView>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ded-tI-R8C">
+                                        <rect key="frame" x="25" y="505" width="325" height="47"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <state key="normal" image="authButton"/>
+                                        <connections>
+                                            <action selector="authorizeAppp:" destination="IOf-FR-uyr" eventType="touchUpInside" id="MMY-jJ-YoN"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SuS-t7-Jot">
+                                        <rect key="frame" x="304" y="740" width="46" height="30"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" name="Hind-Regular" family="Hind" pointSize="15"/>
+                                        <state key="normal" title="Next"/>
+                                        <connections>
+                                            <segue destination="6VG-jr-GIa" kind="show" id="W3D-q5-a1G"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="5l4-vO-fzW"/>
                     </view>
                     <connections>
                         <outlet property="authorizeApp" destination="ded-tI-R8C" id="91X-9k-y8y"/>
+                        <outlet property="gradientView" destination="Hzt-dk-wAH" id="qoB-wq-VZG"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="W8c-Rr-ICC" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2113" y="-345"/>
+            <point key="canvasLocation" x="2112.8000000000002" y="-345.07389162561577"/>
         </scene>
         <!--Calendar-->
         <scene sceneID="jND-eu-z0K">
@@ -565,6 +576,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="authButton" width="1014" height="150"/>
         <image name="blackHeadphones" width="24.666666030883789" height="20.666666030883789"/>
         <image name="blueHeadphones" width="43.666667938232422" height="35.666667938232422"/>
         <image name="blueLocation" width="22.666666030883789" height="39"/>
@@ -574,7 +586,7 @@
         <image name="saveIcon" width="32" height="37"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="tTK-eY-M5o"/>
+        <segue reference="W3D-q5-a1G"/>
         <segue reference="fwe-Sq-vFa"/>
     </inferredMetricsTieBreakers>
 </document>
