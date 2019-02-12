@@ -19,6 +19,7 @@
 		4C3C641A220AA9C800ED4364 /* Track.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C3C6419220AA9C800ED4364 /* Track.swift */; };
 		4C48A9BD2207C07C0073DF63 /* Entry.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C48A9BC2207C07C0073DF63 /* Entry.swift */; };
 		4C48A9C22207C1690073DF63 /* Song.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C48A9C12207C1690073DF63 /* Song.swift */; };
+		4C4B43FD22127ED00022DD3E /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C4B43FC22127ED00022DD3E /* Extensions.swift */; };
 		4C6B3DCE220BFA2800C79C61 /* AuthorizeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C6B3DCD220BFA2800C79C61 /* AuthorizeViewController.swift */; };
 		4C70D9E4220F59B200EA9E8B /* DisplayTrackCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C70D9E3220F59B200EA9E8B /* DisplayTrackCollectionViewCell.swift */; };
 		4CD4EBC4221131D6003BC69D /* Model.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 4CD4EBC2221131D6003BC69D /* Model.xcdatamodeld */; };
@@ -55,6 +56,7 @@
 		4C3C6419220AA9C800ED4364 /* Track.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Track.swift; sourceTree = "<group>"; };
 		4C48A9BC2207C07C0073DF63 /* Entry.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Entry.swift; sourceTree = "<group>"; };
 		4C48A9C12207C1690073DF63 /* Song.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Song.swift; sourceTree = "<group>"; };
+		4C4B43FC22127ED00022DD3E /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		4C6B3DCD220BFA2800C79C61 /* AuthorizeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthorizeViewController.swift; sourceTree = "<group>"; };
 		4C70D9E3220F59B200EA9E8B /* DisplayTrackCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DisplayTrackCollectionViewCell.swift; sourceTree = "<group>"; };
 		4CD4EBC3221131D6003BC69D /* Model.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Model.xcdatamodel; sourceTree = "<group>"; };
@@ -71,14 +73,14 @@
 		6A0C5FAD2204179A00666370 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		6A0C5FB02204179A00666370 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		6A0C5FB22204179A00666370 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		6A202C172211570E0004E98E /* group 2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "group 2.png"; path = "../../group 2.png"; sourceTree = "<group>"; };
-		6A202C1A22115D0D0004E98E /* Hind-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Hind-Bold.ttf"; path = "../../../Resources/Hind-Bold.ttf"; sourceTree = "<group>"; };
-		6A202C1B22115D0D0004E98E /* Hind-Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Hind-Light.ttf"; path = "../../../Resources/Hind-Light.ttf"; sourceTree = "<group>"; };
-		6A202C1C22115D0D0004E98E /* Hind-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Hind-Regular.ttf"; path = "../../../Resources/Hind-Regular.ttf"; sourceTree = "<group>"; };
-		6A202C1D22115D0D0004E98E /* Hind-SemiBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Hind-SemiBold.ttf"; path = "../../../Resources/Hind-SemiBold.ttf"; sourceTree = "<group>"; };
-		6A202C1E22115D0D0004E98E /* Hind-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Hind-Medium.ttf"; path = "../../../Resources/Hind-Medium.ttf"; sourceTree = "<group>"; };
-		6A202C2622116EE10004E98E /* location-logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "location-logo.png"; path = "../../location-logo.png"; sourceTree = "<group>"; };
-		6A202C2A221174DF0004E98E /* moodify-start-logo-01.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "moodify-start-logo-01.png"; path = "../../moodify-start-logo-01.png"; sourceTree = "<group>"; };
+		6A202C172211570E0004E98E /* group 2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "group 2.png"; sourceTree = "<group>"; };
+		6A202C1A22115D0D0004E98E /* Hind-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Hind-Bold.ttf"; sourceTree = "<group>"; };
+		6A202C1B22115D0D0004E98E /* Hind-Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Hind-Light.ttf"; path = "moodifyV2/Resources/Hind-Light.ttf"; sourceTree = SOURCE_ROOT; };
+		6A202C1C22115D0D0004E98E /* Hind-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Hind-Regular.ttf"; sourceTree = "<group>"; };
+		6A202C1D22115D0D0004E98E /* Hind-SemiBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Hind-SemiBold.ttf"; sourceTree = "<group>"; };
+		6A202C1E22115D0D0004E98E /* Hind-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Hind-Medium.ttf"; sourceTree = "<group>"; };
+		6A202C2622116EE10004E98E /* location-logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "location-logo.png"; sourceTree = "<group>"; };
+		6A202C2A221174DF0004E98E /* moodify-start-logo-01.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "moodify-start-logo-01.png"; sourceTree = "<group>"; };
 		8C90D3268E6E46F747930A44 /* Pods-moodifyV2.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-moodifyV2.release.xcconfig"; path = "Pods/Target Support Files/Pods-moodifyV2/Pods-moodifyV2.release.xcconfig"; sourceTree = "<group>"; };
 		9DF3280B68B789ACFDA7F122 /* Pods-moodifyV2.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-moodifyV2.debug.xcconfig"; path = "Pods/Target Support Files/Pods-moodifyV2/Pods-moodifyV2.debug.xcconfig"; sourceTree = "<group>"; };
 		D834A758439C8C3D28916217 /* Pods_moodifyV2.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_moodifyV2.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -153,6 +155,7 @@
 				4C3C6415220AA83E00ED4364 /* DisplayRecentlyPlayedViewController.swift */,
 				4CF6E9B12208147F00836FC6 /* EntryTabViewController.swift */,
 				4CF6E9AB220809A800836FC6 /* WriteEntryViewController.swift */,
+				4C4B43FC22127ED00022DD3E /* Extensions.swift */,
 				4C3C6411220A7E8A00ED4364 /* CalendarViewController.swift */,
 				6A0C5FA82204179800666370 /* ViewController.swift */,
 				4C6B3DCD220BFA2800C79C61 /* AuthorizeViewController.swift */,
@@ -326,6 +329,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4C4B43FD22127ED00022DD3E /* Extensions.swift in Sources */,
 				4C3AF44B2211261800157F34 /* EntryEntity+CoreDataClass.swift in Sources */,
 				4CF6E9A82208024000836FC6 /* HomePageTabBarViewController.swift in Sources */,
 				4C48A9C22207C1690073DF63 /* Song.swift in Sources */,
@@ -495,13 +499,13 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = LVF4872BAN;
+				DEVELOPMENT_TEAM = 3DZD66GQPU;
 				INFOPLIST_FILE = moodifyV2/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = edu.stanford.iokojie;
+				PRODUCT_BUNDLE_IDENTIFIER = edu.stanford.shelbym;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -514,13 +518,13 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = LVF4872BAN;
+				DEVELOPMENT_TEAM = 3DZD66GQPU;
 				INFOPLIST_FILE = moodifyV2/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = edu.stanford.iokojie;
+				PRODUCT_BUNDLE_IDENTIFIER = edu.stanford.shelbym;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";

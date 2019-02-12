@@ -25,5 +25,6 @@ class EntryViewCell:UICollectionViewCell{
         dateLabel.text = formatter.string(from: entry.entryDate)
         locationLabel.text = entry.location
         locationImage.image = UIImage(named: "location-logo.png")
+        relativeDateLabel.text = entry.relativeDate
     }
 }

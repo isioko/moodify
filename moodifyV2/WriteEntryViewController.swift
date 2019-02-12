@@ -194,7 +194,6 @@ class WriteEntryViewController:UIViewController, UITextFieldDelegate, UITextView
             new_entry.entryText = entry_text
         }
         if let location = locationLabel.text{
-            //new_entry.location = "@" + location
             new_entry.location = location
 
         }

@@ -17,6 +17,7 @@ extension EntryEntity {
         return NSFetchRequest<EntryEntity>(entityName: "EntryEntity")
     }
 
+    @NSManaged public var relativeDate: String?
     @NSManaged public var text: String?
     @NSManaged public var date: NSDate?
     @NSManaged public var location: String?

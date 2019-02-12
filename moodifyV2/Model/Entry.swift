@@ -10,17 +10,17 @@ import Foundation
 
 class Entry {
     public var entryText: String
-    public var spotifyID: String
     public var entryDate: Date
     public var location: String
     public var associatedTracks = [Track]()
+    public var relativeDate:String
 
     init() {
         self.entryText = ""
-        self.spotifyID = ""
         self.location = ""
         let date = Date()
         self.entryDate = date
+        self.relativeDate = ""
 //        let formatter = DateFormatter()
 //        formatter.dateFormat = "MM-dd-yyyy"
 //        self.entryDate = formatter.string(from: date)

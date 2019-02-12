@@ -44,6 +44,7 @@ class EntryTabViewController:UIViewController,UICollectionViewDelegate,UICollect
         entry_entity.setValue(entry.entryText, forKeyPath: "text")
         entry_entity.setValue(entry.location, forKeyPath: "location")
         entry_entity.setValue(entry.entryDate, forKeyPath: "date")
+        entry_entity.setValue(entry.relativeDate, forKeyPath: "relativeDate")
         
         // to do: set songs
         for track in entry.associatedTracks{
@@ -58,11 +59,35 @@ class EntryTabViewController:UIViewController,UICollectionViewDelegate,UICollect
         // 4
         do {
             try managedContext.save()
-            entriesCD.append(entry_entity)
+            entriesCD.insert(entry_entity, at: 0)
         } catch let error as NSError {
             print("Could not save. \(error), \(error.userInfo)")
         }
     }
+    
+    func calculateRelativeDate(num_days: Int)->String{
+        if num_days == 0{
+            return "TODAY"
+        }else if num_days == 1{
+            return "YESTERDAY"
+        }else if num_days == 2{
+            return "TWO DAYS AGO"
+        }else if num_days == 3{
+            return "THREE DAYS AGO"
+        }else if num_days == 4{
+            return "FOUR DAYS AGO"
+        }else if num_days == 5{
+            return "FIVE DAYS AGO"
+        }else if num_days == 6{
+            return "SIX DAYS AGO"
+        }else if num_days > 6 && num_days < 30{
+            return "THIS MONTH"
+        }else{
+            return ""
+        }
+        
+    }
+    
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(true)
@@ -80,6 +105,24 @@ class EntryTabViewController:UIViewController,UICollectionViewDelegate,UICollect
         //2
         let fetchRequest =
             NSFetchRequest<NSManagedObject>(entityName: "EntryEntity")
+        
+        // add in to update relative date
+        do {
+            let entryList = try managedContext.fetch(fetchRequest) as! [EntryEntity]
+            for entryEntity in entryList{
+                print(entryEntity.location)
+                let entry_date = entryEntity.date as! Date
+                let current_date = Date()
+                let diff = current_date.interval(ofComponent: .day, fromDate: entry_date)
+                let relativeDateForEntry = calculateRelativeDate(num_days: diff)
+                entryEntity.relativeDate = relativeDateForEntry
+                
+            }
+        } catch {
+            print("Fetching Failed")
+        }
+
+        
         
         //3
         do {
@@ -126,13 +169,11 @@ class EntryTabViewController:UIViewController,UICollectionViewDelegate,UICollect
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int
     {
-//        return entries.entries_list.count
         return entriesCD.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "entryCell", for: indexPath) as! EntryViewCell
-//        let entry = entries.entries_list[indexPath.row]
         let entry_obj = entriesCD[indexPath.row]
         // construct entry to display
         let entry = getEntryFromNSObject(NS_entry: entry_obj)
@@ -152,9 +193,11 @@ class EntryTabViewController:UIViewController,UICollectionViewDelegate,UICollect
     
     func getEntryFromNSObject(NS_entry:NSObject)->Entry{
         let entry = Entry()
+        entry.relativeDate = NS_entry.value(forKey: "relativeDate") as! String
         entry.entryDate = NS_entry.value(forKey: "date") as! Date
         entry.location = NS_entry.value(forKey: "location") as! String
         entry.entryText = NS_entry.value(forKey: "text") as! String
+        
         let tracks_found = NS_entry.value(forKey: "associatedTrack") as! NSSet
         var tracks_assoc = [Track]()
         for track_entity in tracks_found{
@@ -186,3 +229,5 @@ class EntryTabViewController:UIViewController,UICollectionViewDelegate,UICollect
         }
     }
 }
+
+
