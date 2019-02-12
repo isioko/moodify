@@ -307,7 +307,7 @@
                                                         </imageView>
                                                     </subviews>
                                                 </view>
-                                                <color key="backgroundColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <connections>
                                                     <outlet property="dateLabel" destination="3EU-cy-6Y7" id="Imw-49-yll"/>
                                                     <outlet property="entryLabel" destination="F19-sD-2CL" id="m78-du-gSo"/>

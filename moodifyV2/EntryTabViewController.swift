@@ -63,7 +63,7 @@ class EntryTabViewController:UIViewController,UICollectionViewDelegate,UICollect
         //2
         let fetchRequest =
             NSFetchRequest<NSManagedObject>(entityName: "EntryEntity")
-        let sort = NSSortDescriptor(key: #keyPath(EntryEntity.date), ascending: true)
+        let sort = NSSortDescriptor(key: #keyPath(EntryEntity.date), ascending: false)
         fetchRequest.sortDescriptors = [sort]
 
         // add in to update relative date
@@ -125,12 +125,16 @@ class EntryTabViewController:UIViewController,UICollectionViewDelegate,UICollect
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "entryCell", for: indexPath) as! EntryViewCell
+        
+        // Format cells to be white and have rounded edges
+        cell.contentView.backgroundColor = UIColor.white
+        cell.contentView.layer.cornerRadius = 8.0
+        cell.contentView.layer.masksToBounds = true
+        
         let entry_obj = entriesCD[indexPath.row]
         // construct entry to display
         let entry = getEntryFromNSObject(NS_entry: entry_obj)
         cell.displayContent(entry: entry)
-        cell.contentView.layer.cornerRadius = 5.0
-        cell.contentView.layer.masksToBounds = true
 
         return cell
     }
