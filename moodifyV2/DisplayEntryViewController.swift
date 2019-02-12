@@ -26,6 +26,11 @@ class DisplayEntryViewController: UIViewController, UICollectionViewDelegate, UI
     @IBOutlet weak var dateLabel: UILabel!
     @IBOutlet weak var locationLabel: UILabel!
     
+    @IBOutlet weak var locationBubbleView: UIView!
+    @IBOutlet weak var dateBubbleView: UIView!
+    @IBOutlet weak var entryTextBubbleView: UIView!
+    @IBOutlet weak var trackBubbleView: UIView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         trackCollectionView.dataSource = self
@@ -39,6 +44,16 @@ class DisplayEntryViewController: UIViewController, UICollectionViewDelegate, UI
         
         dateLabel.text = formatter.string(from: entry_to_display.entryDate)
         locationLabel.text = entry_to_display.location
+        
+                // Make all views have rounded edges
+        entryTextBubbleView.layer.cornerRadius = 8
+        entryTextBubbleView.clipsToBounds = true
+        dateBubbleView.layer.cornerRadius = 8
+        dateBubbleView.clipsToBounds = true
+        locationBubbleView.layer.cornerRadius = 8
+        locationBubbleView.clipsToBounds = true
+        trackBubbleView.layer.cornerRadius = 8
+        trackBubbleView.clipsToBounds = true
     }
     
     override func viewDidAppear(_ animated: Bool) {
