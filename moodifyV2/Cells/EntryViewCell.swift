@@ -17,6 +17,7 @@ class EntryViewCell:UICollectionViewCell{
     @IBOutlet weak var relativeDateLabel: UILabel!
     @IBOutlet weak var locationLabel: UILabel!
     @IBOutlet weak var locationImage: UIImageView!
+    @IBOutlet weak var numTracksLabel: UILabel!
     
     func displayContent(entry: Entry){
         entryLabel.text = entry.entryText
@@ -25,6 +26,7 @@ class EntryViewCell:UICollectionViewCell{
         dateLabel.text = formatter.string(from: entry.entryDate)
         locationLabel.text = entry.location
         locationImage.image = UIImage(named: "location-logo.png")
+        numTracksLabel.text = String(entry.associatedTracks.count)
         relativeDateLabel.text = entry.relativeDate
     }
 }

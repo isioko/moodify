@@ -143,10 +143,12 @@ class DisplayRecentlyPlayedViewController: UIViewController, UITableViewDataSour
                 wevc.todays_tracks = self.todays_tracks
                 populateSelectedTracks()
                 
-                for i in 0..<selectedTracks.count - 1 {
-                    selectedTracksString += selectedTracks[i].trackName + ", "
+                if selectedTracks.count > 0 {
+                    for i in 0..<selectedTracks.count - 1 {
+                        selectedTracksString += selectedTracks[i].trackName + ", "
+                    }
+                    selectedTracksString += selectedTracks[selectedTracks.count - 1].trackName
                 }
-                selectedTracksString += selectedTracks[selectedTracks.count - 1].trackName
                 
                 wevc.selectedTracks = selectedTracks
                 wevc.selectedRows = self.selectedRows
