@@ -83,7 +83,7 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                 <state key="normal" title="Next"/>
                                 <connections>
-                                    <segue destination="ItK-aK-vma" kind="show" id="ObI-ba-yg9"/>
+                                    <segue destination="6VG-jr-GIa" kind="show" id="W3D-q5-a1G"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -96,7 +96,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="W8c-Rr-ICC" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1281" y="-550"/>
+            <point key="canvasLocation" x="2113" y="-345"/>
         </scene>
         <!--Calendar-->
         <scene sceneID="jND-eu-z0K">
@@ -203,7 +203,7 @@
                                             <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </state>
                                         <connections>
-                                            <segue destination="tXn-6T-E1W" kind="show" id="IzP-kF-08C"/>
+                                            <segue destination="6VG-jr-GIa" kind="show" id="IzP-kF-08C"/>
                                         </connections>
                                     </button>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Location" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PXW-Jn-EUm">
@@ -338,7 +338,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ZUC-3u-MPj" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3066.4000000000001" y="-342.11822660098522"/>
+            <point key="canvasLocation" x="4008.8000000000002" y="-342.11822660098522"/>
         </scene>
         <!--Write Entry View Controller-->
         <scene sceneID="tyT-5E-7M7">
@@ -357,7 +357,7 @@
                                 </state>
                                 <connections>
                                     <action selector="clickAdd:" destination="fEb-oX-jyH" eventType="touchUpInside" id="Uy1-pZ-fbQ"/>
-                                    <segue destination="tXn-6T-E1W" kind="show" identifier="showEntriesSegue" id="tTK-eY-M5o"/>
+                                    <segue destination="6VG-jr-GIa" kind="show" identifier="showEntriesSegue" id="tTK-eY-M5o"/>
                                 </connections>
                             </button>
                             <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="TQ0-UN-7fs">
@@ -389,7 +389,7 @@
                                             <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </state>
                                         <connections>
-                                            <segue destination="tXn-6T-E1W" kind="show" id="ESi-eA-wPO"/>
+                                            <segue destination="6VG-jr-GIa" kind="show" id="ESi-eA-wPO"/>
                                         </connections>
                                     </button>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DKj-NU-Anf">
@@ -419,7 +419,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2gI-g0-9b0" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4256.8000000000002" y="-327.33990147783254"/>
+            <point key="canvasLocation" x="5199.1999999999998" y="-327.33990147783254"/>
         </scene>
         <!--Display Recently Played View Controller-->
         <scene sceneID="zss-kc-vuB">
@@ -499,30 +499,29 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="vFg-DR-ehK" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="5056.8000000000002" y="-335.46798029556652"/>
+            <point key="canvasLocation" x="5999.1999999999998" y="-335.46798029556652"/>
         </scene>
         <!--Tab Bar Controller-->
-        <scene sceneID="uob-nx-R43">
+        <scene sceneID="FoM-WJ-hwF">
             <objects>
-                <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="ItK-aK-vma" sceneMemberID="viewController">
+                <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="6VG-jr-GIa" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="Zqo-pN-Y7O">
-                        <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>
+                    <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="1aZ-7o-evO">
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </tabBar>
                     <connections>
-                        <segue destination="tXn-6T-E1W" kind="relationship" relationship="viewControllers" id="XcM-r3-sv3"/>
-                        <segue destination="K3t-s3-0fX" kind="relationship" relationship="viewControllers" id="hqY-y3-v3e"/>
+                        <segue destination="tXn-6T-E1W" kind="relationship" relationship="viewControllers" id="2aO-zR-XXg"/>
+                        <segue destination="K3t-s3-0fX" kind="relationship" relationship="viewControllers" id="7b2-8S-Zm9"/>
                     </connections>
                 </tabBarController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="Ge2-Ae-c3r" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Cqc-nD-Rxj" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2204" y="-295.50224887556226"/>
+            <point key="canvasLocation" x="3066.4000000000001" y="-342.11822660098522"/>
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
+        <segue reference="tTK-eY-M5o"/>
         <segue reference="fwe-Sq-vFa"/>
-        <segue reference="IzP-kF-08C"/>
     </inferredMetricsTieBreakers>
 </document>

@@ -25,46 +25,6 @@ class EntryTabViewController:UIViewController,UICollectionViewDelegate,UICollect
     
     @IBOutlet weak var plusButton: UIButton!
     
-    // CORE DATA
-    func save(entry: Entry) {
-        
-        guard let appDelegate =
-            UIApplication.shared.delegate as? AppDelegate else {
-                return
-        }
-        
-        // 1
-        let managedContext =
-            appDelegate.persistentContainer.viewContext
-        
-        // 2
-        let entry_entity = EntryEntity(context: managedContext)
-
-        // 3
-        entry_entity.setValue(entry.entryText, forKeyPath: "text")
-        entry_entity.setValue(entry.location, forKeyPath: "location")
-        entry_entity.setValue(entry.entryDate, forKeyPath: "date")
-        entry_entity.setValue(entry.relativeDate, forKeyPath: "relativeDate")
-        
-        // to do: set songs
-        for track in entry.associatedTracks{
-            let trackObj = TrackEntity(context: managedContext)
-            trackObj.setValue(track.artistName, forKeyPath:"artistName")
-            trackObj.setValue(track.trackName, forKeyPath:"trackName")
-            let imageData = track.trackArtworkImage?.pngData()
-            trackObj.setValue(imageData, forKeyPath:"coverArt")
-            entry_entity.addToAssociatedTrack(trackObj)
-        }
-        
-        // 4
-        do {
-            try managedContext.save()
-            entriesCD.insert(entry_entity, at: 0)
-        } catch let error as NSError {
-            print("Could not save. \(error), \(error.userInfo)")
-        }
-    }
-    
     func calculateRelativeDate(num_days: Int)->String{
         if num_days == 0{
             return "TODAY"
@@ -85,9 +45,7 @@ class EntryTabViewController:UIViewController,UICollectionViewDelegate,UICollect
         }else{
             return ""
         }
-        
     }
-    
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(true)
@@ -105,7 +63,9 @@ class EntryTabViewController:UIViewController,UICollectionViewDelegate,UICollect
         //2
         let fetchRequest =
             NSFetchRequest<NSManagedObject>(entityName: "EntryEntity")
-        
+        let sort = NSSortDescriptor(key: #keyPath(EntryEntity.date), ascending: true)
+        fetchRequest.sortDescriptors = [sort]
+
         // add in to update relative date
         do {
             let entryList = try managedContext.fetch(fetchRequest) as! [EntryEntity]
@@ -121,8 +81,6 @@ class EntryTabViewController:UIViewController,UICollectionViewDelegate,UICollect
         } catch {
             print("Fetching Failed")
         }
-
-        
         
         //3
         do {
@@ -132,11 +90,6 @@ class EntryTabViewController:UIViewController,UICollectionViewDelegate,UICollect
         }
         // end of core data
         
-        if newEntry.entryText != ""{
-            save(entry: newEntry)
-            // reinit entry to be empty
-            newEntry = Entry()
-        }
         //add gradient to background
         gradient.frame = gradientView.bounds
         gradient.colors = [pinkColor, purpleColor, blueColor]
@@ -146,19 +99,11 @@ class EntryTabViewController:UIViewController,UICollectionViewDelegate,UICollect
         entryCollectionView.reloadData()
         entryCollectionView.collectionViewLayout.invalidateLayout()
     }
-
-    
     
     @IBOutlet weak var entryCollectionView: UICollectionView!{
         didSet{
             entryCollectionView.dataSource = self
             entryCollectionView.delegate = self
-        }
-    }
-    // don't think ever used anymore, delete
-    func updateNewEntry(entry: Entry) {
-        if(entries.entries_list.count > 0){
-            entries.entries_list[0] = entry
         }
     }
     
@@ -208,7 +153,6 @@ class EntryTabViewController:UIViewController,UICollectionViewDelegate,UICollect
         return entry
     }
  
-    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "writeEntrySegue" {
             if let wevc = segue.destination as? WriteEntryViewController{

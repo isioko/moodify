@@ -198,6 +198,48 @@ class WriteEntryViewController:UIViewController, UITextFieldDelegate, UITextView
 
         }
         new_entry.associatedTracks = selectedTracks
+        save(entry: new_entry)
+    }
+    
+    // CORE DATA
+    var entriesCD: [NSObject] = []
+    func save(entry: Entry) {
+        
+        guard let appDelegate =
+            UIApplication.shared.delegate as? AppDelegate else {
+                return
+        }
+        
+        // 1
+        let managedContext =
+            appDelegate.persistentContainer.viewContext
+        
+        // 2
+        let entry_entity = EntryEntity(context: managedContext)
+        
+        // 3
+        entry_entity.setValue(entry.entryText, forKeyPath: "text")
+        entry_entity.setValue(entry.location, forKeyPath: "location")
+        entry_entity.setValue(entry.entryDate, forKeyPath: "date")
+        entry_entity.setValue(entry.relativeDate, forKeyPath: "relativeDate")
+        
+        // to do: set songs
+        for track in entry.associatedTracks{
+            let trackObj = TrackEntity(context: managedContext)
+            trackObj.setValue(track.artistName, forKeyPath:"artistName")
+            trackObj.setValue(track.trackName, forKeyPath:"trackName")
+            let imageData = track.trackArtworkImage?.pngData()
+            trackObj.setValue(imageData, forKeyPath:"coverArt")
+            entry_entity.addToAssociatedTrack(trackObj)
+        }
+        
+        // 4
+        do {
+            try managedContext.save()
+            entriesCD.insert(entry_entity, at: 0)
+        } catch let error as NSError {
+            print("Could not save. \(error), \(error.userInfo)")
+        }
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
