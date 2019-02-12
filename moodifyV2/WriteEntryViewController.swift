@@ -26,6 +26,7 @@ class WriteEntryViewController:UIViewController, UITextFieldDelegate, UITextView
     public var updated_entries = Entries.init()
     public var selectedTracks = [Track]()
     public var selectedRows:[Bool] = [] // added this
+    public var selectedTracksString = ""
     
     // MARK - UITextFieldDelegate
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
@@ -35,6 +36,8 @@ class WriteEntryViewController:UIViewController, UITextFieldDelegate, UITextView
     }
     @IBOutlet weak var cancelButton: UIButton!
     @IBOutlet weak var addButton: UIButton!
+    
+    @IBOutlet weak var selectedTracksLabel: UILabel!
     
     // Colors for gradient
     let pinkColor = UIColor(red: 250/225, green: 104/225, blue: 104/225, alpha: 1).cgColor
@@ -58,6 +61,10 @@ class WriteEntryViewController:UIViewController, UITextFieldDelegate, UITextView
             displayTracks()
         }
         loadLocation()
+        
+        if selectedTracksString != "" {
+            selectedTracksLabel.text = selectedTracksString
+        }
     }
     
     func loadLocation(){
@@ -96,7 +103,7 @@ class WriteEntryViewController:UIViewController, UITextFieldDelegate, UITextView
         }
         )
         if location != ""{
-        locationLabel.text = location
+            locationLabel.text = location
         }
     }
     
@@ -261,6 +268,7 @@ class WriteEntryViewController:UIViewController, UITextFieldDelegate, UITextView
                 if let entry_text = entryTextView.text{
                     drpvc.entryText = entry_text
                 }
+                //drpvc.selectedTracksString = selectedTracksString
             }
         }else if segue.identifier == "showEntriesSegue"{
             if let etvc = segue.destination as? EntryTabViewController{

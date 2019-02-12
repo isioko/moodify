@@ -362,7 +362,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <subviews>
                                     <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="vtf-f6-WlO">
-                                        <rect key="frame" x="14" y="232" width="347" height="198"/>
+                                        <rect key="frame" x="14" y="232" width="347" height="230"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <fontDescription key="fontDescription" name="Hind-Regular" family="Hind" pointSize="20"/>
@@ -440,6 +440,7 @@
                         <outlet property="gradientView" destination="TQ0-UN-7fs" id="drP-g4-ZOM"/>
                         <outlet property="locationLabel" destination="DKj-NU-Anf" id="W1e-bO-mxI"/>
                         <outlet property="locationView" destination="p9L-18-BHK" id="98b-qc-UC9"/>
+                        <outlet property="selectedTracksLabel" destination="d4B-6j-riR" id="kee-sg-5mD"/>
                         <outlet property="tracksForEntryView" destination="dKe-OL-0FX" id="HBR-Xx-f1l"/>
                     </connections>
                 </viewController>

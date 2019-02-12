@@ -23,6 +23,7 @@ class DisplayRecentlyPlayedViewController: UIViewController, UITableViewDataSour
     
     public var selectedRows:[Bool] = [] 
     var selectedTracks:[Track] = []
+    public var selectedTracksString = ""
     
     public var todays_tracks = [Track()]
     
@@ -142,12 +143,15 @@ class DisplayRecentlyPlayedViewController: UIViewController, UITableViewDataSour
                 wevc.todays_tracks = self.todays_tracks
                 populateSelectedTracks()
                 
-                for i in 0..<selectedTracks.count {
-                    print(selectedTracks[i].trackName)
+                for i in 0..<selectedTracks.count - 1 {
+                    selectedTracksString += selectedTracks[i].trackName + ", "
                 }
+                selectedTracksString += selectedTracks[selectedTracks.count - 1].trackName
+                
                 wevc.selectedTracks = selectedTracks
                 wevc.selectedRows = self.selectedRows
                 wevc.new_entry.entryText = self.entryText
+                wevc.selectedTracksString = selectedTracksString
             }
         }
     }
