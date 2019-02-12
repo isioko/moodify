@@ -28,21 +28,21 @@ class EntryTabViewController:UIViewController,UICollectionViewDelegate,UICollect
     func calculateRelativeDate(num_days: Int)->String{
         if num_days == 0{
             return "TODAY"
-        }else if num_days == 1{
+        } else if num_days == 1 {
             return "YESTERDAY"
-        }else if num_days == 2{
+        } else if num_days == 2 {
             return "TWO DAYS AGO"
-        }else if num_days == 3{
+        } else if num_days == 3 {
             return "THREE DAYS AGO"
-        }else if num_days == 4{
+        } else if num_days == 4 {
             return "FOUR DAYS AGO"
-        }else if num_days == 5{
+        } else if num_days == 5 {
             return "FIVE DAYS AGO"
-        }else if num_days == 6{
+        } else if num_days == 6 {
             return "SIX DAYS AGO"
-        }else if num_days > 6 && num_days < 30{
+        } else if num_days > 6 && num_days < 30 {
             return "THIS MONTH"
-        }else{
+        } else {
             return ""
         }
     }
@@ -98,6 +98,12 @@ class EntryTabViewController:UIViewController,UICollectionViewDelegate,UICollect
         
         entryCollectionView.reloadData()
         entryCollectionView.collectionViewLayout.invalidateLayout()
+        
+        // Add shadow to plus button
+        plusButton.layer.shadowColor = UIColor.darkGray.cgColor
+        plusButton.layer.shadowOffset = CGSize(width: 0, height: 2)
+        plusButton.layer.shadowRadius = 5
+        plusButton.layer.shadowOpacity = 0.5
     }
     
     @IBOutlet weak var entryCollectionView: UICollectionView!{
@@ -123,6 +129,9 @@ class EntryTabViewController:UIViewController,UICollectionViewDelegate,UICollect
         // construct entry to display
         let entry = getEntryFromNSObject(NS_entry: entry_obj)
         cell.displayContent(entry: entry)
+        cell.contentView.layer.cornerRadius = 5.0
+        cell.contentView.layer.masksToBounds = true
+
         return cell
     }
     

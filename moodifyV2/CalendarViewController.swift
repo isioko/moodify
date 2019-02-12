@@ -15,9 +15,9 @@ class CalendarViewController: UIViewController{
     let gradient = CAGradientLayer()
     
     // Colors for gradient
-    let pinkColor = UIColor(red: 255/225, green: 102/225, blue: 102/225, alpha: 1).cgColor
+    let pinkColor = UIColor(red: 250/225, green: 104/225, blue: 104/225, alpha: 1).cgColor
     let purpleColor = UIColor(red: 179/225, green: 102/225, blue: 225/225, alpha: 1).cgColor
-    let blueColor = UIColor(red: 102/225, green: 140/225, blue: 225/225, alpha: 1).cgColor
+    let blueColor = UIColor(red: 85/225, green: 127/225, blue: 242/225, alpha: 1).cgColor
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(true)

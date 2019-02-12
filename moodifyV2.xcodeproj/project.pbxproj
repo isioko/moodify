@@ -42,6 +42,7 @@
 		6A202C2322115D0E0004E98E /* Hind-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 6A202C1E22115D0D0004E98E /* Hind-Medium.ttf */; };
 		6A202C2722116EE10004E98E /* location-logo.png in Resources */ = {isa = PBXBuildFile; fileRef = 6A202C2622116EE10004E98E /* location-logo.png */; };
 		6A202C2B221174E00004E98E /* moodify-start-logo-01.png in Resources */ = {isa = PBXBuildFile; fileRef = 6A202C2A221174DF0004E98E /* moodify-start-logo-01.png */; };
+		6A202C2E2212B9930004E98E /* plus@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 6A202C2D2212B9920004E98E /* plus@3x.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -81,6 +82,7 @@
 		6A202C1E22115D0D0004E98E /* Hind-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Hind-Medium.ttf"; sourceTree = "<group>"; };
 		6A202C2622116EE10004E98E /* location-logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "location-logo.png"; sourceTree = "<group>"; };
 		6A202C2A221174DF0004E98E /* moodify-start-logo-01.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "moodify-start-logo-01.png"; sourceTree = "<group>"; };
+		6A202C2D2212B9920004E98E /* plus@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "plus@3x.png"; path = "../../../plus@3x.png"; sourceTree = "<group>"; };
 		8C90D3268E6E46F747930A44 /* Pods-moodifyV2.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-moodifyV2.release.xcconfig"; path = "Pods/Target Support Files/Pods-moodifyV2/Pods-moodifyV2.release.xcconfig"; sourceTree = "<group>"; };
 		9DF3280B68B789ACFDA7F122 /* Pods-moodifyV2.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-moodifyV2.debug.xcconfig"; path = "Pods/Target Support Files/Pods-moodifyV2/Pods-moodifyV2.debug.xcconfig"; sourceTree = "<group>"; };
 		D834A758439C8C3D28916217 /* Pods_moodifyV2.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_moodifyV2.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -144,6 +146,7 @@
 		6A0C5FA52204179800666370 /* moodifyV2 */ = {
 			isa = PBXGroup;
 			children = (
+				6A202C2C2212B9780004E98E /* icons */,
 				6A202C2A221174DF0004E98E /* moodify-start-logo-01.png */,
 				6A202C2622116EE10004E98E /* location-logo.png */,
 				6A202C1922115CD90004E98E /* Resources */,
@@ -180,6 +183,14 @@
 				6A202C1D22115D0D0004E98E /* Hind-SemiBold.ttf */,
 			);
 			path = Resources;
+			sourceTree = "<group>";
+		};
+		6A202C2C2212B9780004E98E /* icons */ = {
+			isa = PBXGroup;
+			children = (
+				6A202C2D2212B9920004E98E /* plus@3x.png */,
+			);
+			path = icons;
 			sourceTree = "<group>";
 		};
 		A3324A07F530948ABE4C330C /* Frameworks */ = {
@@ -264,6 +275,7 @@
 				6A202C182211570E0004E98E /* group 2.png in Resources */,
 				6A202C2B221174E00004E98E /* moodify-start-logo-01.png in Resources */,
 				6A202C2022115D0E0004E98E /* Hind-Light.ttf in Resources */,
+				6A202C2E2212B9930004E98E /* plus@3x.png in Resources */,
 				6A202C2322115D0E0004E98E /* Hind-Medium.ttf in Resources */,
 				6A202C2722116EE10004E98E /* location-logo.png in Resources */,
 				6A202C2222115D0E0004E98E /* Hind-SemiBold.ttf in Resources */,
@@ -499,13 +511,13 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 3DZD66GQPU;
+				DEVELOPMENT_TEAM = LVF4872BAN;
 				INFOPLIST_FILE = moodifyV2/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = edu.stanford.shelbym;
+				PRODUCT_BUNDLE_IDENTIFIER = edu.stanford.iokojie;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -518,13 +530,13 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 3DZD66GQPU;
+				DEVELOPMENT_TEAM = LVF4872BAN;
 				INFOPLIST_FILE = moodifyV2/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = edu.stanford.shelbym;
+				PRODUCT_BUNDLE_IDENTIFIER = edu.stanford.iokojie;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
