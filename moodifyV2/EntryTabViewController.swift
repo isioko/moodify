@@ -67,21 +67,20 @@ class EntryTabViewController:UIViewController,UICollectionViewDelegate,UICollect
         fetchRequest.sortDescriptors = [sort]
 
         // add in to update relative date
-        do {
-            let entryList = try managedContext.fetch(fetchRequest) as! [EntryEntity]
-            for entryEntity in entryList{
-                print(entryEntity.location)
-                let entry_date = entryEntity.date as! Date
-                let current_date = Date()
-                let diff = current_date.interval(ofComponent: .day, fromDate: entry_date)
-                let relativeDateForEntry = calculateRelativeDate(num_days: diff)
-                entryEntity.relativeDate = relativeDateForEntry
-                
-            }
-        } catch {
-            print("Fetching Failed")
-        }
-        
+//        do {
+//            let entryList = try managedContext.fetch(fetchRequest) as! [EntryEntity]
+//            for entryEntity in entryList {
+//                let entry_date = entryEntity.date as! Date
+//                let current_date = Date()
+//                let diff = current_date.interval(ofComponent: .day, fromDate: entry_date)
+//                let relativeDateForEntry = calculateRelativeDate(num_days: diff)
+//                entryEntity.relativeDate = relativeDateForEntry
+//
+//            }
+//        } catch {
+//            print("Fetching Failed")
+//        }
+//
         //3
         do {
             entriesCD = try managedContext.fetch(fetchRequest)
@@ -153,7 +152,8 @@ class EntryTabViewController:UIViewController,UICollectionViewDelegate,UICollect
     
     func getEntryFromNSObject(NS_entry:NSObject)->Entry{
         let entry = Entry()
-        entry.relativeDate = NS_entry.value(forKey: "relativeDate") as! String
+//        entry.relativeDate = NS_entry.value(forKey: "relativeDate") as! String
+        entry.relativeDate = ""
         entry.entryDate = NS_entry.value(forKey: "date") as! Date
         entry.location = NS_entry.value(forKey: "location") as! String
         entry.entryText = NS_entry.value(forKey: "text") as! String

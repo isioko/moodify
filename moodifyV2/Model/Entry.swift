@@ -21,9 +21,5 @@ class Entry {
         let date = Date()
         self.entryDate = date
         self.relativeDate = ""
-//        let formatter = DateFormatter()
-//        formatter.dateFormat = "MM-dd-yyyy"
-//        self.entryDate = formatter.string(from: date)
-        
     }
 }

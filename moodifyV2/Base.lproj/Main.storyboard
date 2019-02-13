@@ -44,7 +44,7 @@
                     <connections>
                         <outlet property="gradientView" destination="kQJ-Pd-87m" id="4z3-TK-1OK"/>
                         <outlet property="moodifyLogo" destination="3CI-Dn-Q36" id="bHO-17-3Cc"/>
-                        <segue destination="IOf-FR-uyr" kind="show" identifier="loadAppSegue" id="L5T-tc-1gU"/>
+                        <segue destination="IOf-FR-uyr" kind="show" identifier="loadAppSegue" animates="NO" id="L5T-tc-1gU"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -90,14 +90,14 @@
                                         <fontDescription key="fontDescription" name="Hind-Regular" family="Hind" pointSize="15"/>
                                         <state key="normal" title="Next"/>
                                         <connections>
-                                            <segue destination="6VG-jr-GIa" kind="show" id="W3D-q5-a1G"/>
+                                            <segue destination="6VG-jr-GIa" kind="show" animates="NO" id="W3D-q5-a1G"/>
                                         </connections>
                                     </button>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </view>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="5l4-vO-fzW"/>
                     </view>
                     <connections>
@@ -123,7 +123,7 @@
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </view>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="Ffd-3s-H4a"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="Calendar" id="10I-0o-pXl"/>
@@ -139,7 +139,7 @@
         <scene sceneID="esV-uD-r9f">
             <objects>
                 <viewController id="QU1-nM-dcV" customClass="DisplayEntryViewController" customModule="moodifyV2" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="L2z-EM-QbK">
+                    <view key="view" opaque="NO" contentMode="scaleToFill" id="L2z-EM-QbK">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
@@ -263,14 +263,14 @@
                                             <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </state>
                                         <connections>
-                                            <segue destination="6VG-jr-GIa" kind="show" id="IzP-kF-08C"/>
+                                            <segue destination="6VG-jr-GIa" kind="show" animates="NO" id="IzP-kF-08C"/>
                                         </connections>
                                     </button>
                                 </subviews>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </view>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="Osy-Xg-f28"/>
                     </view>
                     <connections>
@@ -306,7 +306,7 @@
                                     <color key="titleColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
                                 <connections>
-                                    <segue destination="fEb-oX-jyH" kind="presentation" identifier="writeEntrySegue" id="fwe-Sq-vFa"/>
+                                    <segue destination="fEb-oX-jyH" kind="presentation" identifier="writeEntrySegue" animates="NO" id="fwe-Sq-vFa"/>
                                 </connections>
                             </button>
                             <view opaque="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="mxe-GF-5kg">
@@ -348,7 +348,7 @@
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Location" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gUX-ro-Gfr">
                                                             <rect key="frame" x="27" y="75" width="125" height="21"/>
                                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                            <fontDescription key="fontDescription" name="Hind-Regular" family="Hind" pointSize="10"/>
+                                                            <fontDescription key="fontDescription" name="Hind-Regular" family="Hind" pointSize="12"/>
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
@@ -370,7 +370,7 @@
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="3" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="d8k-0c-EsO" userLabel="Num Tracks Label">
                                                             <rect key="frame" x="321" y="75" width="15" height="21"/>
                                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                            <fontDescription key="fontDescription" name="Hind-Regular" family="Hind" pointSize="10"/>
+                                                            <fontDescription key="fontDescription" name="Hind-Regular" family="Hind" pointSize="12"/>
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
@@ -384,7 +384,7 @@
                                                     <outlet property="locationLabel" destination="gUX-ro-Gfr" id="duZ-Gc-YJt"/>
                                                     <outlet property="numTracksLabel" destination="d8k-0c-EsO" id="KBa-79-rkG"/>
                                                     <outlet property="relativeDateLabel" destination="Jkq-8r-83p" id="tp1-zA-QFP"/>
-                                                    <segue destination="QU1-nM-dcV" kind="presentation" identifier="viewEntrySegue" id="fna-Md-nNg"/>
+                                                    <segue destination="QU1-nM-dcV" kind="show" identifier="viewEntrySegue" animates="NO" id="fna-Md-nNg"/>
                                                 </connections>
                                             </collectionViewCell>
                                         </cells>
@@ -397,7 +397,7 @@
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </view>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="CwX-hJ-KA2"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="Entries" id="Bcz-oN-pka"/>
@@ -428,7 +428,7 @@
                                 </state>
                                 <connections>
                                     <action selector="clickAdd:" destination="fEb-oX-jyH" eventType="touchUpInside" id="Uy1-pZ-fbQ"/>
-                                    <segue destination="6VG-jr-GIa" kind="show" identifier="showEntriesSegue" id="tTK-eY-M5o"/>
+                                    <segue destination="6VG-jr-GIa" kind="show" identifier="showEntriesSegue" animates="NO" id="tTK-eY-M5o"/>
                                 </connections>
                             </button>
                             <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="TQ0-UN-7fs">
@@ -457,7 +457,7 @@
                                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 </state>
                                                 <connections>
-                                                    <segue destination="HaK-so-nBx" kind="presentation" identifier="chooseMusicSegue" id="cfa-5L-5Fx"/>
+                                                    <segue destination="HaK-so-nBx" kind="presentation" identifier="chooseMusicSegue" animates="NO" id="cfa-5L-5Fx"/>
                                                 </connections>
                                             </button>
                                         </subviews>
@@ -501,14 +501,14 @@
                                             <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </state>
                                         <connections>
-                                            <segue destination="6VG-jr-GIa" kind="show" id="ESi-eA-wPO"/>
+                                            <segue destination="6VG-jr-GIa" kind="show" animates="NO" id="ESi-eA-wPO"/>
                                         </connections>
                                     </button>
                                 </subviews>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </view>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="Qix-fs-ha5"/>
                     </view>
                     <navigationItem key="navigationItem" id="UEC-Yb-eHK">
@@ -590,14 +590,14 @@
                                             <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </state>
                                         <connections>
-                                            <segue destination="fEb-oX-jyH" kind="show" identifier="backToWriteEntrySegue" id="4gZ-eP-sVl"/>
+                                            <segue destination="fEb-oX-jyH" kind="show" identifier="backToWriteEntrySegue" animates="NO" id="4gZ-eP-sVl"/>
                                         </connections>
                                     </button>
                                 </subviews>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </view>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="NU9-cQ-3B2"/>
                     </view>
                     <connections>
@@ -643,7 +643,6 @@
         <image name="saveIcon" width="32" height="37"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="cfa-5L-5Fx"/>
         <segue reference="tTK-eY-M5o"/>
         <segue reference="4gZ-eP-sVl"/>
     </inferredMetricsTieBreakers>
