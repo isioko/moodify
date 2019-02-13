@@ -57,6 +57,9 @@ class DisplayRecentlyPlayedViewController: UIViewController, UITableViewDataSour
         trackTableView.dataSource = self
         trackTableView.delegate = self
         trackTableView.reloadData()
+        
+        trackTableView.layer.cornerRadius = 8.0
+        trackTableView.clipsToBounds = true
     }
     
     func displayTracks() {
