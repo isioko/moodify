@@ -497,6 +497,20 @@ public class SpotifyManager {
         return false
     }
     
+    // Refreshes the token if needed 
+    public func refreshTokenIfNeeded() {
+        if (token?.isExpired)! {
+            // If the token is expired, refresh it first
+            // Then try repeating the operation
+            refreshToken { refreshed in
+                if refreshed {
+                    print("token refreshed")
+                }
+            }
+        }
+    }
+    
+    // Gets recently played tracks from user's Spotify account
     public func getRecentPlayed(completionBlock: @escaping ([(String, String, String)]) -> Void) -> Void {
         let auth = self.token!.tokenType + " " + self.token!.accessToken
         
@@ -530,10 +544,6 @@ public class SpotifyManager {
                 for Item in json_response.items {
                     var track: (String, String, String)
                     
-                    //print("-------------------------TRACK-------------------------")
-                    //print("Name:", Item.track.name)
-                    //print("Time:", Item.playedAt)
-                    
                     let trackName = Item.track.name
                     track.0 = trackName
                     
@@ -543,20 +553,13 @@ public class SpotifyManager {
                     var numArtistsInString = 0
                     for Artist in Item.track.artists {
                         numArtistsInString += 1
-                        //print("Artist:", Artist.name)
                         artistsString += Artist.name
                         if numArtistsInString != numArtists {
                             artistsString += ", "
                         }
-                        //print(artistsString)
                     }
                     track.1 = artistsString
                     
-//                    for Image in Item.track.album.images {
-//                        print("Artwork", Image.url)
-//                        track.2 = Image.url
-//                        break // to just get the first image
-//                    }
                     
                     let image = Item.track.album.images[0]
                     track.2 = image.url

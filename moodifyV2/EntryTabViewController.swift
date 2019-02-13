@@ -104,6 +104,8 @@ class EntryTabViewController:UIViewController,UICollectionViewDelegate,UICollect
         plusButton.layer.shadowOffset = CGSize(width: 0, height: 2)
         plusButton.layer.shadowRadius = 5
         plusButton.layer.shadowOpacity = 0.5
+        
+        spotifyManager.refreshTokenIfNeeded()
     }
     
     @IBOutlet weak var entryCollectionView: UICollectionView!{
