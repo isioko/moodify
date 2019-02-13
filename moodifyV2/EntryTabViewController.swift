@@ -24,29 +24,7 @@ class EntryTabViewController:UIViewController,UICollectionViewDelegate,UICollect
     let blueColor = UIColor(red: 85/225, green: 127/225, blue: 242/225, alpha: 1).cgColor
     
     @IBOutlet weak var plusButton: UIButton!
-    
-    func calculateRelativeDate(num_days: Int)->String{
-        if num_days == 0{
-            return "TODAY"
-        } else if num_days == 1 {
-            return "YESTERDAY"
-        } else if num_days == 2 {
-            return "TWO DAYS AGO"
-        } else if num_days == 3 {
-            return "THREE DAYS AGO"
-        } else if num_days == 4 {
-            return "FOUR DAYS AGO"
-        } else if num_days == 5 {
-            return "FIVE DAYS AGO"
-        } else if num_days == 6 {
-            return "SIX DAYS AGO"
-        } else if num_days > 6 && num_days < 30 {
-            return "THIS MONTH"
-        } else {
-            return ""
-        }
-    }
-    
+        
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(true)
         // CORE DATA
@@ -66,21 +44,6 @@ class EntryTabViewController:UIViewController,UICollectionViewDelegate,UICollect
         let sort = NSSortDescriptor(key: #keyPath(EntryEntity.date), ascending: false)
         fetchRequest.sortDescriptors = [sort]
 
-        // add in to update relative date
-//        do {
-//            let entryList = try managedContext.fetch(fetchRequest) as! [EntryEntity]
-//            for entryEntity in entryList {
-//                let entry_date = entryEntity.date as! Date
-//                let current_date = Date()
-//                let diff = current_date.interval(ofComponent: .day, fromDate: entry_date)
-//                let relativeDateForEntry = calculateRelativeDate(num_days: diff)
-//                entryEntity.relativeDate = relativeDateForEntry
-//
-//            }
-//        } catch {
-//            print("Fetching Failed")
-//        }
-//
         //3
         do {
             entriesCD = try managedContext.fetch(fetchRequest)
@@ -152,8 +115,6 @@ class EntryTabViewController:UIViewController,UICollectionViewDelegate,UICollect
     
     func getEntryFromNSObject(NS_entry:NSObject)->Entry{
         let entry = Entry()
-//        entry.relativeDate = NS_entry.value(forKey: "relativeDate") as! String
-//        entry.relativeDate = ""
         entry.entryDate = NS_entry.value(forKey: "date") as! Date
         entry.location = NS_entry.value(forKey: "location") as! String
         entry.entryText = NS_entry.value(forKey: "text") as! String
@@ -180,7 +141,6 @@ class EntryTabViewController:UIViewController,UICollectionViewDelegate,UICollect
                 let indexPath = self.entryCollectionView!.indexPath(for: entry_cell)
                 let entry_clicked_obj = self.entriesCD[indexPath!.row]
                 let entry_clicked = getEntryFromNSObject(NS_entry: entry_clicked_obj)
-//                let entry_clicked = self.entries.entries_list[indexPath!.row]
                 devc.entry_to_display = entry_clicked
             }
         } else if segue.identifier == ""{

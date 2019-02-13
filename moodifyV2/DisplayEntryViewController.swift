@@ -63,11 +63,19 @@ class DisplayEntryViewController: UIViewController, UICollectionViewDelegate, UI
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(true)
+        if entry_to_display.associatedTracks.count == 0{
+            trackCollectionView.isHidden = true
+            trackCollectionView.alpha = 0
+            trackBubbleView.isHidden = true
+            trackCollectionView.alpha = 0
+        }
+        trackCollectionView.reloadData()
         entryTextView.text = entry_to_display.entryText
         gradient.frame = gradientView.bounds
         gradient.colors = [pinkColor, purpleColor, blueColor]
         gradientView.layer.insertSublayer(gradient, at: 0)
         gradientView.addSubview(doneButton)
+        
     }
     
     // Collection View
