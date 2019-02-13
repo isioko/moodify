@@ -25,6 +25,7 @@ class DisplayEntryViewController: UIViewController, UICollectionViewDelegate, UI
     
     @IBOutlet weak var dateLabel: UILabel!
     @IBOutlet weak var locationLabel: UILabel!
+    @IBOutlet weak var dateBubbleLabel: UILabel!
     
     @IBOutlet weak var locationBubbleView: UIView!
     @IBOutlet weak var dateBubbleView: UIView!
@@ -42,7 +43,11 @@ class DisplayEntryViewController: UIViewController, UICollectionViewDelegate, UI
         let formatter = DateFormatter()
         formatter.dateFormat = "MMMM dd, yyyy"
         
-        dateLabel.text = formatter.string(from: entry_to_display.entryDate)
+        let formatter_time = DateFormatter()
+        formatter_time.dateFormat = "h:mm a"
+        
+        dateBubbleLabel.text = formatter.string(from: entry_to_display.entryDate) + " @ " + formatter_time.string(from: entry_to_display.entryDate)
+        dateLabel.text = entry_to_display.relativeDate
         locationLabel.text = entry_to_display.location
         
                 // Make all views have rounded edges
@@ -62,7 +67,6 @@ class DisplayEntryViewController: UIViewController, UICollectionViewDelegate, UI
         gradient.frame = gradientView.bounds
         gradient.colors = [pinkColor, purpleColor, blueColor]
         gradientView.layer.insertSublayer(gradient, at: 0)
-        gradientView.addSubview(entryTextView)
         gradientView.addSubview(doneButton)
     }
     

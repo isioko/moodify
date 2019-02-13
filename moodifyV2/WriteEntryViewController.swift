@@ -19,6 +19,7 @@ class WriteEntryViewController:UIViewController, UITextFieldDelegate, UITextView
     
     @IBOutlet weak var tracksForEntryView: UIView!
     @IBOutlet weak var locationView: UIView!
+    @IBOutlet weak var entryTextBubbleView: UIView!
     
     var alreadySavedEntry = false
     public var todays_tracks = [Track]()
@@ -48,8 +49,8 @@ class WriteEntryViewController:UIViewController, UITextFieldDelegate, UITextView
         super.viewDidLoad()
         
         // Make all views have rounded edges
-        entryTextView.layer.cornerRadius = 8
-        entryTextView.clipsToBounds = true
+        entryTextBubbleView.layer.cornerRadius = 8
+        entryTextBubbleView.clipsToBounds = true
         tracksForEntryView.layer.cornerRadius = 8
         tracksForEntryView.clipsToBounds = true
         locationView.layer.cornerRadius = 8
@@ -93,7 +94,7 @@ class WriteEntryViewController:UIViewController, UITextFieldDelegate, UITextView
 
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         guard let locValue: CLLocationCoordinate2D = manager.location?.coordinate else { return }
-        print("locations = \(locValue.latitude) \(locValue.longitude)")
+        //print("locations = \(locValue.latitude) \(locValue.longitude)")
         lookUpCurrentLocation(completionHandler: {completionHandler in
             if let completionHandler = completionHandler{
                 if let new_location = completionHandler.locality{
@@ -196,7 +197,7 @@ class WriteEntryViewController:UIViewController, UITextFieldDelegate, UITextView
         gradientView.layer.insertSublayer(gradient, at: 0)
         gradientView.addSubview(addButton)
         gradientView.addSubview(cancelButton)
-        gradientView.addSubview(entryTextView)
+        //gradientView.addSubview(entryTextView)
     }
     
     func textView(_ textView: UITextView, shouldChangeTextIn range: NSRange, replacementText text: String) -> Bool {
