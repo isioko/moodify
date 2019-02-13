@@ -153,7 +153,7 @@ class EntryTabViewController:UIViewController,UICollectionViewDelegate,UICollect
     func getEntryFromNSObject(NS_entry:NSObject)->Entry{
         let entry = Entry()
 //        entry.relativeDate = NS_entry.value(forKey: "relativeDate") as! String
-        entry.relativeDate = ""
+//        entry.relativeDate = ""
         entry.entryDate = NS_entry.value(forKey: "date") as! Date
         entry.location = NS_entry.value(forKey: "location") as! String
         entry.entryText = NS_entry.value(forKey: "text") as! String

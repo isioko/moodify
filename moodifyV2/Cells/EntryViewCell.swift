@@ -28,21 +28,31 @@ class EntryViewCell:UICollectionViewCell{
         locationImage.image = UIImage(named: "location-logo.png")
         numTracksLabel.text = String(entry.associatedTracks.count)
         
-        let current_date = Date()
-//        print("current date", current_date)
-//        print("current date with formatter", current_date)
-//        print("entry date", entry.entryDate)
-//        print("entry date with formatter", formatter.string(from: entry.entryDate))
-//
-        
-        print("time interval from now", entry.entryDate, entry.entryDate.timeIntervalSinceNow)
-        print("num days", Int(-1 * (entry.entryDate.timeIntervalSinceNow / 86400)))
-//        let diff = current_date.interval(ofComponent: .day, fromDate: entry.entryDate)
-        let diff = Int(-1 * (entry.entryDate.timeIntervalSinceNow / 86400))
-        let relativeDateForEntry = calculateRelativeDate(num_days: diff)
+        let numDays = getNumDays(date: entry.entryDate)
+        let relativeDateForEntry = calculateRelativeDate(num_days: numDays)
 
-        //relativeDateLabel.text = entry.relativeDate
         relativeDateLabel.text = relativeDateForEntry
+    }
+    
+    func getNumDays(date: Date) -> Int{
+        let formatter = DateFormatter()
+        formatter.dateFormat = "yyyy/MM/dd HH:mm"
+        
+        let formatter_2 = DateFormatter()
+        formatter_2.dateFormat = "yyyy/MM/dd"
+        
+        var currentDate = formatter_2.string(from: Date())
+        currentDate += " 00:00"
+        
+        var entryDate = formatter_2.string(from: date)
+        entryDate += " 00:00"
+        
+        let currentDate_asDate = formatter.date(from: currentDate)
+        let entryDate_asDate = formatter.date(from: entryDate)
+        
+        let numDays = Calendar.current.dateComponents([.day], from: entryDate_asDate!, to: currentDate_asDate!).day
+        
+        return numDays!
     }
     
     func calculateRelativeDate(num_days: Int)->String{

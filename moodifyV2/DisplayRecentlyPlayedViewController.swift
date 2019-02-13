@@ -157,6 +157,4 @@ class DisplayRecentlyPlayedViewController: UIViewController, UITableViewDataSour
             }
         }
     }
-    
-    
 }

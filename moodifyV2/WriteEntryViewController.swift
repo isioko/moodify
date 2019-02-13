@@ -204,8 +204,10 @@ class WriteEntryViewController:UIViewController, UITextFieldDelegate, UITextView
         //gradientView.addSubview(entryTextView)
         
         // START: Placeholder Text
-        entryTextView.text = PLACEHOLDER_TEXT
-        entryTextView.textColor = UIColor.lightGray
+        if entryTextView.text == "" {
+            entryTextView.text = PLACEHOLDER_TEXT
+            entryTextView.textColor = UIColor.lightGray
+        }
         // END: Placeholder text
     }
     
@@ -268,7 +270,7 @@ class WriteEntryViewController:UIViewController, UITextFieldDelegate, UITextView
         entry_entity.setValue(entry.entryText, forKeyPath: "text")
         entry_entity.setValue(entry.location, forKeyPath: "location")
         entry_entity.setValue(entry.entryDate, forKeyPath: "date")
-        entry_entity.setValue(entry.relativeDate, forKeyPath: "relativeDate")
+        //entry_entity.setValue(entry.relativeDate, forKeyPath: "relativeDate")
         
         // to do: set songs
         for track in entry.associatedTracks{
@@ -294,12 +296,12 @@ class WriteEntryViewController:UIViewController, UITextFieldDelegate, UITextView
             if let drpvc = segue.destination as? DisplayRecentlyPlayedViewController{
                 drpvc.todays_tracks = todays_tracks
                 drpvc.selectedRows = selectedRows
-                if let entry_text = entryTextView.text{
+                if let entry_text = entryTextView.text {
                     drpvc.entryText = entry_text
                 }
                 //drpvc.selectedTracksString = selectedTracksString
             }
-        }else if segue.identifier == "showEntriesSegue"{
+        } else if segue.identifier == "showEntriesSegue" {
             if let etvc = segue.destination as? EntryTabViewController{
                 etvc.newEntry = new_entry
             }
