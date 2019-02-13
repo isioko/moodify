@@ -297,7 +297,11 @@ class WriteEntryViewController:UIViewController, UITextFieldDelegate, UITextView
                 drpvc.todays_tracks = todays_tracks
                 drpvc.selectedRows = selectedRows
                 if let entry_text = entryTextView.text {
-                    drpvc.entryText = entry_text
+                    if entry_text != PLACEHOLDER_TEXT {
+                        drpvc.entryText = entry_text
+                    } else {
+                        drpvc.entryText = ""
+                    }
                 }
                 //drpvc.selectedTracksString = selectedTracksString
             }
