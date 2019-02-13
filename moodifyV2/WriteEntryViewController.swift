@@ -65,6 +65,10 @@ class WriteEntryViewController:UIViewController, UITextFieldDelegate, UITextView
         
         if selectedTracksString != "" {
             selectedTracksLabel.text = selectedTracksString
+            selectedTracksLabel.textColor = UIColor.black
+        } else {
+            selectedTracksLabel.text = "Add your soundtrack"
+            selectedTracksLabel.textColor = UIColor.lightGray
         }
     }
     
@@ -198,6 +202,11 @@ class WriteEntryViewController:UIViewController, UITextFieldDelegate, UITextView
         gradientView.addSubview(addButton)
         gradientView.addSubview(cancelButton)
         //gradientView.addSubview(entryTextView)
+        
+        // START: Placeholder Text
+        entryTextView.text = PLACEHOLDER_TEXT
+        entryTextView.textColor = UIColor.lightGray
+        // END: Placeholder text
     }
     
     func textView(_ textView: UITextView, shouldChangeTextIn range: NSRange, replacementText text: String) -> Bool {
@@ -207,6 +216,25 @@ class WriteEntryViewController:UIViewController, UITextFieldDelegate, UITextView
         }
         return true
     }
+    
+    
+    // START: Placeholder text for entryTextView
+    let PLACEHOLDER_TEXT = "What's on your mind?"
+    
+    func textViewDidBeginEditing(_ textView: UITextView) {
+        if entryTextView.textColor == UIColor.lightGray {
+            entryTextView.text = nil
+            entryTextView.textColor = UIColor.black
+        }
+    }
+    
+    func textViewDidEndEditing(_ textView: UITextView) {
+        if entryTextView.text.isEmpty {
+            entryTextView.text = PLACEHOLDER_TEXT
+            entryTextView.textColor = UIColor.lightGray
+        }
+    }
+    // END: Placeholder text for entryTextView
     
     @IBAction func clickAdd(_ sender: UIButton) {
         if let entry_text = entryTextView.text{
