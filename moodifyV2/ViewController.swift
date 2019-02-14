@@ -28,7 +28,6 @@ class ViewController: UIViewController {
         gradientView.layer.insertSublayer(gradient, at: 0)
         moodifyLogo.image = UIImage(named: "moodify-start-logo-01.png")
         perform(#selector(timeToMoveOn), with: nil, afterDelay: 2)
-        spotifyManager.refreshTokenIfNeeded()
     }
     
     @objc func timeToMoveOn() {
