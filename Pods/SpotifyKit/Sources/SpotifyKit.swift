@@ -499,14 +499,18 @@ public class SpotifyManager {
     
     // Refreshes the token if needed 
     public func refreshTokenIfNeeded() {
-        if (token?.isExpired)! {
-            // If the token is expired, refresh it first
-            // Then try repeating the operation
-            refreshToken { refreshed in
-                if refreshed {
-                    print("token refreshed")
+        if hasToken {
+            if (token?.isExpired)! {
+                // If the token is expired, refresh it first
+                // Then try repeating the operation
+                refreshToken { refreshed in
+                    if refreshed {
+                        print("token refreshed")
+                    }
                 }
             }
+        } else {
+            authorize()
         }
     }
     

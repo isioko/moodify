@@ -332,7 +332,7 @@
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <subviews>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="RELATIVE DATE" textAlignment="natural" lineBreakMode="tailTruncation" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Jkq-8r-83p">
-                                                            <rect key="frame" x="9" y="9" width="139" height="21"/>
+                                                            <rect key="frame" x="9" y="9" width="191" height="21"/>
                                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                             <fontDescription key="fontDescription" name="Hind-SemiBold" family="Hind" pointSize="20"/>
                                                             <nil key="textColor"/>
@@ -644,6 +644,6 @@
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="tTK-eY-M5o"/>
-        <segue reference="4gZ-eP-sVl"/>
+        <segue reference="fwe-Sq-vFa"/>
     </inferredMetricsTieBreakers>
 </document>
