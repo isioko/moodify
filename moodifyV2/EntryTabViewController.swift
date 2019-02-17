@@ -128,7 +128,7 @@ class EntryTabViewController:UIViewController,UICollectionViewDelegate,UICollect
         entry.associatedTracks = tracks_assoc
         return entry
     }
- 
+    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "writeEntrySegue" {
             if let wevc = segue.destination as? WriteEntryViewController{

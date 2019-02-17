@@ -8,6 +8,8 @@
 
 import Foundation
 import UIKit
+import CoreData
+
 
 class DisplayRecentlyPlayedViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
     // Gradient Color Constants

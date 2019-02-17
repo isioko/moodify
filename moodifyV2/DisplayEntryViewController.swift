@@ -8,6 +8,7 @@
 
 import Foundation
 import UIKit
+import CoreData
 
 class DisplayEntryViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource{
     // Colors for gradient
@@ -31,7 +32,7 @@ class DisplayEntryViewController: UIViewController, UICollectionViewDelegate, UI
     @IBOutlet weak var dateBubbleView: UIView!
     @IBOutlet weak var entryTextBubbleView: UIView!
     @IBOutlet weak var trackBubbleView: UIView!
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
         trackCollectionView.dataSource = self
@@ -63,6 +64,7 @@ class DisplayEntryViewController: UIViewController, UICollectionViewDelegate, UI
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(true)
+
         if entry_to_display.associatedTracks.count == 0{
             trackCollectionView.isHidden = true
             trackCollectionView.alpha = 0
@@ -77,6 +79,8 @@ class DisplayEntryViewController: UIViewController, UICollectionViewDelegate, UI
         gradientView.addSubview(doneButton)
         
     }
+    
+    
     
     // Collection View
     @IBOutlet weak var trackCollectionView: UICollectionView!{
@@ -96,6 +100,20 @@ class DisplayEntryViewController: UIViewController, UICollectionViewDelegate, UI
         let track = entry_to_display.associatedTracks[indexPath.row]
         cell.displayTrack(track: track)
         return cell
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "showAssociatedEntriesSegue" {
+            if let vaevc = segue.destination as? ViewAssociatedEntriesViewController {
+                
+                let track_cell = sender as! DisplayTrackCollectionViewCell
+                let indexPath = self.trackCollectionView!.indexPath(for: track_cell)
+                let track = entry_to_display.associatedTracks[(indexPath?.row)!]
+
+                vaevc.entry_to_display = entry_to_display
+                vaevc.track_to_display = track
+            }
+        }
     }
     
 }

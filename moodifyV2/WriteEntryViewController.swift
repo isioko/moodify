@@ -10,6 +10,8 @@ import Foundation
 import UIKit
 import MapKit
 import CoreLocation
+import CoreData
+
 
 class WriteEntryViewController:UIViewController, UITextFieldDelegate, UITextViewDelegate,CLLocationManagerDelegate {
     
@@ -269,23 +271,58 @@ class WriteEntryViewController:UIViewController, UITextFieldDelegate, UITextView
         // 3
         entry_entity.setValue(entry.entryText, forKeyPath: "text")
         entry_entity.setValue(entry.location, forKeyPath: "location")
+       
         entry_entity.setValue(entry.entryDate, forKeyPath: "date")
         //entry_entity.setValue(entry.relativeDate, forKeyPath: "relativeDate")
         
+        var trackEntries = [NSObject]()
         // to do: set songs
         for track in entry.associatedTracks{
-            let trackObj = TrackEntity(context: managedContext)
-            trackObj.setValue(track.artistName, forKeyPath:"artistName")
-            trackObj.setValue(track.trackName, forKeyPath:"trackName")
-            let imageData = track.trackArtworkImage?.pngData()
-            trackObj.setValue(imageData, forKeyPath:"coverArt")
-            entry_entity.addToAssociatedTrack(trackObj)
+            let request = NSFetchRequest<NSFetchRequestResult>(entityName: "TrackEntity")
+            let predicate = NSPredicate(format: "trackName == %@", track.trackName)
+            request.predicate = predicate
+            request.fetchLimit = 1
+            let foundTracks = [NSObject]()
+            do{
+                var foundTracks = try managedContext.fetch(request)
+                let count = try managedContext.count(for: request)
+                if(count == 0){
+                    // no matching object
+                    let trackObj = TrackEntity(context: managedContext)
+                    trackObj.setValue(track.artistName, forKeyPath:"artistName")
+                    trackObj.setValue(track.trackName, forKeyPath:"trackName")
+                    let imageData = track.trackArtworkImage?.pngData()
+                    trackObj.setValue(imageData, forKeyPath:"coverArt")
+                    entry_entity.addToAssociatedTrack(trackObj)
+                    trackObj.addToAssociatedEntry(entry_entity)
+                    trackEntries.append(trackObj)
+                }
+                else{
+                    // at least one matching object exists
+                    let trackObj = foundTracks[0] as! TrackEntity
+                    trackObj.setValue(track.artistName, forKeyPath:"artistName")
+                    trackObj.setValue(track.trackName, forKeyPath:"trackName")
+                    let imageData = track.trackArtworkImage?.pngData()
+                    trackObj.setValue(imageData, forKeyPath:"coverArt")
+                    entry_entity.addToAssociatedTrack(trackObj)
+                    trackObj.addToAssociatedEntry(entry_entity)
+//                    trackEntries.append(trackObj)
+                }
+            }
+            catch let error as NSError {
+                print("Could not fetch \(error), \(error.userInfo)")
+            }
+
         }
         
         // 4
         do {
             try managedContext.save()
             entriesCD.insert(entry_entity, at: 0)
+            // MIGHT BREAK EVERYTHING!!!
+            for trackObj in trackEntries{
+                entriesCD.append(trackObj)
+            }
         } catch let error as NSError {
             print("Could not save. \(error), \(error.userInfo)")
         }

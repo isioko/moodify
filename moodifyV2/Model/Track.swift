@@ -13,7 +13,9 @@ class Track {
     public var trackName: String
     public var artistName: String
     public var trackArtworkImage: UIImage?
-    
+
+    public var associatedEntries = [Entry]()
+
     init(){
         self.trackName = ""
         self.artistName = ""
