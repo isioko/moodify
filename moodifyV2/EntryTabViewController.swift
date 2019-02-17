@@ -12,7 +12,7 @@ import CoreData
 
 class EntryTabViewController:UIViewController,UICollectionViewDelegate,UICollectionViewDataSource{
     var entries = Entries.init()
-    var entriesCD: [NSObject] = []
+    var core_data_entries: [NSObject] = []
     var writeEntry: WriteEntryViewController?
     @IBOutlet weak var gradientView: UIView!
     let gradient = CAGradientLayer()
@@ -46,7 +46,7 @@ class EntryTabViewController:UIViewController,UICollectionViewDelegate,UICollect
 
         //3
         do {
-            entriesCD = try managedContext.fetch(fetchRequest)
+            core_data_entries = try managedContext.fetch(fetchRequest)
         } catch let error as NSError {
             print("Could not fetch. \(error), \(error.userInfo)")
         }
@@ -78,13 +78,13 @@ class EntryTabViewController:UIViewController,UICollectionViewDelegate,UICollect
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        let entry_clicked_obj = self.entriesCD[indexPath.row]
+        let entry_clicked_obj = self.core_data_entries[indexPath.row]
         let entry_clicked = getEntryFromNSObject(NS_entry: entry_clicked_obj)
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int
     {
-        return entriesCD.count
+        return core_data_entries.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
@@ -95,7 +95,7 @@ class EntryTabViewController:UIViewController,UICollectionViewDelegate,UICollect
         cell.contentView.layer.cornerRadius = 8.0
         cell.contentView.layer.masksToBounds = true
         
-        let entry_obj = entriesCD[indexPath.row]
+        let entry_obj = core_data_entries[indexPath.row]
         // construct entry to display
         let entry = getEntryFromNSObject(NS_entry: entry_obj)
         cell.displayContent(entry: entry)
@@ -139,7 +139,7 @@ class EntryTabViewController:UIViewController,UICollectionViewDelegate,UICollect
 
                 let entry_cell = sender as! UICollectionViewCell
                 let indexPath = self.entryCollectionView!.indexPath(for: entry_cell)
-                let entry_clicked_obj = self.entriesCD[indexPath!.row]
+                let entry_clicked_obj = self.core_data_entries[indexPath!.row]
                 let entry_clicked = getEntryFromNSObject(NS_entry: entry_clicked_obj)
                 devc.entry_to_display = entry_clicked
             }

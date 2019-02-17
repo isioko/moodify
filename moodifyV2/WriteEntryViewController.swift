@@ -253,7 +253,7 @@ class WriteEntryViewController:UIViewController, UITextFieldDelegate, UITextView
     }
     
     // CORE DATA
-    var entriesCD: [NSObject] = []
+    var core_data_objs: [NSObject] = []
     func save(entry: Entry) {
         
         guard let appDelegate =
@@ -318,10 +318,10 @@ class WriteEntryViewController:UIViewController, UITextFieldDelegate, UITextView
         // 4
         do {
             try managedContext.save()
-            entriesCD.insert(entry_entity, at: 0)
+            core_data_objs.insert(entry_entity, at: 0)
             // MIGHT BREAK EVERYTHING!!!
             for trackObj in trackEntries{
-                entriesCD.append(trackObj)
+                core_data_objs.append(trackObj)
             }
         } catch let error as NSError {
             print("Could not save. \(error), \(error.userInfo)")

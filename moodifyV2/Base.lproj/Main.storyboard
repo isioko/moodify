@@ -192,7 +192,7 @@
                                                             <outlet property="artistNameLabel" destination="pHI-c4-UX1" id="fFb-l4-Ffg"/>
                                                             <outlet property="trackImage" destination="l3M-eb-oG7" id="K7u-QL-CPQ"/>
                                                             <outlet property="trackNameLabel" destination="N1s-c7-P8N" id="vL9-or-XQ6"/>
-                                                            <segue destination="jp0-Vd-qDB" kind="show" identifier="showAssociatedEntriesSegue" id="C61-Cc-UW2"/>
+                                                            <segue destination="jp0-Vd-qDB" kind="show" identifier="showAssociatedEntriesSegue" animates="NO" id="C61-Cc-UW2"/>
                                                         </connections>
                                                     </collectionViewCell>
                                                 </cells>
@@ -359,6 +359,7 @@
                                             <outlet property="locationImage" destination="F5M-zf-o1Z" id="1F4-7K-0Nj"/>
                                             <outlet property="locationLabel" destination="1cJ-Qy-KDj" id="tml-0g-Kwz"/>
                                             <outlet property="relativeDateLabel" destination="Bp9-OP-2VR" id="TMB-73-UXZ"/>
+                                            <segue destination="QU1-nM-dcV" kind="show" identifier="inspectAssociatedEntrySegue" animates="NO" id="F7f-Jd-g9G"/>
                                         </connections>
                                     </collectionViewCell>
                                 </cells>
@@ -386,7 +387,7 @@
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
                                 <connections>
-                                    <segue destination="QU1-nM-dcV" kind="show" identifier="doneWithViewingAssociationsSegue" id="Bu7-jL-oSM"/>
+                                    <segue destination="QU1-nM-dcV" kind="show" identifier="doneWithViewingAssociationsSegue" animates="NO" id="Bu7-jL-oSM"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Artist Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="r8T-4C-aYt">
@@ -764,8 +765,9 @@
         <image name="saveIcon" width="32" height="37"/>
     </resources>
     <inferredMetricsTieBreakers>
+        <segue reference="C61-Cc-UW2"/>
         <segue reference="IzP-kF-08C"/>
         <segue reference="fwe-Sq-vFa"/>
-        <segue reference="Bu7-jL-oSM"/>
+        <segue reference="F7f-Jd-g9G"/>
     </inferredMetricsTieBreakers>
 </document>

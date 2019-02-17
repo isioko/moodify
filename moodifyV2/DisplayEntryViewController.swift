@@ -33,6 +33,8 @@ class DisplayEntryViewController: UIViewController, UICollectionViewDelegate, UI
     @IBOutlet weak var entryTextBubbleView: UIView!
     @IBOutlet weak var trackBubbleView: UIView!
 
+    var core_data_objs: [NSObject] = []
+
     override func viewDidLoad() {
         super.viewDidLoad()
         trackCollectionView.dataSource = self
@@ -64,6 +66,37 @@ class DisplayEntryViewController: UIViewController, UICollectionViewDelegate, UI
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(true)
+        // CORE DATA
+        
+        //1
+        guard let appDelegate =
+            UIApplication.shared.delegate as? AppDelegate else {
+                return
+        }
+        
+        let managedContext =
+            appDelegate.persistentContainer.viewContext
+        
+        //2
+        let fetchRequest =
+            NSFetchRequest<NSManagedObject>(entityName: "EntryEntity")
+        fetchRequest.fetchLimit = 1
+        fetchRequest.predicate = NSPredicate(format: "date == %@", entry_to_display.entryDate as CVarArg)
+        fetchRequest.predicate = NSPredicate(format: "text == %@", entry_to_display.entryText)
+        //3
+        do {
+            core_data_objs = try managedContext.fetch(fetchRequest)
+            if core_data_objs.count >= 1{
+                print("SUCCESS")
+            }
+        } catch let error as NSError {
+            print("Could not fetch. \(error), \(error.userInfo)")
+        }
+        // end of core data
+        
+        // add tracks to datasource
+        entry_to_display = getEntryFromNSObject(NS_entry: core_data_objs[0] as! NSObject)
+        trackCollectionView.reloadData()
 
         if entry_to_display.associatedTracks.count == 0{
             trackCollectionView.isHidden = true
@@ -79,8 +112,32 @@ class DisplayEntryViewController: UIViewController, UICollectionViewDelegate, UI
         gradientView.addSubview(doneButton)
         
     }
+    func getEntryFromNSObject(NS_entry:NSObject)->Entry{
+        let entry = Entry()
+        entry.entryDate = NS_entry.value(forKey: "date") as! Date
+        entry.location = NS_entry.value(forKey: "location") as! String
+        entry.entryText = NS_entry.value(forKey: "text") as! String
+        
+        let tracks_found = NS_entry.value(forKey: "associatedTrack") as! NSSet
+        var tracks_assoc = [Track]()
+        for track_entity in tracks_found{
+            let track = getTrackFromNSObject(NS_track: track_entity as! NSObject)
+            tracks_assoc.append(track)
+        }
+        entry.associatedTracks = tracks_assoc
+        return entry
+    }
+
     
-    
+    func getTrackFromNSObject(NS_track:NSObject)->Track{
+        let track = Track()
+        track.trackName = NS_track.value(forKey: "trackName") as! String
+        track.artistName = NS_track.value(forKey: "artistName") as! String
+        
+        let data = NS_track.value(forKey: "coverArt") as! Data
+        track.trackArtworkImage = UIImage(data: data)
+        return track
+    }
     
     // Collection View
     @IBOutlet weak var trackCollectionView: UICollectionView!{
