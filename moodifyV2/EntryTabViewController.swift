@@ -15,6 +15,8 @@ import CoreData
 class EntryTabViewController:UIViewController,UICollectionViewDelegate,UICollectionViewDataSource, UISearchControllerDelegate{
     var entries = [Entry]()
     var core_data_entries: [NSObject] = []
+    var core_data_tracks: [NSObject] = []
+
     var writeEntry: WriteEntryViewController?
     @IBOutlet weak var gradientView: UIView!
     let gradient = CAGradientLayer()
@@ -25,18 +27,49 @@ class EntryTabViewController:UIViewController,UICollectionViewDelegate,UICollect
     
     @IBOutlet weak var plusButton: UIButton!
     var filteredEntries = [NSObject]()
+    var filteredTracks = [NSObject]()
     
-    lazy var searchBar = UISearchBar(frame: CGRect.zero)
-
     override func viewDidLoad() {
         super.viewDidLoad()
         // Setup the Search Controller
+        searchView.addSubview(searchController.searchBar)
+
+        searchController.searchBar.sizeToFit()
+        searchController.searchBar.frame.size.width = self.searchView.frame.size.width
+
         searchController.searchResultsUpdater = self
         searchController.obscuresBackgroundDuringPresentation = false
         searchController.searchBar.placeholder = "Search Entries"
-        navigationItem.searchController = searchController
+        searchController.searchBar.searchBarStyle = .minimal
+        
+        // try out these two
         definesPresentationContext = true
         navigationItem.hidesSearchBarWhenScrolling = false
+
+        // set up scope bar for search
+        searchController.searchBar.scopeButtonTitles = ["All Entries", "Songs Only"]
+        searchController.searchBar.delegate = self
+    }
+    func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
+        searchController.searchBar.sizeToFit()
+        searchController.searchBar.frame.size.width = self.searchView.frame.size.width
+    }
+    
+    func searchBarTextDidBeginEditing(_ searchBar: UISearchBar) {
+        searchController.searchBar.sizeToFit()
+        searchController.searchBar.frame.size.width = self.searchView.frame.size.width
+
+    }
+    
+//    func searchBarShouldBeginEditing(_ searchBar: UISearchBar) -> Bool {
+//        searchController.searchBar.sizeToFit()
+//        searchController.searchBar.frame.size.width = self.searchView.frame.size.width
+//
+//    }
+    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
+        searchController.searchBar.sizeToFit()
+        searchController.searchBar.frame.size.width = self.searchView.frame.size.width
+
     }
     
     func searchBarIsEmpty() -> Bool {
@@ -45,24 +78,78 @@ class EntryTabViewController:UIViewController,UICollectionViewDelegate,UICollect
     }
     
     func filterContentForSearchText(_ searchText: String, scope: String = "All") {
-        filteredEntries = core_data_entries.filter({( entry_obj : NSObject) -> Bool in
-            let entry = getEntryFromNSObject(NS_entry: entry_obj)
-            return entry.entryText.lowercased().contains(searchText.lowercased())
-        })
+        searchController.searchBar.sizeToFit()
+        searchController.searchBar.frame.size.width = self.searchView.frame.size.width
+
+        if scope == "All Entries"{
+            filteredEntries = core_data_entries.filter({( entry_obj : NSObject) -> Bool in
+                let entry = getEntryFromNSObject(NS_entry: entry_obj)
+                return entry.entryText.lowercased().contains(searchText.lowercased())
+            })
+        }else{
+            filteredTracks = core_data_tracks.filter({( track_obj : NSObject) -> Bool in
+            let track = getTrackFromNSObject(NS_track: track_obj)
+            return track.trackName.lowercased().contains(searchText.lowercased())
+            })
+            filteredEntries.removeAll()
+            var filteredTrackNames = [String]()
+            if filteredTracks.count == 0{
+                return
+            }
+            for track_obj in filteredTracks{
+                let track = getTrackFromNSObject(NS_track: track_obj)
+                filteredTrackNames.append(track.trackName)
+            }
+            let filtered_track = filteredTrackNames[0]
+            for entry_obj in core_data_entries{
+                let entry = getEntryFromNSObject(NS_entry: entry_obj)
+                let assoc_tracks = entry.associatedTracks
+                
+                let filtered_assoc_tracks = assoc_tracks.filter({( track : Track) -> Bool in
+                    return filtered_track.lowercased().contains(track.trackName.lowercased())
+                })
+                if filtered_assoc_tracks.count > 0{
+                    filteredEntries.append(entry_obj)
+                }
+            }
+
+        }
+
+//        filteredEntries = core_data_entries.filter({( entry_obj : NSObject) -> Bool in
+////            return entry.entryText.lowercased().contains(searchText.lowercased())
+//            if scope == "All"{
+//                let entry = getEntryFromNSObject(NS_entry: entry_obj)
+//                return  entry.entryText.lowercased().contains(searchText.lowercased())
+//            }else{
+//                // songs only
+//                let track = getTrackFromNSObject(NS_track: entry_obj)
+//                return track.trackName.lowercased().contains(searchText.lowercased())
+//            }
+//        }
+
+//        )
         
         entryCollectionView.reloadData()
         entryCollectionView.collectionViewLayout.invalidateLayout()
 
     }
+//    func isFiltering() -> Bool {
+//        return searchController.isActive && !searchBarIsEmpty()
+//    }
+    
     func isFiltering() -> Bool {
-        return searchController.isActive && !searchBarIsEmpty()
+        let searchBarScopeIsFiltering = searchController.searchBar.selectedScopeButtonIndex != 0
+        return searchController.isActive && (!searchBarIsEmpty() || searchBarScopeIsFiltering)
     }
+
 
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(true)
         // CORE DATA
-        
+        searchController.searchBar.sizeToFit()
+        searchController.searchBar.frame.size.width = self.searchView.frame.size.width
+
         //1
         guard let appDelegate =
             UIApplication.shared.delegate as? AppDelegate else {
@@ -73,6 +160,7 @@ class EntryTabViewController:UIViewController,UICollectionViewDelegate,UICollect
             appDelegate.persistentContainer.viewContext
         
         //2
+        let fetchRequest_songs = NSFetchRequest<NSManagedObject>(entityName: "TrackEntity")
         let fetchRequest =
             NSFetchRequest<NSManagedObject>(entityName: "EntryEntity")
         let sort = NSSortDescriptor(key: #keyPath(EntryEntity.date), ascending: false)
@@ -81,6 +169,7 @@ class EntryTabViewController:UIViewController,UICollectionViewDelegate,UICollect
         //3
         do {
             core_data_entries = try managedContext.fetch(fetchRequest)
+            core_data_tracks = try managedContext.fetch(fetchRequest_songs)
         } catch let error as NSError {
             print("Could not fetch. \(error), \(error.userInfo)")
         }
@@ -91,6 +180,8 @@ class EntryTabViewController:UIViewController,UICollectionViewDelegate,UICollect
         gradient.colors = Constants.themeColors()
         gradientView.layer.insertSublayer(gradient, at: 0)
         gradientView.addSubview(plusButton)
+        gradientView.addSubview(searchView)
+
         
         entryCollectionView.reloadData()
         entryCollectionView.collectionViewLayout.invalidateLayout()
@@ -113,7 +204,7 @@ class EntryTabViewController:UIViewController,UICollectionViewDelegate,UICollect
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int
     {
-        if isFiltering() {
+        if isFiltering() && searchController.searchBar.text != ""{
             return filteredEntries.count
         }
         
@@ -128,7 +219,7 @@ class EntryTabViewController:UIViewController,UICollectionViewDelegate,UICollect
         cell.contentView.layer.cornerRadius = 8.0
         cell.contentView.layer.masksToBounds = true
         let entry_obj: NSObject
-        if isFiltering(){
+        if isFiltering() && searchController.searchBar.text != ""{
             entry_obj = filteredEntries[indexPath.row]
         }else{
             entry_obj = core_data_entries[indexPath.row]
@@ -190,12 +281,46 @@ class EntryTabViewController:UIViewController,UICollectionViewDelegate,UICollect
             
         }
     }
+    @IBOutlet weak var searchView: UIView!
+
 }
 
 
 extension EntryTabViewController: UISearchResultsUpdating {
     // MARK: - UISearchResultsUpdating Delegate
+//    func updateSearchResults(for searchController: UISearchController) {
+//        filterContentForSearchText(searchController.searchBar.text!)
+//    }
     func updateSearchResults(for searchController: UISearchController) {
-        filterContentForSearchText(searchController.searchBar.text!)
+        searchController.searchBar.sizeToFit()
+        searchController.searchBar.frame.size.width = self.searchView.frame.size.width
+
+        let searchBar = searchController.searchBar
+        let scope = searchBar.scopeButtonTitles![searchBar.selectedScopeButtonIndex]
+        searchBar.backgroundColor = #colorLiteral(red: 0, green: 0, blue: 0, alpha: 0)
+        
+        filterContentForSearchText(searchController.searchBar.text!, scope: scope)
+    }
+
+}
+
+extension EntryTabViewController: UISearchBarDelegate {
+    // MARK: - UISearchBar Delegate
+    func searchBar(_ searchBar: UISearchBar, selectedScopeButtonIndexDidChange selectedScope: Int) {
+        filterContentForSearchText(searchBar.text!, scope:
+            searchBar.scopeButtonTitles![selectedScope])
+        searchController.searchBar.sizeToFit()
+        searchController.searchBar.frame.size.width = self.searchView.frame.size.width
+
+    }
+    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+        searchController.searchBar.sizeToFit()
+        searchController.searchBar.frame.size.width = self.searchView.frame.size.width
+
+    }
+    func searchBarTextDidEndEditing(_ searchBar: UISearchBar) {
+        searchController.searchBar.sizeToFit()
+        searchController.searchBar.frame.size.width = self.searchView.frame.size.width
+
     }
 }
