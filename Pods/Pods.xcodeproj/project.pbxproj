@@ -7,120 +7,189 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		059D92B7BBFBEC53E9A3B6E11C5C3B3A /* Response.swift in Sources */ = {isa = PBXBuildFile; fileRef = 941CDA4C7596B7C2D0C4B663AF0EE5E2 /* Response.swift */; };
-		08B2BDBECEE6B5C298E9E620C43F0C94 /* SpotifyItems.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC9D99281595715ED74BC51A2782F72E /* SpotifyItems.swift */; };
-		0A39AF55285A3A4F7CBABB6D822FA4A3 /* Alamofire.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0342DA6C4921E5F80CD303CAD380F177 /* Alamofire.swift */; };
-		0E540105BD3C1CC9E1D0067E48207985 /* Keychain.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EF3C2C2732AFBDC25EA4C73A6D967A0 /* Keychain.swift */; };
-		120DB0120DF78BE53D40D4B2DBA85EF2 /* Pods-moodifyV2-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 687C7CB38336719D119F14D4716A97AB /* Pods-moodifyV2-dummy.m */; };
-		1D29D2ACADF961F69D32B06FA6A09E28 /* Notifications.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BF2CEDC9FC48914529EF8D4773011FC /* Notifications.swift */; };
-		2A1343CCE1E2B1B8A8711475015339FB /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CB4607EFCA7C5F75397649E792E2AFCB /* Foundation.framework */; };
-		355C18EEC82624A06A6CC93965258E33 /* Request.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BAE94E5AD21FBC6342FD6470C4DEDD6 /* Request.swift */; };
-		3677486C834F1D4D73B7A1186737587F /* Pods-moodifyV2-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = D8FE881B8F438CD65107FFC2E777277C /* Pods-moodifyV2-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		3B156FD36FFE692FD5A7281722B60E2E /* SpotifyKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04772AC210DD1F5EB1ABCD4424942F3E /* SpotifyKit.swift */; };
+		004F8682CFE4EEB64C3B72AD095BEA5D /* SwipeController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DBCE983658D2970B13D70301F5D80ED /* SwipeController.swift */; };
+		03A344604525383905CA2EDD0011EB27 /* SwipeExpanding.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73D1EC1B79A0609E0CF5AD4B073C3F22 /* SwipeExpanding.swift */; };
+		059D92B7BBFBEC53E9A3B6E11C5C3B3A /* Response.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26A0A57A1CB9822CCE426140226C59DA /* Response.swift */; };
+		0A39AF55285A3A4F7CBABB6D822FA4A3 /* Alamofire.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2D459D896CE44F1CD16088D3C7FA01F /* Alamofire.swift */; };
+		11CEC14FAC79E80475F407DB0D16A008 /* SwipeTableViewCell+Display.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CD8089DD06E3B94ED4D1F35F886E8AE /* SwipeTableViewCell+Display.swift */; };
+		135F61B3F32844CECBFC7FCF95E3F05A /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CB4607EFCA7C5F75397649E792E2AFCB /* Foundation.framework */; };
+		1BE3E24C942E42C9B82C00A04F705FF9 /* SwipeOptions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6549A0133BE5F7A280860BF69FF76F37 /* SwipeOptions.swift */; };
+		1D29D2ACADF961F69D32B06FA6A09E28 /* Notifications.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48554B5E9D856A2C979D5B04954B6365 /* Notifications.swift */; };
+		262AA3FED03F15EE3FB19840D9C5619C /* Swipeable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F04A2D375093FE5075D694A9DC7104A /* Swipeable.swift */; };
+		2B5F2846B562469DDD732F51F54C8E1C /* SwipeTableViewCell+Accessibility.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86D8E0FF8EECEAD1D1D7568E52A25A9C /* SwipeTableViewCell+Accessibility.swift */; };
+		2D92393F6986DE5E6F9A98A143599D54 /* SwipeTableViewCellDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 170A18FF9DA04AEAEBC08BD6DA2D7DA1 /* SwipeTableViewCellDelegate.swift */; };
+		355C18EEC82624A06A6CC93965258E33 /* Request.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDB06ECF2E0E77DC062320A68E19BBF8 /* Request.swift */; };
 		3BD1DAFE1F3E6C9E4EB0F2099B6D6FA2 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CB4607EFCA7C5F75397649E792E2AFCB /* Foundation.framework */; };
-		3E0749AF6C51BCF0E4A41CF1D6A76FED /* DispatchQueue+Alamofire.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57019C3E4752EF03BD2CCBF07754002B /* DispatchQueue+Alamofire.swift */; };
-		52BAAA33C121A8C06789D836C83290AA /* SpotifyKit-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 49D182A54C741547634519494C493403 /* SpotifyKit-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		52ED3F1767936EF2D0D6484ACD2D4710 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CB4607EFCA7C5F75397649E792E2AFCB /* Foundation.framework */; };
-		60B6C2A003864AAD3A426448152F67BE /* Timeline.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CA8A8D73086D3DB2A55AE2EBBD3BED5 /* Timeline.swift */; };
-		60DB8CD3608AE4F91192A23CC61CBE59 /* WebCommunications.swift in Sources */ = {isa = PBXBuildFile; fileRef = 397B3B8CE2C09AE8BC37E7FF33766549 /* WebCommunications.swift */; };
-		6EFD003458AE7F689DEA720A2030C261 /* ResponseSerialization.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BE3B32CC59A9EBD9F068BE92C2D5D40 /* ResponseSerialization.swift */; };
-		700D3D95AF9520CB227846DFD943A2DA /* ParameterEncoding.swift in Sources */ = {isa = PBXBuildFile; fileRef = E99F9BCD13FA80642A521E36C8242E93 /* ParameterEncoding.swift */; };
-		73AB05789A4982944AF68DBD013E3EB7 /* NetworkReachabilityManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A06F4F217EE92CAB5D4D1A87A6B2BF9 /* NetworkReachabilityManager.swift */; };
-		772911DA6E33D1CBBC30131B7C8BDBB3 /* Alamofire-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = C9553412BF2F631C8270BF41700E1606 /* Alamofire-dummy.m */; };
-		77E8F0EB9FFBE2E3EB0C77095C644606 /* TaskDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2D050970AB3056685454C5F9FCDCFAF /* TaskDelegate.swift */; };
-		7E3538A6992A38276764936A9733493D /* AFError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E9F3E91326DD33B73DB966978DD918A /* AFError.swift */; };
-		8D2A6A90A6DDAF75EA52D471258545CC /* ServerTrustPolicy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98CABC55F11571234CE42C62CAD1199A /* ServerTrustPolicy.swift */; };
-		A1EC41966B261DCE460BCDE5124A1DBE /* SessionDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23393E5E8539BED7DE0876CF40241FB8 /* SessionDelegate.swift */; };
-		AA56769D8733D3F3E7976742D5ABA998 /* Validation.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6067A0F92F63067B659BF3A40264B22 /* Validation.swift */; };
-		AEA829AB1A8AF2AD077A808AED6B178A /* MultipartFormData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97E9989DC404A5E17A73D61870D17216 /* MultipartFormData.swift */; };
-		B6F6E4CC26451E91B59FAE0F6841DC1F /* Alamofire-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = D4CA32A9A7A804D06BA293129FC8CDDE /* Alamofire-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		D3FA0AA634AAEA99AB3FABC36BB4958C /* SessionManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1C33CC1515906155AC854570FFA8BA8 /* SessionManager.swift */; };
-		EB0DD8CEA1A69867A30267439C970440 /* Result.swift in Sources */ = {isa = PBXBuildFile; fileRef = 649D3E908885E9D2A450D6C3F3697699 /* Result.swift */; };
-		FA1A10E76ECCEE7627C760D15A51FAF3 /* SpotifyKit-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F971BC409995E498F84E7FA72670232 /* SpotifyKit-dummy.m */; };
+		3E0749AF6C51BCF0E4A41CF1D6A76FED /* DispatchQueue+Alamofire.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A3F5DEF2A5D3D44B220769BF4AA11F0 /* DispatchQueue+Alamofire.swift */; };
+		49C584CC85FC66CCFEE2EFB244741663 /* SwipeCollectionViewCell+Accessibility.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0CDC25E24F96A74142B1902DFE33439 /* SwipeCollectionViewCell+Accessibility.swift */; };
+		60B6C2A003864AAD3A426448152F67BE /* Timeline.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DD2ABE68F6222449C556888E454771A /* Timeline.swift */; };
+		61683B25A673FA7A4A6E228953C2D733 /* SwipeTransitionLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A316442051868251A57A389C1422DC5 /* SwipeTransitionLayout.swift */; };
+		6A54970C9256A31E7F9AE770022E1582 /* SwipeCellKit-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = EAA725099FDE641B58613776F91A914A /* SwipeCellKit-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		6EFD003458AE7F689DEA720A2030C261 /* ResponseSerialization.swift in Sources */ = {isa = PBXBuildFile; fileRef = D63A5AB54433F4C7C186C79E76F81F4B /* ResponseSerialization.swift */; };
+		700D3D95AF9520CB227846DFD943A2DA /* ParameterEncoding.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29423FA4E75D2E7235664F53E1C8E46B /* ParameterEncoding.swift */; };
+		73AB05789A4982944AF68DBD013E3EB7 /* NetworkReachabilityManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 100F13346D7C2A8F5EBA0F11FD70D3D4 /* NetworkReachabilityManager.swift */; };
+		75CF1A4106798BAC9A7FFE39F0698E34 /* SwipeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AE6FC0EC215E74717E067720DCBF1B5 /* SwipeTableViewCell.swift */; };
+		772911DA6E33D1CBBC30131B7C8BDBB3 /* Alamofire-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = D11D9F7D19AD282924742627926941D1 /* Alamofire-dummy.m */; };
+		77E8F0EB9FFBE2E3EB0C77095C644606 /* TaskDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52C65CA11E31EE43DA3F46B46BA04E7B /* TaskDelegate.swift */; };
+		7E3538A6992A38276764936A9733493D /* AFError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 733A10F416E2A0D26405D6F7AC489DC9 /* AFError.swift */; };
+		84099A2C2F7142B53C031F38FD3B25A0 /* SwipeActionButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FD7C42A934F2AE834ACFEE73139FC9A /* SwipeActionButton.swift */; };
+		89DF297942082C2675C8BA4FE9E1EEC0 /* WebCommunications.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FD0F18BF9388BA693475B70F2598C8A /* WebCommunications.swift */; };
+		8A6EEFE1EE0229F9E08DE5909FEC4170 /* SpotifyKit-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 9F3CD82D15CAEF4C60A92DB36B804E8B /* SpotifyKit-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		8CD766E87F51D22920440F21335AF50D /* SwipeExpansionStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 831086F4D96A55D0CF2AE37AF1ABA23C /* SwipeExpansionStyle.swift */; };
+		8D267298D836EB7D741F89ABA16E8051 /* SwipeAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9432279B957E5013187F69D094F7FE1F /* SwipeAction.swift */; };
+		8D2A6A90A6DDAF75EA52D471258545CC /* ServerTrustPolicy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27C2038ADCF79FA77B0FF77E7A9DC6D8 /* ServerTrustPolicy.swift */; };
+		9D94E28D379FEE402F122747D5C115A1 /* Pods-moodifyV2-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 687C7CB38336719D119F14D4716A97AB /* Pods-moodifyV2-dummy.m */; };
+		A1EC41966B261DCE460BCDE5124A1DBE /* SessionDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00B638FEFD547154626EE739FEB2B917 /* SessionDelegate.swift */; };
+		A45018A31C4C51AB9D6EA47282DDBCB2 /* SwipeActionTransitioning.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0804BA8FA4D410CB4A37A2F03309412 /* SwipeActionTransitioning.swift */; };
+		A66AE7A7F5BB186D59747DA77FE7959C /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79F7797FB8B6FEDC131DCA1EDA6CB51C /* Extensions.swift */; };
+		A9F6ECBD1D6154E53F3868BDE6078959 /* SpotifyItems.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57747123CD1CD7916B9B9A17C43198A7 /* SpotifyItems.swift */; };
+		AA56769D8733D3F3E7976742D5ABA998 /* Validation.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDB19841941A7C15F08FCBC3A16C77CE /* Validation.swift */; };
+		AEA829AB1A8AF2AD077A808AED6B178A /* MultipartFormData.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE1D358FB77B5E73E5B7ADB74BAD407B /* MultipartFormData.swift */; };
+		B0ACB603D04CB818971C2EF4318D0947 /* Keychain.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8ED7DFF89648808707FCDC810C5F03F4 /* Keychain.swift */; };
+		B5B0768A9A7F92B971CF40E0D70F8524 /* SwipeActionsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19AEE187385452455444BF091924C553 /* SwipeActionsView.swift */; };
+		B6F6E4CC26451E91B59FAE0F6841DC1F /* Alamofire-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = C15B9B99A9973F935AC8065648268E60 /* Alamofire-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		BB1600BE6F380B2E1FC904339D33E2AA /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CB4607EFCA7C5F75397649E792E2AFCB /* Foundation.framework */; };
+		BEAB3185DA7A2C2B2AC8039E6E26B9FC /* SwipeCellKit-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 23A9727E1FC35EDD6E3F6F5F9D11C8E3 /* SwipeCellKit-dummy.m */; };
+		C5673442F1BD8246025003B705B0A6F9 /* SwipeCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6FEDDB8F765DCD3F1335EA1AA45F89DA /* SwipeCollectionViewCell.swift */; };
+		CC30F8CBA723AFB1EE4F94F88711D861 /* SwipeFeedback.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75B7B11669C54EDC77D3518D514C9327 /* SwipeFeedback.swift */; };
+		D04ADB77ED492DE04E38C53E3978E118 /* SwipeAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 742BC8E540E8CFC06ED575E6C85179AC /* SwipeAnimator.swift */; };
+		D2E1F5E9FA240C8CB02A9958D169131A /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CB4607EFCA7C5F75397649E792E2AFCB /* Foundation.framework */; };
+		D3FA0AA634AAEA99AB3FABC36BB4958C /* SessionManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD88BD39B51244931E6F0B058D4A0A4C /* SessionManager.swift */; };
+		DBAC2BD4393BB3F281172BEBF9180012 /* SwipeAccessibilityCustomAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = E450A180A05F241C1112EED3B0395C1C /* SwipeAccessibilityCustomAction.swift */; };
+		DEB63D84467DCF10845D11C83446378C /* SpotifyKit-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 7CC7408A1D8396F446600A04FB9E928F /* SpotifyKit-dummy.m */; };
+		E0212E2576C7F55862E23DF7976E1920 /* SwipeCollectionViewCellDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF01976459F280A6DC7D57028E62B0BF /* SwipeCollectionViewCellDelegate.swift */; };
+		E86C9BCF8E314F3DD4E5BD40FA69D3B7 /* SwipeCollectionViewCell+Display.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5C1952D3B2FED4A508315B36B3D247D /* SwipeCollectionViewCell+Display.swift */; };
+		EB0DD8CEA1A69867A30267439C970440 /* Result.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8E2CD2307B859E4837B9C73D2487D50 /* Result.swift */; };
+		F7CA65C41213FE24CA3D0FA72C973CCD /* SpotifyKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10F55E90FB999F2854A45685B2B7A6E9 /* SpotifyKit.swift */; };
+		FB24531654AE6C26667E2175BB709CD5 /* Pods-moodifyV2-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = D8FE881B8F438CD65107FFC2E777277C /* Pods-moodifyV2-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		65CD6FDE41CB6A417776985640D8CE4C /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = FEE667CBAD0E74E578A02E8904D47EDD;
-			remoteInfo = SpotifyKit;
-		};
-		E7EDFFDE81D855FFCF37675DBA13C4D5 /* PBXContainerItemProxy */ = {
+		B5770483D3AEF23E6F6E46E4DAF49EE4 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
 			proxyType = 1;
 			remoteGlobalIDString = 3383968E74B5371B20BB519B170DC7FD;
 			remoteInfo = Alamofire;
 		};
+		BDE62F77C46A81DB6C9AF372AF307A41 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 789A0F29071F56E904731819E7851B7C;
+			remoteInfo = SwipeCellKit;
+		};
+		D118F28265E3507D99CAA41BE80A3EAC /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 47A65041E51965F49F2C53EF4BFDC4A0;
+			remoteInfo = SpotifyKit;
+		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		0342DA6C4921E5F80CD303CAD380F177 /* Alamofire.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Alamofire.swift; path = Source/Alamofire.swift; sourceTree = "<group>"; };
-		04772AC210DD1F5EB1ABCD4424942F3E /* SpotifyKit.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SpotifyKit.swift; path = Sources/SpotifyKit.swift; sourceTree = "<group>"; };
-		0F971BC409995E498F84E7FA72670232 /* SpotifyKit-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "SpotifyKit-dummy.m"; sourceTree = "<group>"; };
-		1106CCCC44646879395D5765CB820914 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		1CA8A8D73086D3DB2A55AE2EBBD3BED5 /* Timeline.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Timeline.swift; path = Source/Timeline.swift; sourceTree = "<group>"; };
-		23393E5E8539BED7DE0876CF40241FB8 /* SessionDelegate.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SessionDelegate.swift; path = Source/SessionDelegate.swift; sourceTree = "<group>"; };
+		00B638FEFD547154626EE739FEB2B917 /* SessionDelegate.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SessionDelegate.swift; path = Source/SessionDelegate.swift; sourceTree = "<group>"; };
+		100F13346D7C2A8F5EBA0F11FD70D3D4 /* NetworkReachabilityManager.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = NetworkReachabilityManager.swift; path = Source/NetworkReachabilityManager.swift; sourceTree = "<group>"; };
+		10F55E90FB999F2854A45685B2B7A6E9 /* SpotifyKit.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SpotifyKit.swift; path = Sources/SpotifyKit.swift; sourceTree = "<group>"; };
+		170A18FF9DA04AEAEBC08BD6DA2D7DA1 /* SwipeTableViewCellDelegate.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SwipeTableViewCellDelegate.swift; path = Source/SwipeTableViewCellDelegate.swift; sourceTree = "<group>"; };
+		19AEE187385452455444BF091924C553 /* SwipeActionsView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SwipeActionsView.swift; path = Source/SwipeActionsView.swift; sourceTree = "<group>"; };
+		23A9727E1FC35EDD6E3F6F5F9D11C8E3 /* SwipeCellKit-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "SwipeCellKit-dummy.m"; sourceTree = "<group>"; };
 		24390EFD555DD124430DFF9724065945 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		24754461A0C5A0C0AAC4847C3137F358 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		26A0A57A1CB9822CCE426140226C59DA /* Response.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Response.swift; path = Source/Response.swift; sourceTree = "<group>"; };
+		27C1DB58B89FD3DE750367D3B17EA4DE /* Alamofire-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Alamofire-prefix.pch"; sourceTree = "<group>"; };
+		27C2038ADCF79FA77B0FF77E7A9DC6D8 /* ServerTrustPolicy.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ServerTrustPolicy.swift; path = Source/ServerTrustPolicy.swift; sourceTree = "<group>"; };
+		29423FA4E75D2E7235664F53E1C8E46B /* ParameterEncoding.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ParameterEncoding.swift; path = Source/ParameterEncoding.swift; sourceTree = "<group>"; };
 		2A81F2560F86EAAD2C4AF42D09B6A5AE /* Pods-moodifyV2-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-moodifyV2-acknowledgements.markdown"; sourceTree = "<group>"; };
+		2FD7C42A934F2AE834ACFEE73139FC9A /* SwipeActionButton.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SwipeActionButton.swift; path = Source/SwipeActionButton.swift; sourceTree = "<group>"; };
+		32FEB40E4A55D2F2CF2AC0AA3297E06B /* Alamofire.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Alamofire.framework; path = Alamofire.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		3306B3232429A4959CAE911FF52B39F0 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		356C662DE1ECC8CCEE295E62E0926FEF /* SpotifyKit-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "SpotifyKit-prefix.pch"; sourceTree = "<group>"; };
-		37218A91B2E562F12F2A946A309E0CB7 /* SpotifyKit.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = SpotifyKit.modulemap; sourceTree = "<group>"; };
-		397B3B8CE2C09AE8BC37E7FF33766549 /* WebCommunications.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = WebCommunications.swift; path = Sources/WebCommunications.swift; sourceTree = "<group>"; };
-		3A06F4F217EE92CAB5D4D1A87A6B2BF9 /* NetworkReachabilityManager.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = NetworkReachabilityManager.swift; path = Source/NetworkReachabilityManager.swift; sourceTree = "<group>"; };
-		3DDD5029227922C2AAFF6D132D53B0C7 /* Alamofire-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Alamofire-prefix.pch"; sourceTree = "<group>"; };
-		4792436478C01CBB7B873B476630E956 /* Alamofire.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = Alamofire.xcconfig; sourceTree = "<group>"; };
-		49D182A54C741547634519494C493403 /* SpotifyKit-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "SpotifyKit-umbrella.h"; sourceTree = "<group>"; };
-		4BE3B32CC59A9EBD9F068BE92C2D5D40 /* ResponseSerialization.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ResponseSerialization.swift; path = Source/ResponseSerialization.swift; sourceTree = "<group>"; };
-		57019C3E4752EF03BD2CCBF07754002B /* DispatchQueue+Alamofire.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "DispatchQueue+Alamofire.swift"; path = "Source/DispatchQueue+Alamofire.swift"; sourceTree = "<group>"; };
-		5BAE94E5AD21FBC6342FD6470C4DEDD6 /* Request.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Request.swift; path = Source/Request.swift; sourceTree = "<group>"; };
-		649D3E908885E9D2A450D6C3F3697699 /* Result.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Result.swift; path = Source/Result.swift; sourceTree = "<group>"; };
+		3A316442051868251A57A389C1422DC5 /* SwipeTransitionLayout.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SwipeTransitionLayout.swift; path = Source/SwipeTransitionLayout.swift; sourceTree = "<group>"; };
+		3CD8089DD06E3B94ED4D1F35F886E8AE /* SwipeTableViewCell+Display.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "SwipeTableViewCell+Display.swift"; path = "Source/SwipeTableViewCell+Display.swift"; sourceTree = "<group>"; };
+		3DD2ABE68F6222449C556888E454771A /* Timeline.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Timeline.swift; path = Source/Timeline.swift; sourceTree = "<group>"; };
+		4374D048152764EA559AF990A9555D86 /* Alamofire.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = Alamofire.xcconfig; sourceTree = "<group>"; };
+		48554B5E9D856A2C979D5B04954B6365 /* Notifications.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Notifications.swift; path = Source/Notifications.swift; sourceTree = "<group>"; };
+		4ABAB87093488E3ACF8EE2C56F219180 /* SpotifyKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = SpotifyKit.framework; path = SpotifyKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		4F04A2D375093FE5075D694A9DC7104A /* Swipeable.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Swipeable.swift; path = Source/Swipeable.swift; sourceTree = "<group>"; };
+		4FD0F18BF9388BA693475B70F2598C8A /* WebCommunications.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = WebCommunications.swift; path = Sources/WebCommunications.swift; sourceTree = "<group>"; };
+		52C65CA11E31EE43DA3F46B46BA04E7B /* TaskDelegate.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = TaskDelegate.swift; path = Source/TaskDelegate.swift; sourceTree = "<group>"; };
+		57747123CD1CD7916B9B9A17C43198A7 /* SpotifyItems.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SpotifyItems.swift; path = Sources/SpotifyItems.swift; sourceTree = "<group>"; };
+		5EEE2008C87FF600AC1ABDD8ADCC5F92 /* SwipeCellKit-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "SwipeCellKit-prefix.pch"; sourceTree = "<group>"; };
+		6549A0133BE5F7A280860BF69FF76F37 /* SwipeOptions.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SwipeOptions.swift; path = Source/SwipeOptions.swift; sourceTree = "<group>"; };
 		66661EF2AAC3A5FD1D77D2CBD3E5AD4A /* Pods-moodifyV2.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-moodifyV2.debug.xcconfig"; sourceTree = "<group>"; };
 		687C7CB38336719D119F14D4716A97AB /* Pods-moodifyV2-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-moodifyV2-dummy.m"; sourceTree = "<group>"; };
-		70B989C3FF0BDE7766B2E4CD54F7EAF8 /* Alamofire.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = Alamofire.modulemap; sourceTree = "<group>"; };
+		6AE6FC0EC215E74717E067720DCBF1B5 /* SwipeTableViewCell.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SwipeTableViewCell.swift; path = Source/SwipeTableViewCell.swift; sourceTree = "<group>"; };
+		6FEDDB8F765DCD3F1335EA1AA45F89DA /* SwipeCollectionViewCell.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SwipeCollectionViewCell.swift; path = Source/SwipeCollectionViewCell.swift; sourceTree = "<group>"; };
+		733A10F416E2A0D26405D6F7AC489DC9 /* AFError.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = AFError.swift; path = Source/AFError.swift; sourceTree = "<group>"; };
+		73D1EC1B79A0609E0CF5AD4B073C3F22 /* SwipeExpanding.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SwipeExpanding.swift; path = Source/SwipeExpanding.swift; sourceTree = "<group>"; };
+		742BC8E540E8CFC06ED575E6C85179AC /* SwipeAnimator.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SwipeAnimator.swift; path = Source/SwipeAnimator.swift; sourceTree = "<group>"; };
+		75A52A75772078633B42E7D1089229E8 /* SwipeCellKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = SwipeCellKit.framework; path = SwipeCellKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		75B7B11669C54EDC77D3518D514C9327 /* SwipeFeedback.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SwipeFeedback.swift; path = Source/SwipeFeedback.swift; sourceTree = "<group>"; };
 		786348CC00B6D5FC75053B6F96ECD320 /* Pods-moodifyV2-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-moodifyV2-frameworks.sh"; sourceTree = "<group>"; };
-		7BB34767ED8B7DD4E9BE10F19709EE1F /* Pods_moodifyV2.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_moodifyV2.framework; path = "Pods-moodifyV2.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
-		7BDAAFDE0F3EAEEF99C3512D98C1017B /* SpotifyKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = SpotifyKit.framework; path = SpotifyKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		7BF2CEDC9FC48914529EF8D4773011FC /* Notifications.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Notifications.swift; path = Source/Notifications.swift; sourceTree = "<group>"; };
-		7E9F3E91326DD33B73DB966978DD918A /* AFError.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = AFError.swift; path = Source/AFError.swift; sourceTree = "<group>"; };
-		7EF3C2C2732AFBDC25EA4C73A6D967A0 /* Keychain.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Keychain.swift; path = Sources/Keychain.swift; sourceTree = "<group>"; };
-		81C1CCAC547B73715B09A7377266C4A8 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		941CDA4C7596B7C2D0C4B663AF0EE5E2 /* Response.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Response.swift; path = Source/Response.swift; sourceTree = "<group>"; };
-		97E9989DC404A5E17A73D61870D17216 /* MultipartFormData.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = MultipartFormData.swift; path = Source/MultipartFormData.swift; sourceTree = "<group>"; };
-		98CABC55F11571234CE42C62CAD1199A /* ServerTrustPolicy.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ServerTrustPolicy.swift; path = Source/ServerTrustPolicy.swift; sourceTree = "<group>"; };
+		79F7797FB8B6FEDC131DCA1EDA6CB51C /* Extensions.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Extensions.swift; path = Source/Extensions.swift; sourceTree = "<group>"; };
+		7CC7408A1D8396F446600A04FB9E928F /* SpotifyKit-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "SpotifyKit-dummy.m"; sourceTree = "<group>"; };
+		831086F4D96A55D0CF2AE37AF1ABA23C /* SwipeExpansionStyle.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SwipeExpansionStyle.swift; path = Source/SwipeExpansionStyle.swift; sourceTree = "<group>"; };
+		86D8E0FF8EECEAD1D1D7568E52A25A9C /* SwipeTableViewCell+Accessibility.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "SwipeTableViewCell+Accessibility.swift"; path = "Source/SwipeTableViewCell+Accessibility.swift"; sourceTree = "<group>"; };
+		8A3F5DEF2A5D3D44B220769BF4AA11F0 /* DispatchQueue+Alamofire.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "DispatchQueue+Alamofire.swift"; path = "Source/DispatchQueue+Alamofire.swift"; sourceTree = "<group>"; };
+		8DBCE983658D2970B13D70301F5D80ED /* SwipeController.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SwipeController.swift; path = Source/SwipeController.swift; sourceTree = "<group>"; };
+		8ED7DFF89648808707FCDC810C5F03F4 /* Keychain.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Keychain.swift; path = Sources/Keychain.swift; sourceTree = "<group>"; };
+		9432279B957E5013187F69D094F7FE1F /* SwipeAction.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SwipeAction.swift; path = Source/SwipeAction.swift; sourceTree = "<group>"; };
 		9CBB6A98AC2B51B3613E526430766AC9 /* Pods-moodifyV2-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-moodifyV2-acknowledgements.plist"; sourceTree = "<group>"; };
+		9E22C620D664111EF21BE56024E69264 /* Pods_moodifyV2.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_moodifyV2.framework; path = "Pods-moodifyV2.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		9F3CD82D15CAEF4C60A92DB36B804E8B /* SpotifyKit-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "SpotifyKit-umbrella.h"; sourceTree = "<group>"; };
+		A0CDC25E24F96A74142B1902DFE33439 /* SwipeCollectionViewCell+Accessibility.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "SwipeCollectionViewCell+Accessibility.swift"; path = "Source/SwipeCollectionViewCell+Accessibility.swift"; sourceTree = "<group>"; };
+		A3BFB264983C59003E13F007D78C55CE /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		AC902E183B32D7D902ED915F552FB0C5 /* Pods-moodifyV2-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-moodifyV2-resources.sh"; sourceTree = "<group>"; };
-		AC9D99281595715ED74BC51A2782F72E /* SpotifyItems.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SpotifyItems.swift; path = Sources/SpotifyItems.swift; sourceTree = "<group>"; };
-		C50004580DB2BE13923D3B17404418F9 /* SpotifyKit.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = SpotifyKit.xcconfig; sourceTree = "<group>"; };
-		C6067A0F92F63067B659BF3A40264B22 /* Validation.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Validation.swift; path = Source/Validation.swift; sourceTree = "<group>"; };
-		C9553412BF2F631C8270BF41700E1606 /* Alamofire-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Alamofire-dummy.m"; sourceTree = "<group>"; };
+		AF01976459F280A6DC7D57028E62B0BF /* SwipeCollectionViewCellDelegate.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SwipeCollectionViewCellDelegate.swift; path = Source/SwipeCollectionViewCellDelegate.swift; sourceTree = "<group>"; };
+		C15B9B99A9973F935AC8065648268E60 /* Alamofire-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Alamofire-umbrella.h"; sourceTree = "<group>"; };
+		C5C1952D3B2FED4A508315B36B3D247D /* SwipeCollectionViewCell+Display.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "SwipeCollectionViewCell+Display.swift"; path = "Source/SwipeCollectionViewCell+Display.swift"; sourceTree = "<group>"; };
 		CB4607EFCA7C5F75397649E792E2AFCB /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS12.0.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
-		D4CA32A9A7A804D06BA293129FC8CDDE /* Alamofire-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Alamofire-umbrella.h"; sourceTree = "<group>"; };
+		D11D9F7D19AD282924742627926941D1 /* Alamofire-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Alamofire-dummy.m"; sourceTree = "<group>"; };
+		D2D459D896CE44F1CD16088D3C7FA01F /* Alamofire.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Alamofire.swift; path = Source/Alamofire.swift; sourceTree = "<group>"; };
+		D63A5AB54433F4C7C186C79E76F81F4B /* ResponseSerialization.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ResponseSerialization.swift; path = Source/ResponseSerialization.swift; sourceTree = "<group>"; };
+		D6BD1A52C621786C21059B9E82C2C8B5 /* SwipeCellKit.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = SwipeCellKit.xcconfig; sourceTree = "<group>"; };
+		D8E2CD2307B859E4837B9C73D2487D50 /* Result.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Result.swift; path = Source/Result.swift; sourceTree = "<group>"; };
 		D8FE881B8F438CD65107FFC2E777277C /* Pods-moodifyV2-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-moodifyV2-umbrella.h"; sourceTree = "<group>"; };
+		DC63C5C9B709C943E95AB73A75D43D74 /* SpotifyKit.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = SpotifyKit.modulemap; sourceTree = "<group>"; };
 		DF9C0093A9CFF79D371E11506181416E /* Pods-moodifyV2.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-moodifyV2.modulemap"; sourceTree = "<group>"; };
-		E1C33CC1515906155AC854570FFA8BA8 /* SessionManager.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SessionManager.swift; path = Source/SessionManager.swift; sourceTree = "<group>"; };
-		E2D050970AB3056685454C5F9FCDCFAF /* TaskDelegate.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = TaskDelegate.swift; path = Source/TaskDelegate.swift; sourceTree = "<group>"; };
-		E99F9BCD13FA80642A521E36C8242E93 /* ParameterEncoding.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ParameterEncoding.swift; path = Source/ParameterEncoding.swift; sourceTree = "<group>"; };
+		E0804BA8FA4D410CB4A37A2F03309412 /* SwipeActionTransitioning.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SwipeActionTransitioning.swift; path = Source/SwipeActionTransitioning.swift; sourceTree = "<group>"; };
+		E4126C52FC07653D9FCA054162B130E4 /* Alamofire.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = Alamofire.modulemap; sourceTree = "<group>"; };
+		E450A180A05F241C1112EED3B0395C1C /* SwipeAccessibilityCustomAction.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SwipeAccessibilityCustomAction.swift; path = Source/SwipeAccessibilityCustomAction.swift; sourceTree = "<group>"; };
+		EAA725099FDE641B58613776F91A914A /* SwipeCellKit-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "SwipeCellKit-umbrella.h"; sourceTree = "<group>"; };
 		EB07DA7B4F197074DCFEF6C76310D33D /* Pods-moodifyV2.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-moodifyV2.release.xcconfig"; sourceTree = "<group>"; };
-		F7F3649E3C43856A40DA846F3E563639 /* Alamofire.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Alamofire.framework; path = Alamofire.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		EDB19841941A7C15F08FCBC3A16C77CE /* Validation.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Validation.swift; path = Source/Validation.swift; sourceTree = "<group>"; };
+		F341EF05E1EEB3B272DBC7A6F4A9512C /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		FC5257B4C9D335E66D2F8AC28511CC8C /* SpotifyKit-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "SpotifyKit-prefix.pch"; sourceTree = "<group>"; };
+		FCCAACD4E52F5709DF35B98C8FEDB62F /* SwipeCellKit.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = SwipeCellKit.modulemap; sourceTree = "<group>"; };
+		FD88BD39B51244931E6F0B058D4A0A4C /* SessionManager.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SessionManager.swift; path = Source/SessionManager.swift; sourceTree = "<group>"; };
+		FDB06ECF2E0E77DC062320A68E19BBF8 /* Request.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Request.swift; path = Source/Request.swift; sourceTree = "<group>"; };
+		FE1D358FB77B5E73E5B7ADB74BAD407B /* MultipartFormData.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = MultipartFormData.swift; path = Source/MultipartFormData.swift; sourceTree = "<group>"; };
+		FFCA751F494A940FAB8B78537D33A15F /* SpotifyKit.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = SpotifyKit.xcconfig; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		63FD8138B805409F7FF42DDCF747C81C /* Frameworks */ = {
+		74FE090F0869E0910313E2CB458E1CD3 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2A1343CCE1E2B1B8A8711475015339FB /* Foundation.framework in Frameworks */,
+				135F61B3F32844CECBFC7FCF95E3F05A /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		8B3F3F915B0001D3E27E6D750A62EB51 /* Frameworks */ = {
+		77D5A249ED942589A91A133D0C3BF837 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				52ED3F1767936EF2D0D6484ACD2D4710 /* Foundation.framework in Frameworks */,
+				BB1600BE6F380B2E1FC904339D33E2AA /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C9420FF1617402C8A6148CB9382F6A9D /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D2E1F5E9FA240C8CB02A9958D169131A /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -135,28 +204,59 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		1289E8BD263739A134162D01D3865C2D /* SpotifyKit */ = {
+		2281CB37F9D17B00E662F697846C891B /* SpotifyKit */ = {
 			isa = PBXGroup;
 			children = (
-				7EF3C2C2732AFBDC25EA4C73A6D967A0 /* Keychain.swift */,
-				AC9D99281595715ED74BC51A2782F72E /* SpotifyItems.swift */,
-				04772AC210DD1F5EB1ABCD4424942F3E /* SpotifyKit.swift */,
-				397B3B8CE2C09AE8BC37E7FF33766549 /* WebCommunications.swift */,
-				F53FE6BF770A8CCB42D190B6248DAAC0 /* Support Files */,
+				8ED7DFF89648808707FCDC810C5F03F4 /* Keychain.swift */,
+				57747123CD1CD7916B9B9A17C43198A7 /* SpotifyItems.swift */,
+				10F55E90FB999F2854A45685B2B7A6E9 /* SpotifyKit.swift */,
+				4FD0F18BF9388BA693475B70F2598C8A /* WebCommunications.swift */,
+				4F74097A231930A13564784490A4F3B9 /* Support Files */,
 			);
 			name = SpotifyKit;
 			path = SpotifyKit;
 			sourceTree = "<group>";
 		};
-		1BFBDF6172DF406424DD3B624F2CB5D4 /* Support Files */ = {
+		34157E9DA39654EEBF11FA00B0A34B1F /* SwipeCellKit */ = {
 			isa = PBXGroup;
 			children = (
-				70B989C3FF0BDE7766B2E4CD54F7EAF8 /* Alamofire.modulemap */,
-				4792436478C01CBB7B873B476630E956 /* Alamofire.xcconfig */,
-				C9553412BF2F631C8270BF41700E1606 /* Alamofire-dummy.m */,
-				3DDD5029227922C2AAFF6D132D53B0C7 /* Alamofire-prefix.pch */,
-				D4CA32A9A7A804D06BA293129FC8CDDE /* Alamofire-umbrella.h */,
-				81C1CCAC547B73715B09A7377266C4A8 /* Info.plist */,
+				79F7797FB8B6FEDC131DCA1EDA6CB51C /* Extensions.swift */,
+				4F04A2D375093FE5075D694A9DC7104A /* Swipeable.swift */,
+				E450A180A05F241C1112EED3B0395C1C /* SwipeAccessibilityCustomAction.swift */,
+				9432279B957E5013187F69D094F7FE1F /* SwipeAction.swift */,
+				2FD7C42A934F2AE834ACFEE73139FC9A /* SwipeActionButton.swift */,
+				19AEE187385452455444BF091924C553 /* SwipeActionsView.swift */,
+				E0804BA8FA4D410CB4A37A2F03309412 /* SwipeActionTransitioning.swift */,
+				742BC8E540E8CFC06ED575E6C85179AC /* SwipeAnimator.swift */,
+				6FEDDB8F765DCD3F1335EA1AA45F89DA /* SwipeCollectionViewCell.swift */,
+				A0CDC25E24F96A74142B1902DFE33439 /* SwipeCollectionViewCell+Accessibility.swift */,
+				C5C1952D3B2FED4A508315B36B3D247D /* SwipeCollectionViewCell+Display.swift */,
+				AF01976459F280A6DC7D57028E62B0BF /* SwipeCollectionViewCellDelegate.swift */,
+				8DBCE983658D2970B13D70301F5D80ED /* SwipeController.swift */,
+				73D1EC1B79A0609E0CF5AD4B073C3F22 /* SwipeExpanding.swift */,
+				831086F4D96A55D0CF2AE37AF1ABA23C /* SwipeExpansionStyle.swift */,
+				75B7B11669C54EDC77D3518D514C9327 /* SwipeFeedback.swift */,
+				6549A0133BE5F7A280860BF69FF76F37 /* SwipeOptions.swift */,
+				6AE6FC0EC215E74717E067720DCBF1B5 /* SwipeTableViewCell.swift */,
+				86D8E0FF8EECEAD1D1D7568E52A25A9C /* SwipeTableViewCell+Accessibility.swift */,
+				3CD8089DD06E3B94ED4D1F35F886E8AE /* SwipeTableViewCell+Display.swift */,
+				170A18FF9DA04AEAEBC08BD6DA2D7DA1 /* SwipeTableViewCellDelegate.swift */,
+				3A316442051868251A57A389C1422DC5 /* SwipeTransitionLayout.swift */,
+				6EE1EB18838B123D0C77D8A1B43FBE2A /* Support Files */,
+			);
+			name = SwipeCellKit;
+			path = SwipeCellKit;
+			sourceTree = "<group>";
+		};
+		49BF364E5E57EDCF7B790972AACE002C /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				E4126C52FC07653D9FCA054162B130E4 /* Alamofire.modulemap */,
+				4374D048152764EA559AF990A9555D86 /* Alamofire.xcconfig */,
+				D11D9F7D19AD282924742627926941D1 /* Alamofire-dummy.m */,
+				27C1DB58B89FD3DE750367D3B17EA4DE /* Alamofire-prefix.pch */,
+				C15B9B99A9973F935AC8065648268E60 /* Alamofire-umbrella.h */,
+				F341EF05E1EEB3B272DBC7A6F4A9512C /* Info.plist */,
 			);
 			name = "Support Files";
 			path = "../Target Support Files/Alamofire";
@@ -180,30 +280,58 @@
 			path = "Target Support Files/Pods-moodifyV2";
 			sourceTree = "<group>";
 		};
-		843EFE0A8B8D9C08C305291A98A363F6 /* Alamofire */ = {
+		4F74097A231930A13564784490A4F3B9 /* Support Files */ = {
 			isa = PBXGroup;
 			children = (
-				7E9F3E91326DD33B73DB966978DD918A /* AFError.swift */,
-				0342DA6C4921E5F80CD303CAD380F177 /* Alamofire.swift */,
-				57019C3E4752EF03BD2CCBF07754002B /* DispatchQueue+Alamofire.swift */,
-				97E9989DC404A5E17A73D61870D17216 /* MultipartFormData.swift */,
-				3A06F4F217EE92CAB5D4D1A87A6B2BF9 /* NetworkReachabilityManager.swift */,
-				7BF2CEDC9FC48914529EF8D4773011FC /* Notifications.swift */,
-				E99F9BCD13FA80642A521E36C8242E93 /* ParameterEncoding.swift */,
-				5BAE94E5AD21FBC6342FD6470C4DEDD6 /* Request.swift */,
-				941CDA4C7596B7C2D0C4B663AF0EE5E2 /* Response.swift */,
-				4BE3B32CC59A9EBD9F068BE92C2D5D40 /* ResponseSerialization.swift */,
-				649D3E908885E9D2A450D6C3F3697699 /* Result.swift */,
-				98CABC55F11571234CE42C62CAD1199A /* ServerTrustPolicy.swift */,
-				23393E5E8539BED7DE0876CF40241FB8 /* SessionDelegate.swift */,
-				E1C33CC1515906155AC854570FFA8BA8 /* SessionManager.swift */,
-				E2D050970AB3056685454C5F9FCDCFAF /* TaskDelegate.swift */,
-				1CA8A8D73086D3DB2A55AE2EBBD3BED5 /* Timeline.swift */,
-				C6067A0F92F63067B659BF3A40264B22 /* Validation.swift */,
-				1BFBDF6172DF406424DD3B624F2CB5D4 /* Support Files */,
+				A3BFB264983C59003E13F007D78C55CE /* Info.plist */,
+				DC63C5C9B709C943E95AB73A75D43D74 /* SpotifyKit.modulemap */,
+				FFCA751F494A940FAB8B78537D33A15F /* SpotifyKit.xcconfig */,
+				7CC7408A1D8396F446600A04FB9E928F /* SpotifyKit-dummy.m */,
+				FC5257B4C9D335E66D2F8AC28511CC8C /* SpotifyKit-prefix.pch */,
+				9F3CD82D15CAEF4C60A92DB36B804E8B /* SpotifyKit-umbrella.h */,
+			);
+			name = "Support Files";
+			path = "../Target Support Files/SpotifyKit";
+			sourceTree = "<group>";
+		};
+		5D8E4E73F4FA7712B18E8CF32AC2C902 /* Alamofire */ = {
+			isa = PBXGroup;
+			children = (
+				733A10F416E2A0D26405D6F7AC489DC9 /* AFError.swift */,
+				D2D459D896CE44F1CD16088D3C7FA01F /* Alamofire.swift */,
+				8A3F5DEF2A5D3D44B220769BF4AA11F0 /* DispatchQueue+Alamofire.swift */,
+				FE1D358FB77B5E73E5B7ADB74BAD407B /* MultipartFormData.swift */,
+				100F13346D7C2A8F5EBA0F11FD70D3D4 /* NetworkReachabilityManager.swift */,
+				48554B5E9D856A2C979D5B04954B6365 /* Notifications.swift */,
+				29423FA4E75D2E7235664F53E1C8E46B /* ParameterEncoding.swift */,
+				FDB06ECF2E0E77DC062320A68E19BBF8 /* Request.swift */,
+				26A0A57A1CB9822CCE426140226C59DA /* Response.swift */,
+				D63A5AB54433F4C7C186C79E76F81F4B /* ResponseSerialization.swift */,
+				D8E2CD2307B859E4837B9C73D2487D50 /* Result.swift */,
+				27C2038ADCF79FA77B0FF77E7A9DC6D8 /* ServerTrustPolicy.swift */,
+				00B638FEFD547154626EE739FEB2B917 /* SessionDelegate.swift */,
+				FD88BD39B51244931E6F0B058D4A0A4C /* SessionManager.swift */,
+				52C65CA11E31EE43DA3F46B46BA04E7B /* TaskDelegate.swift */,
+				3DD2ABE68F6222449C556888E454771A /* Timeline.swift */,
+				EDB19841941A7C15F08FCBC3A16C77CE /* Validation.swift */,
+				49BF364E5E57EDCF7B790972AACE002C /* Support Files */,
 			);
 			name = Alamofire;
 			path = Alamofire;
+			sourceTree = "<group>";
+		};
+		6EE1EB18838B123D0C77D8A1B43FBE2A /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				24754461A0C5A0C0AAC4847C3137F358 /* Info.plist */,
+				FCCAACD4E52F5709DF35B98C8FEDB62F /* SwipeCellKit.modulemap */,
+				D6BD1A52C621786C21059B9E82C2C8B5 /* SwipeCellKit.xcconfig */,
+				23A9727E1FC35EDD6E3F6F5F9D11C8E3 /* SwipeCellKit-dummy.m */,
+				5EEE2008C87FF600AC1ABDD8ADCC5F92 /* SwipeCellKit-prefix.pch */,
+				EAA725099FDE641B58613776F91A914A /* SwipeCellKit-umbrella.h */,
+			);
+			name = "Support Files";
+			path = "../Target Support Files/SwipeCellKit";
 			sourceTree = "<group>";
 		};
 		9B055D0CFEA43187E72B03DED11F5662 /* iOS */ = {
@@ -222,21 +350,13 @@
 			name = "Targets Support Files";
 			sourceTree = "<group>";
 		};
-		B2E5A116A486015B5228DB497A04AEF4 /* Pods */ = {
+		BB7353F06ACB6F096BE9AAED9F1B0838 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				843EFE0A8B8D9C08C305291A98A363F6 /* Alamofire */,
-				1289E8BD263739A134162D01D3865C2D /* SpotifyKit */,
-			);
-			name = Pods;
-			sourceTree = "<group>";
-		};
-		BF506675DB461E829C7794B5F5C8B836 /* Products */ = {
-			isa = PBXGroup;
-			children = (
-				F7F3649E3C43856A40DA846F3E563639 /* Alamofire.framework */,
-				7BB34767ED8B7DD4E9BE10F19709EE1F /* Pods_moodifyV2.framework */,
-				7BDAAFDE0F3EAEEF99C3512D98C1017B /* SpotifyKit.framework */,
+				32FEB40E4A55D2F2CF2AC0AA3297E06B /* Alamofire.framework */,
+				9E22C620D664111EF21BE56024E69264 /* Pods_moodifyV2.framework */,
+				4ABAB87093488E3ACF8EE2C56F219180 /* SpotifyKit.framework */,
+				75A52A75772078633B42E7D1089229E8 /* SwipeCellKit.framework */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -246,8 +366,8 @@
 			children = (
 				24390EFD555DD124430DFF9724065945 /* Podfile */,
 				D210D550F4EA176C3123ED886F8F87F5 /* Frameworks */,
-				B2E5A116A486015B5228DB497A04AEF4 /* Pods */,
-				BF506675DB461E829C7794B5F5C8B836 /* Products */,
+				EF086371D5653EFAF3EF9D9F17B1DD3D /* Pods */,
+				BB7353F06ACB6F096BE9AAED9F1B0838 /* Products */,
 				A4BCDA92DE3EC04ECF8DFF8C627786A4 /* Targets Support Files */,
 			);
 			sourceTree = "<group>";
@@ -260,31 +380,19 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		F53FE6BF770A8CCB42D190B6248DAAC0 /* Support Files */ = {
+		EF086371D5653EFAF3EF9D9F17B1DD3D /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				1106CCCC44646879395D5765CB820914 /* Info.plist */,
-				37218A91B2E562F12F2A946A309E0CB7 /* SpotifyKit.modulemap */,
-				C50004580DB2BE13923D3B17404418F9 /* SpotifyKit.xcconfig */,
-				0F971BC409995E498F84E7FA72670232 /* SpotifyKit-dummy.m */,
-				356C662DE1ECC8CCEE295E62E0926FEF /* SpotifyKit-prefix.pch */,
-				49D182A54C741547634519494C493403 /* SpotifyKit-umbrella.h */,
+				5D8E4E73F4FA7712B18E8CF32AC2C902 /* Alamofire */,
+				2281CB37F9D17B00E662F697846C891B /* SpotifyKit */,
+				34157E9DA39654EEBF11FA00B0A34B1F /* SwipeCellKit */,
 			);
-			name = "Support Files";
-			path = "../Target Support Files/SpotifyKit";
+			name = Pods;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
-		1533FCE4D5D3FE1EE8DAB819A0A0AED4 /* Headers */ = {
-			isa = PBXHeadersBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				52BAAA33C121A8C06789D836C83290AA /* SpotifyKit-umbrella.h in Headers */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		23D70D9651451F43E7E8CC1A87B4B7E9 /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
@@ -293,11 +401,27 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		661AA5EB04116DC54C3B7170495718A8 /* Headers */ = {
+		7950BA91D89086DE8381C3B2E5575286 /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3677486C834F1D4D73B7A1186737587F /* Pods-moodifyV2-umbrella.h in Headers */,
+				8A6EEFE1EE0229F9E08DE5909FEC4170 /* SpotifyKit-umbrella.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		BA9B18905EFC12969F280DBDF21DF8D2 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FB24531654AE6C26667E2175BB709CD5 /* Pods-moodifyV2-umbrella.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FA5034C077E41430EB2DB72742F1BE58 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6A54970C9256A31E7F9AE770022E1582 /* SwipeCellKit-umbrella.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -319,37 +443,38 @@
 			);
 			name = Alamofire;
 			productName = Alamofire;
-			productReference = F7F3649E3C43856A40DA846F3E563639 /* Alamofire.framework */;
+			productReference = 32FEB40E4A55D2F2CF2AC0AA3297E06B /* Alamofire.framework */;
 			productType = "com.apple.product-type.framework";
 		};
-		E551AD2CEC8A39AA7EDD2A45455752B3 /* Pods-moodifyV2 */ = {
+		39AC25C893F5B9E702D564FC76A5EDAA /* Pods-moodifyV2 */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = FF1C3FFF45381550A0FDB938BCFA57B9 /* Build configuration list for PBXNativeTarget "Pods-moodifyV2" */;
+			buildConfigurationList = 7B32BAC6BC2F85792374C5B4CAAC2EB6 /* Build configuration list for PBXNativeTarget "Pods-moodifyV2" */;
 			buildPhases = (
-				661AA5EB04116DC54C3B7170495718A8 /* Headers */,
-				A7E3333C91B33511343827C6C70CAFCA /* Sources */,
-				8B3F3F915B0001D3E27E6D750A62EB51 /* Frameworks */,
-				C9C805714651532F7A5BDB40C4D0AE2B /* Resources */,
+				BA9B18905EFC12969F280DBDF21DF8D2 /* Headers */,
+				B82D167139115726C8DED4B425C7E97D /* Sources */,
+				C9420FF1617402C8A6148CB9382F6A9D /* Frameworks */,
+				305A4451B1D368D2BEE57841F96CE6F9 /* Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				D0BE52114BD3F3106A776DFBAEE5800B /* PBXTargetDependency */,
-				9AB48BCF056B7DEF041DDA982B84D6E9 /* PBXTargetDependency */,
+				7BF7C30839AA50C03192CED36FD74E11 /* PBXTargetDependency */,
+				0F7E086049453FE225198AC5F3647186 /* PBXTargetDependency */,
+				6E1CFBA8DB5504131C6EE34ECF8D5ECD /* PBXTargetDependency */,
 			);
 			name = "Pods-moodifyV2";
 			productName = "Pods-moodifyV2";
-			productReference = 7BB34767ED8B7DD4E9BE10F19709EE1F /* Pods_moodifyV2.framework */;
+			productReference = 9E22C620D664111EF21BE56024E69264 /* Pods_moodifyV2.framework */;
 			productType = "com.apple.product-type.framework";
 		};
-		FEE667CBAD0E74E578A02E8904D47EDD /* SpotifyKit */ = {
+		47A65041E51965F49F2C53EF4BFDC4A0 /* SpotifyKit */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = EB035A0EE7E1A700F9F6590EE96DF2C1 /* Build configuration list for PBXNativeTarget "SpotifyKit" */;
+			buildConfigurationList = 448D2C334752A604BE850C6ADBC2DC8B /* Build configuration list for PBXNativeTarget "SpotifyKit" */;
 			buildPhases = (
-				1533FCE4D5D3FE1EE8DAB819A0A0AED4 /* Headers */,
-				0EC1D5546E8EB42C9F1A179D0BBCB9B6 /* Sources */,
-				63FD8138B805409F7FF42DDCF747C81C /* Frameworks */,
-				9D03FAC3E28FA2FB699BB73D3616DB5C /* Resources */,
+				7950BA91D89086DE8381C3B2E5575286 /* Headers */,
+				2CA1CE4434830E1B78303512641ADA82 /* Sources */,
+				77D5A249ED942589A91A133D0C3BF837 /* Frameworks */,
+				E80C36B068300DC3721E05E8D0A0618A /* Resources */,
 			);
 			buildRules = (
 			);
@@ -357,7 +482,25 @@
 			);
 			name = SpotifyKit;
 			productName = SpotifyKit;
-			productReference = 7BDAAFDE0F3EAEEF99C3512D98C1017B /* SpotifyKit.framework */;
+			productReference = 4ABAB87093488E3ACF8EE2C56F219180 /* SpotifyKit.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		789A0F29071F56E904731819E7851B7C /* SwipeCellKit */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 91FCC4561D40D7E1ABBFC7D800D5561B /* Build configuration list for PBXNativeTarget "SwipeCellKit" */;
+			buildPhases = (
+				FA5034C077E41430EB2DB72742F1BE58 /* Headers */,
+				2CB5EB64896BE8005708C41D06CF6024 /* Sources */,
+				74FE090F0869E0910313E2CB458E1CD3 /* Frameworks */,
+				F69B3F4D6D38F60E39442C82D4C5DC58 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = SwipeCellKit;
+			productName = SwipeCellKit;
+			productReference = 75A52A75772078633B42E7D1089229E8 /* SwipeCellKit.framework */;
 			productType = "com.apple.product-type.framework";
 		};
 /* End PBXNativeTarget section */
@@ -377,13 +520,14 @@
 				en,
 			);
 			mainGroup = CF1408CF629C7361332E53B88F7BD30C;
-			productRefGroup = BF506675DB461E829C7794B5F5C8B836 /* Products */;
+			productRefGroup = BB7353F06ACB6F096BE9AAED9F1B0838 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
 				3383968E74B5371B20BB519B170DC7FD /* Alamofire */,
-				E551AD2CEC8A39AA7EDD2A45455752B3 /* Pods-moodifyV2 */,
-				FEE667CBAD0E74E578A02E8904D47EDD /* SpotifyKit */,
+				39AC25C893F5B9E702D564FC76A5EDAA /* Pods-moodifyV2 */,
+				47A65041E51965F49F2C53EF4BFDC4A0 /* SpotifyKit */,
+				789A0F29071F56E904731819E7851B7C /* SwipeCellKit */,
 			);
 		};
 /* End PBXProject section */
@@ -396,14 +540,21 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		9D03FAC3E28FA2FB699BB73D3616DB5C /* Resources */ = {
+		305A4451B1D368D2BEE57841F96CE6F9 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		C9C805714651532F7A5BDB40C4D0AE2B /* Resources */ = {
+		E80C36B068300DC3721E05E8D0A0618A /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F69B3F4D6D38F60E39442C82D4C5DC58 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -413,15 +564,45 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
-		0EC1D5546E8EB42C9F1A179D0BBCB9B6 /* Sources */ = {
+		2CA1CE4434830E1B78303512641ADA82 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0E540105BD3C1CC9E1D0067E48207985 /* Keychain.swift in Sources */,
-				08B2BDBECEE6B5C298E9E620C43F0C94 /* SpotifyItems.swift in Sources */,
-				FA1A10E76ECCEE7627C760D15A51FAF3 /* SpotifyKit-dummy.m in Sources */,
-				3B156FD36FFE692FD5A7281722B60E2E /* SpotifyKit.swift in Sources */,
-				60DB8CD3608AE4F91192A23CC61CBE59 /* WebCommunications.swift in Sources */,
+				B0ACB603D04CB818971C2EF4318D0947 /* Keychain.swift in Sources */,
+				A9F6ECBD1D6154E53F3868BDE6078959 /* SpotifyItems.swift in Sources */,
+				DEB63D84467DCF10845D11C83446378C /* SpotifyKit-dummy.m in Sources */,
+				F7CA65C41213FE24CA3D0FA72C973CCD /* SpotifyKit.swift in Sources */,
+				89DF297942082C2675C8BA4FE9E1EEC0 /* WebCommunications.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		2CB5EB64896BE8005708C41D06CF6024 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A66AE7A7F5BB186D59747DA77FE7959C /* Extensions.swift in Sources */,
+				262AA3FED03F15EE3FB19840D9C5619C /* Swipeable.swift in Sources */,
+				DBAC2BD4393BB3F281172BEBF9180012 /* SwipeAccessibilityCustomAction.swift in Sources */,
+				8D267298D836EB7D741F89ABA16E8051 /* SwipeAction.swift in Sources */,
+				84099A2C2F7142B53C031F38FD3B25A0 /* SwipeActionButton.swift in Sources */,
+				B5B0768A9A7F92B971CF40E0D70F8524 /* SwipeActionsView.swift in Sources */,
+				A45018A31C4C51AB9D6EA47282DDBCB2 /* SwipeActionTransitioning.swift in Sources */,
+				D04ADB77ED492DE04E38C53E3978E118 /* SwipeAnimator.swift in Sources */,
+				BEAB3185DA7A2C2B2AC8039E6E26B9FC /* SwipeCellKit-dummy.m in Sources */,
+				49C584CC85FC66CCFEE2EFB244741663 /* SwipeCollectionViewCell+Accessibility.swift in Sources */,
+				E86C9BCF8E314F3DD4E5BD40FA69D3B7 /* SwipeCollectionViewCell+Display.swift in Sources */,
+				C5673442F1BD8246025003B705B0A6F9 /* SwipeCollectionViewCell.swift in Sources */,
+				E0212E2576C7F55862E23DF7976E1920 /* SwipeCollectionViewCellDelegate.swift in Sources */,
+				004F8682CFE4EEB64C3B72AD095BEA5D /* SwipeController.swift in Sources */,
+				03A344604525383905CA2EDD0011EB27 /* SwipeExpanding.swift in Sources */,
+				8CD766E87F51D22920440F21335AF50D /* SwipeExpansionStyle.swift in Sources */,
+				CC30F8CBA723AFB1EE4F94F88711D861 /* SwipeFeedback.swift in Sources */,
+				1BE3E24C942E42C9B82C00A04F705FF9 /* SwipeOptions.swift in Sources */,
+				2B5F2846B562469DDD732F51F54C8E1C /* SwipeTableViewCell+Accessibility.swift in Sources */,
+				11CEC14FAC79E80475F407DB0D16A008 /* SwipeTableViewCell+Display.swift in Sources */,
+				75CF1A4106798BAC9A7FFE39F0698E34 /* SwipeTableViewCell.swift in Sources */,
+				2D92393F6986DE5E6F9A98A143599D54 /* SwipeTableViewCellDelegate.swift in Sources */,
+				61683B25A673FA7A4A6E228953C2D733 /* SwipeTransitionLayout.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -450,38 +631,42 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		A7E3333C91B33511343827C6C70CAFCA /* Sources */ = {
+		B82D167139115726C8DED4B425C7E97D /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				120DB0120DF78BE53D40D4B2DBA85EF2 /* Pods-moodifyV2-dummy.m in Sources */,
+				9D94E28D379FEE402F122747D5C115A1 /* Pods-moodifyV2-dummy.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		9AB48BCF056B7DEF041DDA982B84D6E9 /* PBXTargetDependency */ = {
+		0F7E086049453FE225198AC5F3647186 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = SpotifyKit;
-			target = FEE667CBAD0E74E578A02E8904D47EDD /* SpotifyKit */;
-			targetProxy = 65CD6FDE41CB6A417776985640D8CE4C /* PBXContainerItemProxy */;
+			target = 47A65041E51965F49F2C53EF4BFDC4A0 /* SpotifyKit */;
+			targetProxy = D118F28265E3507D99CAA41BE80A3EAC /* PBXContainerItemProxy */;
 		};
-		D0BE52114BD3F3106A776DFBAEE5800B /* PBXTargetDependency */ = {
+		6E1CFBA8DB5504131C6EE34ECF8D5ECD /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = SwipeCellKit;
+			target = 789A0F29071F56E904731819E7851B7C /* SwipeCellKit */;
+			targetProxy = BDE62F77C46A81DB6C9AF372AF307A41 /* PBXContainerItemProxy */;
+		};
+		7BF7C30839AA50C03192CED36FD74E11 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = Alamofire;
 			target = 3383968E74B5371B20BB519B170DC7FD /* Alamofire */;
-			targetProxy = E7EDFFDE81D855FFCF37675DBA13C4D5 /* PBXContainerItemProxy */;
+			targetProxy = B5770483D3AEF23E6F6E46E4DAF49EE4 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
-		08B90FC0C51B2B37D5BF620075203003 /* Release */ = {
+		33A153F8D328298D679517517B0679B1 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = EB07DA7B4F197074DCFEF6C76310D33D /* Pods-moodifyV2.release.xcconfig */;
+			baseConfigurationReference = D6BD1A52C621786C21059B9E82C2C8B5 /* SwipeCellKit.xcconfig */;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
-				CLANG_ENABLE_OBJC_WEAK = NO;
 				CODE_SIGN_IDENTITY = "";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
@@ -491,23 +676,22 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				INFOPLIST_FILE = "Target Support Files/Pods-moodifyV2/Info.plist";
+				GCC_PREFIX_HEADER = "Target Support Files/SwipeCellKit/SwipeCellKit-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/SwipeCellKit/Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 					"@loader_path/Frameworks",
 				);
-				MACH_O_TYPE = staticlib;
-				MODULEMAP_FILE = "Target Support Files/Pods-moodifyV2/Pods-moodifyV2.modulemap";
-				OTHER_LDFLAGS = "";
-				OTHER_LIBTOOLFLAGS = "";
-				PODS_ROOT = "$(SRCROOT)";
-				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
-				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				MODULEMAP_FILE = "Target Support Files/SwipeCellKit/SwipeCellKit.modulemap";
+				PRODUCT_MODULE_NAME = SwipeCellKit;
+				PRODUCT_NAME = SwipeCellKit;
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VALIDATE_PRODUCT = YES;
 				VERSIONING_SYSTEM = "apple-generic";
@@ -515,9 +699,44 @@
 			};
 			name = Release;
 		};
-		1C178D740EEA279F5271BB10108EB9CA /* Release */ = {
+		4935B235790D81DC145E65C0EA2061AD /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = C50004580DB2BE13923D3B17404418F9 /* SpotifyKit.xcconfig */;
+			baseConfigurationReference = D6BD1A52C621786C21059B9E82C2C8B5 /* SwipeCellKit.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_PREFIX_HEADER = "Target Support Files/SwipeCellKit/SwipeCellKit-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/SwipeCellKit/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MODULEMAP_FILE = "Target Support Files/SwipeCellKit/SwipeCellKit.modulemap";
+				PRODUCT_MODULE_NAME = SwipeCellKit;
+				PRODUCT_NAME = SwipeCellKit;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		50A8A02F2836BE2A8A6B85ADF8CA491C /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = FFCA751F494A940FAB8B78537D33A15F /* SpotifyKit.xcconfig */;
 			buildSettings = {
 				CLANG_ENABLE_OBJC_WEAK = NO;
 				CODE_SIGN_IDENTITY = "";
@@ -554,7 +773,7 @@
 		};
 		62AF540A103A62931261C7A1F5A054C2 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 4792436478C01CBB7B873B476630E956 /* Alamofire.xcconfig */;
+			baseConfigurationReference = 4374D048152764EA559AF990A9555D86 /* Alamofire.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
@@ -656,7 +875,7 @@
 		};
 		6F224A2BC20C4831A169BD295DAB1813 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 4792436478C01CBB7B873B476630E956 /* Alamofire.xcconfig */;
+			baseConfigurationReference = 4374D048152764EA559AF990A9555D86 /* Alamofire.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
@@ -689,43 +908,7 @@
 			};
 			name = Debug;
 		};
-		B6351051D4ABDE75974B8E80119E1A20 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = C50004580DB2BE13923D3B17404418F9 /* SpotifyKit.xcconfig */;
-			buildSettings = {
-				CLANG_ENABLE_OBJC_WEAK = NO;
-				CODE_SIGN_IDENTITY = "";
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				CURRENT_PROJECT_VERSION = 1;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				GCC_PREFIX_HEADER = "Target Support Files/SpotifyKit/SpotifyKit-prefix.pch";
-				INFOPLIST_FILE = "Target Support Files/SpotifyKit/Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				MODULEMAP_FILE = "Target Support Files/SpotifyKit/SpotifyKit.modulemap";
-				PRODUCT_MODULE_NAME = SpotifyKit;
-				PRODUCT_NAME = SpotifyKit;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
-				SWIFT_VERSION = 4.2;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Debug;
-		};
-		EE2E67E782C3C5A22DA349A6BA80A283 /* Debug */ = {
+		7CCFCBC065A79DD1138944C23AA39472 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 66661EF2AAC3A5FD1D77D2CBD3E5AD4A /* Pods-moodifyV2.debug.xcconfig */;
 			buildSettings = {
@@ -762,6 +945,81 @@
 				VERSION_INFO_PREFIX = "";
 			};
 			name = Debug;
+		};
+		CF6DCBBCBEE032100D310105198C21DB /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = FFCA751F494A940FAB8B78537D33A15F /* SpotifyKit.xcconfig */;
+			buildSettings = {
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_PREFIX_HEADER = "Target Support Files/SpotifyKit/SpotifyKit-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/SpotifyKit/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MODULEMAP_FILE = "Target Support Files/SpotifyKit/SpotifyKit.modulemap";
+				PRODUCT_MODULE_NAME = SpotifyKit;
+				PRODUCT_NAME = SpotifyKit;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		D4A04E9285C30ADC22CDA81D98FD7D28 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = EB07DA7B4F197074DCFEF6C76310D33D /* Pods-moodifyV2.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "Target Support Files/Pods-moodifyV2/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-moodifyV2/Pods-moodifyV2.modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
 		};
 		EF5BFA818FC42461784455EDD41279F0 /* Release */ = {
 			isa = XCBuildConfiguration;
@@ -828,6 +1086,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		448D2C334752A604BE850C6ADBC2DC8B /* Build configuration list for PBXNativeTarget "SpotifyKit" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				CF6DCBBCBEE032100D310105198C21DB /* Debug */,
+				50A8A02F2836BE2A8A6B85ADF8CA491C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		4821239608C13582E20E6DA73FD5F1F9 /* Build configuration list for PBXProject "Pods" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
@@ -837,29 +1104,29 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
+		7B32BAC6BC2F85792374C5B4CAAC2EB6 /* Build configuration list for PBXNativeTarget "Pods-moodifyV2" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				7CCFCBC065A79DD1138944C23AA39472 /* Debug */,
+				D4A04E9285C30ADC22CDA81D98FD7D28 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		91FCC4561D40D7E1ABBFC7D800D5561B /* Build configuration list for PBXNativeTarget "SwipeCellKit" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				4935B235790D81DC145E65C0EA2061AD /* Debug */,
+				33A153F8D328298D679517517B0679B1 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		E87124444A44B7DB55208E7FEC21D331 /* Build configuration list for PBXNativeTarget "Alamofire" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				6F224A2BC20C4831A169BD295DAB1813 /* Debug */,
 				62AF540A103A62931261C7A1F5A054C2 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		EB035A0EE7E1A700F9F6590EE96DF2C1 /* Build configuration list for PBXNativeTarget "SpotifyKit" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				B6351051D4ABDE75974B8E80119E1A20 /* Debug */,
-				1C178D740EEA279F5271BB10108EB9CA /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		FF1C3FFF45381550A0FDB938BCFA57B9 /* Build configuration list for PBXNativeTarget "Pods-moodifyV2" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				EE2E67E782C3C5A22DA349A6BA80A283 /* Debug */,
-				08B90FC0C51B2B37D5BF620075203003 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

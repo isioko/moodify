@@ -9,22 +9,6 @@
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "moodifyV2/EntryTabViewController.swift"
-            timestampString = "572114646.688696"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "88"
-            endingLineNumber = "88"
-            landmarkName = "collectionView(_:numberOfItemsInSection:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
             filePath = "moodifyV2/DisplayRecentlyPlayedViewController.swift"
             timestampString = "572079521.699973"
             startingColumnNumber = "9223372036854775807"
@@ -138,7 +122,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "moodifyV2/WriteEntryViewController.swift"
-            timestampString = "572114646.688887"
+            timestampString = "572418315.127861"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "207"
@@ -170,7 +154,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "moodifyV2/WriteEntryViewController.swift"
-            timestampString = "572114646.688978"
+            timestampString = "572418315.1279629"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "52"
@@ -186,11 +170,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "moodifyV2/EntryTabViewController.swift"
-            timestampString = "572114646.689042"
+            timestampString = "572418315.128023"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "153"
-            endingLineNumber = "153">
+            startingLineNumber = "207"
+            endingLineNumber = "207">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -200,11 +184,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "moodifyV2/EntryTabViewController.swift"
-            timestampString = "572114646.689103"
+            timestampString = "572418315.128432"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "138"
-            endingLineNumber = "138"
+            startingLineNumber = "180"
+            endingLineNumber = "180"
             landmarkName = "prepare(for:sender:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -216,11 +200,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "moodifyV2/EntryTabViewController.swift"
-            timestampString = "572114646.6891609"
+            timestampString = "572418315.128752"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "107"
-            endingLineNumber = "107"
+            startingLineNumber = "149"
+            endingLineNumber = "149"
             landmarkName = "getTrackFromNSObject(NS_track:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -232,11 +216,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "moodifyV2/EntryTabViewController.swift"
-            timestampString = "572114646.689218"
+            timestampString = "572418315.129057"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "42"
-            endingLineNumber = "42"
+            startingLineNumber = "81"
+            endingLineNumber = "81"
             landmarkName = "viewDidAppear(_:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -248,7 +232,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "moodifyV2/WriteEntryViewController.swift"
-            timestampString = "572114646.689275"
+            timestampString = "572418315.129352"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "198"
@@ -264,11 +248,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "moodifyV2/EntryTabViewController.swift"
-            timestampString = "572114646.68933"
+            timestampString = "572418315.1294039"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "32"
-            endingLineNumber = "32"
+            startingLineNumber = "71"
+            endingLineNumber = "71"
             landmarkName = "viewDidAppear(_:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -280,11 +264,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "moodifyV2/EntryTabViewController.swift"
-            timestampString = "572114646.689389"
+            timestampString = "572418315.129687"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "30"
-            endingLineNumber = "30"
+            startingLineNumber = "69"
+            endingLineNumber = "69"
             landmarkName = "viewDidAppear(_:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -390,28 +374,12 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "moodifyV2/WriteEntryViewController.swift"
-            timestampString = "572114646.6894881"
+            timestampString = "572418315.130015"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "279"
             endingLineNumber = "279"
             landmarkName = "save(entry:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "moodifyV2/EntryTabViewController.swift"
-            timestampString = "572114646.6895469"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "108"
-            endingLineNumber = "108"
-            landmarkName = "getTrackFromNSObject(NS_track:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -508,6 +476,70 @@
             startingLineNumber = "33"
             endingLineNumber = "33"
             landmarkName = "collectionView(_:cellForItemAt:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "moodifyV2/EntryTabViewController.swift"
+            timestampString = "572418315.13017"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "52"
+            endingLineNumber = "52"
+            landmarkName = "filterContentForSearchText(_:scope:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "default argument 1 of moodifyV2.EntryTabViewController.filterContentForSearchText(_: Swift.String, scope: Swift.String) -&gt; ()"
+                  moduleName = "moodifyV2"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/shelbymarcus/Desktop/CS194W/moodifyV2/moodifyV2/EntryTabViewController.swift"
+                  timestampString = "572418136.498464"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "52"
+                  endingLineNumber = "52"
+                  offsetFromSymbolStart = "8">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "moodifyV2.EntryTabViewController.filterContentForSearchText(_: Swift.String, scope: Swift.String) -&gt; ()"
+                  moduleName = "moodifyV2"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/shelbymarcus/Desktop/CS194W/moodifyV2/moodifyV2/EntryTabViewController.swift"
+                  timestampString = "572418136.502409"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "53"
+                  endingLineNumber = "53"
+                  offsetFromSymbolStart = "52">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "moodifyV2/EntryTabViewController.swift"
+            timestampString = "572418315.130465"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "204"
+            endingLineNumber = "204"
+            landmarkName = "updateSearchResults(for:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

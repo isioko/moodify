@@ -1,20 +1,24 @@
 PODS:
   - Alamofire (4.8.1)
   - SpotifyKit (0.0.6)
+  - SwipeCellKit (2.5.1)
 
 DEPENDENCIES:
   - Alamofire (~> 4.7)
   - SpotifyKit
+  - SwipeCellKit
 
 SPEC REPOS:
   https://github.com/cocoapods/specs.git:
     - Alamofire
     - SpotifyKit
+    - SwipeCellKit
 
 SPEC CHECKSUMS:
   Alamofire: 16ce2c353fb72865124ddae8a57c5942388f4f11
   SpotifyKit: 20abf7e1e170e35683ecbe6d93598e91d4e7b6ab
+  SwipeCellKit: 30fd6a4f8a8b8ac864ea389c8b4c8bac5ba5471a
 
-PODFILE CHECKSUM: 4e999de2c1982a6f1dadc8c4c9e031b033f9f880
+PODFILE CHECKSUM: 34a107107bf8bc5296219339f4adccf865b0d52d
 
 COCOAPODS: 1.5.3

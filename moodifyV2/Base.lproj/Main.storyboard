@@ -90,7 +90,7 @@
                                         <fontDescription key="fontDescription" name="Hind-Regular" family="Hind" pointSize="15"/>
                                         <state key="normal" title="Next"/>
                                         <connections>
-                                            <segue destination="6VG-jr-GIa" kind="show" animates="NO" id="W3D-q5-a1G"/>
+                                            <segue destination="zra-c7-eQr" kind="show" animates="NO" id="6ug-G8-a8R"/>
                                         </connections>
                                     </button>
                                 </subviews>
@@ -108,32 +108,6 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="W8c-Rr-ICC" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2112.8000000000002" y="-345.07389162561577"/>
-        </scene>
-        <!--Calendar-->
-        <scene sceneID="jND-eu-z0K">
-            <objects>
-                <viewController id="K3t-s3-0fX" customClass="CalendarViewController" customModule="moodifyV2" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="vOJ-Pe-iYe">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="QEX-0P-89z">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                            </view>
-                        </subviews>
-                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <viewLayoutGuide key="safeArea" id="Ffd-3s-H4a"/>
-                    </view>
-                    <tabBarItem key="tabBarItem" title="Calendar" id="10I-0o-pXl"/>
-                    <connections>
-                        <outlet property="gradientView" destination="QEX-0P-89z" id="rjV-6C-X4G"/>
-                    </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="BLY-XP-Kid" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="2992.8000000000002" y="476.60098522167488"/>
         </scene>
         <!--Display Entry View Controller-->
         <scene sceneID="esV-uD-r9f">
@@ -263,9 +237,6 @@
                                         <state key="normal" image="backButton">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </state>
-                                        <connections>
-                                            <segue destination="6VG-jr-GIa" kind="show" animates="NO" id="IzP-kF-08C"/>
-                                        </connections>
                                     </button>
                                 </subviews>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -413,7 +384,7 @@
             </objects>
             <point key="canvasLocation" x="5052" y="-1207.3891625615763"/>
         </scene>
-        <!--Entries-->
+        <!--Entry Tab View Controller-->
         <scene sceneID="jkz-wv-zyf">
             <objects>
                 <viewController id="tXn-6T-E1W" customClass="EntryTabViewController" customModule="moodifyV2" customModuleProvider="target" sceneMemberID="viewController">
@@ -522,7 +493,6 @@
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="CwX-hJ-KA2"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Entries" id="Bcz-oN-pka"/>
                     <navigationItem key="navigationItem" id="02f-9S-vve"/>
                     <connections>
                         <outlet property="entryCollectionView" destination="wgQ-sU-tnF" id="Y8y-YN-CcG"/>
@@ -532,7 +502,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ZUC-3u-MPj" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4008.8000000000002" y="-342.11822660098522"/>
+            <point key="canvasLocation" x="4225" y="-327"/>
         </scene>
         <!--Write Entry View Controller-->
         <scene sceneID="tyT-5E-7M7">
@@ -550,7 +520,6 @@
                                 </state>
                                 <connections>
                                     <action selector="clickAdd:" destination="fEb-oX-jyH" eventType="touchUpInside" id="Uy1-pZ-fbQ"/>
-                                    <segue destination="6VG-jr-GIa" kind="show" identifier="showEntriesSegue" animates="NO" id="tTK-eY-M5o"/>
                                 </connections>
                             </button>
                             <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="TQ0-UN-7fs">
@@ -622,9 +591,6 @@
                                         <state key="normal" image="backButton">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </state>
-                                        <connections>
-                                            <segue destination="6VG-jr-GIa" kind="show" animates="NO" id="ESi-eA-wPO"/>
-                                        </connections>
                                     </button>
                                 </subviews>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -650,7 +616,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2gI-g0-9b0" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="5199.1999999999998" y="-327.33990147783254"/>
+            <point key="canvasLocation" x="6141.6000000000004" y="-327.33990147783254"/>
         </scene>
         <!--Display Recently Played View Controller-->
         <scene sceneID="zss-kc-vuB">
@@ -730,26 +696,26 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="vFg-DR-ehK" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="5999.1999999999998" y="-335.46798029556652"/>
+            <point key="canvasLocation" x="6941.6000000000004" y="-335.46798029556652"/>
         </scene>
-        <!--Tab Bar Controller-->
-        <scene sceneID="FoM-WJ-hwF">
+        <!--Entries-->
+        <scene sceneID="ebk-bh-TLi">
             <objects>
-                <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="6VG-jr-GIa" sceneMemberID="viewController">
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="zra-c7-eQr" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Entries" id="Bcz-oN-pka"/>
                     <toolbarItems/>
-                    <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="1aZ-7o-evO">
-                        <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="TIa-tc-Tox">
+                        <rect key="frame" x="0.0" y="44" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
-                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                    </tabBar>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
                     <connections>
-                        <segue destination="tXn-6T-E1W" kind="relationship" relationship="viewControllers" id="2aO-zR-XXg"/>
-                        <segue destination="K3t-s3-0fX" kind="relationship" relationship="viewControllers" id="7b2-8S-Zm9"/>
+                        <segue destination="tXn-6T-E1W" kind="relationship" relationship="rootViewController" id="B9S-iS-97q"/>
                     </connections>
-                </tabBarController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="Cqc-nD-Rxj" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="vxK-LE-DgN" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3066.4000000000001" y="-342.11822660098522"/>
+            <point key="canvasLocation" x="3148" y="-327"/>
         </scene>
     </scenes>
     <resources>
@@ -765,9 +731,7 @@
         <image name="saveIcon" width="32" height="37"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="C61-Cc-UW2"/>
-        <segue reference="IzP-kF-08C"/>
         <segue reference="fwe-Sq-vFa"/>
-        <segue reference="F7f-Jd-g9G"/>
+        <segue reference="fna-Md-nNg"/>
     </inferredMetricsTieBreakers>
 </document>

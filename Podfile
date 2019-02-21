@@ -5,4 +5,5 @@ use_frameworks!
 target 'moodifyV2' do
     pod 'SpotifyKit'
     pod 'Alamofire', '~> 4.7'
+    pod 'SwipeCellKit'
 end

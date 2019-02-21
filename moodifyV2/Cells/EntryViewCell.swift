@@ -8,6 +8,7 @@
 
 import Foundation
 import UIKit
+import SwipeCellKit
 
 class EntryViewCell:UICollectionViewCell{
     static let reuseIdentifier = "entryCell"
@@ -19,6 +20,8 @@ class EntryViewCell:UICollectionViewCell{
     @IBOutlet weak var locationImage: UIImageView!
     @IBOutlet weak var numTracksLabel: UILabel!
     
+    public weak var delegate: SwipeCollectionViewCellDelegate?
+
     func displayContent(entry: Entry){
         entryLabel.text = entry.entryText
         let formatter = DateFormatter()

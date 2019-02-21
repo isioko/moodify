@@ -26,7 +26,7 @@ class WriteEntryViewController:UIViewController, UITextFieldDelegate, UITextView
     var alreadySavedEntry = false
     public var todays_tracks = [Track]()
     public var new_entry = Entry.init()
-    public var updated_entries = Entries.init()
+    public var updated_entries = [Entry]()
     public var selectedTracks = [Track]()
     public var selectedRows:[Bool] = [] // added this
     public var selectedTracksString = ""

@@ -10,13 +10,18 @@ import Foundation
 import UIKit
 import CoreData
 
-class EntryTabViewController:UIViewController,UICollectionViewDelegate,UICollectionViewDataSource{
-    var entries = Entries.init()
+// search controller tutorial: https://www.raywenderlich.com/472-uisearchcontroller-tutorial-getting-started
+
+class EntryTabViewController:UIViewController,UICollectionViewDelegate,UICollectionViewDataSource, UISearchControllerDelegate{
+    var entries = [Entry]()
     var core_data_entries: [NSObject] = []
     var writeEntry: WriteEntryViewController?
     @IBOutlet weak var gradientView: UIView!
     let gradient = CAGradientLayer()
     public var newEntry = Entry()
+    
+    //search controller
+    let searchController = UISearchController(searchResultsController: nil)
     
     // Colors for gradient
     let pinkColor = UIColor(red: 250/225, green: 104/225, blue: 104/225, alpha: 1).cgColor
@@ -24,7 +29,41 @@ class EntryTabViewController:UIViewController,UICollectionViewDelegate,UICollect
     let blueColor = UIColor(red: 85/225, green: 127/225, blue: 242/225, alpha: 1).cgColor
     
     @IBOutlet weak var plusButton: UIButton!
+    var filteredEntries = [NSObject]()
+    
+    lazy var searchBar = UISearchBar(frame: CGRect.zero)
+
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        // Setup the Search Controller
+        searchController.searchResultsUpdater = self
+        searchController.obscuresBackgroundDuringPresentation = false
+        searchController.searchBar.placeholder = "Search Entries"
+        navigationItem.searchController = searchController
+        definesPresentationContext = true
+        navigationItem.hidesSearchBarWhenScrolling = false
+    }
+    
+    func searchBarIsEmpty() -> Bool {
+        // Returns true if the text is empty or nil
+        return searchController.searchBar.text?.isEmpty ?? true
+    }
+    
+    func filterContentForSearchText(_ searchText: String, scope: String = "All") {
+        filteredEntries = core_data_entries.filter({( entry_obj : NSObject) -> Bool in
+            let entry = getEntryFromNSObject(NS_entry: entry_obj)
+            return entry.entryText.lowercased().contains(searchText.lowercased())
+        })
         
+        entryCollectionView.reloadData()
+        entryCollectionView.collectionViewLayout.invalidateLayout()
+
+    }
+    func isFiltering() -> Bool {
+        return searchController.isActive && !searchBarIsEmpty()
+    }
+
+    
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(true)
         // CORE DATA
@@ -77,13 +116,12 @@ class EntryTabViewController:UIViewController,UICollectionViewDelegate,UICollect
         }
     }
     
-    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        let entry_clicked_obj = self.core_data_entries[indexPath.row]
-        let entry_clicked = getEntryFromNSObject(NS_entry: entry_clicked_obj)
-    }
-    
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int
     {
+        if isFiltering() {
+            return filteredEntries.count
+        }
+        
         return core_data_entries.count
     }
     
@@ -94,8 +132,12 @@ class EntryTabViewController:UIViewController,UICollectionViewDelegate,UICollect
         cell.contentView.backgroundColor = UIColor.white
         cell.contentView.layer.cornerRadius = 8.0
         cell.contentView.layer.masksToBounds = true
-        
-        let entry_obj = core_data_entries[indexPath.row]
+        let entry_obj: NSObject
+        if isFiltering(){
+            entry_obj = filteredEntries[indexPath.row]
+        }else{
+            entry_obj = core_data_entries[indexPath.row]
+        }
         // construct entry to display
         let entry = getEntryFromNSObject(NS_entry: entry_obj)
         cell.displayContent(entry: entry)
@@ -139,7 +181,13 @@ class EntryTabViewController:UIViewController,UICollectionViewDelegate,UICollect
 
                 let entry_cell = sender as! UICollectionViewCell
                 let indexPath = self.entryCollectionView!.indexPath(for: entry_cell)
-                let entry_clicked_obj = self.core_data_entries[indexPath!.row]
+                let entry_clicked_obj: NSObject
+                if isFiltering(){
+                    entry_clicked_obj = filteredEntries[indexPath!.row]
+                }else{
+                    entry_clicked_obj = core_data_entries[indexPath!.row]
+                }
+//                let entry_clicked_obj = self.core_data_entries[indexPath!.row]
                 let entry_clicked = getEntryFromNSObject(NS_entry: entry_clicked_obj)
                 devc.entry_to_display = entry_clicked
             }
@@ -150,3 +198,9 @@ class EntryTabViewController:UIViewController,UICollectionViewDelegate,UICollect
 }
 
 
+extension EntryTabViewController: UISearchResultsUpdating {
+    // MARK: - UISearchResultsUpdating Delegate
+    func updateSearchResults(for searchController: UISearchController) {
+        filterContentForSearchText(searchController.searchBar.text!)
+    }
+}
