@@ -31,6 +31,7 @@
 		4CF6E9AC220809A800836FC6 /* WriteEntryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CF6E9AB220809A800836FC6 /* WriteEntryViewController.swift */; };
 		4CF6E9B22208147F00836FC6 /* EntryTabViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CF6E9B12208147F00836FC6 /* EntryTabViewController.swift */; };
 		4CF6E9B4220819EF00836FC6 /* Entries.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CF6E9B3220819EF00836FC6 /* Entries.swift */; };
+		5AF0F722221E8FB100EFE1DD /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AF0F721221E8FB100EFE1DD /* Constants.swift */; };
 		6A0C5FA72204179800666370 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A0C5FA62204179800666370 /* AppDelegate.swift */; };
 		6A0C5FA92204179800666370 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A0C5FA82204179800666370 /* ViewController.swift */; };
 		6A0C5FAC2204179800666370 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6A0C5FAA2204179800666370 /* Main.storyboard */; };
@@ -70,6 +71,7 @@
 		4CF6E9AB220809A800836FC6 /* WriteEntryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WriteEntryViewController.swift; sourceTree = "<group>"; };
 		4CF6E9B12208147F00836FC6 /* EntryTabViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EntryTabViewController.swift; sourceTree = "<group>"; };
 		4CF6E9B3220819EF00836FC6 /* Entries.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Entries.swift; sourceTree = "<group>"; };
+		5AF0F721221E8FB100EFE1DD /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		6A0C5FA32204179800666370 /* moodifyV2.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = moodifyV2.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6A0C5FA62204179800666370 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		6A0C5FA82204179800666370 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -179,6 +181,7 @@
 		6A202C1922115CD90004E98E /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				5AF0F721221E8FB100EFE1DD /* Constants.swift */,
 				6A202C1A22115D0D0004E98E /* Hind-Bold.ttf */,
 				6A202C1B22115D0D0004E98E /* Hind-Light.ttf */,
 				6A202C1E22115D0D0004E98E /* Hind-Medium.ttf */,
@@ -344,6 +347,7 @@
 				4C374615221915BA003B90A7 /* TrackEntity+CoreDataProperties.swift in Sources */,
 				4C6B3DCE220BFA2800C79C61 /* AuthorizeViewController.swift in Sources */,
 				4C374616221915BA003B90A7 /* EntryEntity+CoreDataClass.swift in Sources */,
+				5AF0F722221E8FB100EFE1DD /* Constants.swift in Sources */,
 				4C374614221915BA003B90A7 /* TrackEntity+CoreDataClass.swift in Sources */,
 				4CF6E9B4220819EF00836FC6 /* Entries.swift in Sources */,
 				4C37461B22191BCA003B90A7 /* ViewAssociatedEntriesViewController.swift in Sources */,
