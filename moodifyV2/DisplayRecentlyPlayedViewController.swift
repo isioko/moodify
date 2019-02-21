@@ -13,10 +13,10 @@ import CoreData
 
 class DisplayRecentlyPlayedViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
     public var entryText = ""
-    @IBOutlet weak var gradientView: UIView!
+
+    @IBOutlet weak var backgroundView: UIView!
     @IBOutlet weak var aBackButton: UIButton!
-    
-    let gradient = CAGradientLayer()
+    @IBOutlet weak var blackBoxView: UIView!
     
     public var selectedRows:[Bool] = [] 
     var selectedTracks:[Track] = []
@@ -55,8 +55,8 @@ class DisplayRecentlyPlayedViewController: UIViewController, UITableViewDataSour
         trackTableView.delegate = self
         trackTableView.reloadData()
         
-        trackTableView.layer.cornerRadius = 8.0
-        trackTableView.clipsToBounds = true
+        blackBoxView.layer.cornerRadius = 8.0
+        blackBoxView.clipsToBounds = true
     }
     
     func displayTracks() {
@@ -122,10 +122,7 @@ class DisplayRecentlyPlayedViewController: UIViewController, UITableViewDataSour
 
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(true)
-        gradient.frame = gradientView.bounds
-        gradient.colors = Constants.themeColors()
-        gradientView.layer.insertSublayer(gradient, at: 0)
-        gradientView.addSubview(trackTableView)
+        blackBoxView.addSubview(trackTableView)
         trackTableView.reloadData()
     }
     
