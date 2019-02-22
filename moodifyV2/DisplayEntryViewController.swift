@@ -148,6 +148,13 @@ class DisplayEntryViewController: UIViewController, UICollectionViewDelegate, UI
         return entry_to_display.associatedTracks.count
     }
 
+    //Delete an entry. may need to add a var?
+    @IBAction func clickDelete(_ sender: UIButton) {
+        print("Clicked!")
+        
+    }
+    
+    
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "displayTrackCollectionViewCell", for: indexPath) as! DisplayTrackCollectionViewCell
         let track = entry_to_display.associatedTracks[indexPath.row]
