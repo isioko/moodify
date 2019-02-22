@@ -236,14 +236,24 @@ class WriteEntryViewController:UIViewController, UITextFieldDelegate, UITextView
     // END: Placeholder text for entryTextView
     
     @IBAction func clickAdd(_ sender: UIButton) {
-        if let entry_text = entryTextView.text{
-            new_entry.entryText = entry_text
+        if entryTextView.text != PLACEHOLDER_TEXT {
+            if let entry_text = entryTextView.text {
+                new_entry.entryText = entry_text
+            }
+        } else {
+            new_entry.entryText = " "
         }
-        if let location = locationLabel.text{
+        
+        if let location = locationLabel.text {
             new_entry.location = location
-
         }
+        
         new_entry.associatedTracks = selectedTracks
+        
+        for track in new_entry.associatedTracks {
+            print(track.trackName)
+        }
+        
         save(entry: new_entry)
     }
     
@@ -338,6 +348,10 @@ class WriteEntryViewController:UIViewController, UITextFieldDelegate, UITextView
                 //drpvc.selectedTracksString = selectedTracksString
             }
         } else if segue.identifier == "showEntriesSegue" {
+            if let etvc = segue.destination as? EntryTabViewController{
+                etvc.newEntry = new_entry
+            }
+        } else if segue.identifier == "backToAllEntriesFromSave" {
             if let etvc = segue.destination as? EntryTabViewController{
                 etvc.newEntry = new_entry
             }

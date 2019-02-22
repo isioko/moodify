@@ -548,6 +548,7 @@
                                 </state>
                                 <connections>
                                     <action selector="clickAdd:" destination="fEb-oX-jyH" eventType="touchUpInside" id="Uy1-pZ-fbQ"/>
+                                    <segue destination="tXn-6T-E1W" kind="show" identifier="backToAllEntriesFromSave" animates="NO" id="KUB-CY-1is"/>
                                 </connections>
                             </button>
                             <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="TQ0-UN-7fs">
@@ -765,8 +766,9 @@
         <image name="xButton" width="27.333333969116211" height="27.333333969116211"/>
     </resources>
     <inferredMetricsTieBreakers>
+        <segue reference="cfa-5L-5Fx"/>
         <segue reference="4gZ-eP-sVl"/>
-        <segue reference="aWB-x6-rs9"/>
+        <segue reference="k8m-tN-fQe"/>
         <segue reference="fna-Md-nNg"/>
     </inferredMetricsTieBreakers>
 </document>

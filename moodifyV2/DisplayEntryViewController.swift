@@ -49,7 +49,7 @@ class DisplayEntryViewController: UIViewController, UICollectionViewDelegate, UI
         dateLabel.text = entry_to_display.relativeDate
         locationLabel.text = entry_to_display.location
         
-                // Make all views have rounded edges
+        // Make all views have rounded edges
         entryTextBubbleView.layer.cornerRadius = 8
         entryTextBubbleView.clipsToBounds = true
         dateBubbleView.layer.cornerRadius = 8
@@ -78,7 +78,7 @@ class DisplayEntryViewController: UIViewController, UICollectionViewDelegate, UI
             NSFetchRequest<NSManagedObject>(entityName: "EntryEntity")
         fetchRequest.fetchLimit = 1
         fetchRequest.predicate = NSPredicate(format: "date == %@", entry_to_display.entryDate as CVarArg)
-        fetchRequest.predicate = NSPredicate(format: "text == %@", entry_to_display.entryText)
+
         //3
         do {
             core_data_objs = try managedContext.fetch(fetchRequest)
@@ -93,22 +93,25 @@ class DisplayEntryViewController: UIViewController, UICollectionViewDelegate, UI
         // add tracks to datasource
         entry_to_display = getEntryFromNSObject(NS_entry: core_data_objs[0] as! NSObject)
         trackCollectionView.reloadData()
+        
+        print("NUM TRACKS:", entry_to_display.associatedTracks.count)
 
-        if entry_to_display.associatedTracks.count == 0{
+        if entry_to_display.associatedTracks.count == 0 {
             trackCollectionView.isHidden = true
             trackCollectionView.alpha = 0
             trackBubbleView.isHidden = true
             trackCollectionView.alpha = 0
         }
+        
         trackCollectionView.reloadData()
         entryTextView.text = entry_to_display.entryText
         gradient.frame = gradientView.bounds
         gradient.colors = Constants.themeColors()
         gradientView.layer.insertSublayer(gradient, at: 0)
         gradientView.addSubview(doneButton)
-        
     }
-    func getEntryFromNSObject(NS_entry:NSObject)->Entry{
+    
+    func getEntryFromNSObject(NS_entry:NSObject)->Entry {
         let entry = Entry()
         entry.entryDate = NS_entry.value(forKey: "date") as! Date
         entry.location = NS_entry.value(forKey: "location") as! String
@@ -125,7 +128,7 @@ class DisplayEntryViewController: UIViewController, UICollectionViewDelegate, UI
     }
 
     
-    func getTrackFromNSObject(NS_track:NSObject)->Track{
+    func getTrackFromNSObject(NS_track:NSObject)->Track {
         let track = Track()
         track.trackName = NS_track.value(forKey: "trackName") as! String
         track.artistName = NS_track.value(forKey: "artistName") as! String
@@ -136,7 +139,7 @@ class DisplayEntryViewController: UIViewController, UICollectionViewDelegate, UI
     }
     
     // Collection View
-    @IBOutlet weak var trackCollectionView: UICollectionView!{
+    @IBOutlet weak var trackCollectionView: UICollectionView! {
         didSet {
             trackCollectionView.dataSource = self
             trackCollectionView.delegate = self
