@@ -360,13 +360,6 @@
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <slider opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" fixedFrame="YES" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" minValue="-10" maxValue="10" continuous="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iNq-ug-Zcd" userLabel="Senitment Slider">
-                                        <rect key="frame" x="12" y="310" width="351" height="30"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <connections>
-                                            <action selector="sentimentSlider:" destination="jp0-Vd-qDB" eventType="valueChanged" id="zlf-ju-BfR"/>
-                                        </connections>
-                                    </slider>
                                     <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="cKd-4e-1KW">
                                         <rect key="frame" x="14" y="358" width="347" height="388"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -442,6 +435,21 @@
                                             </collectionViewCell>
                                         </cells>
                                     </collectionView>
+                                    <slider opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" fixedFrame="YES" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" minValue="-10" maxValue="10" continuous="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iNq-ug-Zcd" userLabel="Senitment Slider">
+                                        <rect key="frame" x="57" y="310" width="260" height="30"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <connections>
+                                            <action selector="sentimentSlider:" destination="jp0-Vd-qDB" eventType="valueChanged" id="zlf-ju-BfR"/>
+                                        </connections>
+                                    </slider>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="sad" translatesAutoresizingMaskIntoConstraints="NO" id="8NC-9z-Yes">
+                                        <rect key="frame" x="14" y="307" width="37" height="35"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    </imageView>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="happy" translatesAutoresizingMaskIntoConstraints="NO" id="4xS-AP-fyx">
+                                        <rect key="frame" x="323" y="307" width="37" height="35"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    </imageView>
                                 </subviews>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </view>
@@ -841,8 +849,10 @@
         <image name="blueLocation" width="22" height="39"/>
         <image name="checkmark" width="37" height="37"/>
         <image name="continue" width="93" height="50"/>
+        <image name="happy" width="169" height="161"/>
         <image name="moodify-start-logo-01.png" width="1140" height="540"/>
         <image name="plusButton" width="94" height="94"/>
+        <image name="sad" width="162" height="151"/>
         <image name="saveIcon" width="32" height="37"/>
         <image name="xButton" width="27" height="27"/>
     </resources>
