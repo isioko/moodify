@@ -465,7 +465,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Biu-yT-nZz">
-                                <rect key="frame" x="287" y="673" width="55" height="55"/>
+                                <rect key="frame" x="287" y="690" width="55" height="55"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="55" id="EfI-9q-n6x"/>
                                     <constraint firstAttribute="height" constant="55" id="rdp-80-kkD"/>
@@ -478,7 +478,7 @@
                                 </connections>
                             </button>
                             <view opaque="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="mxe-GF-5kg">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                                <rect key="frame" x="0.0" y="44" width="375" height="734"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <subviews>
                                     <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="wgQ-sU-tnF">
@@ -579,8 +579,8 @@
                         </subviews>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="Biu-yT-nZz" firstAttribute="leading" secondItem="CwX-hJ-KA2" secondAttribute="leading" constant="287" id="CeL-lw-dZz"/>
-                            <constraint firstItem="CwX-hJ-KA2" firstAttribute="bottom" secondItem="Biu-yT-nZz" secondAttribute="bottom" constant="50" id="UPB-6e-3Jl"/>
+                            <constraint firstItem="CwX-hJ-KA2" firstAttribute="trailing" secondItem="Biu-yT-nZz" secondAttribute="trailing" constant="33" id="OEU-Ry-2dl"/>
+                            <constraint firstItem="CwX-hJ-KA2" firstAttribute="bottom" secondItem="Biu-yT-nZz" secondAttribute="bottom" constant="33" id="dDY-pj-Qmg"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="CwX-hJ-KA2"/>
                     </view>
@@ -831,6 +831,6 @@
     <inferredMetricsTieBreakers>
         <segue reference="fwe-Sq-vFa"/>
         <segue reference="koC-nw-clj"/>
-        <segue reference="F7f-Jd-g9G"/>
+        <segue reference="fna-Md-nNg"/>
     </inferredMetricsTieBreakers>
 </document>
