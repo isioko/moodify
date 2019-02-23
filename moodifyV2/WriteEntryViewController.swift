@@ -95,7 +95,6 @@ class WriteEntryViewController:UIViewController, UITextFieldDelegate, UITextView
 
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         guard let locValue: CLLocationCoordinate2D = manager.location?.coordinate else { return }
-        //print("locations = \(locValue.latitude) \(locValue.longitude)")
         lookUpCurrentLocation(completionHandler: {completionHandler in
             if let completionHandler = completionHandler{
                 if let new_location = completionHandler.locality{
@@ -198,7 +197,6 @@ class WriteEntryViewController:UIViewController, UITextFieldDelegate, UITextView
         gradientView.layer.insertSublayer(gradient, at: 0)
         gradientView.addSubview(addButton)
         gradientView.addSubview(cancelButton)
-        //gradientView.addSubview(entryTextView)
         
         // START: Placeholder Text
         if entryTextView.text == "" {
@@ -249,11 +247,6 @@ class WriteEntryViewController:UIViewController, UITextFieldDelegate, UITextView
         }
         
         new_entry.associatedTracks = selectedTracks
-        
-        for track in new_entry.associatedTracks {
-            print(track.trackName)
-        }
-        
         save(entry: new_entry)
     }
     

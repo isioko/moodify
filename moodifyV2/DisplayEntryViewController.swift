@@ -94,8 +94,6 @@ class DisplayEntryViewController: UIViewController, UICollectionViewDelegate, UI
         entry_to_display = getEntryFromNSObject(NS_entry: core_data_objs[0] as! NSObject)
         trackCollectionView.reloadData()
         
-        print("NUM TRACKS:", entry_to_display.associatedTracks.count)
-
         if entry_to_display.associatedTracks.count == 0 {
             trackCollectionView.isHidden = true
             trackCollectionView.alpha = 0

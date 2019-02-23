@@ -11,17 +11,18 @@ import UIKit
 
 class AssociatedEntryViewCell:UICollectionViewCell{
     @IBOutlet weak var entryTextLabel: UILabel!
-    @IBOutlet weak var dateLabel: UILabel!
     @IBOutlet weak var relativeDateLabel: UILabel!
+    @IBOutlet weak var dateLabel: UILabel!
     @IBOutlet weak var locationLabel: UILabel!
     @IBOutlet weak var locationImage: UIImageView!
+    
     func displayContent(entry: Entry){
         entryTextLabel.text = entry.entryText
         let formatter = DateFormatter()
         formatter.dateFormat = "MMMM dd, yyyy"
         dateLabel.text = formatter.string(from: entry.entryDate)
         locationLabel.text = entry.location
-        locationImage.image = UIImage(named: "location-logo.png")
+        locationImage.image = UIImage(named: "blackLocation")
 //        numTracksLabel.text = String(entry.associatedTracks.count)
 
         let numDays = getNumDays(date: entry.entryDate)
@@ -29,7 +30,8 @@ class AssociatedEntryViewCell:UICollectionViewCell{
 
         relativeDateLabel.text = relativeDateForEntry
     }
-    func getNumDays(date: Date) -> Int{
+    
+    func getNumDays(date: Date) -> Int {
         let formatter = DateFormatter()
         formatter.dateFormat = "yyyy/MM/dd HH:mm"
         
