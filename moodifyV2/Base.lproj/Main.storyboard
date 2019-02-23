@@ -353,8 +353,22 @@
                                         </subviews>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     </view>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Sentiment Valence of Associated Entries:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AHQ-b6-FRL">
+                                        <rect key="frame" x="14" y="281" width="347" height="21"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <slider opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" fixedFrame="YES" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" minValue="-10" maxValue="10" continuous="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iNq-ug-Zcd" userLabel="Senitment Slider">
+                                        <rect key="frame" x="12" y="310" width="351" height="30"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <connections>
+                                            <action selector="sentimentSlider:" destination="jp0-Vd-qDB" eventType="valueChanged" id="zlf-ju-BfR"/>
+                                        </connections>
+                                    </slider>
                                     <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="cKd-4e-1KW">
-                                        <rect key="frame" x="14" y="258" width="347" height="488"/>
+                                        <rect key="frame" x="14" y="358" width="347" height="388"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="11" minimumInteritemSpacing="11" id="xOf-dx-iEi">
@@ -450,6 +464,7 @@
                         <outlet property="assocEntriesCollectionView" destination="cKd-4e-1KW" id="BYk-5V-K2h"/>
                         <outlet property="coverArtImage" destination="Fr8-gB-7F8" id="jFL-hJ-8i8"/>
                         <outlet property="gradientView" destination="Qwf-ho-maX" id="hAK-dh-V7O"/>
+                        <outlet property="sentimentSlider" destination="iNq-ug-Zcd" id="g1h-N0-f1k"/>
                         <outlet property="songBubbleView" destination="8pE-q7-d6U" id="EvW-vX-SFx"/>
                         <outlet property="trackNameLabel" destination="Ds3-P8-9Yg" id="OHQ-7Q-1EB"/>
                     </connections>
@@ -834,6 +849,6 @@
     <inferredMetricsTieBreakers>
         <segue reference="fwe-Sq-vFa"/>
         <segue reference="KUB-CY-1is"/>
-        <segue reference="F7f-Jd-g9G"/>
+        <segue reference="Bu7-jL-oSM"/>
     </inferredMetricsTieBreakers>
 </document>

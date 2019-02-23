@@ -22,6 +22,7 @@ class ViewAssociatedEntriesViewController:UIViewController, UICollectionViewDele
     
     @IBOutlet weak var gradientView: UIView!
     @IBOutlet weak var songBubbleView: UIView!
+    @IBOutlet var sentimentSlider: UISlider!
     
     let gradient = CAGradientLayer()
 
@@ -83,20 +84,26 @@ class ViewAssociatedEntriesViewController:UIViewController, UICollectionViewDele
         
         // TESTING SENT ANAL HERE
         let sentiment = Sentimently()
+        var total = 0.0
         for assoc_entry in assoc_entries{
             print(assoc_entry.entryText)
-            print(sentiment.score(assoc_entry.entryText)) //TEST
             entries.append(assoc_entry)
+            total += Double(sentiment.score(assoc_entry.entryText).score)
+            //print(sentiment.score(assoc_entry.entryText)) //TEST
             
         }
-        assocEntriesCollectionView.reloadData()
         
+        //Get average sentiment of associated entries
+        total = total/Double(assoc_entries.count)
+        sentimentSlider.setValue(Float(total), animated: true)
+        
+        assocEntriesCollectionView.reloadData()
         trackNameLabel.text = track_obj.trackName
         artistNameLabel.text = track_obj.artistName
         coverArtImage.image = track_obj.trackArtworkImage
-        
-        
     }
+    
+    
     @IBOutlet weak var trackNameLabel: UILabel!
     @IBOutlet weak var coverArtImage: UIImageView!
     @IBOutlet weak var artistNameLabel: UILabel!
