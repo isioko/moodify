@@ -252,6 +252,7 @@
                                         </state>
                                         <connections>
                                             <action selector="clickDelete:" destination="QU1-nM-dcV" eventType="touchUpInside" id="XaR-YC-bMB"/>
+                                            <segue destination="tXn-6T-E1W" kind="show" id="Kt8-03-4gy"/>
                                         </connections>
                                     </button>
                                 </subviews>

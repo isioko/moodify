@@ -22,4 +22,13 @@ class Entry {
         self.entryDate = date
         self.relativeDate = ""
     }
+    
+    func isEqual(compare_with : Entry)-> Bool{
+        if entryText != compare_with.entryText {return false}
+        if location != compare_with.location {return false}
+        if entryDate != compare_with.entryDate {return false}
+        // add comparison on tracks!!
+        //if associatedTracks != compare_with.associatedTracks {return false}
+        return true
+    }
 }

@@ -148,11 +148,36 @@ class DisplayEntryViewController: UIViewController, UICollectionViewDelegate, UI
         return entry_to_display.associatedTracks.count
     }
 
-    //Delete an entry. may need to add a var?
+    //Delete an entry. Makes use of isEqual function in Entry, which does not walk through tracks.
+    // Improvement: add notification upon arriving back at entry tab view controller that an entry has been deleted.
     @IBAction func clickDelete(_ sender: UIButton) {
         print("Clicked!")
         
+        guard let appDelegate =
+            UIApplication.shared.delegate as? AppDelegate else {
+                return
+        }
+        
+        let context = appDelegate.persistentContainer.viewContext
+        let fetchRequest = NSFetchRequest<NSManagedObject>(entityName: "EntryEntity")
+        var core_data_entries: [NSObject] = []
+        
+        do {
+            core_data_entries = try context.fetch(fetchRequest)
+            for obj in core_data_entries {
+                let compare_with = getEntryFromNSObject(NS_entry: obj)
+                if compare_with.isEqual(compare_with: entry_to_display) {
+                    context.delete(obj as! NSManagedObject)
+                    break
+                }
+            }
+        } catch let error as NSError {
+            print("Could not fetch. \(error), \(error.userInfo)")
+        }
+        
     }
+    
+    
     
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
