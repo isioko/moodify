@@ -95,7 +95,6 @@ class WriteEntryViewController:UIViewController, UITextFieldDelegate, UITextView
 
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         guard let locValue: CLLocationCoordinate2D = manager.location?.coordinate else { return }
-        //print("locations = \(locValue.latitude) \(locValue.longitude)")
         lookUpCurrentLocation(completionHandler: {completionHandler in
             if let completionHandler = completionHandler{
                 if let new_location = completionHandler.locality{
@@ -198,7 +197,6 @@ class WriteEntryViewController:UIViewController, UITextFieldDelegate, UITextView
         gradientView.layer.insertSublayer(gradient, at: 0)
         gradientView.addSubview(addButton)
         gradientView.addSubview(cancelButton)
-        //gradientView.addSubview(entryTextView)
         
         // START: Placeholder Text
         if entryTextView.text == "" {
@@ -236,13 +234,18 @@ class WriteEntryViewController:UIViewController, UITextFieldDelegate, UITextView
     // END: Placeholder text for entryTextView
     
     @IBAction func clickAdd(_ sender: UIButton) {
-        if let entry_text = entryTextView.text{
-            new_entry.entryText = entry_text
+        if entryTextView.text != PLACEHOLDER_TEXT {
+            if let entry_text = entryTextView.text {
+                new_entry.entryText = entry_text
+            }
+        } else {
+            new_entry.entryText = " "
         }
-        if let location = locationLabel.text{
+        
+        if let location = locationLabel.text {
             new_entry.location = location
-
         }
+        
         new_entry.associatedTracks = selectedTracks
         save(entry: new_entry)
     }
@@ -338,6 +341,10 @@ class WriteEntryViewController:UIViewController, UITextFieldDelegate, UITextView
                 //drpvc.selectedTracksString = selectedTracksString
             }
         } else if segue.identifier == "showEntriesSegue" {
+            if let etvc = segue.destination as? EntryTabViewController{
+                etvc.newEntry = new_entry
+            }
+        } else if segue.identifier == "backToAllEntriesFromSave" {
             if let etvc = segue.destination as? EntryTabViewController{
                 etvc.newEntry = new_entry
             }

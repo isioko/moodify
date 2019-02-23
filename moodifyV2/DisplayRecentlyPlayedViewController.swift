@@ -34,8 +34,10 @@ class DisplayRecentlyPlayedViewController: UIViewController, UITableViewDataSour
         cell.displayTrack(track: track)
         
         if selectedRows[indexPath.row] {
-            cell.accessoryType = .checkmark
+            cell.checkmarkView.isHidden = false
+            //cell.accessoryType = .checkmark
         } else {
+            cell.checkmarkView.isHidden = true
             cell.accessoryType = .none
         }
         cell.setNeedsLayout()
@@ -109,14 +111,23 @@ class DisplayRecentlyPlayedViewController: UIViewController, UITableViewDataSour
             }
         }
     }
+
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         selectedRows[indexPath.row] = !selectedRows[indexPath.row]
 
+        let cell = tableView.dequeueReusableCell(withIdentifier: "trackTableViewCell", for: indexPath) as! TrackTableViewCell
+
         if selectedRows[indexPath.row] {
-            tableView.cellForRow(at: indexPath)?.accessoryType = .checkmark
+            cell.checkmarkView.isHidden = false
+            tableView.beginUpdates()
+            tableView.reloadRows(at: [indexPath], with: UITableView.RowAnimation.none)
+            tableView.endUpdates()
         } else {
-            tableView.cellForRow(at: indexPath)?.accessoryType = .none
+            cell.checkmarkView.isHidden = true
+            tableView.beginUpdates()
+            tableView.reloadRows(at: [indexPath], with: UITableView.RowAnimation.none)
+            tableView.endUpdates()
         }
     }
 

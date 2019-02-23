@@ -21,6 +21,7 @@ class ViewAssociatedEntriesViewController:UIViewController, UICollectionViewDele
     public var entry_to_display = Entry.init()
     
     @IBOutlet weak var gradientView: UIView!
+    @IBOutlet weak var songBubbleView: UIView!
     
     let gradient = CAGradientLayer()
 
@@ -42,10 +43,11 @@ class ViewAssociatedEntriesViewController:UIViewController, UICollectionViewDele
         gradient.frame = gradientView.bounds
         gradient.colors = Constants.themeColors()
         gradientView.layer.insertSublayer(gradient, at: 0)
-        gradientView.addSubview(assocEntriesCollectionView)
-        gradientView.addSubview(coverArtImage)
-        gradientView.addSubview(trackNameLabel)
-        gradientView.addSubview(artistNameLabel)
+        
+        songBubbleView.backgroundColor = UIColor.white
+        songBubbleView.layer.cornerRadius = 8.0
+        songBubbleView.layer.masksToBounds = true
+        
         // CORE DATA
         
         //1
@@ -132,7 +134,7 @@ class ViewAssociatedEntriesViewController:UIViewController, UICollectionViewDele
                 
                 devc.entry_to_display = entry_to_display
             }
-        }else if segue.identifier == "inspectAssociatedEntrySegue"{
+        } else if segue.identifier == "inspectAssociatedEntrySegue" {
             if let devc = segue.destination as? DisplayEntryViewController {
                 let entry_cell = sender as! AssociatedEntryViewCell
                 let indexPath = self.assocEntriesCollectionView!.indexPath(for: entry_cell)
