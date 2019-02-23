@@ -80,9 +80,14 @@ class ViewAssociatedEntriesViewController:UIViewController, UICollectionViewDele
         // TO DO: get tracks from Core Data so can display sorted
         let track_obj = getTrackFromNSObject(NS_track: core_data_objs[0] as! NSObject)
         let assoc_entries = track_obj.associatedEntries
+        
+        // TESTING SENT ANAL HERE
+        let sentiment = Sentimently()
         for assoc_entry in assoc_entries{
             print(assoc_entry.entryText)
+            print(sentiment.score(assoc_entry.entryText)) //TEST
             entries.append(assoc_entry)
+            
         }
         assocEntriesCollectionView.reloadData()
         

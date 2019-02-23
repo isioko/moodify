@@ -178,8 +178,6 @@ class DisplayEntryViewController: UIViewController, UICollectionViewDelegate, UI
     }
     
     
-    
-    
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "displayTrackCollectionViewCell", for: indexPath) as! DisplayTrackCollectionViewCell
         let track = entry_to_display.associatedTracks[indexPath.row]

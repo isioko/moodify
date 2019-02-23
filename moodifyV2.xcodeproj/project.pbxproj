@@ -20,7 +20,7 @@
 		4C3C6418220AA8B000ED4364 /* TrackTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C3C6417220AA8B000ED4364 /* TrackTableViewCell.swift */; };
 		4C3C641A220AA9C800ED4364 /* Track.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C3C6419220AA9C800ED4364 /* Track.swift */; };
 		4C48A9BD2207C07C0073DF63 /* Entry.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C48A9BC2207C07C0073DF63 /* Entry.swift */; };
-		4C48A9C22207C1690073DF63 /* Song.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C48A9C12207C1690073DF63 /* Song.swift */; };
+		4C48A9C22207C1690073DF63 /* Sentimental.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C48A9C12207C1690073DF63 /* Sentimental.swift */; };
 		4C4B43FD22127ED00022DD3E /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C4B43FC22127ED00022DD3E /* Extensions.swift */; };
 		4C6B3DCE220BFA2800C79C61 /* AuthorizeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C6B3DCD220BFA2800C79C61 /* AuthorizeViewController.swift */; };
 		4C70D9E4220F59B200EA9E8B /* DisplayTrackCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C70D9E3220F59B200EA9E8B /* DisplayTrackCollectionViewCell.swift */; };
@@ -45,6 +45,7 @@
 		6A202C2322115D0E0004E98E /* Hind-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 6A202C1E22115D0D0004E98E /* Hind-Medium.ttf */; };
 		6A202C2722116EE10004E98E /* location-logo.png in Resources */ = {isa = PBXBuildFile; fileRef = 6A202C2622116EE10004E98E /* location-logo.png */; };
 		6A202C2B221174E00004E98E /* moodify-start-logo-01.png in Resources */ = {isa = PBXBuildFile; fileRef = 6A202C2A221174DF0004E98E /* moodify-start-logo-01.png */; };
+		BAC72FD82221E7D0008135E8 /* AFINN.json in Resources */ = {isa = PBXBuildFile; fileRef = BAC72FD72221E7CF008135E8 /* AFINN.json */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -60,7 +61,7 @@
 		4C3C6417220AA8B000ED4364 /* TrackTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrackTableViewCell.swift; sourceTree = "<group>"; };
 		4C3C6419220AA9C800ED4364 /* Track.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Track.swift; sourceTree = "<group>"; };
 		4C48A9BC2207C07C0073DF63 /* Entry.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Entry.swift; sourceTree = "<group>"; };
-		4C48A9C12207C1690073DF63 /* Song.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Song.swift; sourceTree = "<group>"; };
+		4C48A9C12207C1690073DF63 /* Sentimental.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Sentimental.swift; sourceTree = "<group>"; };
 		4C4B43FC22127ED00022DD3E /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		4C6B3DCD220BFA2800C79C61 /* AuthorizeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthorizeViewController.swift; sourceTree = "<group>"; };
 		4C70D9E3220F59B200EA9E8B /* DisplayTrackCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DisplayTrackCollectionViewCell.swift; sourceTree = "<group>"; };
@@ -89,6 +90,7 @@
 		6A202C2A221174DF0004E98E /* moodify-start-logo-01.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "moodify-start-logo-01.png"; sourceTree = "<group>"; };
 		8C90D3268E6E46F747930A44 /* Pods-moodifyV2.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-moodifyV2.release.xcconfig"; path = "Pods/Target Support Files/Pods-moodifyV2/Pods-moodifyV2.release.xcconfig"; sourceTree = "<group>"; };
 		9DF3280B68B789ACFDA7F122 /* Pods-moodifyV2.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-moodifyV2.debug.xcconfig"; path = "Pods/Target Support Files/Pods-moodifyV2/Pods-moodifyV2.debug.xcconfig"; sourceTree = "<group>"; };
+		BAC72FD72221E7CF008135E8 /* AFINN.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = AFINN.json; path = ../../../Win19/SentimentlySwift/SentimentlySwift.playground/Resources/AFINN.json; sourceTree = "<group>"; };
 		D834A758439C8C3D28916217 /* Pods_moodifyV2.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_moodifyV2.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -110,7 +112,7 @@
 				4C3C6419220AA9C800ED4364 /* Track.swift */,
 				4C48A9BC2207C07C0073DF63 /* Entry.swift */,
 				4CF6E9B3220819EF00836FC6 /* Entries.swift */,
-				4C48A9C12207C1690073DF63 /* Song.swift */,
+				4C48A9C12207C1690073DF63 /* Sentimental.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -183,6 +185,7 @@
 			children = (
 				5AF0F721221E8FB100EFE1DD /* Constants.swift */,
 				6A202C1A22115D0D0004E98E /* Hind-Bold.ttf */,
+				BAC72FD72221E7CF008135E8 /* AFINN.json */,
 				6A202C1B22115D0D0004E98E /* Hind-Light.ttf */,
 				6A202C1E22115D0D0004E98E /* Hind-Medium.ttf */,
 				6A202C1C22115D0D0004E98E /* Hind-Regular.ttf */,
@@ -274,6 +277,7 @@
 				6A202C2B221174E00004E98E /* moodify-start-logo-01.png in Resources */,
 				6A202C2022115D0E0004E98E /* Hind-Light.ttf in Resources */,
 				6A202C2322115D0E0004E98E /* Hind-Medium.ttf in Resources */,
+				BAC72FD82221E7D0008135E8 /* AFINN.json in Resources */,
 				6A202C2722116EE10004E98E /* location-logo.png in Resources */,
 				6A202C2222115D0E0004E98E /* Hind-SemiBold.ttf in Resources */,
 				6A0C5FAE2204179A00666370 /* Assets.xcassets in Resources */,
@@ -343,7 +347,7 @@
 				4C4B43FD22127ED00022DD3E /* Extensions.swift in Sources */,
 				4C37461D2219357F003B90A7 /* AssociatedEntryViewCell.swift in Sources */,
 				4CF6E9A82208024000836FC6 /* HomePageTabBarViewController.swift in Sources */,
-				4C48A9C22207C1690073DF63 /* Song.swift in Sources */,
+				4C48A9C22207C1690073DF63 /* Sentimental.swift in Sources */,
 				4C374615221915BA003B90A7 /* TrackEntity+CoreDataProperties.swift in Sources */,
 				4C6B3DCE220BFA2800C79C61 /* AuthorizeViewController.swift in Sources */,
 				4C374616221915BA003B90A7 /* EntryEntity+CoreDataClass.swift in Sources */,
