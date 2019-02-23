@@ -169,6 +169,7 @@ class DisplayEntryViewController: UIViewController, UICollectionViewDelegate, UI
                 let compare_with = getEntryFromNSObject(NS_entry: obj)
                 if compare_with.isEqual(compare_with: entry_to_display) {
                     context.delete(obj as! NSManagedObject)
+                    try context.save()
                     break
                 }
             }
