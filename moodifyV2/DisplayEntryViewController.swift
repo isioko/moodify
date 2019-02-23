@@ -149,7 +149,7 @@ class DisplayEntryViewController: UIViewController, UICollectionViewDelegate, UI
         return entry_to_display.associatedTracks.count
     }
 
-    //Delete an entry. Makes use of isEqual function in Entry, which does not walk through tracks.
+    //Delete an entry. NOTE: makes use of isEqual function in Entry, which does not walk through tracks.
     // Improvement: add notification upon arriving back at entry tab view controller that an entry has been deleted.
     @IBAction func clickDelete(_ sender: UIButton) {
         print("Clicked!")
@@ -175,7 +175,6 @@ class DisplayEntryViewController: UIViewController, UICollectionViewDelegate, UI
         } catch let error as NSError {
             print("Could not fetch. \(error), \(error.userInfo)")
         }
-        
     }
     
     

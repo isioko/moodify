@@ -23,12 +23,13 @@ class Entry {
         self.relativeDate = ""
     }
     
+    // NOTE: only goes so far as to compare SIZE of tracks array; does not loop through tracks
     func isEqual(compare_with : Entry)-> Bool{
         if entryText != compare_with.entryText {return false}
         if location != compare_with.location {return false}
         if entryDate != compare_with.entryDate {return false}
-        // add comparison on tracks!!
-        //if associatedTracks != compare_with.associatedTracks {return false}
+        // only compares SIZE of track lists
+        if associatedTracks.count != compare_with.associatedTracks.count {return false}
         return true
     }
 }
