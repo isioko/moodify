@@ -107,6 +107,7 @@ class ViewAssociatedEntriesViewController:UIViewController, UICollectionViewDele
     @IBOutlet weak var trackNameLabel: UILabel!
     @IBOutlet weak var coverArtImage: UIImageView!
     @IBOutlet weak var artistNameLabel: UILabel!
+    @IBOutlet weak var numEntriesLabel: UILabel!
     
     func getEntryFromNSObject(NS_entry:NSObject)->Entry{
         let entry = Entry()
@@ -124,10 +125,15 @@ class ViewAssociatedEntriesViewController:UIViewController, UICollectionViewDele
 
         let entries_found = NS_track.value(forKey: "associatedEntry") as! NSSet
         var entries_assoc = [Entry]()
+        
+        var numEntries: Int = 0
+        
         for entry_entity in entries_found{
             let entry = getEntryFromNSObject(NS_entry: entry_entity as! NSObject)
             entries_assoc.append(entry)
+            numEntries += 1
         }
+        numEntriesLabel.text = String(numEntries)
         track.associatedEntries = entries_assoc
         let data = NS_track.value(forKey: "coverArt") as! Data
         track.trackArtworkImage = UIImage(data: data)

@@ -163,7 +163,7 @@
                                     <button opaque="NO" contentMode="scaleAspectFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GG0-Yo-EwV">
                                         <rect key="frame" x="30" y="52" width="315" height="648"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <state key="normal" title="Page One" image="tutorialPageOne"/>
+                                        <state key="normal" image="tutorialPageOne"/>
                                         <connections>
                                             <segue destination="qh4-mY-EPU" kind="show" animates="NO" id="vtO-jH-J3A"/>
                                         </connections>
@@ -322,10 +322,10 @@
                                             <segue destination="tXn-6T-E1W" kind="show" animates="NO" id="aWB-x6-rs9"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sKS-rv-Xax" userLabel="Delete Button">
-                                        <rect key="frame" x="318" y="45" width="43" height="44"/>
+                                    <button opaque="NO" contentMode="scaleAspectFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sKS-rv-Xax" userLabel="Delete Button">
+                                        <rect key="frame" x="329" y="44" width="32" height="33"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <state key="normal" image="xButton">
+                                        <state key="normal" image="trashCan">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </state>
                                         <connections>
@@ -392,6 +392,17 @@
                                                 <rect key="frame" x="9" y="9" width="133" height="133"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             </imageView>
+                                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="blackEntries" translatesAutoresizingMaskIntoConstraints="NO" id="ZZW-I7-Nwf" userLabel="Num Entries Image">
+                                                <rect key="frame" x="304" y="122" width="15" height="21"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            </imageView>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="3" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RN7-C7-3Id" userLabel="Num Entries Label">
+                                                <rect key="frame" x="324" y="122" width="16" height="21"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <fontDescription key="fontDescription" name="Hind-Regular" family="Hind" pointSize="15"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
                                         </subviews>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     </view>
@@ -514,6 +525,7 @@
                         <outlet property="assocEntriesCollectionView" destination="cKd-4e-1KW" id="BYk-5V-K2h"/>
                         <outlet property="coverArtImage" destination="Fr8-gB-7F8" id="jFL-hJ-8i8"/>
                         <outlet property="gradientView" destination="Qwf-ho-maX" id="hAK-dh-V7O"/>
+                        <outlet property="numEntriesLabel" destination="RN7-C7-3Id" id="780-J8-zmL"/>
                         <outlet property="sentimentSlider" destination="iNq-ug-Zcd" id="g1h-N0-f1k"/>
                         <outlet property="songBubbleView" destination="8pE-q7-d6U" id="EvW-vX-SFx"/>
                         <outlet property="trackNameLabel" destination="Ds3-P8-9Yg" id="OHQ-7Q-1EB"/>
@@ -970,6 +982,7 @@
     <resources>
         <image name="authButton" width="1014" height="150"/>
         <image name="backButton" width="41" height="33.333332061767578"/>
+        <image name="blackEntries" width="18" height="24.333333969116211"/>
         <image name="blackHeadphones" width="24.666666030883789" height="20.666666030883789"/>
         <image name="blackLocation" width="10.666666984558105" height="18.333333969116211"/>
         <image name="blueCalIcon" width="41" height="48.666667938232422"/>
@@ -983,6 +996,7 @@
         <image name="sad" width="162" height="151"/>
         <image name="saveIcon" width="32" height="37"/>
         <image name="skipTutorial" width="134" height="50"/>
+        <image name="trashCan" width="49" height="61"/>
         <image name="tutorialPageOne" width="312" height="648"/>
         <image name="tutorialPageThree" width="312" height="648"/>
         <image name="tutorialPageTwo" width="312" height="648"/>
@@ -990,7 +1004,7 @@
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="fwe-Sq-vFa"/>
-        <segue reference="k8m-tN-fQe"/>
+        <segue reference="aWB-x6-rs9"/>
         <segue reference="Bu7-jL-oSM"/>
     </inferredMetricsTieBreakers>
 </document>
