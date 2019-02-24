@@ -39,13 +39,12 @@
 		6A0C5FB12204179A00666370 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6A0C5FAF2204179A00666370 /* LaunchScreen.storyboard */; };
 		6A202C182211570E0004E98E /* group 2.png in Resources */ = {isa = PBXBuildFile; fileRef = 6A202C172211570E0004E98E /* group 2.png */; };
 		6A202C1F22115D0E0004E98E /* Hind-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 6A202C1A22115D0D0004E98E /* Hind-Bold.ttf */; };
-		6A202C2022115D0E0004E98E /* Hind-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 6A202C1B22115D0D0004E98E /* Hind-Light.ttf */; };
+		6A202C2022115D0E0004E98E /* AFINN.json in Resources */ = {isa = PBXBuildFile; fileRef = 6A202C1B22115D0D0004E98E /* AFINN.json */; };
 		6A202C2122115D0E0004E98E /* Hind-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 6A202C1C22115D0D0004E98E /* Hind-Regular.ttf */; };
 		6A202C2222115D0E0004E98E /* Hind-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 6A202C1D22115D0D0004E98E /* Hind-SemiBold.ttf */; };
 		6A202C2322115D0E0004E98E /* Hind-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 6A202C1E22115D0D0004E98E /* Hind-Medium.ttf */; };
 		6A202C2722116EE10004E98E /* location-logo.png in Resources */ = {isa = PBXBuildFile; fileRef = 6A202C2622116EE10004E98E /* location-logo.png */; };
 		6A202C2B221174E00004E98E /* moodify-start-logo-01.png in Resources */ = {isa = PBXBuildFile; fileRef = 6A202C2A221174DF0004E98E /* moodify-start-logo-01.png */; };
-		BAC72FD82221E7D0008135E8 /* AFINN.json in Resources */ = {isa = PBXBuildFile; fileRef = BAC72FD72221E7CF008135E8 /* AFINN.json */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -82,7 +81,7 @@
 		6A0C5FB22204179A00666370 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		6A202C172211570E0004E98E /* group 2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "group 2.png"; sourceTree = "<group>"; };
 		6A202C1A22115D0D0004E98E /* Hind-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Hind-Bold.ttf"; sourceTree = "<group>"; };
-		6A202C1B22115D0D0004E98E /* Hind-Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Hind-Light.ttf"; path = "moodifyV2/Resources/Hind-Light.ttf"; sourceTree = SOURCE_ROOT; };
+		6A202C1B22115D0D0004E98E /* AFINN.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; name = AFINN.json; path = moodifyV2/Resources/AFINN.json; sourceTree = SOURCE_ROOT; };
 		6A202C1C22115D0D0004E98E /* Hind-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Hind-Regular.ttf"; sourceTree = "<group>"; };
 		6A202C1D22115D0D0004E98E /* Hind-SemiBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Hind-SemiBold.ttf"; sourceTree = "<group>"; };
 		6A202C1E22115D0D0004E98E /* Hind-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Hind-Medium.ttf"; sourceTree = "<group>"; };
@@ -90,7 +89,6 @@
 		6A202C2A221174DF0004E98E /* moodify-start-logo-01.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "moodify-start-logo-01.png"; sourceTree = "<group>"; };
 		8C90D3268E6E46F747930A44 /* Pods-moodifyV2.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-moodifyV2.release.xcconfig"; path = "Pods/Target Support Files/Pods-moodifyV2/Pods-moodifyV2.release.xcconfig"; sourceTree = "<group>"; };
 		9DF3280B68B789ACFDA7F122 /* Pods-moodifyV2.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-moodifyV2.debug.xcconfig"; path = "Pods/Target Support Files/Pods-moodifyV2/Pods-moodifyV2.debug.xcconfig"; sourceTree = "<group>"; };
-		BAC72FD72221E7CF008135E8 /* AFINN.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = AFINN.json; path = ../../../Win19/SentimentlySwift/SentimentlySwift.playground/Resources/AFINN.json; sourceTree = "<group>"; };
 		D834A758439C8C3D28916217 /* Pods_moodifyV2.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_moodifyV2.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -185,8 +183,7 @@
 			children = (
 				5AF0F721221E8FB100EFE1DD /* Constants.swift */,
 				6A202C1A22115D0D0004E98E /* Hind-Bold.ttf */,
-				BAC72FD72221E7CF008135E8 /* AFINN.json */,
-				6A202C1B22115D0D0004E98E /* Hind-Light.ttf */,
+				6A202C1B22115D0D0004E98E /* AFINN.json */,
 				6A202C1E22115D0D0004E98E /* Hind-Medium.ttf */,
 				6A202C1C22115D0D0004E98E /* Hind-Regular.ttf */,
 				6A202C1D22115D0D0004E98E /* Hind-SemiBold.ttf */,
@@ -275,9 +272,8 @@
 				6A0C5FB12204179A00666370 /* LaunchScreen.storyboard in Resources */,
 				6A202C182211570E0004E98E /* group 2.png in Resources */,
 				6A202C2B221174E00004E98E /* moodify-start-logo-01.png in Resources */,
-				6A202C2022115D0E0004E98E /* Hind-Light.ttf in Resources */,
+				6A202C2022115D0E0004E98E /* AFINN.json in Resources */,
 				6A202C2322115D0E0004E98E /* Hind-Medium.ttf in Resources */,
-				BAC72FD82221E7D0008135E8 /* AFINN.json in Resources */,
 				6A202C2722116EE10004E98E /* location-logo.png in Resources */,
 				6A202C2222115D0E0004E98E /* Hind-SemiBold.ttf in Resources */,
 				6A0C5FAE2204179A00666370 /* Assets.xcassets in Resources */,
@@ -517,13 +513,13 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = AXP224W4VX;
+				DEVELOPMENT_TEAM = 3DZD66GQPU;
 				INFOPLIST_FILE = moodifyV2/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = edu.stanford.dharding;
+				PRODUCT_BUNDLE_IDENTIFIER = edu.stanford.shelbym;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -536,13 +532,13 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = AXP224W4VX;
+				DEVELOPMENT_TEAM = 3DZD66GQPU;
 				INFOPLIST_FILE = moodifyV2/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = edu.stanford.dharding;
+				PRODUCT_BUNDLE_IDENTIFIER = edu.stanford.shelbym;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
