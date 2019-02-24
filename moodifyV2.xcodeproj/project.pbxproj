@@ -31,6 +31,9 @@
 		4CF6E9AC220809A800836FC6 /* WriteEntryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CF6E9AB220809A800836FC6 /* WriteEntryViewController.swift */; };
 		4CF6E9B22208147F00836FC6 /* EntryTabViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CF6E9B12208147F00836FC6 /* EntryTabViewController.swift */; };
 		4CF6E9B4220819EF00836FC6 /* Entries.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CF6E9B3220819EF00836FC6 /* Entries.swift */; };
+		4F1C042922225B1D00334AF2 /* TutorialFirstViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F1C042822225B1D00334AF2 /* TutorialFirstViewController.swift */; };
+		4F1C042B22225D0800334AF2 /* TutorialSecondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F1C042A22225D0800334AF2 /* TutorialSecondViewController.swift */; };
+		4F1C042D22225E8700334AF2 /* TutorialThirdViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F1C042C22225E8700334AF2 /* TutorialThirdViewController.swift */; };
 		5AF0F722221E8FB100EFE1DD /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AF0F721221E8FB100EFE1DD /* Constants.swift */; };
 		6A0C5FA72204179800666370 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A0C5FA62204179800666370 /* AppDelegate.swift */; };
 		6A0C5FA92204179800666370 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A0C5FA82204179800666370 /* ViewController.swift */; };
@@ -71,6 +74,9 @@
 		4CF6E9AB220809A800836FC6 /* WriteEntryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WriteEntryViewController.swift; sourceTree = "<group>"; };
 		4CF6E9B12208147F00836FC6 /* EntryTabViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EntryTabViewController.swift; sourceTree = "<group>"; };
 		4CF6E9B3220819EF00836FC6 /* Entries.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Entries.swift; sourceTree = "<group>"; };
+		4F1C042822225B1D00334AF2 /* TutorialFirstViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TutorialFirstViewController.swift; sourceTree = "<group>"; };
+		4F1C042A22225D0800334AF2 /* TutorialSecondViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TutorialSecondViewController.swift; sourceTree = "<group>"; };
+		4F1C042C22225E8700334AF2 /* TutorialThirdViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TutorialThirdViewController.swift; sourceTree = "<group>"; };
 		5AF0F721221E8FB100EFE1DD /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		6A0C5FA32204179800666370 /* moodifyV2.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = moodifyV2.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6A0C5FA62204179800666370 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -155,6 +161,9 @@
 				6A202C2622116EE10004E98E /* location-logo.png */,
 				6A202C1922115CD90004E98E /* Resources */,
 				4CD4EBC2221131D6003BC69D /* Model.xcdatamodeld */,
+				4F1C042A22225D0800334AF2 /* TutorialSecondViewController.swift */,
+				4F1C042C22225E8700334AF2 /* TutorialThirdViewController.swift */,
+				4F1C042822225B1D00334AF2 /* TutorialFirstViewController.swift */,
 				4CD7A92F2207F3F700991F89 /* UIImageView+Download.swift */,
 				6A0C5FA62204179800666370 /* AppDelegate.swift */,
 				4C3C6413220A8E5600ED4364 /* DisplayEntryViewController.swift */,
@@ -344,9 +353,11 @@
 				4C37461D2219357F003B90A7 /* AssociatedEntryViewCell.swift in Sources */,
 				4CF6E9A82208024000836FC6 /* HomePageTabBarViewController.swift in Sources */,
 				4C48A9C22207C1690073DF63 /* Sentimental.swift in Sources */,
+				4F1C042922225B1D00334AF2 /* TutorialFirstViewController.swift in Sources */,
 				4C374615221915BA003B90A7 /* TrackEntity+CoreDataProperties.swift in Sources */,
 				4C6B3DCE220BFA2800C79C61 /* AuthorizeViewController.swift in Sources */,
 				4C374616221915BA003B90A7 /* EntryEntity+CoreDataClass.swift in Sources */,
+				4F1C042B22225D0800334AF2 /* TutorialSecondViewController.swift in Sources */,
 				5AF0F722221E8FB100EFE1DD /* Constants.swift in Sources */,
 				4C374614221915BA003B90A7 /* TrackEntity+CoreDataClass.swift in Sources */,
 				4CF6E9B4220819EF00836FC6 /* Entries.swift in Sources */,
@@ -356,6 +367,7 @@
 				4C3C6416220AA83E00ED4364 /* DisplayRecentlyPlayedViewController.swift in Sources */,
 				4C70D9E4220F59B200EA9E8B /* DisplayTrackCollectionViewCell.swift in Sources */,
 				4C48A9BD2207C07C0073DF63 /* Entry.swift in Sources */,
+				4F1C042D22225E8700334AF2 /* TutorialThirdViewController.swift in Sources */,
 				4CD4EBC4221131D6003BC69D /* Model.xcdatamodeld in Sources */,
 				4CD7A9302207F3F700991F89 /* UIImageView+Download.swift in Sources */,
 				6A0C5FA92204179800666370 /* ViewController.swift in Sources */,

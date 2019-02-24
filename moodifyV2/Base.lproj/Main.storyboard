@@ -151,7 +151,7 @@
         <!--Tutorial Page One View Controller-->
         <scene sceneID="szb-By-BfO">
             <objects>
-                <viewController storyboardIdentifier="Tutorial Page One View Controller" title="Tutorial Page One View Controller" id="ID3-CU-KFe" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="Tutorial Page One View Controller" title="Tutorial Page One View Controller" id="ID3-CU-KFe" customClass="TutorialFirstViewController" customModule="moodifyV2" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Jgh-YX-pyl">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -177,12 +177,14 @@
                                         </connections>
                                     </button>
                                 </subviews>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="CvU-ib-VHo"/>
                     </view>
+                    <connections>
+                        <outlet property="gradientView" destination="hK2-F5-RLv" id="jGc-i5-4zJ"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Oui-aW-o9o" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -881,7 +883,7 @@
         <!--Tutorial Page Two View Controller-->
         <scene sceneID="yEj-qA-FPD">
             <objects>
-                <viewController storyboardIdentifier="Tutorial Page Two View Controller" title="Tutorial Page Two View Controller" id="qh4-mY-EPU" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="Tutorial Page Two View Controller" title="Tutorial Page Two View Controller" id="qh4-mY-EPU" customClass="TutorialSecondViewController" customModule="moodifyV2" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="IXy-rH-5N5">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -913,6 +915,9 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="3YB-If-CIl"/>
                     </view>
+                    <connections>
+                        <outlet property="gradientView" destination="gQ9-5c-yFj" id="wkK-wr-mn7"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="aDC-mt-hG4" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -921,7 +926,7 @@
         <!--Tutorial Page Three View Controller-->
         <scene sceneID="zAG-NG-3NQ">
             <objects>
-                <viewController storyboardIdentifier="Tutorial Page Three View Controller" title="Tutorial Page Three View Controller" id="Oqr-p5-i8h" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="Tutorial Page Three View Controller" title="Tutorial Page Three View Controller" id="Oqr-p5-i8h" customClass="TutorialThirdViewController" customModule="moodifyV2" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="jOJ-sd-ah9">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -953,6 +958,9 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="v0G-Ia-gR3"/>
                     </view>
+                    <connections>
+                        <outlet property="gradientView" destination="dhA-8e-goZ" id="Xlb-c3-Fqz"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Bf4-8Z-IFe" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -982,7 +990,7 @@
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="fwe-Sq-vFa"/>
-        <segue reference="IRZ-Ic-qaz"/>
+        <segue reference="RAH-vO-Wgf"/>
         <segue reference="Bu7-jL-oSM"/>
     </inferredMetricsTieBreakers>
 </document>
