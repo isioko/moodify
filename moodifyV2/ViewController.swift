@@ -15,8 +15,7 @@ class ViewController: UIViewController {
     
     @IBOutlet weak var moodifyLogo: UIImageView!
     
-    override func viewDidLoad() {
-        super.viewDidLoad()
+    override func viewDidAppear(_ animated: Bool) {
         //self.view.backgroundColor = blueColor
         gradient.frame = gradientView.bounds
         gradient.colors = Constants.themeColors()

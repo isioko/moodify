@@ -33,16 +33,16 @@
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                                 <subviews>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="3CI-Dn-Q36">
-                                        <rect key="frame" x="40" y="330" width="295" height="140"/>
+                                        <rect key="frame" x="25" y="285.33333333333331" width="325" height="140"/>
                                         <constraints>
-                                            <constraint firstAttribute="height" constant="140" id="nzc-tD-13h"/>
+                                            <constraint firstAttribute="width" secondItem="3CI-Dn-Q36" secondAttribute="height" multiplier="65:28" id="LeD-9h-a97"/>
                                         </constraints>
                                     </imageView>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
-                                    <constraint firstItem="3CI-Dn-Q36" firstAttribute="leading" secondItem="kQJ-Pd-87m" secondAttribute="leading" constant="40" id="qO6-hu-f7W"/>
-                                    <constraint firstItem="3CI-Dn-Q36" firstAttribute="top" secondItem="kQJ-Pd-87m" secondAttribute="top" constant="330" id="rPD-66-4lI"/>
+                                    <constraint firstItem="3CI-Dn-Q36" firstAttribute="leading" secondItem="kQJ-Pd-87m" secondAttribute="trailing" multiplier="1/15" id="qO6-hu-f7W"/>
+                                    <constraint firstItem="3CI-Dn-Q36" firstAttribute="centerY" secondItem="kQJ-Pd-87m" secondAttribute="bottom" multiplier="3.5/8" id="rPD-66-4lI"/>
                                     <constraint firstItem="3CI-Dn-Q36" firstAttribute="centerX" secondItem="kQJ-Pd-87m" secondAttribute="centerX" id="s3j-nm-cav"/>
                                 </constraints>
                             </view>
@@ -78,7 +78,7 @@
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7PF-3e-POH">
-                                        <rect key="frame" x="148" y="604.66666666666663" width="79" height="37"/>
+                                        <rect key="frame" x="148" y="590.66666666666663" width="79" height="37"/>
                                         <fontDescription key="fontDescription" name="Hind-Regular" family="Hind" pointSize="15"/>
                                         <state key="normal" title="Deauthorize">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -88,15 +88,15 @@
                                         </connections>
                                     </button>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="moodify-start-logo-01.png" translatesAutoresizingMaskIntoConstraints="NO" id="YNo-hC-skH">
-                                        <rect key="frame" x="57" y="344.66666666666669" width="261" height="123"/>
+                                        <rect key="frame" x="25" y="278.66666666666669" width="325" height="153"/>
                                         <constraints>
                                             <constraint firstAttribute="width" secondItem="YNo-hC-skH" secondAttribute="height" multiplier="87:41" id="xLQ-BI-BjV"/>
                                         </constraints>
                                     </imageView>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ded-tI-R8C">
-                                        <rect key="frame" x="25" y="542.66666666666663" width="325" height="47"/>
+                                        <rect key="frame" x="29" y="535.33333333333337" width="317" height="46"/>
                                         <constraints>
-                                            <constraint firstAttribute="height" constant="47" id="5g6-2Z-85b"/>
+                                            <constraint firstAttribute="width" secondItem="ded-tI-R8C" secondAttribute="height" multiplier="325:47" id="w0I-Hw-rSM"/>
                                         </constraints>
                                         <state key="normal" image="authButton"/>
                                         <connections>
@@ -104,10 +104,9 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SuS-t7-Jot" userLabel="Continue">
-                                        <rect key="frame" x="257" y="720" width="93" height="50"/>
+                                        <rect key="frame" x="258.33333333333331" y="736.33333333333337" width="93" height="50"/>
                                         <constraints>
-                                            <constraint firstAttribute="height" constant="50" id="81P-z2-yih"/>
-                                            <constraint firstAttribute="width" constant="93" id="AcN-6u-5gq"/>
+                                            <constraint firstAttribute="width" secondItem="SuS-t7-Jot" secondAttribute="height" multiplier="93:50" id="zvL-VW-EcT"/>
                                         </constraints>
                                         <state key="normal" image="continue"/>
                                         <connections>
@@ -118,15 +117,15 @@
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstItem="ded-tI-R8C" firstAttribute="centerX" secondItem="Hzt-dk-wAH" secondAttribute="centerX" id="58C-lS-EUT"/>
+                                    <constraint firstItem="7PF-3e-POH" firstAttribute="centerY" secondItem="Hzt-dk-wAH" secondAttribute="bottom" multiplier="6/8" id="Adp-Xr-1C7"/>
                                     <constraint firstItem="7PF-3e-POH" firstAttribute="centerX" secondItem="Hzt-dk-wAH" secondAttribute="centerX" id="Bgz-xk-kMx"/>
-                                    <constraint firstItem="ded-tI-R8C" firstAttribute="top" secondItem="YNo-hC-skH" secondAttribute="bottom" constant="75" id="CSp-or-5dg"/>
-                                    <constraint firstItem="7PF-3e-POH" firstAttribute="top" secondItem="ded-tI-R8C" secondAttribute="bottom" constant="15" id="Dpm-6z-XDq"/>
-                                    <constraint firstItem="YNo-hC-skH" firstAttribute="leading" secondItem="Hzt-dk-wAH" secondAttribute="leading" constant="57" id="PNN-1L-JsO"/>
-                                    <constraint firstItem="ded-tI-R8C" firstAttribute="leading" secondItem="Hzt-dk-wAH" secondAttribute="leading" constant="25" id="RVm-pn-tVA"/>
+                                    <constraint firstItem="YNo-hC-skH" firstAttribute="leading" secondItem="Hzt-dk-wAH" secondAttribute="trailing" multiplier="1/15" id="PNN-1L-JsO"/>
+                                    <constraint firstItem="SuS-t7-Jot" firstAttribute="centerY" secondItem="Hzt-dk-wAH" secondAttribute="bottom" multiplier="15/16" id="Q2b-v6-GR6"/>
+                                    <constraint firstItem="ded-tI-R8C" firstAttribute="leading" secondItem="Hzt-dk-wAH" secondAttribute="trailing" multiplier="1/13" id="RVm-pn-tVA"/>
                                     <constraint firstItem="YNo-hC-skH" firstAttribute="centerX" secondItem="Hzt-dk-wAH" secondAttribute="centerX" id="dgf-SR-yGr"/>
-                                    <constraint firstItem="ded-tI-R8C" firstAttribute="trailing" secondItem="SuS-t7-Jot" secondAttribute="trailing" id="fPJ-qB-zeT"/>
-                                    <constraint firstItem="YNo-hC-skH" firstAttribute="centerY" secondItem="Hzt-dk-wAH" secondAttribute="centerY" id="pT2-8O-0AP"/>
-                                    <constraint firstItem="SuS-t7-Jot" firstAttribute="bottom" secondItem="Hzt-dk-wAH" secondAttribute="bottomMargin" id="zOf-qt-ta8"/>
+                                    <constraint firstItem="YNo-hC-skH" firstAttribute="centerY" secondItem="Hzt-dk-wAH" secondAttribute="bottom" multiplier="3.5/8" id="pT2-8O-0AP"/>
+                                    <constraint firstItem="ded-tI-R8C" firstAttribute="centerY" secondItem="Hzt-dk-wAH" secondAttribute="bottom" multiplier="5.5/8" id="qwi-kh-SC0"/>
+                                    <constraint firstItem="SuS-t7-Jot" firstAttribute="centerX" secondItem="Hzt-dk-wAH" secondAttribute="trailing" multiplier="6.5/8" id="s5H-3A-t1Y"/>
                                 </constraints>
                             </view>
                         </subviews>
@@ -1042,6 +1041,6 @@
         <segue reference="4gZ-eP-sVl"/>
         <segue reference="PF0-kO-r5D"/>
         <segue reference="Bu7-jL-oSM"/>
-        <segue reference="duo-8l-e07"/>
+        <segue reference="1Ua-Ua-5DW"/>
     </inferredMetricsTieBreakers>
 </document>
