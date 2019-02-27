@@ -100,6 +100,8 @@ class ViewAssociatedEntriesViewController:UIViewController, UICollectionViewDele
         assocEntriesCollectionView.reloadData()
         trackNameLabel.text = track_obj.trackName
         artistNameLabel.text = track_obj.artistName
+        coverArtImage.layer.cornerRadius = 8.0
+        coverArtImage.clipsToBounds = true
         coverArtImage.image = track_obj.trackArtworkImage
     }
     
