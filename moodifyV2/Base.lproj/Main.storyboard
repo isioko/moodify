@@ -174,7 +174,7 @@
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <state key="normal" title="Skip Tutorial" image="skipTutorial"/>
                                         <connections>
-                                            <segue destination="tXn-6T-E1W" kind="show" animates="NO" id="IRZ-Ic-qaz"/>
+                                            <segue destination="uqo-ot-EXU" kind="show" animates="NO" id="IRZ-Ic-qaz"/>
                                         </connections>
                                     </button>
                                 </subviews>
@@ -191,7 +191,7 @@
                 <swipeGestureRecognizer direction="left" id="Nzu-s1-eep">
                     <connections>
                         <action selector="handleSwipeWithRecognizer:" destination="ID3-CU-KFe" id="Rgn-kc-ypG"/>
-                        <segue destination="qh4-mY-EPU" kind="custom" customClass="SegueFromRight" customModule="moodifyV2" customModuleProvider="target" id="EEt-wu-0tb"/>
+                        <segue destination="qh4-mY-EPU" kind="custom" customClass="SegueFromRight" customModule="moodifyV2" customModuleProvider="target" animates="NO" id="EEt-wu-0tb"/>
                     </connections>
                 </swipeGestureRecognizer>
             </objects>
@@ -330,7 +330,7 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CS7-M9-ZqV" userLabel="Back Button">
-                                        <rect key="frame" x="26.333333333333329" y="47" width="41" height="33"/>
+                                        <rect key="frame" x="29" y="49" width="36" height="29"/>
                                         <constraints>
                                             <constraint firstAttribute="width" secondItem="CS7-M9-ZqV" secondAttribute="height" multiplier="41:33" id="IeL-mR-xZS"/>
                                         </constraints>
@@ -338,7 +338,7 @@
                                             <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </state>
                                         <connections>
-                                            <segue destination="tXn-6T-E1W" kind="show" animates="NO" id="aWB-x6-rs9"/>
+                                            <segue destination="uqo-ot-EXU" kind="show" animates="NO" id="aWB-x6-rs9"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleAspectFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sKS-rv-Xax" userLabel="Delete Button">
@@ -351,7 +351,7 @@
                                         </state>
                                         <connections>
                                             <action selector="clickDelete:" destination="QU1-nM-dcV" eventType="touchUpInside" id="XaR-YC-bMB"/>
-                                            <segue destination="tXn-6T-E1W" kind="show" id="Kt8-03-4gy"/>
+                                            <segue destination="uqo-ot-EXU" kind="show" id="Kt8-03-4gy"/>
                                         </connections>
                                     </button>
                                 </subviews>
@@ -613,7 +613,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <subviews>
                                     <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="wgQ-sU-tnF">
-                                        <rect key="frame" x="14" y="220" width="347" height="550"/>
+                                        <rect key="frame" x="14" y="120" width="347" height="650"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="11" id="pBz-ks-De5">
@@ -688,22 +688,6 @@
                                             </collectionViewCell>
                                         </cells>
                                     </collectionView>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="moodify-start-logo-01.png" translatesAutoresizingMaskIntoConstraints="NO" id="4Z3-cu-djb">
-                                        <rect key="frame" x="138" y="52" width="100" height="50"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                    </imageView>
-                                    <view opaque="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="mZr-m4-T6S">
-                                        <rect key="frame" x="14" y="110" width="353" height="102"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <subviews>
-                                            <view opaque="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="D0x-7f-tLy">
-                                                <rect key="frame" x="0.0" y="0.0" width="345" height="102"/>
-                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                            </view>
-                                        </subviews>
-                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                    </view>
                                 </subviews>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </view>
@@ -715,16 +699,18 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="CwX-hJ-KA2"/>
                     </view>
+                    <navigationItem key="navigationItem" id="I8H-Bc-qYN">
+                        <nil key="title"/>
+                    </navigationItem>
                     <connections>
                         <outlet property="entryCollectionView" destination="wgQ-sU-tnF" id="Y8y-YN-CcG"/>
                         <outlet property="gradientView" destination="mxe-GF-5kg" id="jqX-1D-39G"/>
                         <outlet property="plusButton" destination="Biu-yT-nZz" id="fCO-F5-w9B"/>
-                        <outlet property="searchView" destination="mZr-m4-T6S" id="yIX-lP-PFr"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ZUC-3u-MPj" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4224.8000000000002" y="-327.33990147783254"/>
+            <point key="canvasLocation" x="5767.1999999999998" y="-396.05911330049264"/>
         </scene>
         <!--Write Entry View Controller-->
         <scene sceneID="tyT-5E-7M7">
@@ -735,13 +721,13 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iff-tX-ZKE">
-                                <rect key="frame" x="312" y="45" width="32" height="37"/>
+                                <rect key="frame" x="312" y="43.333333333333336" width="32" height="40.000000000000007"/>
                                 <state key="normal" image="saveIcon">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
                                 <connections>
                                     <action selector="clickAdd:" destination="fEb-oX-jyH" eventType="touchUpInside" id="Uy1-pZ-fbQ"/>
-                                    <segue destination="tXn-6T-E1W" kind="show" identifier="backToAllEntriesFromSave" animates="NO" id="KUB-CY-1is"/>
+                                    <segue destination="uqo-ot-EXU" kind="show" identifier="backToAllEntriesFromSave" animates="NO" id="KUB-CY-1is"/>
                                 </connections>
                             </button>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="TQ0-UN-7fs">
@@ -807,12 +793,12 @@
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     </view>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OfG-MC-ZnX">
-                                        <rect key="frame" x="26.333333333333329" y="47" width="41" height="33"/>
+                                        <rect key="frame" x="29" y="52" width="36" height="23"/>
                                         <state key="normal" image="backButton">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </state>
                                         <connections>
-                                            <segue destination="tXn-6T-E1W" kind="show" animates="NO" id="k8m-tN-fQe"/>
+                                            <segue destination="uqo-ot-EXU" kind="show" animates="NO" id="k8m-tN-fQe"/>
                                         </connections>
                                     </button>
                                 </subviews>
@@ -851,7 +837,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2gI-g0-9b0" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="5554" y="-316"/>
+            <point key="canvasLocation" x="6495.1999999999998" y="-316.25615763546801"/>
         </scene>
         <!--Display Recently Played View Controller-->
         <scene sceneID="zss-kc-vuB">
@@ -987,7 +973,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="vFg-DR-ehK" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="6941.6000000000004" y="-335.46798029556652"/>
+            <point key="canvasLocation" x="7884" y="-335.46798029556652"/>
         </scene>
         <!--Tutorial Page Two View Controller-->
         <scene sceneID="yEj-qA-FPD">
@@ -1017,7 +1003,7 @@
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <state key="normal" title="Skip Tutorial" image="skipTutorial"/>
                                         <connections>
-                                            <segue destination="tXn-6T-E1W" kind="show" animates="NO" id="eY9-KM-355"/>
+                                            <segue destination="uqo-ot-EXU" kind="show" animates="NO" id="eY9-KM-355"/>
                                         </connections>
                                     </button>
                                 </subviews>
@@ -1034,12 +1020,12 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="aDC-mt-hG4" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <swipeGestureRecognizer direction="left" id="ocH-KG-rK4">
                     <connections>
-                        <segue destination="Oqr-p5-i8h" kind="custom" customClass="SegueFromRight" customModule="moodifyV2" customModuleProvider="target" id="ifw-3b-8KV"/>
+                        <segue destination="Oqr-p5-i8h" kind="custom" customClass="SegueFromRight" customModule="moodifyV2" customModuleProvider="target" animates="NO" id="ifw-3b-8KV"/>
                     </connections>
                 </swipeGestureRecognizer>
                 <swipeGestureRecognizer direction="right" id="0fW-Fv-StA">
                     <connections>
-                        <segue destination="ID3-CU-KFe" kind="custom" customClass="SegueFromLeft" customModule="moodifyV2" customModuleProvider="target" id="duo-8l-e07"/>
+                        <segue destination="ID3-CU-KFe" kind="custom" customClass="SegueFromLeft" customModule="moodifyV2" customModuleProvider="target" animates="NO" id="duo-8l-e07"/>
                     </connections>
                 </swipeGestureRecognizer>
             </objects>
@@ -1065,7 +1051,7 @@
                                         <connections>
                                             <outletCollection property="gestureRecognizers" destination="nmg-MG-dDb" appends="YES" id="ils-Mx-jbX"/>
                                             <outletCollection property="gestureRecognizers" destination="mBw-FJ-Ut6" appends="YES" id="Ddp-aC-s1h"/>
-                                            <segue destination="tXn-6T-E1W" kind="show" animates="NO" id="Jdj-kO-TmZ"/>
+                                            <segue destination="uqo-ot-EXU" kind="show" animates="NO" id="Jdj-kO-TmZ"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleAspectFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jxG-He-Wr6">
@@ -1073,7 +1059,7 @@
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <state key="normal" title="Skip Tutorial" image="getStartedButton"/>
                                         <connections>
-                                            <segue destination="tXn-6T-E1W" kind="show" animates="NO" id="RAH-vO-Wgf"/>
+                                            <segue destination="uqo-ot-EXU" kind="show" animates="NO" id="RAH-vO-Wgf"/>
                                         </connections>
                                     </button>
                                 </subviews>
@@ -1090,21 +1076,39 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Bf4-8Z-IFe" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <swipeGestureRecognizer direction="left" id="nmg-MG-dDb">
                     <connections>
-                        <segue destination="tXn-6T-E1W" kind="custom" customClass="SegueFromRight" customModule="moodifyV2" customModuleProvider="target" id="PF0-kO-r5D"/>
+                        <segue destination="uqo-ot-EXU" kind="custom" customClass="SegueFromRight" customModule="moodifyV2" customModuleProvider="target" animates="NO" id="PF0-kO-r5D"/>
                     </connections>
                 </swipeGestureRecognizer>
                 <swipeGestureRecognizer direction="right" id="mBw-FJ-Ut6">
                     <connections>
-                        <segue destination="qh4-mY-EPU" kind="custom" customClass="SegueFromLeft" customModule="moodifyV2" customModuleProvider="target" id="HAf-G0-2z0"/>
+                        <segue destination="qh4-mY-EPU" kind="custom" customClass="SegueFromLeft" customModule="moodifyV2" customModuleProvider="target" animates="NO" id="HAf-G0-2z0"/>
                     </connections>
                 </swipeGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="3842" y="556"/>
         </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="bNB-cA-lPF">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="uqo-ot-EXU" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="Rhw-2g-SKW">
+                        <rect key="frame" x="0.0" y="44" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="tXn-6T-E1W" kind="relationship" relationship="rootViewController" id="D7K-DD-Z06"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="USZ-aU-7ep" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="4824.8000000000002" y="-396.05911330049264"/>
+        </scene>
     </scenes>
     <resources>
         <image name="authButton" width="1014" height="150"/>
-        <image name="backButton" width="41" height="33.333332061767578"/>
+        <image name="backButton" width="36.333332061767578" height="23.666666030883789"/>
         <image name="blackEntries" width="18" height="24.333333969116211"/>
         <image name="blackHeadphones" width="24.666666030883789" height="20.666666030883789"/>
         <image name="blackLocation" width="10.666666984558105" height="18.333333969116211"/>
@@ -1118,21 +1122,20 @@
         <image name="moodify-start-logo-01.png" width="1140" height="540"/>
         <image name="plusButton" width="94" height="94"/>
         <image name="sad" width="162" height="151"/>
-        <image name="saveIcon" width="32" height="37"/>
+        <image name="saveIcon" width="32" height="40"/>
         <image name="skipTutorial" width="134" height="50"/>
-        <image name="trashCan" width="49" height="61"/>
+        <image name="trashCan" width="36.666667938232422" height="39.666667938232422"/>
         <image name="tutorialPageOne" width="312" height="648"/>
         <image name="tutorialPageThree" width="312" height="648"/>
         <image name="tutorialPageTwo" width="312" height="648"/>
         <image name="xButton" width="27.333333969116211" height="27.333333969116211"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="C61-Cc-UW2"/>
-        <segue reference="hC9-EP-CXI"/>
-        <segue reference="vtO-jH-J3A"/>
+        <segue reference="k8m-tN-fQe"/>
+        <segue reference="ifw-3b-8KV"/>
+        <segue reference="EEt-wu-0tb"/>
         <segue reference="fwe-Sq-vFa"/>
-        <segue reference="aWB-x6-rs9"/>
-        <segue reference="Bu7-jL-oSM"/>
-        <segue reference="duo-8l-e07"/>
+        <segue reference="fna-Md-nNg"/>
+        <segue reference="1Ua-Ua-5DW"/>
     </inferredMetricsTieBreakers>
 </document>
