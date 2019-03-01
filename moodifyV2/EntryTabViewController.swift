@@ -37,26 +37,12 @@ class EntryTabViewController:UIViewController,UICollectionViewDelegate,UICollect
         setUpSearch()
     }
 
-//    func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
-//        searchController.searchBar.sizeToFit()
-//    }
-//
-//    func searchBarTextDidBeginEditing(_ searchBar: UISearchBar) {
-//        searchController.searchBar.sizeToFit()
-//    }
-//
-//    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
-//        searchController.searchBar.sizeToFit()
-//    }
-
     func searchBarIsEmpty() -> Bool {
         // Returns true if the text is empty or nil
         return searchController.searchBar.text?.isEmpty ?? true
     }
     
     func filterContentForSearchText(_ searchText: String, scope: String = "All") {
-//        searchController.searchBar.sizeToFit()
-
         if scope == "All Entries"{
             filteredEntries = core_data_entries.filter({( entry_obj : NSObject) -> Bool in
                 let entry = getEntryFromNSObject(NS_entry: entry_obj)
@@ -118,6 +104,8 @@ class EntryTabViewController:UIViewController,UICollectionViewDelegate,UICollect
         let image = UIImage(named: "moodify-start-logo-01.png")
         imageView.image = image
         navigationItem.titleView = imageView
+        
+        searchController.searchBar.tintColor = UIColor(cgColor: Constants.themeColors()[2])
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -247,7 +235,7 @@ class EntryTabViewController:UIViewController,UICollectionViewDelegate,UICollect
                 let entry_cell = sender as! UICollectionViewCell
                 let indexPath = self.entryCollectionView!.indexPath(for: entry_cell)
                 let entry_clicked_obj: NSObject
-                if isFiltering(){
+                if isFiltering() && searchController.searchBar.text != ""{
                     entry_clicked_obj = filteredEntries[indexPath!.row]
                 }else{
                     entry_clicked_obj = core_data_entries[indexPath!.row]

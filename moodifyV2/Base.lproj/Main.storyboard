@@ -174,7 +174,7 @@
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <state key="normal" title="Skip Tutorial" image="skipTutorial"/>
                                         <connections>
-                                            <segue destination="uqo-ot-EXU" kind="show" animates="NO" id="IRZ-Ic-qaz"/>
+                                            <segue destination="uqo-ot-EXU" kind="presentation" animates="NO" id="IRZ-Ic-qaz"/>
                                         </connections>
                                     </button>
                                 </subviews>
@@ -351,7 +351,7 @@
                                         </state>
                                         <connections>
                                             <action selector="clickDelete:" destination="QU1-nM-dcV" eventType="touchUpInside" id="XaR-YC-bMB"/>
-                                            <segue destination="uqo-ot-EXU" kind="show" id="Kt8-03-4gy"/>
+                                            <segue destination="uqo-ot-EXU" kind="show" animates="NO" id="Kt8-03-4gy"/>
                                         </connections>
                                     </button>
                                 </subviews>
@@ -613,7 +613,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <subviews>
                                     <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="wgQ-sU-tnF">
-                                        <rect key="frame" x="14" y="120" width="347" height="650"/>
+                                        <rect key="frame" x="14" y="136" width="347" height="634"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="11" id="pBz-ks-De5">
@@ -683,7 +683,7 @@
                                                     <outlet property="locationLabel" destination="gUX-ro-Gfr" id="duZ-Gc-YJt"/>
                                                     <outlet property="numTracksLabel" destination="d8k-0c-EsO" id="KBa-79-rkG"/>
                                                     <outlet property="relativeDateLabel" destination="Jkq-8r-83p" id="tp1-zA-QFP"/>
-                                                    <segue destination="QU1-nM-dcV" kind="show" identifier="viewEntrySegue" animates="NO" id="fna-Md-nNg"/>
+                                                    <segue destination="QU1-nM-dcV" kind="presentation" identifier="viewEntrySegue" animates="NO" id="fna-Md-nNg"/>
                                                 </connections>
                                             </collectionViewCell>
                                         </cells>
@@ -1131,11 +1131,11 @@
         <image name="xButton" width="27.333333969116211" height="27.333333969116211"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="k8m-tN-fQe"/>
+        <segue reference="IRZ-Ic-qaz"/>
         <segue reference="ifw-3b-8KV"/>
-        <segue reference="EEt-wu-0tb"/>
+        <segue reference="vtO-jH-J3A"/>
         <segue reference="fwe-Sq-vFa"/>
         <segue reference="fna-Md-nNg"/>
-        <segue reference="1Ua-Ua-5DW"/>
+        <segue reference="duo-8l-e07"/>
     </inferredMetricsTieBreakers>
 </document>
