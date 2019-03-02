@@ -50,6 +50,7 @@
 		6A202C2B221174E00004E98E /* moodify-start-logo-01.png in Resources */ = {isa = PBXBuildFile; fileRef = 6A202C2A221174DF0004E98E /* moodify-start-logo-01.png */; };
 		BA79382F2223D995002D6C97 /* SegueLeft.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA79382E2223D995002D6C97 /* SegueLeft.swift */; };
 		BA7938312223DAD1002D6C97 /* SegueRight.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA7938302223DAD1002D6C97 /* SegueRight.swift */; };
+		BABC66CC222B333800DAEB4F /* EmojiToImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = BABC66CB222B333800DAEB4F /* EmojiToImage.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -99,6 +100,7 @@
 		9DF3280B68B789ACFDA7F122 /* Pods-moodifyV2.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-moodifyV2.debug.xcconfig"; path = "Pods/Target Support Files/Pods-moodifyV2/Pods-moodifyV2.debug.xcconfig"; sourceTree = "<group>"; };
 		BA79382E2223D995002D6C97 /* SegueLeft.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SegueLeft.swift; sourceTree = "<group>"; };
 		BA7938302223DAD1002D6C97 /* SegueRight.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SegueRight.swift; sourceTree = "<group>"; };
+		BABC66CB222B333800DAEB4F /* EmojiToImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmojiToImage.swift; sourceTree = "<group>"; };
 		D834A758439C8C3D28916217 /* Pods_moodifyV2.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_moodifyV2.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -166,6 +168,7 @@
 				6A202C1922115CD90004E98E /* Resources */,
 				4CD4EBC2221131D6003BC69D /* Model.xcdatamodeld */,
 				BA79382E2223D995002D6C97 /* SegueLeft.swift */,
+				BABC66CB222B333800DAEB4F /* EmojiToImage.swift */,
 				BA7938302223DAD1002D6C97 /* SegueRight.swift */,
 				4F1C042822225B1D00334AF2 /* TutorialFirstViewController.swift */,
 				4F1C042A22225D0800334AF2 /* TutorialSecondViewController.swift */,
@@ -362,6 +365,7 @@
 				4F1C042922225B1D00334AF2 /* TutorialFirstViewController.swift in Sources */,
 				4C374615221915BA003B90A7 /* TrackEntity+CoreDataProperties.swift in Sources */,
 				4C6B3DCE220BFA2800C79C61 /* AuthorizeViewController.swift in Sources */,
+				BABC66CC222B333800DAEB4F /* EmojiToImage.swift in Sources */,
 				4C374616221915BA003B90A7 /* EntryEntity+CoreDataClass.swift in Sources */,
 				4F1C042B22225D0800334AF2 /* TutorialSecondViewController.swift in Sources */,
 				5AF0F722221E8FB100EFE1DD /* Constants.swift in Sources */,

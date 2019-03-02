@@ -86,21 +86,18 @@ class ViewAssociatedEntriesViewController:UIViewController, UICollectionViewDele
         
         // SENTIMENT ANALYSIS HERE
         let sentiment = Sentimently()
-        var total = 0.0
+        var total = 0
         for assoc_entry in assoc_entries{
             print(assoc_entry.entryText)
             entries.append(assoc_entry)
-            total += Double(sentiment.score(assoc_entry.entryText).score)
+            total += sentiment.score(assoc_entry.entryText).score
             print(sentiment.score(assoc_entry.entryText)) //TEST
             
         }
         
         //Get average sentiment of associated entries
-        total = total/Double(assoc_entries.count)
+        total = total/assoc_entries.count
         displaySentiment(score: total)
-//        sentiFace.layer.cornerRadius = 8.0
-//        sentiFace.clipsToBounds = true
-//        sentiFace.image = UIImage(named: "sad")!
         
         sentimentSlider.setValue(Float(total), animated: true)
         
@@ -112,17 +109,38 @@ class ViewAssociatedEntriesViewController:UIViewController, UICollectionViewDele
         coverArtImage.image = track_obj.trackArtworkImage
     }
     
-    func displaySentiment(score:Double){
-        // create array of all faces
+    func displaySentiment(score:Int){
         // pull appropriate index from that array
-        
+        //center score at 3
         sentiFace.layer.cornerRadius = 8.0
         sentiFace.clipsToBounds = true
-        var img = round(score)
-        if img > 3 {img = 3}
-        if img < -3 {img = -3}
-        let string = String(img)
-        sentiFace.image = UIImage(named: string)!
+        // create array of all faces
+        var images : [UIImage] = []
+        var strings : [String] = ["😩","😔","😕","😑","😏","😊","😃"]
+        // <= -5, -5 < -3, -3 < -1, 0
+        
+        for s in strings {
+            images.append(s.emojiToImage()!)
+        }
+        var ind = (score + 5)/2
+        if ind < 0 {ind = 0}
+        if ind > strings.count-1 {ind = strings.count-1}
+        sentiFace.image = images[ind]
+        
+//
+//
+//        var centerAt = strings.count/2
+//        var adjusted = score + strings.count
+//
+//        var emojis: [UIImage] = []
+//
+////        if img > 3 {img = 3}
+////        if img < -3 {img = -3}
+////        let string = String(img)
+//        sentiFace.image = UIImage(named: "sad")!
+//        var adjusted = round(score) + strings.count
+//
+//        sentiFace.image = images[round(score)]
     }
     
     
