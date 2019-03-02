@@ -60,6 +60,7 @@
                         <outlet property="gradientView" destination="kQJ-Pd-87m" id="4z3-TK-1OK"/>
                         <outlet property="moodifyLogo" destination="3CI-Dn-Q36" id="bHO-17-3Cc"/>
                         <segue destination="IOf-FR-uyr" kind="show" identifier="loadAppSegue" animates="NO" id="L5T-tc-1gU"/>
+                        <segue destination="uqo-ot-EXU" kind="presentation" identifier="straightToEntryTab" animates="NO" id="r54-EK-xoz"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -1131,7 +1132,7 @@
         <image name="xButton" width="27.333333969116211" height="27.333333969116211"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="IRZ-Ic-qaz"/>
+        <segue reference="r54-EK-xoz"/>
         <segue reference="ifw-3b-8KV"/>
         <segue reference="vtO-jH-J3A"/>
         <segue reference="fwe-Sq-vFa"/>

@@ -12,7 +12,7 @@ import CoreData
 
 // search controller tutorial: https://www.raywenderlich.com/472-uisearchcontroller-tutorial-getting-started
 
-class EntryTabViewController:UIViewController,UICollectionViewDelegate,UICollectionViewDataSource, UISearchControllerDelegate{
+class EntryTabViewController:UIViewController, UICollectionViewDelegate, UICollectionViewDataSource, UISearchControllerDelegate {
     var entries = [Entry]()
     var core_data_entries: [NSObject] = []
     var core_data_tracks: [NSObject] = []
@@ -22,7 +22,7 @@ class EntryTabViewController:UIViewController,UICollectionViewDelegate,UICollect
     let gradient = CAGradientLayer()
     public var newEntry = Entry()
     
-    lazy   var searchBar:UISearchBar = UISearchBar(frame: CGRect.zero)
+    lazy var searchBar:UISearchBar = UISearchBar(frame: CGRect.zero)
 
     //search controller
     let searchController = UISearchController(searchResultsController: nil)
@@ -34,6 +34,7 @@ class EntryTabViewController:UIViewController,UICollectionViewDelegate,UICollect
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        definesPresentationContext = true
         setUpSearch()
     }
 
@@ -84,7 +85,7 @@ class EntryTabViewController:UIViewController,UICollectionViewDelegate,UICollect
         return searchController.isActive && (!searchBarIsEmpty() || searchBarScopeIsFiltering)
     }
 
-    func setUpSearch(){
+    func setUpSearch() {
         // Setup the Search Controller
         if #available(iOS 11.0, *) {
             navigationItem.hidesSearchBarWhenScrolling = true

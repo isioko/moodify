@@ -21,13 +21,20 @@ class ViewController: UIViewController {
         gradient.colors = Constants.themeColors()
         gradientView.layer.insertSublayer(gradient, at: 0)
         moodifyLogo.image = UIImage(named: "moodify-start-logo-01.png")
-        perform(#selector(timeToMoveOn), with: nil, afterDelay: 2)
+        perform(#selector(timeToMoveOn), with: nil, afterDelay: 1.5)
     }
     
     @objc func timeToMoveOn() {
-        self.performSegue(withIdentifier: "loadAppSegue", sender: self)
+        let launchedBefore = UserDefaults.standard.bool(forKey: "launchedBefore")
+        if launchedBefore  {
+            print("Not first launch.")
+            self.performSegue(withIdentifier: "straightToEntryTab", sender: self)
+        } else {
+            print("First launch, setting UserDefault.")
+            UserDefaults.standard.set(true, forKey: "launchedBefore")
+            self.performSegue(withIdentifier: "loadAppSegue", sender: self)
+        }
     }
-    
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
