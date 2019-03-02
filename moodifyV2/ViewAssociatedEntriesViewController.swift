@@ -23,6 +23,8 @@ class ViewAssociatedEntriesViewController:UIViewController, UICollectionViewDele
     @IBOutlet weak var gradientView: UIView!
     @IBOutlet weak var songBubbleView: UIView!
     @IBOutlet var sentimentSlider: UISlider!
+    @IBOutlet weak var sentiFace: UIImageView!
+    
     
     let gradient = CAGradientLayer()
 
@@ -82,19 +84,24 @@ class ViewAssociatedEntriesViewController:UIViewController, UICollectionViewDele
         let track_obj = getTrackFromNSObject(NS_track: core_data_objs[0] as! NSObject)
         let assoc_entries = track_obj.associatedEntries
         
-        // TESTING SENT ANAL HERE
+        // SENTIMENT ANALYSIS HERE
         let sentiment = Sentimently()
         var total = 0.0
         for assoc_entry in assoc_entries{
             print(assoc_entry.entryText)
             entries.append(assoc_entry)
             total += Double(sentiment.score(assoc_entry.entryText).score)
-            //print(sentiment.score(assoc_entry.entryText)) //TEST
+            print(sentiment.score(assoc_entry.entryText)) //TEST
             
         }
         
         //Get average sentiment of associated entries
         total = total/Double(assoc_entries.count)
+        displaySentiment(score: total)
+//        sentiFace.layer.cornerRadius = 8.0
+//        sentiFace.clipsToBounds = true
+//        sentiFace.image = UIImage(named: "sad")!
+        
         sentimentSlider.setValue(Float(total), animated: true)
         
         assocEntriesCollectionView.reloadData()
@@ -103,6 +110,19 @@ class ViewAssociatedEntriesViewController:UIViewController, UICollectionViewDele
         coverArtImage.layer.cornerRadius = 8.0
         coverArtImage.clipsToBounds = true
         coverArtImage.image = track_obj.trackArtworkImage
+    }
+    
+    func displaySentiment(score:Double){
+        // create array of all faces
+        // pull appropriate index from that array
+        
+        sentiFace.layer.cornerRadius = 8.0
+        sentiFace.clipsToBounds = true
+        var img = round(score)
+        if img > 3 {img = 3}
+        if img < -3 {img = -3}
+        let string = String(img)
+        sentiFace.image = UIImage(named: string)!
     }
     
     
