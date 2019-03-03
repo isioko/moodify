@@ -156,9 +156,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="hK2-F5-RLv" userLabel="Gradient View">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hK2-F5-RLv" userLabel="Gradient View">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <subviews>
                                     <button opaque="NO" multipleTouchEnabled="YES" contentMode="scaleAspectFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GG0-Yo-EwV">
                                         <rect key="frame" x="30" y="52" width="315" height="648"/>
@@ -182,6 +181,12 @@
                             </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="hK2-F5-RLv" firstAttribute="leading" secondItem="Jgh-YX-pyl" secondAttribute="leading" id="43B-DZ-Xav"/>
+                            <constraint firstAttribute="bottom" secondItem="hK2-F5-RLv" secondAttribute="bottom" id="Aqb-fi-W5s"/>
+                            <constraint firstItem="hK2-F5-RLv" firstAttribute="top" secondItem="Jgh-YX-pyl" secondAttribute="top" id="Iqf-rk-lbK"/>
+                            <constraint firstItem="hK2-F5-RLv" firstAttribute="trailing" secondItem="Jgh-YX-pyl" secondAttribute="trailing" id="dlg-vW-u4O"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="CvU-ib-VHo"/>
                     </view>
                     <connections>
@@ -614,9 +619,8 @@
                                     <segue destination="fEb-oX-jyH" kind="presentation" identifier="writeEntrySegue" animates="NO" id="fwe-Sq-vFa"/>
                                 </connections>
                             </button>
-                            <view opaque="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="mxe-GF-5kg">
+                            <view opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mxe-GF-5kg">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <subviews>
                                     <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="wgQ-sU-tnF">
                                         <rect key="frame" x="14" y="136" width="347" height="634"/>
@@ -700,8 +704,12 @@
                         </subviews>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
+                            <constraint firstItem="mxe-GF-5kg" firstAttribute="trailing" secondItem="Tdn-xo-C9E" secondAttribute="trailing" id="Gli-he-M3w"/>
                             <constraint firstItem="CwX-hJ-KA2" firstAttribute="trailing" secondItem="Biu-yT-nZz" secondAttribute="trailing" constant="33" id="OEU-Ry-2dl"/>
+                            <constraint firstAttribute="bottom" secondItem="mxe-GF-5kg" secondAttribute="bottom" id="bFY-Nj-Z9L"/>
                             <constraint firstItem="CwX-hJ-KA2" firstAttribute="bottom" secondItem="Biu-yT-nZz" secondAttribute="bottom" constant="33" id="dDY-pj-Qmg"/>
+                            <constraint firstItem="mxe-GF-5kg" firstAttribute="top" secondItem="Tdn-xo-C9E" secondAttribute="top" id="l1t-Al-Mfs"/>
+                            <constraint firstItem="mxe-GF-5kg" firstAttribute="leading" secondItem="Tdn-xo-C9E" secondAttribute="leading" id="mSw-LX-Psk"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="CwX-hJ-KA2"/>
                     </view>
@@ -1018,9 +1026,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="gQ9-5c-yFj" userLabel="Gradient View">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gQ9-5c-yFj" userLabel="Gradient View">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleAspectFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rpp-ew-ySc">
                                         <rect key="frame" x="30" y="52" width="315" height="648"/>
@@ -1046,6 +1053,12 @@
                             </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstAttribute="bottom" secondItem="gQ9-5c-yFj" secondAttribute="bottom" id="Qp7-Tt-qha"/>
+                            <constraint firstItem="gQ9-5c-yFj" firstAttribute="trailing" secondItem="IXy-rH-5N5" secondAttribute="trailing" id="YFN-v6-X5r"/>
+                            <constraint firstItem="gQ9-5c-yFj" firstAttribute="top" secondItem="IXy-rH-5N5" secondAttribute="top" id="awo-pn-Eqx"/>
+                            <constraint firstItem="gQ9-5c-yFj" firstAttribute="leading" secondItem="IXy-rH-5N5" secondAttribute="leading" id="iLf-A6-Au7"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="3YB-If-CIl"/>
                     </view>
                     <connections>
@@ -1074,9 +1087,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="dhA-8e-goZ" userLabel="Gradient View">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dhA-8e-goZ" userLabel="Gradient View">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleAspectFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rVn-Bi-itQ">
                                         <rect key="frame" x="30" y="52" width="315" height="648"/>
@@ -1102,6 +1114,12 @@
                             </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="dhA-8e-goZ" firstAttribute="leading" secondItem="jOJ-sd-ah9" secondAttribute="leading" id="3OD-Be-PK1"/>
+                            <constraint firstItem="dhA-8e-goZ" firstAttribute="trailing" secondItem="jOJ-sd-ah9" secondAttribute="trailing" id="KWd-2y-ymI"/>
+                            <constraint firstAttribute="bottom" secondItem="dhA-8e-goZ" secondAttribute="bottom" id="WnS-EL-DeS"/>
+                            <constraint firstItem="dhA-8e-goZ" firstAttribute="top" secondItem="jOJ-sd-ah9" secondAttribute="top" id="nAB-vu-VV7"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="v0G-Ia-gR3"/>
                     </view>
                     <connections>
@@ -1246,7 +1264,6 @@
         <image name="xButton" width="27" height="27"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="C61-Cc-UW2"/>
         <segue reference="aWB-x6-rs9"/>
         <segue reference="ifw-3b-8KV"/>
         <segue reference="HAf-G0-2z0"/>
