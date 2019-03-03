@@ -12,7 +12,7 @@ import CoreData
 
 // search controller tutorial: https://www.raywenderlich.com/472-uisearchcontroller-tutorial-getting-started
 
-class EntryTabViewController:UIViewController, UICollectionViewDelegate, UICollectionViewDataSource, UISearchControllerDelegate {
+class EntryTabViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource, UISearchControllerDelegate {
     var entries = [Entry]()
     var core_data_entries: [NSObject] = []
     var core_data_tracks: [NSObject] = []
@@ -34,7 +34,26 @@ class EntryTabViewController:UIViewController, UICollectionViewDelegate, UIColle
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        definesPresentationContext = true
+        
+        let date_formatter = DateFormatter()
+        date_formatter.dateFormat = "yyyy/MM/dd"
+        
+        let dateString = date_formatter.string(from: Date())
+        
+        let lastNotificationDate = UserDefaults.standard.string(forKey: "lastNotificationDate")
+        
+        if lastNotificationDate != dateString {
+            print("send notification")
+            UserDefaults.standard.set(dateString, forKey: "lastNotificationDate")
+            self.performSegue(withIdentifier: "toNotificationSegue", sender: self)
+        } else {
+            print("do not send notification")
+        }
+        
+        // Uncomment line below to play with the notification pop up
+//        self.performSegue(withIdentifier: "toNotificationSegue", sender: self)
+
+        
         setUpSearch()
     }
 
@@ -118,6 +137,8 @@ class EntryTabViewController:UIViewController, UICollectionViewDelegate, UIColle
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(true)
+        
+        
         setUpSearch()
         // CORE DATA
         //1

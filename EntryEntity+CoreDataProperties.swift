@@ -21,6 +21,7 @@ extension EntryEntity {
     @NSManaged public var location: String?
     @NSManaged public var text: String?
     @NSManaged public var associatedTrack: NSSet?
+//    @NSManaged public var dateString: String?
 
 }
 
