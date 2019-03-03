@@ -50,6 +50,10 @@ class EntryTabViewController: UIViewController, UICollectionViewDelegate, UIColl
             print("do not send notification")
         }
         
+        // Uncomment line below to play with the notification pop up
+//        self.performSegue(withIdentifier: "toNotificationSegue", sender: self)
+
+        
         setUpSearch()
     }
 

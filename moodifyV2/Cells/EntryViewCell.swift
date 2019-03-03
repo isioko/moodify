@@ -22,7 +22,7 @@ class EntryViewCell:UICollectionViewCell{
     
     public weak var delegate: SwipeCollectionViewCellDelegate?
 
-    func displayContent(entry: Entry){
+    func displayContent(entry: Entry) {
         entryLabel.text = entry.entryText
         let formatter = DateFormatter()
         formatter.dateFormat = "MMMM dd, yyyy"
