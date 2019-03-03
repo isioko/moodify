@@ -48,6 +48,7 @@
 		6A202C2322115D0E0004E98E /* Hind-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 6A202C1E22115D0D0004E98E /* Hind-Medium.ttf */; };
 		6A202C2722116EE10004E98E /* location-logo.png in Resources */ = {isa = PBXBuildFile; fileRef = 6A202C2622116EE10004E98E /* location-logo.png */; };
 		6A202C2B221174E00004E98E /* moodify-start-logo-01.png in Resources */ = {isa = PBXBuildFile; fileRef = 6A202C2A221174DF0004E98E /* moodify-start-logo-01.png */; };
+		6AA26230222B44C7006C54E1 /* NotificationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AA2622F222B44C7006C54E1 /* NotificationViewController.swift */; };
 		BA79382F2223D995002D6C97 /* SegueLeft.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA79382E2223D995002D6C97 /* SegueLeft.swift */; };
 		BA7938312223DAD1002D6C97 /* SegueRight.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA7938302223DAD1002D6C97 /* SegueRight.swift */; };
 		BABC66CC222B333800DAEB4F /* EmojiToImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = BABC66CB222B333800DAEB4F /* EmojiToImage.swift */; };
@@ -96,6 +97,7 @@
 		6A202C1E22115D0D0004E98E /* Hind-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Hind-Medium.ttf"; sourceTree = "<group>"; };
 		6A202C2622116EE10004E98E /* location-logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "location-logo.png"; sourceTree = "<group>"; };
 		6A202C2A221174DF0004E98E /* moodify-start-logo-01.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "moodify-start-logo-01.png"; sourceTree = "<group>"; };
+		6AA2622F222B44C7006C54E1 /* NotificationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationViewController.swift; sourceTree = "<group>"; };
 		8C90D3268E6E46F747930A44 /* Pods-moodifyV2.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-moodifyV2.release.xcconfig"; path = "Pods/Target Support Files/Pods-moodifyV2/Pods-moodifyV2.release.xcconfig"; sourceTree = "<group>"; };
 		9DF3280B68B789ACFDA7F122 /* Pods-moodifyV2.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-moodifyV2.debug.xcconfig"; path = "Pods/Target Support Files/Pods-moodifyV2/Pods-moodifyV2.debug.xcconfig"; sourceTree = "<group>"; };
 		BA79382E2223D995002D6C97 /* SegueLeft.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SegueLeft.swift; sourceTree = "<group>"; };
@@ -185,6 +187,7 @@
 				6A0C5FA82204179800666370 /* ViewController.swift */,
 				4C6B3DCD220BFA2800C79C61 /* AuthorizeViewController.swift */,
 				4C37461A22191BCA003B90A7 /* ViewAssociatedEntriesViewController.swift */,
+				6AA2622F222B44C7006C54E1 /* NotificationViewController.swift */,
 				6A0C5FAA2204179800666370 /* Main.storyboard */,
 				4C70D9E5220F5F8700EA9E8B /* Cells */,
 				4C48A9BE2207C1430073DF63 /* Model */,
@@ -381,6 +384,7 @@
 				4F1C042D22225E8700334AF2 /* TutorialThirdViewController.swift in Sources */,
 				4CD4EBC4221131D6003BC69D /* Model.xcdatamodeld in Sources */,
 				4CD7A9302207F3F700991F89 /* UIImageView+Download.swift in Sources */,
+				6AA26230222B44C7006C54E1 /* NotificationViewController.swift in Sources */,
 				6A0C5FA92204179800666370 /* ViewController.swift in Sources */,
 				4CF6E9AC220809A800836FC6 /* WriteEntryViewController.swift in Sources */,
 				4C3C6414220A8E5700ED4364 /* DisplayEntryViewController.swift in Sources */,
