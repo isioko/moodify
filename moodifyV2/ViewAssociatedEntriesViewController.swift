@@ -22,7 +22,6 @@ class ViewAssociatedEntriesViewController: UIViewController, UICollectionViewDel
     
     @IBOutlet weak var gradientView: UIView!
     @IBOutlet weak var songBubbleView: UIView!
-    @IBOutlet var sentimentSlider: UISlider!
     @IBOutlet weak var sentiFace: UIImageView!
     
     
@@ -98,8 +97,6 @@ class ViewAssociatedEntriesViewController: UIViewController, UICollectionViewDel
         //Get average sentiment of associated entries
         total = total/assoc_entries.count
         displaySentiment(score: total)
-        
-        sentimentSlider.setValue(Float(total), animated: true)
         
         assocEntriesCollectionView.reloadData()
         trackNameLabel.text = track_obj.trackName

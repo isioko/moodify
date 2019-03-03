@@ -42,8 +42,9 @@ class EntryTabViewController: UIViewController, UICollectionViewDelegate, UIColl
         
         let lastNotificationDate = UserDefaults.standard.string(forKey: "lastNotificationDate")
         
-        if lastNotificationDate != dateString {
+        if lastNotificationDate != dateString && core_data_entries.count > 0 {
             print("send notification")
+            
             UserDefaults.standard.set(dateString, forKey: "lastNotificationDate")
             self.performSegue(withIdentifier: "toNotificationSegue", sender: self)
         } else {
@@ -52,7 +53,6 @@ class EntryTabViewController: UIViewController, UICollectionViewDelegate, UIColl
         
         // Uncomment line below to play with the notification pop up
 //        self.performSegue(withIdentifier: "toNotificationSegue", sender: self)
-
         
         setUpSearch()
     }
