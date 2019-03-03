@@ -111,7 +111,7 @@
                                         </constraints>
                                         <state key="normal" image="continue"/>
                                         <connections>
-                                            <segue destination="ID3-CU-KFe" kind="show" animates="NO" id="1Ua-Ua-5DW"/>
+                                            <action selector="clickContinue:" destination="IOf-FR-uyr" eventType="touchUpInside" id="Lz4-6U-cgT"/>
                                         </connections>
                                     </button>
                                 </subviews>
@@ -142,6 +142,8 @@
                     <connections>
                         <outlet property="authorizeApp" destination="ded-tI-R8C" id="91X-9k-y8y"/>
                         <outlet property="gradientView" destination="Hzt-dk-wAH" id="qoB-wq-VZG"/>
+                        <segue destination="ID3-CU-KFe" kind="show" identifier="FirstLoad" id="g2W-IX-yYm"/>
+                        <segue destination="tXn-6T-E1W" kind="show" identifier="SkipTutorial" id="Kin-nW-zLa"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="W8c-Rr-ICC" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -1141,7 +1143,8 @@
         <segue reference="ifw-3b-8KV"/>
         <segue reference="vtO-jH-J3A"/>
         <segue reference="fwe-Sq-vFa"/>
+        <segue reference="Kin-nW-zLa"/>
         <segue reference="F7f-Jd-g9G"/>
-        <segue reference="duo-8l-e07"/>
+        <segue reference="g2W-IX-yYm"/>
     </inferredMetricsTieBreakers>
 </document>

@@ -1,11 +1,12 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="14460.32" systemVersion="18D109" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="14460.32" systemVersion="17G65" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
     <entity name="EntryEntity" representedClassName="EntryEntity" syncable="YES">
         <attribute name="date" optional="YES" attributeType="Date" usesScalarValueType="NO" syncable="YES"/>
         <attribute name="location" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="text" optional="YES" attributeType="String" syncable="YES"/>
         <relationship name="associatedTrack" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="TrackEntity" inverseName="associatedEntry" inverseEntity="TrackEntity" syncable="YES"/>
     </entity>
+    <entity name="FirstLoadEntity" representedClassName="FirstLoadEntity" syncable="YES" codeGenerationType="class"/>
     <entity name="TrackEntity" representedClassName="TrackEntity" syncable="YES">
         <attribute name="artistName" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="coverArt" optional="YES" attributeType="Binary" syncable="YES"/>
@@ -15,5 +16,6 @@
     <elements>
         <element name="EntryEntity" positionX="-63" positionY="-18" width="128" height="105"/>
         <element name="TrackEntity" positionX="-54" positionY="18" width="128" height="105"/>
+        <element name="FirstLoadEntity" positionX="-63" positionY="36" width="128" height="45"/>
     </elements>
 </model>
