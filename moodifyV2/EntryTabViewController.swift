@@ -16,6 +16,8 @@ class EntryTabViewController: UIViewController, UICollectionViewDelegate, UIColl
     var entries = [Entry]()
     var core_data_entries: [NSObject] = []
     var core_data_tracks: [NSObject] = []
+    
+    var filteredEntriesByDate = [NSObject]()
 
     var writeEntry: WriteEntryViewController?
     @IBOutlet weak var gradientView: UIView!
@@ -34,26 +36,6 @@ class EntryTabViewController: UIViewController, UICollectionViewDelegate, UIColl
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        let date_formatter = DateFormatter()
-        date_formatter.dateFormat = "yyyy/MM/dd"
-        
-        let dateString = date_formatter.string(from: Date())
-        
-        let lastNotificationDate = UserDefaults.standard.string(forKey: "lastNotificationDate")
-        
-        if lastNotificationDate != dateString && core_data_entries.count > 0 {
-            print("send notification")
-            
-            UserDefaults.standard.set(dateString, forKey: "lastNotificationDate")
-            self.performSegue(withIdentifier: "toNotificationSegue", sender: self)
-        } else {
-            print("do not send notification")
-        }
-        
-        // Uncomment line below to play with the notification pop up
-//        self.performSegue(withIdentifier: "toNotificationSegue", sender: self)
-        
         setUpSearch()
     }
 
@@ -63,12 +45,12 @@ class EntryTabViewController: UIViewController, UICollectionViewDelegate, UIColl
     }
     
     func filterContentForSearchText(_ searchText: String, scope: String = "All") {
-        if scope == "All Entries"{
+        if scope == "All Entries" {
             filteredEntries = core_data_entries.filter({( entry_obj : NSObject) -> Bool in
                 let entry = getEntryFromNSObject(NS_entry: entry_obj)
                 return entry.entryText.lowercased().contains(searchText.lowercased())
             })
-        }else{
+        } else {
             filteredTracks = core_data_tracks.filter({( track_obj : NSObject) -> Bool in
             let track = getTrackFromNSObject(NS_track: track_obj)
             return track.trackName.lowercased().contains(searchText.lowercased())
@@ -128,6 +110,21 @@ class EntryTabViewController: UIViewController, UICollectionViewDelegate, UIColl
         searchController.searchBar.tintColor = UIColor(cgColor: Constants.themeColors()[2])
     }
     
+    func getYesterdaysEntries() {
+        let date_formatter = DateFormatter()
+        date_formatter.dateFormat = "yyyy/MM/dd"
+        
+        let today = Date()
+        let yesterday = today.addingTimeInterval(TimeInterval(-60*60*24))
+        let yesterdayString = date_formatter.string(from: yesterday)
+        
+        filteredEntriesByDate = core_data_entries.filter({( entry_obj : NSObject) -> Bool in
+            let entry = getEntryFromNSObject(NS_entry: entry_obj)
+            let entryDateString = date_formatter.string(from: entry.entryDate)
+            return entryDateString == yesterdayString
+        })
+    }
+    
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         if #available(iOS 11.0, *) {
@@ -137,8 +134,6 @@ class EntryTabViewController: UIViewController, UICollectionViewDelegate, UIColl
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(true)
-        
-        
         setUpSearch()
         // CORE DATA
         //1
@@ -166,7 +161,28 @@ class EntryTabViewController: UIViewController, UICollectionViewDelegate, UIColl
         }
         // end of core data
         
-        //add gradient to background
+        getYesterdaysEntries()
+        
+        let date_formatter = DateFormatter()
+        date_formatter.dateFormat = "yyyy/MM/dd"
+        
+        let dateString = date_formatter.string(from: Date())
+        
+        let lastNotificationDate = UserDefaults.standard.string(forKey: "lastNotificationDate")
+        
+        if lastNotificationDate != dateString && filteredEntriesByDate.count > 0 {
+            print("send notification")
+            
+            UserDefaults.standard.set(dateString, forKey: "lastNotificationDate")
+            self.performSegue(withIdentifier: "toNotificationSegue", sender: self)
+        } else {
+            print("do not send notification")
+        }
+        
+        // Uncomment line below to play with the notification pop up
+//                self.performSegue(withIdentifier: "toNotificationSegue", sender: self)
+        
+        // Add gradient to background
         gradient.frame = gradientView.bounds
         gradient.colors = Constants.themeColors()
         gradientView.layer.insertSublayer(gradient, at: 0)
