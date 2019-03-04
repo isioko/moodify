@@ -172,7 +172,7 @@ class EntryTabViewController: UIViewController, UICollectionViewDelegate, UIColl
         
         let lastNotificationDate = UserDefaults.standard.string(forKey: "lastNotificationDate")
         
-        if lastNotificationDate != dateString && filteredEntriesByDate.count > 0 {
+        if  lastNotificationDate != dateString && filteredEntriesByDate.count > 0 {
             print("send notification")
             
             UserDefaults.standard.set(dateString, forKey: "lastNotificationDate")

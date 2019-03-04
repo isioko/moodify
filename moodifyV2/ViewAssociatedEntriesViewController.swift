@@ -111,7 +111,7 @@ class ViewAssociatedEntriesViewController: UIViewController, UICollectionViewDel
         sentiFace.clipsToBounds = true
         // create array of all faces
         var images : [UIImage] = []
-        var strings : [String] = ["😩","😔","😕","😑","😏","😊","😃"]
+        let strings : [String] = ["😩","😔","😕","😑","😏","😊","😃"]
         // <= -5, -5 < -3, -3 < -1, 0
         
         for s in strings {
@@ -121,21 +121,6 @@ class ViewAssociatedEntriesViewController: UIViewController, UICollectionViewDel
         if ind < 0 {ind = 0}
         if ind > strings.count-1 {ind = strings.count-1}
         sentiFace.image = images[ind]
-        
-//
-//
-//        var centerAt = strings.count/2
-//        var adjusted = score + strings.count
-//
-//        var emojis: [UIImage] = []
-//
-////        if img > 3 {img = 3}
-////        if img < -3 {img = -3}
-////        let string = String(img)
-//        sentiFace.image = UIImage(named: "sad")!
-//        var adjusted = round(score) + strings.count
-//
-//        sentiFace.image = images[round(score)]
     }
     
     

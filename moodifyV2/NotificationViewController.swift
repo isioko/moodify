@@ -60,10 +60,46 @@ class NotificationViewController: UIViewController, UICollectionViewDelegate, UI
         
         for object in filteredEntriesByDate {
             entries.append(getEntryFromNSObject(NS_entry: object))
+            
         }
-        
+        analyzeSentiment(entries: entries)
         notificationCollectionView.reloadData()
     }
+    
+    func analyzeSentiment(entries : [Entry]){
+        let sentiment = Sentimently()
+        var total = 0
+        for entry in entries{
+            print(entry.entryText)
+            total += sentiment.score(entry.entryText).score
+            print(sentiment.score(entry.entryText)) //TEST
+        }
+        //Get average sentiment of associated entries
+        //total = total//entries.count    ADD DIVISION
+        displaySentiment(score: total)
+    }
+    
+    func displaySentiment(score:Int){
+        // pull appropriate index from that array
+        //center score at 3
+        //sentiFace.layer.cornerRadius = 8.0
+        //sentiFace.clipsToBounds = true
+        // create array of all faces
+        var images : [UIImage] = []
+        let strings : [String] = ["😩","😔","😕","😑","😏","😊","😃"]
+        // <= -5, -5 < -3, -3 < -1, 0
+        
+        for s in strings {
+            images.append(s.emojiToImage()!)
+        }
+        var ind = (score + 5)/2
+        if ind < 0 {ind = 0}
+        if ind > strings.count-1 {ind = strings.count-1}
+        // print statement for debugging until Dylan done with storyboard
+        print(strings[ind])
+        //sentiFace.image = images[ind]
+    }
+    
     
     func getYesterdaysEntries() {
         let date_formatter = DateFormatter()
