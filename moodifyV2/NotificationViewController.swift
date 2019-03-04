@@ -15,7 +15,7 @@ class NotificationViewController: UIViewController, UICollectionViewDelegate, UI
         return entries.count
     }
     
-    @IBOutlet weak var Emotiface: UIImageView!
+    @IBOutlet weak var emotiface: UIImageView!
     var entries = [Entry]()
     var core_data_entries: [NSObject] = []
     var filteredEntriesByDate = [NSObject]()
@@ -85,8 +85,8 @@ class NotificationViewController: UIViewController, UICollectionViewDelegate, UI
     func displaySentiment(score:Int){
         // pull appropriate index from that array
         //center score at 3
-        emotiFace.layer.cornerRadius = 8.0
-        emotiFace.clipsToBounds = true
+        emotiface.layer.cornerRadius = 8.0
+        emotiface.clipsToBounds = true
         // create array of all faces
         var images : [UIImage] = []
         let strings : [String] = ["😩","😔","😕","😑","😏","😊","😃"]
@@ -100,7 +100,7 @@ class NotificationViewController: UIViewController, UICollectionViewDelegate, UI
         if ind > strings.count-1 {ind = strings.count-1}
         // print statement for debugging until Dylan done with storyboard
         print(strings[ind])
-        emotiFace.image = images[ind]
+        emotiface.image = images[ind]
     }
     
     
