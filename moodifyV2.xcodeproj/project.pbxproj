@@ -180,9 +180,9 @@
 				4F1C042C22225E8700334AF2 /* TutorialThirdViewController.swift */,
 				4CD7A92F2207F3F700991F89 /* UIImageView+Download.swift */,
 				6A0C5FA62204179800666370 /* AppDelegate.swift */,
-				4C3C6413220A8E5600ED4364 /* DisplayEntryViewController.swift */,
 				4CF6E9A72208024000836FC6 /* HomePageTabBarViewController.swift */,
 				4C3C6415220AA83E00ED4364 /* DisplayRecentlyPlayedViewController.swift */,
+				4C3C6413220A8E5600ED4364 /* DisplayEntryViewController.swift */,
 				4CF6E9B12208147F00836FC6 /* EntryTabViewController.swift */,
 				4CF6E9AB220809A800836FC6 /* WriteEntryViewController.swift */,
 				4C4B43FC22127ED00022DD3E /* Extensions.swift */,
@@ -545,13 +545,13 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = LVF4872BAN;
+				DEVELOPMENT_TEAM = 3DZD66GQPU;
 				INFOPLIST_FILE = moodifyV2/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = edu.stanford.iokojie;
+				PRODUCT_BUNDLE_IDENTIFIER = edu.stanford.shelbym;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -564,13 +564,13 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = LVF4872BAN;
+				DEVELOPMENT_TEAM = 3DZD66GQPU;
 				INFOPLIST_FILE = moodifyV2/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = edu.stanford.iokojie;
+				PRODUCT_BUNDLE_IDENTIFIER = edu.stanford.shelbym;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
