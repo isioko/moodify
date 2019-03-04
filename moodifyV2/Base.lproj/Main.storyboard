@@ -59,8 +59,8 @@
                     <connections>
                         <outlet property="gradientView" destination="kQJ-Pd-87m" id="4z3-TK-1OK"/>
                         <outlet property="moodifyLogo" destination="3CI-Dn-Q36" id="bHO-17-3Cc"/>
-                        <segue destination="IOf-FR-uyr" kind="show" identifier="loadAppSegue" animates="NO" id="L5T-tc-1gU"/>
                         <segue destination="uqo-ot-EXU" kind="presentation" identifier="straightToEntryTab" animates="NO" id="r54-EK-xoz"/>
+                        <segue destination="ID3-CU-KFe" kind="show" identifier="loadAppSegue" id="kOC-gf-NDs"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -111,7 +111,7 @@
                                         </constraints>
                                         <state key="normal" image="continue"/>
                                         <connections>
-                                            <segue destination="ID3-CU-KFe" kind="show" animates="NO" id="1Ua-Ua-5DW"/>
+                                            <segue destination="uqo-ot-EXU" kind="show" id="mOq-n4-Wac"/>
                                         </connections>
                                     </button>
                                 </subviews>
@@ -166,7 +166,6 @@
                                         <state key="normal" image="tutorialPageOne"/>
                                         <connections>
                                             <outletCollection property="gestureRecognizers" destination="Nzu-s1-eep" appends="YES" id="EZu-ft-wn8"/>
-                                            <segue destination="qh4-mY-EPU" kind="show" customClass="SegueFromLeft" customModule="moodifyV2" customModuleProvider="target" animates="NO" id="vtO-jH-J3A"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleAspectFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ws1-hO-Iz7">
@@ -174,7 +173,7 @@
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <state key="normal" title="Skip Tutorial" image="skipTutorial"/>
                                         <connections>
-                                            <segue destination="uqo-ot-EXU" kind="presentation" animates="NO" id="IRZ-Ic-qaz"/>
+                                            <segue destination="IOf-FR-uyr" kind="show" id="7iq-Li-HY4"/>
                                         </connections>
                                     </button>
                                 </subviews>
@@ -201,7 +200,7 @@
                     </connections>
                 </swipeGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="2332" y="556"/>
+            <point key="canvasLocation" x="1342" y="539"/>
         </scene>
         <!--Display Entry View Controller-->
         <scene sceneID="esV-uD-r9f">
@@ -1014,7 +1013,6 @@
                                         <connections>
                                             <outletCollection property="gestureRecognizers" destination="ocH-KG-rK4" appends="YES" id="UeE-5B-ehY"/>
                                             <outletCollection property="gestureRecognizers" destination="0fW-Fv-StA" appends="YES" id="wvr-Qi-3FK"/>
-                                            <segue destination="Oqr-p5-i8h" kind="show" animates="NO" id="hC9-EP-CXI"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleAspectFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DWw-JF-UT6">
@@ -1022,7 +1020,7 @@
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <state key="normal" title="Skip Tutorial" image="skipTutorial"/>
                                         <connections>
-                                            <segue destination="uqo-ot-EXU" kind="show" animates="NO" id="eY9-KM-355"/>
+                                            <segue destination="IOf-FR-uyr" kind="show" id="DhY-yA-xq4"/>
                                         </connections>
                                     </button>
                                 </subviews>
@@ -1048,13 +1046,9 @@
                         <segue destination="Oqr-p5-i8h" kind="custom" customClass="SegueFromRight" customModule="moodifyV2" customModuleProvider="target" animates="NO" id="ifw-3b-8KV"/>
                     </connections>
                 </swipeGestureRecognizer>
-                <swipeGestureRecognizer direction="right" id="0fW-Fv-StA">
-                    <connections>
-                        <segue destination="ID3-CU-KFe" kind="custom" customClass="SegueFromLeft" customModule="moodifyV2" customModuleProvider="target" animates="NO" id="duo-8l-e07"/>
-                    </connections>
-                </swipeGestureRecognizer>
+                <swipeGestureRecognizer direction="right" id="0fW-Fv-StA"/>
             </objects>
-            <point key="canvasLocation" x="3081" y="556"/>
+            <point key="canvasLocation" x="2308" y="539"/>
         </scene>
         <!--Tutorial Page Three View Controller-->
         <scene sceneID="zAG-NG-3NQ">
@@ -1075,7 +1069,6 @@
                                         <connections>
                                             <outletCollection property="gestureRecognizers" destination="nmg-MG-dDb" appends="YES" id="ils-Mx-jbX"/>
                                             <outletCollection property="gestureRecognizers" destination="mBw-FJ-Ut6" appends="YES" id="Ddp-aC-s1h"/>
-                                            <segue destination="uqo-ot-EXU" kind="show" animates="NO" id="Jdj-kO-TmZ"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleAspectFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jxG-He-Wr6">
@@ -1083,7 +1076,7 @@
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <state key="normal" title="Skip Tutorial" image="getStartedButton"/>
                                         <connections>
-                                            <segue destination="uqo-ot-EXU" kind="show" animates="NO" id="RAH-vO-Wgf"/>
+                                            <segue destination="IOf-FR-uyr" kind="show" id="2q1-Fp-SUj"/>
                                         </connections>
                                     </button>
                                 </subviews>
@@ -1106,7 +1099,7 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Bf4-8Z-IFe" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <swipeGestureRecognizer direction="left" id="nmg-MG-dDb">
                     <connections>
-                        <segue destination="uqo-ot-EXU" kind="custom" customClass="SegueFromRight" customModule="moodifyV2" customModuleProvider="target" animates="NO" id="PF0-kO-r5D"/>
+                        <segue destination="IOf-FR-uyr" kind="custom" customClass="SegueFromRight" customModule="moodifyV2" customModuleProvider="target" id="cKn-Za-EUj"/>
                     </connections>
                 </swipeGestureRecognizer>
                 <swipeGestureRecognizer direction="right" id="mBw-FJ-Ut6">
@@ -1115,7 +1108,7 @@
                     </connections>
                 </swipeGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="3842" y="556"/>
+            <point key="canvasLocation" x="3262" y="539"/>
         </scene>
         <!--Notification View Controller-->
         <scene sceneID="fCz-L1-4HB">
@@ -1242,11 +1235,10 @@
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="C61-Cc-UW2"/>
-        <segue reference="twh-QW-wH0"/>
-        <segue reference="ifw-3b-8KV"/>
+        <segue reference="mOq-n4-Wac"/>
         <segue reference="HAf-G0-2z0"/>
         <segue reference="fwe-Sq-vFa"/>
         <segue reference="Bu7-jL-oSM"/>
-        <segue reference="1Ua-Ua-5DW"/>
+        <segue reference="2q1-Fp-SUj"/>
     </inferredMetricsTieBreakers>
 </document>
