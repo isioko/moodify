@@ -23,6 +23,7 @@ class EntryTabViewController: UIViewController, UICollectionViewDelegate, UIColl
     @IBOutlet weak var gradientView: UIView!
     let gradient = CAGradientLayer()
     public var newEntry = Entry()
+    public var currentSearchString = ""
     
     lazy var searchBar:UISearchBar = UISearchBar(frame: CGRect.zero)
 
@@ -36,6 +37,7 @@ class EntryTabViewController: UIViewController, UICollectionViewDelegate, UIColl
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        definesPresentationContext = true
         setUpSearch()
     }
 
@@ -198,6 +200,13 @@ class EntryTabViewController: UIViewController, UICollectionViewDelegate, UIColl
         plusButton.layer.shadowOpacity = 0.5
         
         spotifyManager.refreshTokenIfNeeded()
+        
+        print("current search did appear", currentSearchString)
+        if currentSearchString != "" {
+            print("made it in if statement")
+            searchController.isActive = true
+            searchController.searchBar.text = currentSearchString
+        }
     }
     
     @IBOutlet weak var entryCollectionView: UICollectionView!{
@@ -280,8 +289,13 @@ class EntryTabViewController: UIViewController, UICollectionViewDelegate, UIColl
                 }
                 let entry_clicked = getEntryFromNSObject(NS_entry: entry_clicked_obj)
                 devc.entry_to_display = entry_clicked
+                
+                if let currentSearchString = searchController.searchBar.text {
+                    devc.currentSearchString = currentSearchString
+                }
+//                devc.currentSearchString = searchBar.text
             }
-        } else if segue.identifier == ""{
+        } else if segue.identifier == "" {
             
         }
     }

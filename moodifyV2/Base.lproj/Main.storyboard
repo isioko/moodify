@@ -344,7 +344,7 @@
                                             <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </state>
                                         <connections>
-                                            <segue destination="uqo-ot-EXU" kind="show" animates="NO" id="aWB-x6-rs9"/>
+                                            <segue destination="uqo-ot-EXU" kind="presentation" identifier="backToEntryTabFromViewEntry" animates="NO" id="twh-QW-wH0"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleAspectFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sKS-rv-Xax" userLabel="Delete Button">
@@ -1241,7 +1241,8 @@
         <image name="xButton" width="27.333333969116211" height="27.333333969116211"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="S62-3M-qzb"/>
+        <segue reference="C61-Cc-UW2"/>
+        <segue reference="twh-QW-wH0"/>
         <segue reference="ifw-3b-8KV"/>
         <segue reference="HAf-G0-2z0"/>
         <segue reference="fwe-Sq-vFa"/>
