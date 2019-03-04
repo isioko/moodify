@@ -269,8 +269,8 @@ class WriteEntryViewController:UIViewController, UITextFieldDelegate, UITextView
         // 3
         entry_entity.setValue(entry.entryText, forKeyPath: "text")
         entry_entity.setValue(entry.location, forKeyPath: "location")
-       
         entry_entity.setValue(entry.entryDate, forKeyPath: "date")
+//        entry_entity.setValue(entry.entryDateString, forKey: "dateString")
         //entry_entity.setValue(entry.relativeDate, forKeyPath: "relativeDate")
         
         var trackEntries = [NSObject]()

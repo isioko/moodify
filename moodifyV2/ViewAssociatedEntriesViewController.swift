@@ -10,7 +10,7 @@ import Foundation
 import UIKit
 import CoreData
 
-class ViewAssociatedEntriesViewController:UIViewController, UICollectionViewDelegate, UICollectionViewDataSource{
+class ViewAssociatedEntriesViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource {
     public var entries = [Entry]()
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return entries.count
@@ -22,7 +22,8 @@ class ViewAssociatedEntriesViewController:UIViewController, UICollectionViewDele
     
     @IBOutlet weak var gradientView: UIView!
     @IBOutlet weak var songBubbleView: UIView!
-    @IBOutlet var sentimentSlider: UISlider!
+    @IBOutlet weak var sentiFace: UIImageView!
+    
     
     let gradient = CAGradientLayer()
 
@@ -82,27 +83,59 @@ class ViewAssociatedEntriesViewController:UIViewController, UICollectionViewDele
         let track_obj = getTrackFromNSObject(NS_track: core_data_objs[0] as! NSObject)
         let assoc_entries = track_obj.associatedEntries
         
-        // TESTING SENT ANAL HERE
+        // SENTIMENT ANALYSIS HERE
         let sentiment = Sentimently()
-        var total = 0.0
+        var total = 0
         for assoc_entry in assoc_entries{
             print(assoc_entry.entryText)
             entries.append(assoc_entry)
-            total += Double(sentiment.score(assoc_entry.entryText).score)
-            //print(sentiment.score(assoc_entry.entryText)) //TEST
+            total += sentiment.score(assoc_entry.entryText).score
+            print(sentiment.score(assoc_entry.entryText)) //TEST
             
         }
         
         //Get average sentiment of associated entries
-        total = total/Double(assoc_entries.count)
-        sentimentSlider.setValue(Float(total), animated: true)
+        total = total/assoc_entries.count
+        displaySentiment(score: total)
         
         assocEntriesCollectionView.reloadData()
         trackNameLabel.text = track_obj.trackName
         artistNameLabel.text = track_obj.artistName
-        coverArtImage.layer.cornerRadius = 8.0
-        coverArtImage.clipsToBounds = true
         coverArtImage.image = track_obj.trackArtworkImage
+    }
+    
+    func displaySentiment(score:Int){
+        // pull appropriate index from that array
+        //center score at 3
+        sentiFace.layer.cornerRadius = 8.0
+        sentiFace.clipsToBounds = true
+        // create array of all faces
+        var images : [UIImage] = []
+        var strings : [String] = ["😩","😔","😕","😑","😏","😊","😃"]
+        // <= -5, -5 < -3, -3 < -1, 0
+        
+        for s in strings {
+            images.append(s.emojiToImage()!)
+        }
+        var ind = (score + 5)/2
+        if ind < 0 {ind = 0}
+        if ind > strings.count-1 {ind = strings.count-1}
+        sentiFace.image = images[ind]
+        
+//
+//
+//        var centerAt = strings.count/2
+//        var adjusted = score + strings.count
+//
+//        var emojis: [UIImage] = []
+//
+////        if img > 3 {img = 3}
+////        if img < -3 {img = -3}
+////        let string = String(img)
+//        sentiFace.image = UIImage(named: "sad")!
+//        var adjusted = round(score) + strings.count
+//
+//        sentiFace.image = images[round(score)]
     }
     
     
@@ -111,7 +144,7 @@ class ViewAssociatedEntriesViewController:UIViewController, UICollectionViewDele
     @IBOutlet weak var artistNameLabel: UILabel!
     @IBOutlet weak var numEntriesLabel: UILabel!
     
-    func getEntryFromNSObject(NS_entry:NSObject)->Entry{
+    func getEntryFromNSObject(NS_entry:NSObject)->Entry {
         let entry = Entry()
         entry.entryDate = NS_entry.value(forKey: "date") as! Date
         entry.location = NS_entry.value(forKey: "location") as! String
@@ -119,8 +152,7 @@ class ViewAssociatedEntriesViewController:UIViewController, UICollectionViewDele
         return entry
     }
 
-
-    func getTrackFromNSObject(NS_track:NSObject)->Track{
+    func getTrackFromNSObject(NS_track:NSObject)->Track {
         let track = Track()
         track.trackName = NS_track.value(forKey: "trackName") as! String
         track.artistName = NS_track.value(forKey: "artistName") as! String
@@ -130,7 +162,7 @@ class ViewAssociatedEntriesViewController:UIViewController, UICollectionViewDele
         
         var numEntries: Int = 0
         
-        for entry_entity in entries_found{
+        for entry_entity in entries_found { 
             let entry = getEntryFromNSObject(NS_entry: entry_entity as! NSObject)
             entries_assoc.append(entry)
             numEntries += 1
@@ -142,12 +174,13 @@ class ViewAssociatedEntriesViewController:UIViewController, UICollectionViewDele
         return track
     }
     
-    @IBOutlet weak var assocEntriesCollectionView: UICollectionView!{
-        didSet{
+    @IBOutlet weak var assocEntriesCollectionView: UICollectionView! {
+        didSet {
             assocEntriesCollectionView.dataSource = self
             assocEntriesCollectionView.delegate = self
         }
     }
+    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "doneWithViewingAssociationsSegue" {
             if let devc = segue.destination as? DisplayEntryViewController {

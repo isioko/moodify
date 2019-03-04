@@ -8,6 +8,7 @@
 
 import Foundation
 import UIKit
+import CoreData
 
 class AuthorizeViewController: UIViewController{
     
@@ -15,6 +16,36 @@ class AuthorizeViewController: UIViewController{
     @IBOutlet weak var gradientView: UIView!
     
     @IBOutlet weak var authorizeApp: UIButton!
+    
+    
+    /* Triggers segue depending on whether "first" app launch or not.
+     * "First launch" detected by whether or not any entries exist in CoreData*/
+    @IBAction func clickContinue(_ sender: UIButton) {
+        print("Triggered click")
+        guard let appDelegate =
+            UIApplication.shared.delegate as? AppDelegate else {
+                return
+        }
+        var core_data_entries: [NSObject] = []
+        let managedContext =
+            appDelegate.persistentContainer.viewContext
+        //2
+        let fetchRequest =
+            NSFetchRequest<NSManagedObject>(entityName: "EntryEntity")
+        //3
+        do {
+            core_data_entries = try managedContext.fetch(fetchRequest)
+        } catch let error as NSError {
+            print("Could not fetch. \(error), \(error.userInfo)")
+        }
+        
+        if core_data_entries.count == 0 {
+            performSegue(withIdentifier: "FirstLoad", sender: sender)
+        } else {
+            performSegue(withIdentifier: "SkipTutorial", sender: sender)
+        }
+        
+    }
     
     @IBAction func deauthorizeApp(_ sender: UIButton) {
         // Deauthorize just for development to start a new Spotify session
