@@ -25,7 +25,7 @@ class ViewController: UIViewController {
     }
     
     @objc func timeToMoveOn() {
-        let launchedBefore = UserDefaults.standard.bool(forKey: "launchedBefore")
+        let launchedBefore = false //UserDefaults.standard.bool(forKey: "launchedBefore")
         if launchedBefore  {
             print("Not first launch.")
             self.performSegue(withIdentifier: "straightToEntryTab", sender: self)
