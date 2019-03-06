@@ -203,7 +203,7 @@
                 <swipeGestureRecognizer direction="left" id="Nzu-s1-eep">
                     <connections>
                         <action selector="handleSwipeWithRecognizer:" destination="ID3-CU-KFe" id="Rgn-kc-ypG"/>
-                        <segue destination="qh4-mY-EPU" kind="custom" customClass="SegueFromRight" customModule="moodifyV2" customModuleProvider="target" animates="NO" id="EEt-wu-0tb"/>
+                        <segue destination="qh4-mY-EPU" kind="custom" customClass="SegueFromRight" customModule="moodifyV2" customModuleProvider="target" id="EEt-wu-0tb"/>
                     </connections>
                 </swipeGestureRecognizer>
             </objects>
@@ -336,7 +336,7 @@
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     </view>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Date" textAlignment="center" lineBreakMode="tailTruncation" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZRA-8T-utO" userLabel="Date Label">
-                                        <rect key="frame" x="161.33333333333334" y="53.000000000000007" width="52.333333333333343" height="29.333333333333336"/>
+                                        <rect key="frame" x="161.33333333333334" y="47.666666666666657" width="52.333333333333343" height="40.333333333333343"/>
                                         <fontDescription key="fontDescription" name="Hind-SemiBold" family="Hind" pointSize="25"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
@@ -363,11 +363,12 @@
                                         </state>
                                         <connections>
                                             <action selector="clickDelete:" destination="QU1-nM-dcV" eventType="touchUpInside" id="XaR-YC-bMB"/>
-                                            <segue destination="uqo-ot-EXU" kind="show" animates="NO" id="Kt8-03-4gy"/>
+                                            <segue destination="uqo-ot-EXU" kind="show" identifier="" customClass="SegueFromRight" customModule="moodifyV2" customModuleProvider="target" animates="NO" id="Kt8-03-4gy"/>
                                         </connections>
                                     </button>
                                 </subviews>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <gestureRecognizers/>
                                 <constraints>
                                     <constraint firstItem="sKS-rv-Xax" firstAttribute="centerX" secondItem="2h8-FG-4mY" secondAttribute="trailing" multiplier="7/8" id="58h-rA-ksl"/>
                                     <constraint firstItem="bBi-3v-Js0" firstAttribute="centerX" secondItem="2h8-FG-4mY" secondAttribute="centerX" id="6Qb-nZ-nrs"/>
@@ -393,6 +394,9 @@
                                     <constraint firstItem="HLO-JG-8pH" firstAttribute="top" secondItem="2h8-FG-4mY" secondAttribute="bottom" multiplier="4/32" id="rpu-86-XaS"/>
                                     <constraint firstItem="bBi-3v-Js0" firstAttribute="bottom" secondItem="2h8-FG-4mY" secondAttribute="bottom" multiplier="30/32" id="tu2-18-OkU"/>
                                 </constraints>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="pHp-tm-R7v" appends="YES" id="Bzf-og-XTu"/>
+                                </connections>
                             </view>
                         </subviews>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -419,6 +423,11 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4su-YD-Wjg" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <swipeGestureRecognizer direction="right" id="pHp-tm-R7v">
+                    <connections>
+                        <segue destination="tXn-6T-E1W" kind="custom" id="8Ia-DJ-7yc"/>
+                    </connections>
+                </swipeGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="3901.5999999999999" y="-1173.3990147783252"/>
         </scene>
@@ -1061,10 +1070,14 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="aDC-mt-hG4" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <swipeGestureRecognizer direction="left" id="ocH-KG-rK4">
                     <connections>
-                        <segue destination="Oqr-p5-i8h" kind="custom" customClass="SegueFromRight" customModule="moodifyV2" customModuleProvider="target" animates="NO" id="ifw-3b-8KV"/>
+                        <segue destination="Oqr-p5-i8h" kind="custom" customClass="SegueFromRight" customModule="moodifyV2" customModuleProvider="target" id="ifw-3b-8KV"/>
                     </connections>
                 </swipeGestureRecognizer>
-                <swipeGestureRecognizer direction="right" id="0fW-Fv-StA"/>
+                <swipeGestureRecognizer direction="right" id="0fW-Fv-StA">
+                    <connections>
+                        <segue destination="ID3-CU-KFe" kind="custom" customClass="SegueFromLeft" customModule="moodifyV2" customModuleProvider="target" id="sKe-pV-3Ei"/>
+                    </connections>
+                </swipeGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="2308" y="539"/>
         </scene>
@@ -1129,7 +1142,7 @@
                 </swipeGestureRecognizer>
                 <swipeGestureRecognizer direction="right" id="mBw-FJ-Ut6">
                     <connections>
-                        <segue destination="qh4-mY-EPU" kind="custom" customClass="SegueFromLeft" customModule="moodifyV2" customModuleProvider="target" animates="NO" id="HAf-G0-2z0"/>
+                        <segue destination="qh4-mY-EPU" kind="custom" customClass="SegueFromLeft" customModule="moodifyV2" customModuleProvider="target" id="HAf-G0-2z0"/>
                     </connections>
                 </swipeGestureRecognizer>
             </objects>
@@ -1270,10 +1283,12 @@
         <image name="xButton" width="27" height="27"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="mOq-n4-Wac"/>
-        <segue reference="EEt-wu-0tb"/>
+        <segue reference="Kt8-03-4gy"/>
+        <segue reference="HAf-G0-2z0"/>
         <segue reference="4gZ-eP-sVl"/>
+        <segue reference="8Ia-DJ-7yc"/>
         <segue reference="F7f-Jd-g9G"/>
-        <segue reference="7iq-Li-HY4"/>
+        <segue reference="sKe-pV-3Ei"/>
+        <segue reference="DhY-yA-xq4"/>
     </inferredMetricsTieBreakers>
 </document>
