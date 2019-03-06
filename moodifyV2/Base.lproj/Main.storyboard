@@ -597,7 +597,7 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="pPv-zh-pKC" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <swipeGestureRecognizer direction="right" id="Ege-75-VW1">
                     <connections>
-                        <segue destination="QU1-nM-dcV" kind="custom" customClass="SegueFromLeft" customModule="moodifyV2" customModuleProvider="target" id="y9L-gB-dIy"/>
+                        <segue destination="QU1-nM-dcV" kind="show" identifier="doneWithViewingAssociationsSegue" customClass="SegueFromLeft" customModule="moodifyV2" customModuleProvider="target" id="kZu-Eh-mCM"/>
                     </connections>
                 </swipeGestureRecognizer>
             </objects>
@@ -1305,7 +1305,7 @@
         <segue reference="EEt-wu-0tb"/>
         <segue reference="4gZ-eP-sVl"/>
         <segue reference="r1K-7r-LKt"/>
-        <segue reference="y9L-gB-dIy"/>
+        <segue reference="kZu-Eh-mCM"/>
         <segue reference="sKe-pV-3Ei"/>
         <segue reference="7iq-Li-HY4"/>
     </inferredMetricsTieBreakers>
