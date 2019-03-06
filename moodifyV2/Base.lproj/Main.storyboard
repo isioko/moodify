@@ -425,7 +425,7 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4su-YD-Wjg" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <swipeGestureRecognizer direction="right" id="pHp-tm-R7v">
                     <connections>
-                        <segue destination="tXn-6T-E1W" kind="custom" id="8Ia-DJ-7yc"/>
+                        <segue destination="tXn-6T-E1W" kind="custom" customClass="SegueFromLeft" customModule="moodifyV2" customModuleProvider="target" id="r1K-7r-LKt"/>
                     </connections>
                 </swipeGestureRecognizer>
             </objects>
@@ -1283,12 +1283,13 @@
         <image name="xButton" width="27" height="27"/>
     </resources>
     <inferredMetricsTieBreakers>
+        <segue reference="C61-Cc-UW2"/>
         <segue reference="Kt8-03-4gy"/>
-        <segue reference="HAf-G0-2z0"/>
+        <segue reference="EEt-wu-0tb"/>
         <segue reference="4gZ-eP-sVl"/>
-        <segue reference="8Ia-DJ-7yc"/>
+        <segue reference="r1K-7r-LKt"/>
         <segue reference="F7f-Jd-g9G"/>
         <segue reference="sKe-pV-3Ei"/>
-        <segue reference="DhY-yA-xq4"/>
+        <segue reference="7iq-Li-HY4"/>
     </inferredMetricsTieBreakers>
 </document>
