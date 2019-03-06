@@ -564,6 +564,10 @@
                                     </collectionView>
                                 </subviews>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <gestureRecognizers/>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="Ege-75-VW1" appends="YES" id="uyN-4Z-xcG"/>
+                                </connections>
                             </view>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LTJ-ew-Sfr" userLabel="Back Button">
                                 <rect key="frame" x="14" y="44" width="43" height="35"/>
@@ -591,6 +595,11 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="pPv-zh-pKC" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <swipeGestureRecognizer direction="right" id="Ege-75-VW1">
+                    <connections>
+                        <segue destination="QU1-nM-dcV" kind="custom" customClass="SegueFromLeft" customModule="moodifyV2" customModuleProvider="target" id="y9L-gB-dIy"/>
+                    </connections>
+                </swipeGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="5052" y="-1207.3891625615763"/>
         </scene>
@@ -830,6 +839,7 @@
                                     </button>
                                 </subviews>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <gestureRecognizers/>
                                 <constraints>
                                     <constraint firstItem="dKe-OL-0FX" firstAttribute="top" secondItem="TQ0-UN-7fs" secondAttribute="bottom" multiplier="4/32" id="A5U-Sx-L2f"/>
                                     <constraint firstItem="4cx-3M-XWR" firstAttribute="top" secondItem="TQ0-UN-7fs" secondAttribute="bottom" multiplier="9/32" id="B8q-6a-jFY"/>
@@ -846,6 +856,9 @@
                                     <constraint firstItem="OfG-MC-ZnX" firstAttribute="centerY" secondItem="TQ0-UN-7fs" secondAttribute="bottom" multiplier="1.25/16" id="mQo-UO-Ptn"/>
                                     <constraint firstItem="p9L-18-BHK" firstAttribute="leading" secondItem="TQ0-UN-7fs" secondAttribute="trailing" multiplier="1/32" id="oXd-n1-m0R"/>
                                 </constraints>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="BSn-yf-5tI" appends="YES" id="zwd-Uy-NcF"/>
+                                </connections>
                             </view>
                         </subviews>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -875,6 +888,11 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2gI-g0-9b0" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <swipeGestureRecognizer direction="right" id="BSn-yf-5tI">
+                    <connections>
+                        <segue destination="tXn-6T-E1W" kind="custom" customClass="SegueFromLeft" customModule="moodifyV2" customModuleProvider="target" id="dgz-WR-54A"/>
+                    </connections>
+                </swipeGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="6495.1999999999998" y="-316.25615763546801"/>
         </scene>
@@ -1283,12 +1301,11 @@
         <image name="xButton" width="27" height="27"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="C61-Cc-UW2"/>
         <segue reference="Kt8-03-4gy"/>
         <segue reference="EEt-wu-0tb"/>
         <segue reference="4gZ-eP-sVl"/>
         <segue reference="r1K-7r-LKt"/>
-        <segue reference="F7f-Jd-g9G"/>
+        <segue reference="y9L-gB-dIy"/>
         <segue reference="sKe-pV-3Ei"/>
         <segue reference="7iq-Li-HY4"/>
     </inferredMetricsTieBreakers>
