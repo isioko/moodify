@@ -14,7 +14,6 @@
 		4C374617221915BA003B90A7 /* EntryEntity+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C374613221915BA003B90A7 /* EntryEntity+CoreDataProperties.swift */; };
 		4C37461B22191BCA003B90A7 /* ViewAssociatedEntriesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C37461A22191BCA003B90A7 /* ViewAssociatedEntriesViewController.swift */; };
 		4C37461D2219357F003B90A7 /* AssociatedEntryViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C37461C2219357F003B90A7 /* AssociatedEntryViewCell.swift */; };
-		4C3C6412220A7E8A00ED4364 /* CalendarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C3C6411220A7E8A00ED4364 /* CalendarViewController.swift */; };
 		4C3C6414220A8E5700ED4364 /* DisplayEntryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C3C6413220A8E5600ED4364 /* DisplayEntryViewController.swift */; };
 		4C3C6416220AA83E00ED4364 /* DisplayRecentlyPlayedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C3C6415220AA83E00ED4364 /* DisplayRecentlyPlayedViewController.swift */; };
 		4C3C6418220AA8B000ED4364 /* TrackTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C3C6417220AA8B000ED4364 /* TrackTableViewCell.swift */; };
@@ -62,7 +61,6 @@
 		4C374613221915BA003B90A7 /* EntryEntity+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "EntryEntity+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		4C37461A22191BCA003B90A7 /* ViewAssociatedEntriesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewAssociatedEntriesViewController.swift; sourceTree = "<group>"; };
 		4C37461C2219357F003B90A7 /* AssociatedEntryViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AssociatedEntryViewCell.swift; sourceTree = "<group>"; };
-		4C3C6411220A7E8A00ED4364 /* CalendarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarViewController.swift; sourceTree = "<group>"; };
 		4C3C6413220A8E5600ED4364 /* DisplayEntryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DisplayEntryViewController.swift; sourceTree = "<group>"; };
 		4C3C6415220AA83E00ED4364 /* DisplayRecentlyPlayedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DisplayRecentlyPlayedViewController.swift; sourceTree = "<group>"; };
 		4C3C6417220AA8B000ED4364 /* TrackTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrackTableViewCell.swift; sourceTree = "<group>"; };
@@ -186,7 +184,6 @@
 				4CF6E9B12208147F00836FC6 /* EntryTabViewController.swift */,
 				4CF6E9AB220809A800836FC6 /* WriteEntryViewController.swift */,
 				4C4B43FC22127ED00022DD3E /* Extensions.swift */,
-				4C3C6411220A7E8A00ED4364 /* CalendarViewController.swift */,
 				6A0C5FA82204179800666370 /* ViewController.swift */,
 				4C6B3DCD220BFA2800C79C61 /* AuthorizeViewController.swift */,
 				4C37461A22191BCA003B90A7 /* ViewAssociatedEntriesViewController.swift */,
@@ -380,7 +377,6 @@
 				4C37461B22191BCA003B90A7 /* ViewAssociatedEntriesViewController.swift in Sources */,
 				4C374617221915BA003B90A7 /* EntryEntity+CoreDataProperties.swift in Sources */,
 				BA7938312223DAD1002D6C97 /* SegueRight.swift in Sources */,
-				4C3C6412220A7E8A00ED4364 /* CalendarViewController.swift in Sources */,
 				4C3C6416220AA83E00ED4364 /* DisplayRecentlyPlayedViewController.swift in Sources */,
 				4C70D9E4220F59B200EA9E8B /* DisplayTrackCollectionViewCell.swift in Sources */,
 				4C48A9BD2207C07C0073DF63 /* Entry.swift in Sources */,

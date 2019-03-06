@@ -10,15 +10,13 @@ import UIKit
 
 class TutorialFirstViewController: UIViewController {
 
-    @IBOutlet weak var gradientView: UIView!
     let gradient = CAGradientLayer()
+    @IBOutlet weak var gradientView: UIView!
     
-    override func viewDidLoad() {
-        super.viewDidLoad()
+    override func viewDidAppear(_ animated: Bool) {
         gradient.frame = gradientView.bounds
         gradient.colors = Constants.themeColors()
         gradientView.layer.insertSublayer(gradient, at: 0)
-        // Do any additional setup after loading the view.
     }
 
 }
