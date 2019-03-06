@@ -336,7 +336,7 @@
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     </view>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Date" textAlignment="center" lineBreakMode="tailTruncation" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZRA-8T-utO" userLabel="Date Label">
-                                        <rect key="frame" x="161.33333333333334" y="47.666666666666657" width="52.333333333333343" height="40.333333333333343"/>
+                                        <rect key="frame" x="161.33333333333334" y="53.000000000000007" width="52.333333333333343" height="29.333333333333336"/>
                                         <fontDescription key="fontDescription" name="Hind-SemiBold" family="Hind" pointSize="25"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
@@ -922,9 +922,9 @@
                                                                     </constraints>
                                                                 </imageView>
                                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="checkmark" translatesAutoresizingMaskIntoConstraints="NO" id="AqC-dE-wXS">
-                                                                    <rect key="frame" x="292.33333333333331" y="15.000000000000002" width="31" height="24.666666666666671"/>
+                                                                    <rect key="frame" x="295" y="14.666666666666666" width="25.666666666666686" height="25.333333333333336"/>
                                                                     <constraints>
-                                                                        <constraint firstAttribute="width" secondItem="AqC-dE-wXS" secondAttribute="height" multiplier="37:30" id="ZB7-HQ-lp6"/>
+                                                                        <constraint firstAttribute="width" secondItem="AqC-dE-wXS" secondAttribute="height" multiplier="30:30" id="ZB7-HQ-lp6"/>
                                                                     </constraints>
                                                                 </imageView>
                                                             </subviews>
@@ -935,7 +935,7 @@
                                                                 <constraint firstItem="IhI-qw-OIs" firstAttribute="trailing" secondItem="4EM-Ky-9Xo" secondAttribute="trailing" multiplier="7/8" id="Ew2-Gv-qwq"/>
                                                                 <constraint firstItem="AqC-dE-wXS" firstAttribute="centerX" secondItem="4EM-Ky-9Xo" secondAttribute="trailing" multiplier="15/16" id="Nlg-43-fcA"/>
                                                                 <constraint firstItem="9zT-yu-5pW" firstAttribute="trailing" secondItem="4EM-Ky-9Xo" secondAttribute="trailing" multiplier="7/8" id="eUI-eH-Soa"/>
-                                                                <constraint firstItem="AqC-dE-wXS" firstAttribute="trailing" secondItem="4EM-Ky-9Xo" secondAttribute="trailing" multiplier="63/64" id="hN0-lM-Ni2"/>
+                                                                <constraint firstItem="AqC-dE-wXS" firstAttribute="trailing" secondItem="4EM-Ky-9Xo" secondAttribute="trailing" multiplier="62.5/64" id="hN0-lM-Ni2"/>
                                                                 <constraint firstItem="AqC-dE-wXS" firstAttribute="centerY" secondItem="4EM-Ky-9Xo" secondAttribute="centerY" id="jwf-Or-6WR"/>
                                                                 <constraint firstItem="IhI-qw-OIs" firstAttribute="leading" secondItem="4EM-Ky-9Xo" secondAttribute="trailing" multiplier="2.25/12" id="myj-LY-d8R"/>
                                                                 <constraint firstItem="IhI-qw-OIs" firstAttribute="top" secondItem="4EM-Ky-9Xo" secondAttribute="topMargin" multiplier="1/2" id="pnb-z5-hTj"/>
@@ -1270,10 +1270,10 @@
         <image name="xButton" width="27" height="27"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="twh-QW-wH0"/>
+        <segue reference="mOq-n4-Wac"/>
         <segue reference="EEt-wu-0tb"/>
-        <segue reference="fwe-Sq-vFa"/>
-        <segue reference="Bu7-jL-oSM"/>
+        <segue reference="4gZ-eP-sVl"/>
+        <segue reference="F7f-Jd-g9G"/>
         <segue reference="7iq-Li-HY4"/>
     </inferredMetricsTieBreakers>
 </document>
