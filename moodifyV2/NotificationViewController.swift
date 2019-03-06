@@ -89,7 +89,7 @@ class NotificationViewController: UIViewController, UICollectionViewDelegate, UI
         emotiface.clipsToBounds = true
         // create array of all faces
         var images : [UIImage] = []
-        let strings : [String] = ["😩","😔","😕","😑","😏","😊","😃"]
+        let strings : [String] = ["😩","☹","😕","😑","😊","😀","😁"]
         // <= -5, -5 < -3, -3 < -1, 0
         
         for s in strings {
