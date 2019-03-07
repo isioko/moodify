@@ -15,7 +15,11 @@ class NotificationViewController: UIViewController, UICollectionViewDelegate, UI
         return entries.count
     }
     
-    @IBOutlet weak var emotiface: UIImageView!
+    @IBOutlet weak var popupView: UIView!
+    @IBOutlet weak var numEntriesLabel: UILabel!
+    
+    
+    @IBOutlet weak var emojiLabel: UILabel!
     var entries = [Entry]()
     var core_data_entries: [NSObject] = []
     var filteredEntriesByDate = [NSObject]()
@@ -34,6 +38,9 @@ class NotificationViewController: UIViewController, UICollectionViewDelegate, UI
     }
     
     override func viewDidAppear(_ animated: Bool) {
+        popupView.layer.cornerRadius = 8.0
+        popupView.clipsToBounds = true
+        
         // CORE DATA
         //1
         guard let appDelegate =
@@ -83,10 +90,6 @@ class NotificationViewController: UIViewController, UICollectionViewDelegate, UI
     }
     
     func displaySentiment(score:Int){
-        // pull appropriate index from that array
-        //center score at 3
-        emotiface.layer.cornerRadius = 8.0
-        emotiface.clipsToBounds = true
         // create array of all faces
         var images : [UIImage] = []
         let strings : [String] = ["😩","☹","😕","😑","😊","😀","😁"]
@@ -98,9 +101,8 @@ class NotificationViewController: UIViewController, UICollectionViewDelegate, UI
         var ind = (score + 5)/2
         if ind < 0 {ind = 0}
         if ind > strings.count-1 {ind = strings.count-1}
-        // print statement for debugging until Dylan done with storyboard
-        print(strings[ind])
-        emotiface.image = images[ind]
+        
+        emojiLabel.text = strings[ind]
     }
     
     
@@ -117,6 +119,8 @@ class NotificationViewController: UIViewController, UICollectionViewDelegate, UI
             let entryDateString = date_formatter.string(from: entry.entryDate)
             return entryDateString == yesterdayString
         })
+        
+        numEntriesLabel.text = String(filteredEntriesByDate.count)
     }
     
     func getEntryFromNSObject(NS_entry:NSObject) -> Entry {

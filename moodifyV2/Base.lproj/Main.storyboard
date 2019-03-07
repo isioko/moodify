@@ -346,8 +346,8 @@
                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CS7-M9-ZqV" userLabel="Back Button">
-                                        <rect key="frame" x="29" y="49" width="36" height="29"/>
+                                    <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CS7-M9-ZqV" userLabel="Back Button">
+                                        <rect key="frame" x="11.666666666666666" y="52" width="36" height="29"/>
                                         <constraints>
                                             <constraint firstAttribute="width" secondItem="CS7-M9-ZqV" secondAttribute="height" multiplier="41:33" id="IeL-mR-xZS"/>
                                         </constraints>
@@ -358,8 +358,8 @@
                                             <segue destination="uqo-ot-EXU" kind="presentation" identifier="backToEntryTabFromViewEntry" animates="NO" id="twh-QW-wH0"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleAspectFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sKS-rv-Xax" userLabel="Delete Button">
-                                        <rect key="frame" x="310.66666666666669" y="45" width="34.666666666666686" height="36.666666666666657"/>
+                                    <button opaque="NO" contentMode="scaleAspectFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sKS-rv-Xax" userLabel="Delete Button">
+                                        <rect key="frame" x="328" y="48" width="34.666666666666686" height="36.666666666666657"/>
                                         <constraints>
                                             <constraint firstAttribute="width" secondItem="sKS-rv-Xax" secondAttribute="height" multiplier="35:37" id="Xls-Bs-Nr4"/>
                                         </constraints>
@@ -745,8 +745,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iff-tX-ZKE">
-                                <rect key="frame" x="312" y="43.333333333333336" width="32" height="40.000000000000007"/>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iff-tX-ZKE">
+                                <rect key="frame" x="330" y="43.333333333333329" width="32" height="40"/>
                                 <state key="normal" image="saveIcon">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
@@ -833,8 +833,8 @@
                                         </subviews>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     </view>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OfG-MC-ZnX">
-                                        <rect key="frame" x="29" y="52" width="36" height="23"/>
+                                    <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OfG-MC-ZnX">
+                                        <rect key="frame" x="11.666666666666666" y="52" width="36" height="23"/>
                                         <state key="normal" image="backButton">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </state>
@@ -1273,8 +1273,37 @@
                                                     <segue destination="uqo-ot-EXU" kind="presentation" identifier="backToEntryTabFromPopUp" animates="NO" id="S62-3M-qzb"/>
                                                 </connections>
                                             </button>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="ONE DAY AGO" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1EB-CD-Lwg">
+                                                <rect key="frame" x="90" y="11" width="150" height="37"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <fontDescription key="fontDescription" name="Hind-SemiBold" family="Hind" pointSize="23"/>
+                                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="1" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="M3r-Sx-iMN" userLabel="Number Entries Label">
+                                                <rect key="frame" x="220" y="51" width="23" height="37"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <fontDescription key="fontDescription" name="Hind-SemiBold" family="Hind" pointSize="23"/>
+                                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="white thought" translatesAutoresizingMaskIntoConstraints="NO" id="xLi-ha-yZW" userLabel="ThoughtBubble">
+                                                <rect key="frame" x="97" y="56" width="37" height="25"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            </imageView>
+                                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="entriesIcon" translatesAutoresizingMaskIntoConstraints="NO" id="OJw-PS-F2c">
+                                                <rect key="frame" x="195" y="56" width="21" height="25"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            </imageView>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="1" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1tg-CR-2Ej" userLabel="Emoji Text">
+                                                <rect key="frame" x="137" y="50" width="25" height="37"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <fontDescription key="fontDescription" name="Hind-SemiBold" family="Hind" pointSize="23"/>
+                                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
                                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="Cx9-7S-VVt" userLabel="Entry Collection View">
-                                                <rect key="frame" x="3" y="57" width="324" height="488"/>
+                                                <rect key="frame" x="17" y="96" width="297" height="440"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="11" id="ebg-xx-AFZ">
@@ -1285,7 +1314,7 @@
                                                 </collectionViewFlowLayout>
                                                 <cells>
                                                     <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="notifCell" id="BLo-Ln-fQU" userLabel="Notification Cell" customClass="NotificationEntryViewCell" customModule="moodifyV2" customModuleProvider="target">
-                                                        <rect key="frame" x="0.0" y="0.0" width="324" height="105"/>
+                                                        <rect key="frame" x="-13.666666666666666" y="0.0" width="324" height="105"/>
                                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
                                                             <rect key="frame" x="0.0" y="0.0" width="324" height="105"/>
@@ -1299,27 +1328,13 @@
                                                                 </label>
                                                             </subviews>
                                                         </view>
+                                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <connections>
                                                             <outlet property="entryLabel" destination="moo-jO-nYe" id="UYx-O1-QBS"/>
                                                         </connections>
                                                     </collectionViewCell>
                                                 </cells>
                                             </collectionView>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="A DAY AGO" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1EB-CD-Lwg">
-                                                <rect key="frame" x="55" y="12" width="121" height="37"/>
-                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                <fontDescription key="fontDescription" name="Hind-SemiBold" family="Hind" pointSize="23"/>
-                                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                <nil key="highlightedColor"/>
-                                            </label>
-                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="YRR-KA-wOp" userLabel="EmotiFace">
-                                                <rect key="frame" x="224" y="12" width="36" height="37"/>
-                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                            </imageView>
-                                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="white thought" translatesAutoresizingMaskIntoConstraints="NO" id="xLi-ha-yZW" userLabel="ThoughtBubble">
-                                                <rect key="frame" x="184" y="18" width="36" height="25"/>
-                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                            </imageView>
                                         </subviews>
                                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     </view>
@@ -1332,8 +1347,10 @@
                     </view>
                     <nil key="simulatedTopBarMetrics"/>
                     <connections>
-                        <outlet property="Emotiface" destination="YRR-KA-wOp" id="deb-TG-aZW"/>
+                        <outlet property="emojiLabel" destination="1tg-CR-2Ej" id="SkX-Hp-7dg"/>
                         <outlet property="notificationCollectionView" destination="Cx9-7S-VVt" id="pfv-Ih-qVz"/>
+                        <outlet property="numEntriesLabel" destination="M3r-Sx-iMN" id="suG-Oy-zZY"/>
+                        <outlet property="popupView" destination="0Jw-O2-0jH" id="xeW-aC-o7x"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="frP-ba-09p" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -1371,6 +1388,7 @@
         <image name="blueLocation" width="22.666666030883789" height="39"/>
         <image name="checkmark" width="37" height="37"/>
         <image name="continue" width="93.333335876464844" height="50"/>
+        <image name="entriesIcon" width="34" height="45.666667938232422"/>
         <image name="getStartedButton" width="134" height="50"/>
         <image name="moodify-start-logo-01.png" width="1140" height="540"/>
         <image name="plusButton" width="94" height="94"/>
@@ -1388,9 +1406,9 @@
         <segue reference="r54-EK-xoz"/>
         <segue reference="5YD-BO-11A"/>
         <segue reference="Xnz-1o-NJS"/>
-        <segue reference="4gZ-eP-sVl"/>
+        <segue reference="fwe-Sq-vFa"/>
         <segue reference="r1K-7r-LKt"/>
-        <segue reference="kZu-Eh-mCM"/>
+        <segue reference="fna-Md-nNg"/>
         <segue reference="kOC-gf-NDs"/>
         <segue reference="znF-Wd-OaF"/>
     </inferredMetricsTieBreakers>
