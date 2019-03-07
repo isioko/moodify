@@ -173,7 +173,7 @@
                                     <button opaque="NO" contentMode="scaleAspectFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ws1-hO-Iz7">
                                         <rect key="frame" x="120" y="720" width="134" height="50"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <state key="normal" title="Skip Tutorial" image="skipTutorial"/>
+                                        <state key="normal" image="skipTutorial"/>
                                         <connections>
                                             <segue destination="IOf-FR-uyr" kind="show" animates="NO" id="7iq-Li-HY4"/>
                                         </connections>
@@ -1058,7 +1058,7 @@
                                     <button opaque="NO" contentMode="scaleAspectFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DWw-JF-UT6">
                                         <rect key="frame" x="120" y="720" width="134" height="50"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <state key="normal" title="Skip Tutorial" image="skipTutorial"/>
+                                        <state key="normal" image="skipTutorial"/>
                                         <connections>
                                             <segue destination="IOf-FR-uyr" kind="show" animates="NO" id="DhY-yA-xq4"/>
                                         </connections>
@@ -1125,7 +1125,7 @@
                                     <button opaque="NO" contentMode="scaleAspectFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jxG-He-Wr6">
                                         <rect key="frame" x="120" y="720" width="134" height="50"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <state key="normal" title="Skip Tutorial" image="skipTutorial"/>
+                                        <state key="normal" image="skipTutorial"/>
                                         <connections>
                                             <segue destination="IOf-FR-uyr" kind="show" animates="NO" id="2q1-Fp-SUj"/>
                                         </connections>
@@ -1181,7 +1181,7 @@
                                     <button opaque="NO" contentMode="scaleAspectFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6tL-2p-Lzy">
                                         <rect key="frame" x="120" y="720" width="134" height="50"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <state key="normal" title="Get Started" image="getStartedButton"/>
+                                        <state key="normal" image="getStartedButton"/>
                                         <connections>
                                             <segue destination="IOf-FR-uyr" kind="show" animates="NO" id="vcI-uF-JvT"/>
                                         </connections>
