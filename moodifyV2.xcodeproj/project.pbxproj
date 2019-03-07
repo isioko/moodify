@@ -33,6 +33,7 @@
 		4F1C042922225B1D00334AF2 /* TutorialFirstViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F1C042822225B1D00334AF2 /* TutorialFirstViewController.swift */; };
 		4F1C042B22225D0800334AF2 /* TutorialSecondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F1C042A22225D0800334AF2 /* TutorialSecondViewController.swift */; };
 		4F1C042D22225E8700334AF2 /* TutorialThirdViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F1C042C22225E8700334AF2 /* TutorialThirdViewController.swift */; };
+		4F3909632230A930000B9DEB /* TutorialFourthViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F3909622230A930000B9DEB /* TutorialFourthViewController.swift */; };
 		5AF0F722221E8FB100EFE1DD /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AF0F721221E8FB100EFE1DD /* Constants.swift */; };
 		6A0C5FA72204179800666370 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A0C5FA62204179800666370 /* AppDelegate.swift */; };
 		6A0C5FA92204179800666370 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A0C5FA82204179800666370 /* ViewController.swift */; };
@@ -80,6 +81,7 @@
 		4F1C042822225B1D00334AF2 /* TutorialFirstViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TutorialFirstViewController.swift; sourceTree = "<group>"; };
 		4F1C042A22225D0800334AF2 /* TutorialSecondViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TutorialSecondViewController.swift; sourceTree = "<group>"; };
 		4F1C042C22225E8700334AF2 /* TutorialThirdViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TutorialThirdViewController.swift; sourceTree = "<group>"; };
+		4F3909622230A930000B9DEB /* TutorialFourthViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TutorialFourthViewController.swift; sourceTree = "<group>"; };
 		5AF0F721221E8FB100EFE1DD /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		6A0C5FA32204179800666370 /* moodifyV2.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = moodifyV2.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6A0C5FA62204179800666370 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -176,6 +178,7 @@
 				4F1C042822225B1D00334AF2 /* TutorialFirstViewController.swift */,
 				4F1C042A22225D0800334AF2 /* TutorialSecondViewController.swift */,
 				4F1C042C22225E8700334AF2 /* TutorialThirdViewController.swift */,
+				4F3909622230A930000B9DEB /* TutorialFourthViewController.swift */,
 				4CD7A92F2207F3F700991F89 /* UIImageView+Download.swift */,
 				6A0C5FA62204179800666370 /* AppDelegate.swift */,
 				4CF6E9A72208024000836FC6 /* HomePageTabBarViewController.swift */,
@@ -377,6 +380,7 @@
 				4C37461B22191BCA003B90A7 /* ViewAssociatedEntriesViewController.swift in Sources */,
 				4C374617221915BA003B90A7 /* EntryEntity+CoreDataProperties.swift in Sources */,
 				BA7938312223DAD1002D6C97 /* SegueRight.swift in Sources */,
+				4F3909632230A930000B9DEB /* TutorialFourthViewController.swift in Sources */,
 				4C3C6416220AA83E00ED4364 /* DisplayRecentlyPlayedViewController.swift in Sources */,
 				4C70D9E4220F59B200EA9E8B /* DisplayTrackCollectionViewCell.swift in Sources */,
 				4C48A9BD2207C07C0073DF63 /* Entry.swift in Sources */,
