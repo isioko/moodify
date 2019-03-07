@@ -109,7 +109,33 @@ class EntryTabViewController: UIViewController, UICollectionViewDelegate, UIColl
         imageView.image = image
         navigationItem.titleView = imageView
         
-        searchController.searchBar.tintColor = UIColor(cgColor: Constants.themeColors()[2])
+//        searchController.searchBar.tintColor = UIColor(cgColor: Constants.themeColors()[2])
+        searchController.searchBar.tintColor = UIColor.white
+        
+        if let textfield = searchController.searchBar.value(forKey: "searchField") as? UITextField {
+            textfield.textColor = UIColor.white
+            //            textfield.textColor = UIColor.black
+            if let backgroundview = textfield.subviews.first {
+                
+                // Background color
+                //                backgroundview.backgroundColor = UIColor.white
+                backgroundview.backgroundColor = UIColor(red: 1, green: 1, blue: 1, alpha: 0.7)
+                
+                // Rounded corner
+                backgroundview.layer.cornerRadius = 10;
+                backgroundview.clipsToBounds = true;
+                
+                // Change color of search icon
+                let imageV = textfield.leftView as! UIImageView
+                imageV.image = imageV.image?.withRenderingMode(UIImage.RenderingMode.alwaysTemplate)
+                imageV.tintColor = UIColor.white
+                
+                let textfieldLabel = textfield.value(forKey: "placeholderLabel") as? UILabel
+                textfieldLabel?.textColor = UIColor.white
+            }
+        }
+        
+        searchController.searchBar.isTranslucent = true
     }
     
     func getYesterdaysEntries() {
@@ -207,6 +233,20 @@ class EntryTabViewController: UIViewController, UICollectionViewDelegate, UIColl
             searchController.isActive = true
             searchController.searchBar.text = currentSearchString
         }
+        
+        navigationController?.navigationBar.isTranslucent = true
+        
+        // remove navigation background
+        navigationController?.navigationBar.setBackgroundImage(UIImage(), for: .default)
+        navigationController?.navigationBar.shadowImage = UIImage()
+        navigationController?.navigationBar.setBackgroundImage(UIImage(), for: UIBarMetrics.default)
+        
+        // change search bar settings
+        searchController.searchBar.tintColor = UIColor.white
+        searchController.searchBar.barTintColor = UIColor.white
+        searchController.searchBar.isTranslucent = false
+        UITextField.appearance(whenContainedInInstancesOf: [UISearchBar.self]).defaultTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.white]
+        UITextField.appearance(whenContainedInInstancesOf: [UISearchBar.self]).attributedPlaceholder = NSAttributedString(string: "placeholder", attributes: [NSAttributedString.Key.foregroundColor: UIColor.white])
     }
     
     @IBOutlet weak var entryCollectionView: UICollectionView!{
