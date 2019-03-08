@@ -4,7 +4,8 @@
 //
 //  Created by Zoe Pacalin on 2/25/19.
 //  Copyright © 2019 Isi Okojie. All rights reserved.
-//
+// CREDIT TO PUBLICALLY AVAILABLE CODE ON stack overflow, FROM WHICH THE FOLLOWING WAS PULLED:
+// https://stackoverflow.com/questions/30763519/ios-segue-left-to-right
 
 import Foundation
 import UIKit
