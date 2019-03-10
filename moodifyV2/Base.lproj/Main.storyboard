@@ -61,6 +61,7 @@
                         <outlet property="moodifyLogo" destination="3CI-Dn-Q36" id="bHO-17-3Cc"/>
                         <segue destination="uqo-ot-EXU" kind="presentation" identifier="straightToEntryTab" animates="NO" id="r54-EK-xoz"/>
                         <segue destination="ID3-CU-KFe" kind="show" identifier="loadAppSegue" id="kOC-gf-NDs"/>
+                        <segue destination="IOf-FR-uyr" kind="presentation" identifier="toAuthorizeFromLoad" animates="NO" id="JsF-V9-RdV"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -1526,12 +1527,12 @@
         <image name="xButton" width="27.333333969116211" height="27.333333969116211"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="S62-3M-qzb"/>
+        <segue reference="r54-EK-xoz"/>
         <segue reference="C3T-j3-342"/>
         <segue reference="Xnz-1o-NJS"/>
         <segue reference="4gZ-eP-sVl"/>
         <segue reference="sDg-8x-Tes"/>
-        <segue reference="sKe-pV-3Ei"/>
-        <segue reference="vcI-uF-JvT"/>
+        <segue reference="kOC-gf-NDs"/>
+        <segue reference="JsF-V9-RdV"/>
     </inferredMetricsTieBreakers>
 </document>
