@@ -1291,9 +1291,6 @@
                                             <constraint firstAttribute="width" secondItem="6tL-2p-Lzy" secondAttribute="height" multiplier="67:25" id="cRI-ji-Js2"/>
                                         </constraints>
                                         <state key="normal" image="getStartedButton"/>
-                                        <connections>
-                                            <segue destination="IOf-FR-uyr" kind="show" animates="NO" id="vcI-uF-JvT"/>
-                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleAspectFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageWhenHighlighted="NO" adjustsImageWhenDisabled="NO" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Bua-by-H6j">
                                         <rect key="frame" x="23" y="34" width="329" height="676.66666666666663"/>
@@ -1315,8 +1312,8 @@
                                     <constraint firstItem="Bua-by-H6j" firstAttribute="centerX" secondItem="3B9-OE-fx4" secondAttribute="centerX" id="yjV-rc-eXJ"/>
                                 </constraints>
                                 <connections>
-                                    <outletCollection property="gestureRecognizers" destination="YcD-Er-2ve" appends="YES" id="AGq-kk-dfO"/>
-                                    <outletCollection property="gestureRecognizers" destination="nBl-27-nu8" appends="YES" id="Ddn-Pi-HUo"/>
+                                    <outletCollection property="gestureRecognizers" destination="aPf-EJ-ph8" appends="YES" id="tpM-uw-5fD"/>
+                                    <outletCollection property="gestureRecognizers" destination="k37-wV-fH8" appends="YES" id="GsR-92-XLm"/>
                                 </connections>
                             </view>
                         </subviews>
@@ -1331,12 +1328,19 @@
                     </view>
                     <connections>
                         <outlet property="gradientView" destination="3B9-OE-fx4" id="pzR-Lq-6dz"/>
-                        <segue destination="Oqr-p5-i8h" kind="custom" customClass="SegueFromLeft" customModule="moodifyV2" customModuleProvider="target" id="C3T-j3-342"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="yFW-Qv-fte" userLabel="First Responder" sceneMemberID="firstResponder"/>
-                <swipeGestureRecognizer direction="right" id="YcD-Er-2ve"/>
-                <swipeGestureRecognizer direction="left" id="nBl-27-nu8"/>
+                <swipeGestureRecognizer direction="right" id="aPf-EJ-ph8">
+                    <connections>
+                        <segue destination="Oqr-p5-i8h" kind="custom" customClass="SegueFromLeft" customModule="moodifyV2" customModuleProvider="target" id="pJo-5t-rbY"/>
+                    </connections>
+                </swipeGestureRecognizer>
+                <swipeGestureRecognizer direction="left" id="k37-wV-fH8">
+                    <connections>
+                        <segue destination="IOf-FR-uyr" kind="custom" customClass="SegueFromRight" customModule="moodifyV2" customModuleProvider="target" id="h6n-VN-wBa"/>
+                    </connections>
+                </swipeGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="3503" y="848"/>
         </scene>
@@ -1480,34 +1484,34 @@
         </scene>
     </scenes>
     <resources>
-        <image name="authButton" width="1014" height="150"/>
-        <image name="backButton" width="36.333332061767578" height="23.666666030883789"/>
-        <image name="blackEntries" width="18" height="24.333333969116211"/>
-        <image name="blackHeadphones" width="24.666666030883789" height="20.666666030883789"/>
-        <image name="blackLocation" width="10.666666984558105" height="18.333333969116211"/>
-        <image name="blackThought" width="30" height="23.666666030883789"/>
-        <image name="blueCalIcon" width="41" height="48.666667938232422"/>
-        <image name="blueHeadphones" width="43.666667938232422" height="35.666667938232422"/>
-        <image name="blueLocation" width="22.666666030883789" height="39"/>
+        <image name="authButton" width="338" height="50"/>
+        <image name="backButton" width="36" height="23"/>
+        <image name="blackEntries" width="18" height="24"/>
+        <image name="blackHeadphones" width="24" height="20"/>
+        <image name="blackLocation" width="10" height="18"/>
+        <image name="blackThought" width="30" height="23"/>
+        <image name="blueCalIcon" width="41" height="48"/>
+        <image name="blueHeadphones" width="43" height="35"/>
+        <image name="blueLocation" width="22" height="39"/>
         <image name="checkmark" width="37" height="37"/>
-        <image name="continue" width="93.333335876464844" height="50"/>
-        <image name="entriesIcon" width="34" height="45.666667938232422"/>
+        <image name="continue" width="93" height="50"/>
+        <image name="entriesIcon" width="34" height="45"/>
         <image name="getStartedButton" width="134" height="50"/>
         <image name="moodify-start-logo-01.png" width="1140" height="540"/>
         <image name="plusButton" width="94" height="94"/>
         <image name="saveIcon" width="32" height="40"/>
         <image name="skipTutorial" width="134" height="50"/>
-        <image name="trashCan" width="36.666667938232422" height="39.666667938232422"/>
+        <image name="trashCan" width="36" height="39"/>
         <image name="tutorialPageFour" width="312" height="648"/>
         <image name="tutorialPageOne" width="312" height="648"/>
         <image name="tutorialPageThree" width="312" height="648"/>
         <image name="tutorialPageTwo" width="312" height="648"/>
-        <image name="white thought" width="30" height="23.666666030883789"/>
-        <image name="xButton" width="27.333333969116211" height="27.333333969116211"/>
+        <image name="white thought" width="30" height="23"/>
+        <image name="xButton" width="27" height="27"/>
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="S62-3M-qzb"/>
-        <segue reference="C3T-j3-342"/>
+        <segue reference="pJo-5t-rbY"/>
         <segue reference="Xnz-1o-NJS"/>
         <segue reference="fwe-Sq-vFa"/>
         <segue reference="sDg-8x-Tes"/>
