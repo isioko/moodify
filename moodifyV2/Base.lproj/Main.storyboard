@@ -141,6 +141,7 @@
                     </view>
                     <connections>
                         <outlet property="authorizeApp" destination="ded-tI-R8C" id="91X-9k-y8y"/>
+                        <outlet property="continueButton" destination="SuS-t7-Jot" id="d6p-Jr-LQi"/>
                         <outlet property="gradientView" destination="Hzt-dk-wAH" id="qoB-wq-VZG"/>
                     </connections>
                 </viewController>
@@ -1329,15 +1330,12 @@
                     </view>
                     <connections>
                         <outlet property="gradientView" destination="3B9-OE-fx4" id="pzR-Lq-6dz"/>
+                        <segue destination="Oqr-p5-i8h" kind="custom" customClass="SegueFromLeft" customModule="moodifyV2" customModuleProvider="target" id="C3T-j3-342"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="yFW-Qv-fte" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <swipeGestureRecognizer direction="right" id="YcD-Er-2ve"/>
-                <swipeGestureRecognizer direction="left" id="nBl-27-nu8">
-                    <connections>
-                        <segue destination="uqo-ot-EXU" kind="custom" customClass="SegueFromRight" customModule="moodifyV2" customModuleProvider="target" id="HOM-tD-uN6"/>
-                    </connections>
-                </swipeGestureRecognizer>
+                <swipeGestureRecognizer direction="left" id="nBl-27-nu8"/>
             </objects>
             <point key="canvasLocation" x="3503" y="848"/>
         </scene>
@@ -1529,10 +1527,11 @@
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="S62-3M-qzb"/>
+        <segue reference="C3T-j3-342"/>
         <segue reference="Xnz-1o-NJS"/>
         <segue reference="4gZ-eP-sVl"/>
         <segue reference="sDg-8x-Tes"/>
         <segue reference="sKe-pV-3Ei"/>
-        <segue reference="2q1-Fp-SUj"/>
+        <segue reference="vcI-uF-JvT"/>
     </inferredMetricsTieBreakers>
 </document>

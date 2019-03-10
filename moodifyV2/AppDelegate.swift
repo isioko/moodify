@@ -49,28 +49,28 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         return true
     }
     
-    func resetMemoryNotificationVars(){
+    func resetMemoryNotificationVars() {
         let managedContext =
             self.persistentContainer.viewContext
         
         
         let request = NSFetchRequest<NSFetchRequestResult>(entityName: "MemoryEntity")
-        do{
+        do {
             
             let count = try managedContext.count(for: request)
             var foundMemory = try managedContext.fetch(request)
             
-            if(count == 0){
+            if(count == 0) {
                 // no matching object
                 let memoryObj = MemoryEntity(context: managedContext)
                 memoryObj.setValue(true, forKeyPath:"showBool")
                 
-            }else{
+            } else {
                 let memoryObj = foundMemory[0] as! MemoryEntity
                 memoryObj.setValue(true, forKeyPath:"showBool")
                 
             }
-        }catch let error as NSError {
+        } catch let error as NSError {
             print("Could not fetch \(error), \(error.userInfo)")
         }
         
