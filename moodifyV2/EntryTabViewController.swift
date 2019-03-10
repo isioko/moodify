@@ -24,7 +24,7 @@ class EntryTabViewController: UIViewController, UICollectionViewDelegate, UIColl
     let gradient = CAGradientLayer()
     public var newEntry = Entry()
     public var currentSearchString = ""
-    
+    public var showMemoryPopup = true
     lazy var searchBar:UISearchBar = UISearchBar(frame: CGRect.zero)
 
     //search controller
@@ -174,16 +174,24 @@ class EntryTabViewController: UIViewController, UICollectionViewDelegate, UIColl
             appDelegate.persistentContainer.viewContext
         
         //2
-        let fetchRequest_songs = NSFetchRequest<NSManagedObject>(entityName: "TrackEntity")
-        let fetchRequest =
+        let fetchRequestMemory = NSFetchRequest<NSManagedObject>(entityName: "MemoryEntity")
+
+        let fetchRequestSongs = NSFetchRequest<NSManagedObject>(entityName: "TrackEntity")
+        let fetchRequestEntries =
             NSFetchRequest<NSManagedObject>(entityName: "EntryEntity")
         let sort = NSSortDescriptor(key: #keyPath(EntryEntity.date), ascending: false)
-        fetchRequest.sortDescriptors = [sort]
+        fetchRequestEntries.sortDescriptors = [sort]
 
         //3
         do {
-            core_data_entries = try managedContext.fetch(fetchRequest)
-            core_data_tracks = try managedContext.fetch(fetchRequest_songs)
+            core_data_entries = try managedContext.fetch(fetchRequestEntries)
+            core_data_tracks = try managedContext.fetch(fetchRequestSongs)
+            // get var to know if user has "exxed" out of NotificationViewController previously
+            let memory_saved_pref = try managedContext.fetch(fetchRequestMemory)
+            if memory_saved_pref.count > 0{
+                showMemoryPopup = memory_saved_pref[0].value(forKey: "showBool") as! Bool
+                print(showMemoryPopup)
+            }
         } catch let error as NSError {
             print("Could not fetch. \(error), \(error.userInfo)")
         }
@@ -198,17 +206,22 @@ class EntryTabViewController: UIViewController, UICollectionViewDelegate, UIColl
         
         let lastNotificationDate = UserDefaults.standard.string(forKey: "lastNotificationDate")
         
-        if  lastNotificationDate != dateString && filteredEntriesByDate.count > 0 {
-            print("send notification")
-            
-            UserDefaults.standard.set(dateString, forKey: "lastNotificationDate")
-            self.performSegue(withIdentifier: "toNotificationSegue", sender: self)
-        } else {
-            print("do not send notification")
+        
+        if showMemoryPopup{
+            if  lastNotificationDate != dateString && filteredEntriesByDate.count > 0 {
+                print("send notification")
+                
+                UserDefaults.standard.set(dateString, forKey: "lastNotificationDate")
+                self.performSegue(withIdentifier: "toNotificationSegue", sender: self)
+            } else {
+                print("do not send notification")
+            }
         }
         
         // Uncomment line below to play with the notification pop up
-//                self.performSegue(withIdentifier: "toNotificationSegue", sender: self)
+        if showMemoryPopup{
+            self.performSegue(withIdentifier: "toNotificationSegue", sender: self)
+        }
         
         // Add gradient to background
         gradient.frame = gradientView.bounds
@@ -333,10 +346,7 @@ class EntryTabViewController: UIViewController, UICollectionViewDelegate, UIColl
                 if let currentSearchString = searchController.searchBar.text {
                     devc.currentSearchString = currentSearchString
                 }
-//                devc.currentSearchString = searchBar.text
             }
-        } else if segue.identifier == "" {
-            
         }
     }
 }

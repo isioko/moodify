@@ -26,10 +26,12 @@ class ViewController: UIViewController {
     
     @objc func timeToMoveOn() {
         let launchedBefore = UserDefaults.standard.bool(forKey: "launchedBefore")
-        if launchedBefore  {
+        if launchedBefore && spotifyManager.isAuthorized() {
             print("Not first launch.")
             self.performSegue(withIdentifier: "straightToEntryTab", sender: self)
-        } else {
+        } else if launchedBefore && !spotifyManager.isAuthorized() {
+            self.performSegue(withIdentifier: "toAuthorizeFromLoad", sender: self)
+        } else if !launchedBefore {
             print("First launch, setting UserDefault.")
             UserDefaults.standard.set(true, forKey: "launchedBefore")
             self.performSegue(withIdentifier: "loadAppSegue", sender: self)

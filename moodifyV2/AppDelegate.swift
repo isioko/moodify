@@ -49,12 +49,47 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         return true
     }
     
-    
+    func resetMemoryNotificationVars() {
+        let managedContext =
+            self.persistentContainer.viewContext
+        
+        
+        let request = NSFetchRequest<NSFetchRequestResult>(entityName: "MemoryEntity")
+        do {
+            
+            let count = try managedContext.count(for: request)
+            var foundMemory = try managedContext.fetch(request)
+            
+            if(count == 0) {
+                // no matching object
+                let memoryObj = MemoryEntity(context: managedContext)
+                memoryObj.setValue(true, forKeyPath:"showBool")
+                
+            } else {
+                let memoryObj = foundMemory[0] as! MemoryEntity
+                memoryObj.setValue(true, forKeyPath:"showBool")
+                
+            }
+        } catch let error as NSError {
+            print("Could not fetch \(error), \(error.userInfo)")
+        }
+        
+        
+        do {
+            try managedContext.save()
+        } catch let error as NSError {
+            print("Could not save. \(error), \(error.userInfo)")
+        }
+
+    }
     
     func applicationWillTerminate(_ application: UIApplication) {
         // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
         // Saves changes in the application's managed object context before the application terminates.
         self.saveContext()
+        // this function resets variable controlling NotificationViewController display
+        // right now it resets so that pop up will display next time app is opened
+        resetMemoryNotificationVars()
     }
     
     // MARK: - Core Data stack

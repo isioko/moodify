@@ -137,4 +137,79 @@ class NotificationViewController: UIViewController, UICollectionViewDelegate, UI
             notificationCollectionView.delegate = self
         }
     }
+    
+    func updateCoreDataDoneLookingAtMemory(){
+        
+        guard let appDelegate =
+            UIApplication.shared.delegate as? AppDelegate else {
+                return
+        }
+        
+        // 1
+        let managedContext =
+            appDelegate.persistentContainer.viewContext
+        
+        
+        let request = NSFetchRequest<NSFetchRequestResult>(entityName: "MemoryEntity")
+        do{
+            
+            let count = try managedContext.count(for: request)
+            var foundMemory = try managedContext.fetch(request)
+            
+            if(count == 0){
+                // no matching object
+                let memoryObj = MemoryEntity(context: managedContext)
+                memoryObj.setValue(false, forKeyPath:"showBool")
+                
+            }else{
+                let memoryObj = foundMemory[0] as! MemoryEntity
+                memoryObj.setValue(false, forKeyPath:"showBool")
+                
+            }
+        }catch let error as NSError {
+            print("Could not fetch \(error), \(error.userInfo)")
+        }
+        
+        
+        do {
+            try managedContext.save()
+        } catch let error as NSError {
+            print("Could not save. \(error), \(error.userInfo)")
+        }
+
+    }
+    
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        var touch: UITouch? = touches.first
+        let touch_point = touch!.location(in: popupView)
+        // check if user touched outside of Popup, if so exit out popup functionality
+        if self.view.bounds.contains(touch_point){
+            print("TOUCH IS IN BOUNDS OF POPUP")
+        }else{
+            print("TOUCH IS NOT IN BOUNDS OF POPUP")
+            performSegue(withIdentifier: "backToEntryTabFromPopUp", sender: self)
+        }
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "showEntryFromMemorySegue" {
+            if let devc = segue.destination as? DisplayEntryViewController {
+                
+                let entry_cell = sender as! UICollectionViewCell
+                let indexPath = self.notificationCollectionView!.indexPath(for: entry_cell)
+                let entry_clicked_obj: NSObject
+                entry_clicked_obj = filteredEntriesByDate[indexPath!.row]
+                
+                let entry_clicked = getEntryFromNSObject(NS_entry: entry_clicked_obj)
+                devc.entry_to_display = entry_clicked
+                // leave memory notification view controller up in entry tab in future
+            }
+        }else if segue.identifier == "backToEntryTabFromPopUp"{
+            if let nc = segue.destination as? UINavigationController {
+                // permanently x out of notification view controller
+                updateCoreDataDoneLookingAtMemory()
+            }
+        }
+    }
+
 }

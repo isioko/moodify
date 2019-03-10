@@ -644,6 +644,17 @@ public class SpotifyManager {
     }
     
     /**
+     Checks if user is authorized by checking if there is a token
+     */
+    public func isAuthorized() -> Bool {
+        if hasToken {
+            return true
+        } else {
+            return false
+        }
+    }
+    
+    /**
      Removes the saved authorization token from the keychain
      */
     public func deauthorize() {
