@@ -45,6 +45,18 @@ class DisplayRecentlyPlayedViewController: UIViewController, UITableViewDataSour
         return cell
     }
     
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        var touch: UITouch? = touches.first
+        let touch_point = touch!.location(in: blackBoxView)
+        // check if user touched outside of Popup, if so exit out popup functionality
+        if self.view.bounds.contains(touch_point){
+            print("TOUCH IS IN BOUNDS OF POPUP")
+        }else{
+            print("TOUCH IS NOT IN BOUNDS OF POPUP")
+            performSegue(withIdentifier: "backToWriteEntrySegue", sender: self)
+        }
+    }
+    
     @IBOutlet weak var trackTableView: UITableView!{
         didSet {
             trackTableView.dataSource = self

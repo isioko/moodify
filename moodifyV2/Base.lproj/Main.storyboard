@@ -1528,7 +1528,6 @@
         <image name="xButton" width="27.333333969116211" height="27.333333969116211"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="D7K-DD-Z06"/>
         <segue reference="S62-3M-qzb"/>
         <segue reference="Xnz-1o-NJS"/>
         <segue reference="4gZ-eP-sVl"/>
