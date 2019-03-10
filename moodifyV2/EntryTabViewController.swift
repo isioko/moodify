@@ -118,22 +118,24 @@ class EntryTabViewController: UIViewController, UICollectionViewDelegate, UIColl
             if let backgroundview = textfield.subviews.first {
                 
                 // Background color
-                //                backgroundview.backgroundColor = UIColor.white
                 backgroundview.backgroundColor = UIColor(red: 1, green: 1, blue: 1, alpha: 0.7)
                 
                 // Rounded corner
                 backgroundview.layer.cornerRadius = 10;
                 backgroundview.clipsToBounds = true;
-                
-                // Change color of search icon
-                let imageV = textfield.leftView as! UIImageView
-                imageV.image = imageV.image?.withRenderingMode(UIImage.RenderingMode.alwaysTemplate)
-                imageV.tintColor = UIColor.white
-                
-                let textfieldLabel = textfield.value(forKey: "placeholderLabel") as? UILabel
-                textfieldLabel?.textColor = UIColor.white
             }
+            
+            // Change color of search icon
+            let imageV = textfield.leftView as! UIImageView
+            imageV.image = imageV.image?.withRenderingMode(UIImage.RenderingMode.alwaysTemplate)
+//            imageV.image = imageV.image?.withRenderingMode(.alwaysTemplate)
+            imageV.tintColor = UIColor.white
+
+            let textfieldLabel = textfield.value(forKey: "placeholderLabel") as? UILabel
+            textfieldLabel?.textColor = UIColor.white
         }
+        
+//        searchController.searchBar.setImage(UIImage(named: "searchBar"), for: .search, state: .normal)
         
         searchController.searchBar.isTranslucent = true
     }
@@ -207,7 +209,7 @@ class EntryTabViewController: UIViewController, UICollectionViewDelegate, UIColl
         let lastNotificationDate = UserDefaults.standard.string(forKey: "lastNotificationDate")
         
         
-        if showMemoryPopup{
+        if showMemoryPopup {
             if  lastNotificationDate != dateString && filteredEntriesByDate.count > 0 {
                 print("send notification")
                 
@@ -219,7 +221,7 @@ class EntryTabViewController: UIViewController, UICollectionViewDelegate, UIColl
         }
         
         // Uncomment line below to play with the notification pop up
-        if showMemoryPopup{
+        if showMemoryPopup {
             self.performSegue(withIdentifier: "toNotificationSegue", sender: self)
         }
         
@@ -288,7 +290,7 @@ class EntryTabViewController: UIViewController, UICollectionViewDelegate, UIColl
         let entry_obj: NSObject
         if isFiltering() && searchController.searchBar.text != ""{
             entry_obj = filteredEntries[indexPath.row]
-        }else{
+        } else {
             entry_obj = core_data_entries[indexPath.row]
         }
         // construct entry to display
