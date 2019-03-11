@@ -47,6 +47,15 @@ class EntryTabViewController: UIViewController, UICollectionViewDelegate, UIColl
     }
     
     func filterContentForSearchText(_ searchText: String, scope: String = "All") {
+        print("Search Text: ", searchText)
+        // if searchText is nothing, display all entries & songs
+        if searchText == ""{
+            filteredEntries = core_data_entries
+            entryCollectionView.reloadData()
+            entryCollectionView.collectionViewLayout.invalidateLayout()
+            return
+        }
+        
         if scope == "All Entries" {
             filteredEntries = core_data_entries.filter({( entry_obj : NSObject) -> Bool in
                 let entry = getEntryFromNSObject(NS_entry: entry_obj)
@@ -371,5 +380,15 @@ extension EntryTabViewController: UISearchBarDelegate {
     func searchBar(_ searchBar: UISearchBar, selectedScopeButtonIndexDidChange selectedScope: Int) {
         filterContentForSearchText(searchBar.text!, scope:
             searchBar.scopeButtonTitles![selectedScope])
+    }
+    
+    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+        filterContentForSearchText(searchBar.text!, scope: searchBar.scopeButtonTitles![searchBar.selectedScopeButtonIndex])
+
+    }
+    
+    func searchBarTextDidEndEditing(_ searchBar: UISearchBar) {
+        filterContentForSearchText(searchBar.text!, scope: searchBar.scopeButtonTitles![searchBar.selectedScopeButtonIndex])
+
     }
 }
