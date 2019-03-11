@@ -261,7 +261,7 @@ class EntryTabViewController: UIViewController, UICollectionViewDelegate, UIColl
         searchController.searchBar.barTintColor = UIColor.white
         searchController.searchBar.isTranslucent = false
         UITextField.appearance(whenContainedInInstancesOf: [UISearchBar.self]).defaultTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.white]
-        UITextField.appearance(whenContainedInInstancesOf: [UISearchBar.self]).attributedPlaceholder = NSAttributedString(string: "placeholder", attributes: [NSAttributedString.Key.foregroundColor: UIColor.white])
+        UITextField.appearance(whenContainedInInstancesOf: [UISearchBar.self]).attributedPlaceholder = NSAttributedString(string: "Search Entries", attributes: [NSAttributedString.Key.foregroundColor: UIColor.white])
     }
     
     @IBOutlet weak var entryCollectionView: UICollectionView!{

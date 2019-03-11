@@ -17,9 +17,8 @@ class NotificationViewController: UIViewController, UICollectionViewDelegate, UI
     
     @IBOutlet weak var popupView: UIView!
     @IBOutlet weak var numEntriesLabel: UILabel!
-    
-    
     @IBOutlet weak var emojiLabel: UILabel!
+    
     var entries = [Entry]()
     var core_data_entries: [NSObject] = []
     var filteredEntriesByDate = [NSObject]()
@@ -68,7 +67,6 @@ class NotificationViewController: UIViewController, UICollectionViewDelegate, UI
         
         for object in filteredEntriesByDate {
             entries.append(getEntryFromNSObject(NS_entry: object))
-            
         }
         analyzeSentiment(entries: entries)
         notificationCollectionView.reloadData()
@@ -82,7 +80,7 @@ class NotificationViewController: UIViewController, UICollectionViewDelegate, UI
             total += sentiment.score(entry.entryText).score
             print(sentiment.score(entry.entryText)) //TEST
         }
-        //Get average sentiment of associated entries
+        // Get average sentiment of associated entries
         if entries.count != 0 { //always true, when called
             total = total/entries.count
         }
@@ -114,10 +112,15 @@ class NotificationViewController: UIViewController, UICollectionViewDelegate, UI
         let yesterday = today.addingTimeInterval(TimeInterval(-60*60*24))
         let yesterdayString = date_formatter.string(from: yesterday)
         
+        let todayString = date_formatter.string(from: today)
+        
         filteredEntriesByDate = core_data_entries.filter({( entry_obj : NSObject) -> Bool in
             let entry = getEntryFromNSObject(NS_entry: entry_obj)
             let entryDateString = date_formatter.string(from: entry.entryDate)
-            return entryDateString == yesterdayString
+            
+            // Switch for testing to view today's entries
+            //            return entryDateString == yesterdayString
+            return entryDateString == todayString
         })
         
         numEntriesLabel.text = String(filteredEntriesByDate.count)

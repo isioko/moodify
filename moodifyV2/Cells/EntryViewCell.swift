@@ -24,9 +24,11 @@ class EntryViewCell:UICollectionViewCell{
 
     func displayContent(entry: Entry) {
         entryLabel.text = entry.entryText
+        
         let formatter = DateFormatter()
         formatter.dateFormat = "MMMM dd, yyyy"
         dateLabel.text = formatter.string(from: entry.entryDate)
+        
         locationLabel.text = entry.location
         locationImage.image = UIImage(named: "location-logo.png")
         numTracksLabel.text = String(entry.associatedTracks.count)
@@ -37,7 +39,7 @@ class EntryViewCell:UICollectionViewCell{
         relativeDateLabel.text = relativeDateForEntry
     }
     
-    func getNumDays(date: Date) -> Int{
+    func getNumDays(date: Date) -> Int {
         let formatter = DateFormatter()
         formatter.dateFormat = "yyyy/MM/dd HH:mm"
         
@@ -58,7 +60,7 @@ class EntryViewCell:UICollectionViewCell{
         return numDays!
     }
     
-    func calculateRelativeDate(num_days: Int)->String{
+    func calculateRelativeDate(num_days: Int)->String {
         if num_days == 0 {
             return "TODAY"
         } else if num_days == 1 {
