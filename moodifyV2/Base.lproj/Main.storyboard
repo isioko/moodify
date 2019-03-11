@@ -722,7 +722,7 @@
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Entry text" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="F19-sD-2CL">
-                                                            <rect key="frame" x="10.666666666666657" y="26.333333333333332" width="323.66666666666674" height="52.333333333333343"/>
+                                                            <rect key="frame" x="31.666666666666657" y="26.333333333333332" width="281.66666666666674" height="52.333333333333343"/>
                                                             <fontDescription key="fontDescription" name="Hind-Regular" family="Hind" pointSize="17"/>
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
@@ -767,7 +767,7 @@
                                                     <constraint firstItem="Jkq-8r-83p" firstAttribute="leading" secondItem="fWx-qX-Fzo" secondAttribute="trailingMargin" multiplier="1/32" id="AHn-Be-vTO"/>
                                                     <constraint firstItem="v8B-ze-RuH" firstAttribute="centerY" secondItem="fWx-qX-Fzo" secondAttribute="bottom" multiplier="3/4" id="AS8-iR-tJU"/>
                                                     <constraint firstItem="F19-sD-2CL" firstAttribute="centerX" secondItem="fWx-qX-Fzo" secondAttribute="centerX" id="AVy-Hw-C5z"/>
-                                                    <constraint firstItem="F19-sD-2CL" firstAttribute="leading" secondItem="fWx-qX-Fzo" secondAttribute="trailingMargin" multiplier="1/32" id="BQh-ML-vpV"/>
+                                                    <constraint firstItem="F19-sD-2CL" firstAttribute="leading" secondItem="fWx-qX-Fzo" secondAttribute="trailingMargin" multiplier="1.5/16" id="BQh-ML-vpV"/>
                                                     <constraint firstItem="v8B-ze-RuH" firstAttribute="bottom" secondItem="fWx-qX-Fzo" secondAttribute="bottomMargin" multiplier="14.75/16" id="KEm-0v-nkj"/>
                                                     <constraint firstItem="Efw-oL-S9X" firstAttribute="centerX" secondItem="fWx-qX-Fzo" secondAttribute="trailing" multiplier="28/32" id="LcN-Tx-11x"/>
                                                     <constraint firstItem="Jkq-8r-83p" firstAttribute="top" secondItem="fWx-qX-Fzo" secondAttribute="bottom" multiplier="1/8" id="aGI-Ui-Wr9"/>
