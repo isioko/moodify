@@ -103,6 +103,7 @@ class EntryTabViewController: UIViewController, UICollectionViewDelegate, UIColl
         // set up scope bar for search
         searchController.searchBar.scopeButtonTitles = ["All Entries", "Songs Only"]
         searchController.searchBar.delegate = self
+        
         let imageView = UIImageView(frame: CGRect(x: 0, y: 0, width: 55, height: 30))
         imageView.contentMode = .scaleAspectFit
         let image = UIImage(named: "moodify-start-logo-01.png")
@@ -367,21 +368,8 @@ extension EntryTabViewController: UISearchResultsUpdating {
 
 extension EntryTabViewController: UISearchBarDelegate {
     // MARK: - UISearchBar Delegate
-//    func searchBar(_ searchBar: UISearchBar, selectedScopeButtonIndexDidChange selectedScope: Int) {
-//        filterContentForSearchText(searchBar.text!, scope:
-//            searchBar.scopeButtonTitles![selectedScope])
-//        searchController.searchBar.sizeToFit()
-//        searchController.searchBar.frame.size.width = self.searchView.frame.size.width
-//
-//    }
-//    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
-//        searchController.searchBar.sizeToFit()
-//        searchController.searchBar.frame.size.width = self.searchView.frame.size.width
-//
-//    }
-//    func searchBarTextDidEndEditing(_ searchBar: UISearchBar) {
-//        searchController.searchBar.sizeToFit()
-//        searchController.searchBar.frame.size.width = self.searchView.frame.size.width
-//
-//    }
+    func searchBar(_ searchBar: UISearchBar, selectedScopeButtonIndexDidChange selectedScope: Int) {
+        filterContentForSearchText(searchBar.text!, scope:
+            searchBar.scopeButtonTitles![selectedScope])
+    }
 }
