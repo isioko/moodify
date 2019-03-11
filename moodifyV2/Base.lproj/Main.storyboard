@@ -589,7 +589,7 @@
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                         <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="blackHeadphones" translatesAutoresizingMaskIntoConstraints="NO" id="32D-Fv-Nii" userLabel="Headphones Image">
-                                                            <rect key="frame" x="309" y="78.333333333333329" width="14.333333333333314" height="14"/>
+                                                            <rect key="frame" x="306.33333333333331" y="78.333333333333329" width="14.333333333333314" height="14"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="width" secondItem="32D-Fv-Nii" secondAttribute="height" multiplier="1:1" id="63L-bu-Vdz"/>
                                                             </constraints>
@@ -606,7 +606,7 @@
                                                     <constraint firstItem="X9e-8z-v5E" firstAttribute="trailing" secondItem="GXT-H5-aRb" secondAttribute="trailingMargin" multiplier="31/32" id="Jfd-Do-Wzc"/>
                                                     <constraint firstItem="ViK-28-1Jg" firstAttribute="leading" secondItem="GXT-H5-aRb" secondAttribute="trailingMargin" multiplier="1/32" id="L96-cz-hMH"/>
                                                     <constraint firstItem="X9e-8z-v5E" firstAttribute="centerY" secondItem="GXT-H5-aRb" secondAttribute="bottom" multiplier="1.5/8" id="M5o-Mf-RiQ"/>
-                                                    <constraint firstItem="32D-Fv-Nii" firstAttribute="centerX" secondItem="GXT-H5-aRb" secondAttribute="trailing" multiplier="28.5/32" id="Qwx-Vc-JNK"/>
+                                                    <constraint firstItem="32D-Fv-Nii" firstAttribute="centerX" secondItem="GXT-H5-aRb" secondAttribute="trailing" multiplier="28.25/32" id="Qwx-Vc-JNK"/>
                                                     <constraint firstItem="ViK-28-1Jg" firstAttribute="top" secondItem="GXT-H5-aRb" secondAttribute="bottomMargin" multiplier="1.5/16" id="Wtr-ZK-FMG"/>
                                                     <constraint firstItem="5kw-SG-Xa4" firstAttribute="centerY" secondItem="GXT-H5-aRb" secondAttribute="bottom" multiplier="6.5/8" id="XLs-Cf-ZFb"/>
                                                     <constraint firstItem="U1a-mZ-Y8C" firstAttribute="centerX" secondItem="GXT-H5-aRb" secondAttribute="trailing" multiplier="2/32" id="XjY-uK-bQl"/>
@@ -731,8 +731,8 @@
                                                     <rect key="frame" x="0.0" y="0.0" width="345" height="105"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <subviews>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="RELATIVE DATE" textAlignment="natural" lineBreakMode="tailTruncation" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Jkq-8r-83p">
-                                                            <rect key="frame" x="10.666666666666671" y="10.000000000000002" width="138.33333333333331" height="19.666666666666671"/>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="RELATIVE DATE" textAlignment="natural" lineBreakMode="tailTruncation" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Jkq-8r-83p">
+                                                            <rect key="frame" x="10.666666666666657" y="10.000000000000002" width="296.33333333333337" height="19.666666666666671"/>
                                                             <fontDescription key="fontDescription" name="Hind-SemiBold" family="Hind" pointSize="20"/>
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
@@ -743,14 +743,14 @@
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Location" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gUX-ro-Gfr">
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="Location" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gUX-ro-Gfr">
                                                             <rect key="frame" x="31.666666666666668" y="75.666666666666671" width="44.666666666666657" height="19.333333333333329"/>
                                                             <fontDescription key="fontDescription" name="Hind-Regular" family="Hind" pointSize="12"/>
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Date" textAlignment="right" lineBreakMode="tailTruncation" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3EU-cy-6Y7">
-                                                            <rect key="frame" x="301.66666666666669" y="11.333333333333334" width="24.666666666666686" height="16.666666666666664"/>
+                                                            <rect key="frame" x="307" y="11.333333333333334" width="24.666666666666686" height="16.666666666666664"/>
                                                             <fontDescription key="fontDescription" name="Hind-Regular" family="Hind" pointSize="12"/>
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
@@ -762,7 +762,7 @@
                                                             </constraints>
                                                         </imageView>
                                                         <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="blackHeadphones" translatesAutoresizingMaskIntoConstraints="NO" id="Efw-oL-S9X" userLabel="Headphones Image">
-                                                            <rect key="frame" x="298.66666666666669" y="78.333333333333329" width="17.333333333333314" height="14"/>
+                                                            <rect key="frame" x="296" y="78.333333333333329" width="17" height="14"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="width" secondItem="Efw-oL-S9X" secondAttribute="height" multiplier="6:5" id="sTH-AW-JPp"/>
                                                             </constraints>
@@ -784,17 +784,18 @@
                                                     <constraint firstItem="v8B-ze-RuH" firstAttribute="centerY" secondItem="fWx-qX-Fzo" secondAttribute="bottom" multiplier="6.5/8" id="AS8-iR-tJU"/>
                                                     <constraint firstItem="F19-sD-2CL" firstAttribute="centerX" secondItem="fWx-qX-Fzo" secondAttribute="centerX" id="AVy-Hw-C5z"/>
                                                     <constraint firstItem="F19-sD-2CL" firstAttribute="leading" secondItem="fWx-qX-Fzo" secondAttribute="trailingMargin" multiplier="1.5/16" id="BQh-ML-vpV"/>
+                                                    <constraint firstItem="d8k-0c-EsO" firstAttribute="leading" secondItem="fWx-qX-Fzo" secondAttribute="trailing" multiplier="29.5/32" id="Jng-nj-81J"/>
                                                     <constraint firstItem="v8B-ze-RuH" firstAttribute="bottom" secondItem="fWx-qX-Fzo" secondAttribute="bottomMargin" multiplier="15.5/16" id="KEm-0v-nkj"/>
-                                                    <constraint firstItem="Efw-oL-S9X" firstAttribute="centerX" secondItem="fWx-qX-Fzo" secondAttribute="trailing" multiplier="28.5/32" id="LcN-Tx-11x"/>
+                                                    <constraint firstItem="Efw-oL-S9X" firstAttribute="centerX" secondItem="fWx-qX-Fzo" secondAttribute="trailing" multiplier="28.25/32" id="LcN-Tx-11x"/>
                                                     <constraint firstItem="Jkq-8r-83p" firstAttribute="top" secondItem="fWx-qX-Fzo" secondAttribute="bottom" multiplier="1.5/16" id="aGI-Ui-Wr9"/>
                                                     <constraint firstItem="gUX-ro-Gfr" firstAttribute="leading" secondItem="fWx-qX-Fzo" secondAttribute="trailingMargin" multiplier="3/32" id="aK1-xF-XtS"/>
                                                     <constraint firstItem="F19-sD-2CL" firstAttribute="centerY" secondItem="fWx-qX-Fzo" secondAttribute="centerY" id="aXM-Zd-TOC"/>
                                                     <constraint firstItem="F19-sD-2CL" firstAttribute="top" secondItem="fWx-qX-Fzo" secondAttribute="bottom" multiplier="1/4" id="fAn-pE-aRq"/>
-                                                    <constraint firstItem="3EU-cy-6Y7" firstAttribute="trailing" secondItem="fWx-qX-Fzo" secondAttribute="trailingMargin" multiplier="31/32" id="hBd-Zt-u4K"/>
+                                                    <constraint firstItem="3EU-cy-6Y7" firstAttribute="leading" secondItem="Jkq-8r-83p" secondAttribute="trailing" id="fe8-a6-AmL"/>
+                                                    <constraint firstItem="3EU-cy-6Y7" firstAttribute="trailing" secondItem="fWx-qX-Fzo" secondAttribute="trailingMargin" multiplier="63/64" id="hBd-Zt-u4K"/>
                                                     <constraint firstItem="Efw-oL-S9X" firstAttribute="bottom" secondItem="fWx-qX-Fzo" secondAttribute="bottomMargin" multiplier="15.25/16" id="kJi-6k-AgB"/>
                                                     <constraint firstItem="3EU-cy-6Y7" firstAttribute="top" secondItem="fWx-qX-Fzo" secondAttribute="bottomMargin" multiplier="1.875/16" id="nRg-8t-VgX"/>
                                                     <constraint firstItem="Jkq-8r-83p" firstAttribute="centerY" secondItem="fWx-qX-Fzo" secondAttribute="bottom" multiplier="1.5/8" id="nYq-kH-svm"/>
-                                                    <constraint firstItem="d8k-0c-EsO" firstAttribute="leading" secondItem="fWx-qX-Fzo" secondAttribute="trailing" multiplier="29.5/32" id="pON-9O-Aq5"/>
                                                     <constraint firstItem="Efw-oL-S9X" firstAttribute="centerY" secondItem="fWx-qX-Fzo" secondAttribute="bottom" multiplier="6.5/8" id="v4Y-oA-auJ"/>
                                                     <constraint firstItem="gUX-ro-Gfr" firstAttribute="centerY" secondItem="fWx-qX-Fzo" secondAttribute="bottom" multiplier="6.5/8" id="yaf-oG-DXl"/>
                                                 </constraints>
@@ -1095,7 +1096,7 @@
                                                 </prototypes>
                                             </tableView>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="RECENTLY PLAYED" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="E3I-5w-mAB">
-                                                <rect key="frame" x="10.666666666666671" y="10" width="188.33333333333331" height="35.666666666666664"/>
+                                                <rect key="frame" x="10.666666666666657" y="-0.3333333333333286" width="295.33333333333337" height="56.333333333333336"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" secondItem="E3I-5w-mAB" secondAttribute="height" multiplier="21:4" id="gv4-Zf-SbC"/>
                                                 </constraints>
@@ -1114,6 +1115,7 @@
                                             <constraint firstItem="BpW-e9-NwS" firstAttribute="leading" secondItem="I9s-Hl-SUT" secondAttribute="trailing" multiplier="1/32" id="WYr-mh-eHd"/>
                                             <constraint firstItem="ixu-lK-2Fd" firstAttribute="centerY" secondItem="I9s-Hl-SUT" secondAttribute="bottom" multiplier="1/24" id="ZdT-IX-p7F"/>
                                             <constraint firstItem="BpW-e9-NwS" firstAttribute="centerX" secondItem="I9s-Hl-SUT" secondAttribute="centerX" id="rX8-7f-0sa"/>
+                                            <constraint firstItem="E3I-5w-mAB" firstAttribute="trailing" secondItem="I9s-Hl-SUT" secondAttribute="trailing" multiplier="7/8" id="vSm-1D-jM5"/>
                                         </constraints>
                                     </view>
                                 </subviews>
@@ -1551,12 +1553,12 @@
         <image name="xButton" width="27" height="27"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="cfa-5L-5Fx"/>
+        <segue reference="XvY-0b-bjm"/>
         <segue reference="S62-3M-qzb"/>
         <segue reference="ifw-3b-8KV"/>
         <segue reference="EEt-wu-0tb"/>
-        <segue reference="4gZ-eP-sVl"/>
-        <segue reference="sDg-8x-Tes"/>
+        <segue reference="fwe-Sq-vFa"/>
+        <segue reference="F7f-Jd-g9G"/>
         <segue reference="sKe-pV-3Ei"/>
         <segue reference="DhY-yA-xq4"/>
     </inferredMetricsTieBreakers>
