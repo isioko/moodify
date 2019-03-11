@@ -364,8 +364,8 @@
                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CS7-M9-ZqV" userLabel="Back Button">
-                                        <rect key="frame" x="11.666666666666666" y="52" width="36" height="29"/>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CS7-M9-ZqV" userLabel="Back Button">
+                                        <rect key="frame" x="11.666666666666664" y="49" width="36" height="29"/>
                                         <constraints>
                                             <constraint firstAttribute="width" secondItem="CS7-M9-ZqV" secondAttribute="height" multiplier="41:33" id="IeL-mR-xZS"/>
                                         </constraints>
@@ -376,8 +376,8 @@
                                             <segue destination="uqo-ot-EXU" kind="presentation" identifier="backToEntryTabFromViewEntry" animates="NO" id="twh-QW-wH0"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleAspectFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sKS-rv-Xax" userLabel="Delete Button">
-                                        <rect key="frame" x="328" y="48" width="34.666666666666686" height="36.666666666666657"/>
+                                    <button opaque="NO" contentMode="scaleAspectFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sKS-rv-Xax" userLabel="Delete Button">
+                                        <rect key="frame" x="328.66666666666669" y="45" width="34.666666666666686" height="36.666666666666657"/>
                                         <constraints>
                                             <constraint firstAttribute="width" secondItem="sKS-rv-Xax" secondAttribute="height" multiplier="35:37" id="Xls-Bs-Nr4"/>
                                         </constraints>
@@ -393,10 +393,10 @@
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <gestureRecognizers/>
                                 <constraints>
-                                    <constraint firstItem="sKS-rv-Xax" firstAttribute="centerX" secondItem="2h8-FG-4mY" secondAttribute="trailing" multiplier="7/8" id="58h-rA-ksl"/>
+                                    <constraint firstItem="sKS-rv-Xax" firstAttribute="trailing" secondItem="2h8-FG-4mY" secondAttribute="trailing" multiplier="31/32" id="58h-rA-ksl"/>
                                     <constraint firstItem="bBi-3v-Js0" firstAttribute="centerX" secondItem="2h8-FG-4mY" secondAttribute="centerX" id="6Qb-nZ-nrs"/>
                                     <constraint firstItem="CS7-M9-ZqV" firstAttribute="centerY" secondItem="2h8-FG-4mY" secondAttribute="bottom" multiplier="1.25/16" id="7hk-Mh-6nH"/>
-                                    <constraint firstItem="CS7-M9-ZqV" firstAttribute="centerX" secondItem="2h8-FG-4mY" secondAttribute="trailing" multiplier="1/8" id="9NH-CF-k5v"/>
+                                    <constraint firstItem="CS7-M9-ZqV" firstAttribute="leading" secondItem="2h8-FG-4mY" secondAttribute="trailing" multiplier="1/32" id="9NH-CF-k5v"/>
                                     <constraint firstItem="e9e-Ue-oNA" firstAttribute="top" secondItem="2h8-FG-4mY" secondAttribute="bottom" multiplier="9/32" id="BhL-ee-JgU"/>
                                     <constraint firstItem="NSW-SJ-z14" firstAttribute="leading" secondItem="2h8-FG-4mY" secondAttribute="trailing" multiplier="1/32" id="GGR-LL-MQh"/>
                                     <constraint firstItem="HLO-JG-8pH" firstAttribute="bottom" secondItem="2h8-FG-4mY" secondAttribute="bottom" multiplier="6.25/32" id="GKg-H5-9dY"/>
@@ -648,7 +648,7 @@
                                 </connections>
                             </view>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LTJ-ew-Sfr" userLabel="Back Button">
-                                <rect key="frame" x="29" y="52" width="36" height="23"/>
+                                <rect key="frame" x="11.666666666666664" y="52" width="36" height="23"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="LTJ-ew-Sfr" secondAttribute="height" multiplier="36:23" id="m7p-Oy-UAF"/>
                                 </constraints>
@@ -663,7 +663,7 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="Qwf-ho-maX" firstAttribute="trailing" secondItem="xcC-ur-D8N" secondAttribute="trailing" id="2E9-iH-Par"/>
-                            <constraint firstItem="LTJ-ew-Sfr" firstAttribute="centerX" secondItem="xcC-ur-D8N" secondAttribute="trailing" multiplier="1/8" id="ARc-dp-QZT"/>
+                            <constraint firstItem="LTJ-ew-Sfr" firstAttribute="leading" secondItem="xcC-ur-D8N" secondAttribute="trailing" multiplier="1/32" id="ARc-dp-QZT"/>
                             <constraint firstAttribute="bottom" secondItem="Qwf-ho-maX" secondAttribute="bottom" id="R1I-k5-r4f"/>
                             <constraint firstItem="Qwf-ho-maX" firstAttribute="top" secondItem="xcC-ur-D8N" secondAttribute="top" id="hu8-V0-pPv"/>
                             <constraint firstItem="Qwf-ho-maX" firstAttribute="leading" secondItem="xcC-ur-D8N" secondAttribute="leading" id="u8D-uO-8R2"/>
@@ -855,7 +855,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iff-tX-ZKE">
-                                <rect key="frame" x="312" y="43.333333333333336" width="32" height="40.000000000000007"/>
+                                <rect key="frame" x="331.33333333333331" y="43.333333333333336" width="32" height="40.000000000000007"/>
                                 <state key="normal" image="saveIcon">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
@@ -943,7 +943,7 @@
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     </view>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OfG-MC-ZnX">
-                                        <rect key="frame" x="29" y="52" width="36" height="23"/>
+                                        <rect key="frame" x="11.666666666666664" y="52" width="36" height="23"/>
                                         <state key="normal" image="backButton">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </state>
@@ -962,7 +962,7 @@
                                     <constraint firstItem="dKe-OL-0FX" firstAttribute="centerX" secondItem="TQ0-UN-7fs" secondAttribute="centerX" id="MQ8-ek-Tgi"/>
                                     <constraint firstItem="4cx-3M-XWR" firstAttribute="leading" secondItem="TQ0-UN-7fs" secondAttribute="trailing" multiplier="1/32" id="MrY-8j-PZ6"/>
                                     <constraint firstItem="dKe-OL-0FX" firstAttribute="bottom" secondItem="TQ0-UN-7fs" secondAttribute="bottom" multiplier="6.25/32" constant="1" id="azR-iB-fy6"/>
-                                    <constraint firstItem="OfG-MC-ZnX" firstAttribute="centerX" secondItem="TQ0-UN-7fs" secondAttribute="trailing" multiplier="1/8" id="bqz-9m-8N7"/>
+                                    <constraint firstItem="OfG-MC-ZnX" firstAttribute="leading" secondItem="TQ0-UN-7fs" secondAttribute="trailing" multiplier="1/32" id="bqz-9m-8N7"/>
                                     <constraint firstItem="4cx-3M-XWR" firstAttribute="bottom" secondItem="TQ0-UN-7fs" secondAttribute="bottom" multiplier="18.75/32" id="gm1-cP-jSw"/>
                                     <constraint firstItem="p9L-18-BHK" firstAttribute="top" secondItem="TQ0-UN-7fs" secondAttribute="bottom" multiplier="6.5/32" id="jfY-YU-naT"/>
                                     <constraint firstItem="4cx-3M-XWR" firstAttribute="centerX" secondItem="TQ0-UN-7fs" secondAttribute="centerX" id="kGw-OM-oeb"/>
@@ -978,7 +978,7 @@
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="TQ0-UN-7fs" firstAttribute="leading" secondItem="Qix-fs-ha5" secondAttribute="leading" id="7zL-SU-Ar0"/>
-                            <constraint firstItem="iff-tX-ZKE" firstAttribute="centerX" secondItem="0HL-JJ-1d7" secondAttribute="trailing" multiplier="7/8" id="EkP-EQ-fn4"/>
+                            <constraint firstItem="iff-tX-ZKE" firstAttribute="trailing" secondItem="0HL-JJ-1d7" secondAttribute="trailing" multiplier="31/32" id="EkP-EQ-fn4"/>
                             <constraint firstItem="iff-tX-ZKE" firstAttribute="centerY" secondItem="0HL-JJ-1d7" secondAttribute="bottom" multiplier="1.25/16" id="P7O-xJ-m3x"/>
                             <constraint firstItem="TQ0-UN-7fs" firstAttribute="trailing" secondItem="Qix-fs-ha5" secondAttribute="trailing" id="YQF-bz-snV"/>
                             <constraint firstAttribute="bottom" secondItem="TQ0-UN-7fs" secondAttribute="bottom" id="ZIa-2r-4Na"/>
@@ -1551,12 +1551,13 @@
         <image name="xButton" width="27" height="27"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="Kt8-03-4gy"/>
-        <segue reference="pJo-5t-rbY"/>
+        <segue reference="cfa-5L-5Fx"/>
+        <segue reference="S62-3M-qzb"/>
+        <segue reference="ifw-3b-8KV"/>
         <segue reference="EEt-wu-0tb"/>
-        <segue reference="fwe-Sq-vFa"/>
-        <segue reference="fna-Md-nNg"/>
-        <segue reference="kOC-gf-NDs"/>
-        <segue reference="7iq-Li-HY4"/>
+        <segue reference="4gZ-eP-sVl"/>
+        <segue reference="sDg-8x-Tes"/>
+        <segue reference="sKe-pV-3Ei"/>
+        <segue reference="DhY-yA-xq4"/>
     </inferredMetricsTieBreakers>
 </document>
