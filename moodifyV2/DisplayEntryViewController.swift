@@ -31,8 +31,6 @@ class DisplayEntryViewController: UIViewController, UICollectionViewDelegate, UI
 
     var core_data_objs: [NSObject] = []
     
-    public var currentSearchString = ""
-
     override func viewDidLoad() {
         super.viewDidLoad()
         trackCollectionView.dataSource = self
@@ -198,11 +196,6 @@ class DisplayEntryViewController: UIViewController, UICollectionViewDelegate, UI
 
                 vaevc.entry_to_display = entry_to_display
                 vaevc.track_to_display = track
-            }
-        } else if segue.identifier == "backToEntryTabFromViewEntry" {
-           if let nc = segue.destination as? UINavigationController {
-                let etvc = nc.topViewController as! EntryTabViewController
-                etvc.currentSearchString = currentSearchString
             }
         }
     }
