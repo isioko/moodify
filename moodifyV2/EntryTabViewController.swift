@@ -13,6 +13,12 @@ import CoreData
 // search controller tutorial: https://www.raywenderlich.com/472-uisearchcontroller-tutorial-getting-started
 
 class EntryTabViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource, UISearchControllerDelegate {
+    
+    enum scopeConstants {
+        static let entriesOnly = "Entries Only"
+        static let songsOnly = "Songs Only"
+    }
+    
     var entries = [Entry]()
     var core_data_entries: [NSObject] = []
     var core_data_tracks: [NSObject] = []
@@ -38,7 +44,6 @@ class EntryTabViewController: UIViewController, UICollectionViewDelegate, UIColl
     override func viewDidLoad() {
         super.viewDidLoad()
         definesPresentationContext = true
-        setUpSearch()
     }
 
     func searchBarIsEmpty() -> Bool {
@@ -47,7 +52,6 @@ class EntryTabViewController: UIViewController, UICollectionViewDelegate, UIColl
     }
     
     func filterContentForSearchText(_ searchText: String, scope: String = "All") {
-        print("Search Text: ", searchText)
         // if searchText is nothing, display all entries & songs
         if searchText == ""{
             filteredEntries = core_data_entries
@@ -56,19 +60,30 @@ class EntryTabViewController: UIViewController, UICollectionViewDelegate, UIColl
             return
         }
         
-        if scope == "All Entries" {
+        if scope == scopeConstants.entriesOnly {
+            // displays entries which have text that match search criteria
             filteredEntries = core_data_entries.filter({( entry_obj : NSObject) -> Bool in
                 let entry = getEntryFromNSObject(NS_entry: entry_obj)
                 return entry.entryText.lowercased().contains(searchText.lowercased())
             })
         } else {
+            // displays entries which have songs that match search criteria
             filteredTracks = core_data_tracks.filter({( track_obj : NSObject) -> Bool in
             let track = getTrackFromNSObject(NS_track: track_obj)
-            return track.trackName.lowercased().contains(searchText.lowercased())
+                // filter on track name and artist name
+                return track.trackName.lowercased().contains(searchText.lowercased())
             })
+            // filter on artist name
+            let filteredTracksByArtist = core_data_tracks.filter({( track_obj : NSObject) -> Bool in
+                let track = getTrackFromNSObject(NS_track: track_obj)
+                return track.artistName.lowercased().contains(searchText.lowercased())
+            })
+            filteredTracks += filteredTracksByArtist
             filteredEntries.removeAll()
             var filteredTrackNames = [String]()
             if filteredTracks.count == 0{
+                entryCollectionView.reloadData()
+                entryCollectionView.collectionViewLayout.invalidateLayout()
                 return
             }
             for track_obj in filteredTracks{
@@ -79,7 +94,6 @@ class EntryTabViewController: UIViewController, UICollectionViewDelegate, UIColl
             for entry_obj in core_data_entries{
                 let entry = getEntryFromNSObject(NS_entry: entry_obj)
                 let assoc_tracks = entry.associatedTracks
-                
                 let filtered_assoc_tracks = assoc_tracks.filter({( track : Track) -> Bool in
                     return filtered_track.lowercased().contains(track.trackName.lowercased())
                 })
@@ -110,7 +124,7 @@ class EntryTabViewController: UIViewController, UICollectionViewDelegate, UIColl
         navigationItem.hidesSearchBarWhenScrolling = true
 
         // set up scope bar for search
-        searchController.searchBar.scopeButtonTitles = ["All Entries", "Songs Only"]
+        searchController.searchBar.scopeButtonTitles = [scopeConstants.entriesOnly, scopeConstants.songsOnly]
         searchController.searchBar.delegate = self
         
         let imageView = UIImageView(frame: CGRect(x: 0, y: 0, width: 55, height: 30))
@@ -118,8 +132,8 @@ class EntryTabViewController: UIViewController, UICollectionViewDelegate, UIColl
         let image = UIImage(named: "moodify-start-logo-01.png")
         imageView.image = image
         navigationItem.titleView = imageView
-        
-//        searchController.searchBar.tintColor = UIColor(cgColor: Constants.themeColors()[2])
+    }
+    func setUpSearchGraphics(){
         searchController.searchBar.tintColor = UIColor.white
         
         if let textfield = searchController.searchBar.value(forKey: "searchField") as? UITextField {
@@ -136,17 +150,14 @@ class EntryTabViewController: UIViewController, UICollectionViewDelegate, UIColl
             }
             
             // Change color of search icon
-            let imageV = textfield.leftView as! UIImageView
-            imageV.image = imageV.image?.withRenderingMode(UIImage.RenderingMode.alwaysTemplate)
-//            imageV.image = imageV.image?.withRenderingMode(.alwaysTemplate)
-            imageV.tintColor = UIColor.white
-
+//            let imageV = textfield.leftView as! UIImageView
+//            imageV.image = imageV.image?.withRenderingMode(UIImage.RenderingMode.alwaysTemplate)
+//            imageV.tintColor = UIColor.white
+            
             let textfieldLabel = textfield.value(forKey: "placeholderLabel") as? UILabel
             textfieldLabel?.textColor = UIColor.white
         }
-        
-//        searchController.searchBar.setImage(UIImage(named: "searchBar"), for: .search, state: .normal)
-        
+        searchController.searchBar.setImage(UIImage(named: "searchBar"), for: .search, state: .normal)
         searchController.searchBar.isTranslucent = true
     }
     
@@ -175,6 +186,7 @@ class EntryTabViewController: UIViewController, UICollectionViewDelegate, UIColl
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(true)
         setUpSearch()
+        setUpSearchGraphics()
         // CORE DATA
         //1
         guard let appDelegate =
@@ -251,10 +263,7 @@ class EntryTabViewController: UIViewController, UICollectionViewDelegate, UIColl
         plusButton.layer.shadowOpacity = 0.5
         
         spotifyManager.refreshTokenIfNeeded()
-        
-        print("current search did appear", currentSearchString)
         if currentSearchString != "" {
-            print("made it in if statement")
             searchController.isActive = true
             searchController.searchBar.text = currentSearchString
         }
