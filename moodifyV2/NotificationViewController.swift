@@ -207,11 +207,20 @@ class NotificationViewController: UIViewController, UICollectionViewDelegate, UI
                 devc.entry_to_display = entry_clicked
                 // leave memory notification view controller up in entry tab in future
             }
-        }else if segue.identifier == "backToEntryTabFromPopUp"{
-            if let nc = segue.destination as? UINavigationController {
-                // permanently x out of notification view controller
-                updateCoreDataDoneLookingAtMemory()
-            }
+//        } else if segue.identifier == "backToEntryTabFromPopUp" {
+//            if let nc = segue.destination as? UINavigationController {
+//                // permanently x out of notification view controller
+//                updateCoreDataDoneLookingAtMemory()
+//            }
+        } else if segue.identifier == "backToEntryTabFromPopUp" {
+            let date_formatter = DateFormatter()
+            date_formatter.dateFormat = "yyyy/MM/dd"
+            
+            let dateString = date_formatter.string(from: Date())
+            
+            UserDefaults.standard.set(dateString, forKey: "lastClosedNotification")
+            
+            print("last closed set to", UserDefaults.standard.string(forKey: "lastClosedNotification"))
         }
     }
 

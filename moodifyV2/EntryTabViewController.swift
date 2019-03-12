@@ -40,7 +40,6 @@ class EntryTabViewController: UIViewController, UICollectionViewDelegate, UIColl
     var filteredEntries = [NSObject]()
     var filteredTracks = [NSObject]()
     
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         definesPresentationContext = true
@@ -53,7 +52,7 @@ class EntryTabViewController: UIViewController, UICollectionViewDelegate, UIColl
     
     func filterContentForSearchText(_ searchText: String, scope: String = "All") {
         // if searchText is nothing, display all entries & songs
-        if searchText == ""{
+        if searchText == "" {
             filteredEntries = core_data_entries
             entryCollectionView.reloadData()
             entryCollectionView.collectionViewLayout.invalidateLayout()
@@ -81,23 +80,23 @@ class EntryTabViewController: UIViewController, UICollectionViewDelegate, UIColl
             filteredTracks += filteredTracksByArtist
             filteredEntries.removeAll()
             var filteredTrackNames = [String]()
-            if filteredTracks.count == 0{
+            if filteredTracks.count == 0 {
                 entryCollectionView.reloadData()
                 entryCollectionView.collectionViewLayout.invalidateLayout()
                 return
             }
-            for track_obj in filteredTracks{
+            for track_obj in filteredTracks {
                 let track = getTrackFromNSObject(NS_track: track_obj)
                 filteredTrackNames.append(track.trackName)
             }
             let filtered_track = filteredTrackNames[0]
-            for entry_obj in core_data_entries{
+            for entry_obj in core_data_entries {
                 let entry = getEntryFromNSObject(NS_entry: entry_obj)
                 let assoc_tracks = entry.associatedTracks
                 let filtered_assoc_tracks = assoc_tracks.filter({( track : Track) -> Bool in
                     return filtered_track.lowercased().contains(track.trackName.lowercased())
                 })
-                if filtered_assoc_tracks.count > 0{
+                if filtered_assoc_tracks.count > 0 {
                     filteredEntries.append(entry_obj)
                 }
             }
@@ -133,6 +132,7 @@ class EntryTabViewController: UIViewController, UICollectionViewDelegate, UIColl
         imageView.image = image
         navigationItem.titleView = imageView
     }
+    
     func setUpSearchGraphics(){
         searchController.searchBar.tintColor = UIColor.white
         
@@ -149,15 +149,13 @@ class EntryTabViewController: UIViewController, UICollectionViewDelegate, UIColl
                 backgroundview.clipsToBounds = true;
             }
             
-            // Change color of search icon
-//            let imageV = textfield.leftView as! UIImageView
-//            imageV.image = imageV.image?.withRenderingMode(UIImage.RenderingMode.alwaysTemplate)
-//            imageV.tintColor = UIColor.white
-            
+            // Change placeholder color to white
             let textfieldLabel = textfield.value(forKey: "placeholderLabel") as? UILabel
             textfieldLabel?.textColor = UIColor.white
         }
+        // Change search icon
         searchController.searchBar.setImage(UIImage(named: "searchBar"), for: .search, state: .normal)
+        
         searchController.searchBar.isTranslucent = true
     }
     
@@ -169,10 +167,17 @@ class EntryTabViewController: UIViewController, UICollectionViewDelegate, UIColl
         let yesterday = today.addingTimeInterval(TimeInterval(-60*60*24))
         let yesterdayString = date_formatter.string(from: yesterday)
         
+        // for testing
+//        let todayString = date_formatter.string(from: today)
+        
         filteredEntriesByDate = core_data_entries.filter({( entry_obj : NSObject) -> Bool in
             let entry = getEntryFromNSObject(NS_entry: entry_obj)
             let entryDateString = date_formatter.string(from: entry.entryDate)
             return entryDateString == yesterdayString
+
+            // for testing
+//            return entryDateString == todayString
+
         })
     }
     
@@ -219,9 +224,8 @@ class EntryTabViewController: UIViewController, UICollectionViewDelegate, UIColl
             }
             // get var to know if user has "exxed" out of NotificationViewController previously
             let memory_saved_pref = try managedContext.fetch(fetchRequestMemory)
-            if memory_saved_pref.count > 0{
+            if memory_saved_pref.count > 0 {
                 showMemoryPopup = memory_saved_pref[0].value(forKey: "showBool") as! Bool
-                print(showMemoryPopup)
             }
         } catch let error as NSError {
             print("Could not fetch. \(error), \(error.userInfo)")
@@ -244,12 +248,13 @@ class EntryTabViewController: UIViewController, UICollectionViewDelegate, UIColl
         let dateString = date_formatter.string(from: Date())
         
         let lastNotificationDate = UserDefaults.standard.string(forKey: "lastNotificationDate")
+        let lastClosedNotification = UserDefaults.standard.string(forKey: "lastClosedNotification")
         
         
-        if showMemoryPopup {
-            if  lastNotificationDate != dateString && filteredEntriesByDate.count > 0 {
+        if lastClosedNotification != dateString {
+            if lastNotificationDate != dateString && filteredEntriesByDate.count > 0  {
                 print("send notification")
-                
+            
                 UserDefaults.standard.set(dateString, forKey: "lastNotificationDate")
                 self.performSegue(withIdentifier: "toNotificationSegue", sender: self)
             } else {
@@ -258,9 +263,7 @@ class EntryTabViewController: UIViewController, UICollectionViewDelegate, UIColl
         }
         
         // Uncomment line below to play with the notification pop up
-        if showMemoryPopup {
-            self.performSegue(withIdentifier: "toNotificationSegue", sender: self)
-        }
+//            self.performSegue(withIdentifier: "toNotificationSegue", sender: self)
         
         // Add gradient to background
         gradient.frame = gradientView.bounds
@@ -369,15 +372,15 @@ class EntryTabViewController: UIViewController, UICollectionViewDelegate, UIColl
                 let entry_cell = sender as! UICollectionViewCell
                 let indexPath = self.entryCollectionView!.indexPath(for: entry_cell)
                 let entry_clicked_obj: NSObject
-                if isFiltering() && searchController.searchBar.text != ""{
+                if isFiltering() && searchController.searchBar.text != "" {
                     entry_clicked_obj = filteredEntries[indexPath!.row]
-                }else{
+                } else {
                     entry_clicked_obj = core_data_entries[indexPath!.row]
                 }
                 let entry_clicked = getEntryFromNSObject(NS_entry: entry_clicked_obj)
                 devc.entry_to_display = entry_clicked
             }
-        }
+        } 
     }
     
     
@@ -400,13 +403,13 @@ class EntryTabViewController: UIViewController, UICollectionViewDelegate, UIColl
             var foundSearch = try managedContext.fetch(request)
             
             
-            if(count == 0){
+            if(count == 0) {
                 // no matching object
                 let searchObj = SearchEntity(context: managedContext)
                 searchObj.setValue(entriesOnlyScope, forKeyPath:"entriesOnlyScopeBool")
                 searchObj.setValue(currentSearchString, forKeyPath:"searchString")
                 
-            }else{
+            } else {
                 let searchObj = foundSearch[0] as! SearchEntity
                 searchObj.setValue(entriesOnlyScope, forKeyPath:"entriesOnlyScopeBool")
                 searchObj.setValue(currentSearchString, forKeyPath:"searchString")
@@ -445,7 +448,7 @@ extension EntryTabViewController: UISearchBarDelegate {
     func searchBar(_ searchBar: UISearchBar, selectedScopeButtonIndexDidChange selectedScope: Int) {
         if selectedScope == 0{
             entriesOnlyScope = true
-        }else{
+        } else {
             entriesOnlyScope = false
         }
         filterContentForSearchText(searchBar.text!, scope:
