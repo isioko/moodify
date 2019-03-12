@@ -201,3 +201,13 @@ class DisplayEntryViewController: UIViewController, UICollectionViewDelegate, UI
     }
     
 }
+
+extension DisplayEntryViewController: UICollectionViewDelegateFlowLayout {
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        
+        let cell_width = collectionView.bounds.width
+        let cell_height: CGFloat = 105
+        return CGSize(width: cell_width, height: cell_height)
+    }
+}
+
