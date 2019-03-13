@@ -11,7 +11,7 @@ import UIKit
 import CoreData
 
 
-class DisplayRecentlyPlayedViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
+class DisplayRecentlyPlayedViewController: UIViewController, UITableViewDataSource {
     public var entryText = ""
 
     @IBOutlet weak var backgroundView: UIView!
@@ -23,30 +23,31 @@ class DisplayRecentlyPlayedViewController: UIViewController, UITableViewDataSour
     public var selectedTracksString = ""
     
     public var todays_tracks = [Track()]
-    
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return todays_tracks.count
+
+    @IBOutlet weak var trackTableView: UITableView!{
+        didSet {
+            trackTableView.dataSource = self
+            trackTableView.delegate = self
+        }
     }
     
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "trackTableViewCell", for: indexPath) as! TrackTableViewCell
-        let track = todays_tracks[indexPath.row]
-        cell.displayTrack(track: track)
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(true)
+        blackBoxView.addSubview(trackTableView)
+        trackTableView.reloadData()
+    }
+
+    override func viewDidLoad() {
+        trackTableView.dataSource = self
+        trackTableView.delegate = self
+        trackTableView.reloadData()
         
-        if selectedRows[indexPath.row] {
-            cell.checkmarkView.isHidden = false
-            //cell.accessoryType = .checkmark
-        } else {
-            cell.checkmarkView.isHidden = true
-            cell.accessoryType = .none
-        }
-        cell.setNeedsLayout()
-        
-        return cell
+        blackBoxView.layer.cornerRadius = 8.0
+        blackBoxView.clipsToBounds = true
     }
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
-        var touch: UITouch? = touches.first
+        let touch: UITouch? = touches.first
         let touch_point = touch!.location(in: blackBoxView)
         // check if user touched outside of Popup, if so exit out popup functionality
         if self.view.bounds.contains(touch_point){
@@ -57,28 +58,10 @@ class DisplayRecentlyPlayedViewController: UIViewController, UITableViewDataSour
         }
     }
     
-    @IBOutlet weak var trackTableView: UITableView!{
-        didSet {
-            trackTableView.dataSource = self
-            trackTableView.delegate = self
-        }
-    }
-    
-    override func viewDidLoad() {
-        trackTableView.dataSource = self
-        trackTableView.delegate = self
-        trackTableView.reloadData()
-        
-        blackBoxView.layer.cornerRadius = 8.0
-        blackBoxView.clipsToBounds = true
-    }
-    
     func displayTracks() {
         var doneTracks = false
-        
         spotifyManager.getRecentPlayed { (tracks) in
             let alert = UIAlertController(title: nil, message: "Please wait...", preferredStyle: .alert)
-            
             let loadingIndicator = UIActivityIndicatorView(frame: CGRect(x: 10, y: 5, width: 50, height: 50))
             if !doneTracks {
                 loadingIndicator.hidesWhenStopped = true
@@ -88,7 +71,6 @@ class DisplayRecentlyPlayedViewController: UIViewController, UITableViewDataSour
                 alert.view.addSubview(loadingIndicator)
                 self.present(alert, animated: true, completion: nil)
             }
-            
             let group = DispatchGroup()
             tracks.forEach { track in
                 group.enter()
@@ -109,44 +91,14 @@ class DisplayRecentlyPlayedViewController: UIViewController, UITableViewDataSour
                 } catch {
                     print("error")
                 }
-                
                 self.todays_tracks.append(new_track)
-                
                 group.leave()
             }
             doneTracks = true
-            
-            print("DONE TRACKS")
             if doneTracks {
-                print("CALLED DISMISS")
                 self.dismiss(animated: false, completion: nil)
             }
         }
-    }
-
-    
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        selectedRows[indexPath.row] = !selectedRows[indexPath.row]
-
-        let cell = tableView.dequeueReusableCell(withIdentifier: "trackTableViewCell", for: indexPath) as! TrackTableViewCell
-
-        if selectedRows[indexPath.row] {
-            cell.checkmarkView.isHidden = false
-            tableView.beginUpdates()
-            tableView.reloadRows(at: [indexPath], with: UITableView.RowAnimation.none)
-            tableView.endUpdates()
-        } else {
-            cell.checkmarkView.isHidden = true
-            tableView.beginUpdates()
-            tableView.reloadRows(at: [indexPath], with: UITableView.RowAnimation.none)
-            tableView.endUpdates()
-        }
-    }
-
-    override func viewDidAppear(_ animated: Bool) {
-        super.viewDidAppear(true)
-        blackBoxView.addSubview(trackTableView)
-        trackTableView.reloadData()
     }
     
     func populateSelectedTracks() {
@@ -176,5 +128,45 @@ class DisplayRecentlyPlayedViewController: UIViewController, UITableViewDataSour
                 wevc.selectedTracksString = selectedTracksString
             }
         }
+    }
+}
+
+extension DisplayRecentlyPlayedViewController: UITableViewDelegate{
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        selectedRows[indexPath.row] = !selectedRows[indexPath.row]
+        
+        let cell = tableView.dequeueReusableCell(withIdentifier: "trackTableViewCell", for: indexPath) as! TrackTableViewCell
+        
+        if selectedRows[indexPath.row] {
+            cell.checkmarkView.isHidden = false
+            tableView.beginUpdates()
+            tableView.reloadRows(at: [indexPath], with: UITableView.RowAnimation.none)
+            tableView.endUpdates()
+        } else {
+            cell.checkmarkView.isHidden = true
+            tableView.beginUpdates()
+            tableView.reloadRows(at: [indexPath], with: UITableView.RowAnimation.none)
+            tableView.endUpdates()
+        }
+    }
+
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return todays_tracks.count
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "trackTableViewCell", for: indexPath) as! TrackTableViewCell
+        let track = todays_tracks[indexPath.row]
+        cell.displayTrack(track: track)
+        
+        if selectedRows[indexPath.row] {
+            cell.checkmarkView.isHidden = false
+            //cell.accessoryType = .checkmark
+        } else {
+            cell.checkmarkView.isHidden = true
+            cell.accessoryType = .none
+        }
+        cell.setNeedsLayout()
+        return cell
     }
 }

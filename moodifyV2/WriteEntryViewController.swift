@@ -13,17 +13,15 @@ import CoreLocation
 import CoreData
 
 
-class WriteEntryViewController:UIViewController, UITextFieldDelegate, UITextViewDelegate,CLLocationManagerDelegate {
+class WriteEntryViewController:UIViewController {
     
     let gradient = CAGradientLayer()
     @IBOutlet weak var gradientView: UIView!
     @IBOutlet weak var entryTextView: UITextView!
     
     @IBOutlet weak var tracksForEntryView: UIView!
-    @IBOutlet weak var locationView: UIView!
     @IBOutlet weak var entryTextBubbleView: UIView!
     
-    var alreadySavedEntry = false
     public var todays_tracks = [Track]()
     public var new_entry = Entry.init()
     public var updated_entries = [Entry]()
@@ -31,17 +29,20 @@ class WriteEntryViewController:UIViewController, UITextFieldDelegate, UITextView
     public var selectedRows:[Bool] = [] // added this
     public var selectedTracksString = ""
     
-    // MARK - UITextFieldDelegate
-    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
-        textField.resignFirstResponder()
-        self.view.endEditing(true)
-        return false
-    }
+    
+    let PLACEHOLDER_TEXT = "What's on your mind?"
+
+    // Buttons
     @IBOutlet weak var cancelButton: UIButton!
     @IBOutlet weak var addButton: UIButton!
     
     @IBOutlet weak var selectedTracksLabel: UILabel!
-        
+    // variables for location feature
+    let locationManager = CLLocationManager()
+    public var location = ""
+    @IBOutlet weak var locationView: UIView!
+    @IBOutlet weak var locationLabel: UILabel!
+
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -59,7 +60,6 @@ class WriteEntryViewController:UIViewController, UITextFieldDelegate, UITextView
             displayTracks()
         }
         loadLocation()
-        
         if selectedTracksString != "" {
             selectedTracksLabel.text = selectedTracksString
             selectedTracksLabel.textColor = UIColor.black
@@ -68,73 +68,7 @@ class WriteEntryViewController:UIViewController, UITextFieldDelegate, UITextView
             selectedTracksLabel.textColor = UIColor.lightGray
         }
     }
-    
-    func loadLocation(){
-        self.locationManager.requestAlwaysAuthorization()
-        
-        // For use in foreground
-        self.locationManager.requestWhenInUseAuthorization()
-        
-        if CLLocationManager.locationServicesEnabled() {
-            locationManager.delegate = self
-            locationManager.desiredAccuracy = kCLLocationAccuracyNearestTenMeters
-            locationManager.requestAlwaysAuthorization()
-            locationManager.startUpdatingLocation()
-            if location != ""{
-                locationManager.stopUpdatingLocation()
-                locationLabel.text = location
-            }
-        }
-    }
-    
-    @IBOutlet weak var locationLabel: UILabel!
-    
-    //https://stackoverflow.com/questions/25296691/get-users-current-location-coordinates
-    let locationManager = CLLocationManager()
-    public var location = ""
 
-    func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
-        guard let locValue: CLLocationCoordinate2D = manager.location?.coordinate else { return }
-        lookUpCurrentLocation(completionHandler: {completionHandler in
-            if let completionHandler = completionHandler{
-                if let new_location = completionHandler.locality{
-                    self.location = new_location
-                }
-            }
-        }
-        )
-        if location != ""{
-            locationLabel.text = location
-        }
-    }
-    
-    //https://developer.apple.com/documentation/corelocation/converting_between_coordinates_and_user-friendly_place_names
-    func lookUpCurrentLocation(completionHandler: @escaping (CLPlacemark?)
-        -> Void ) {
-        // Use the last reported location.
-        if let lastLocation = self.locationManager.location {
-            let geocoder = CLGeocoder()
-            
-            // Look up the location and pass it to the completion handler
-            geocoder.reverseGeocodeLocation(lastLocation,
-                                            completionHandler: { (placemarks, error) in
-                                                if error == nil {
-                                                    let firstLocation = placemarks?[0]
-                                                    completionHandler(firstLocation)
-                                                }
-                                                else {
-                                                    // An error occurred during geocoding.
-                                                    completionHandler(nil)
-                                                }
-            })
-        }
-        else {
-            // No location was available.
-            completionHandler(nil)
-        }
-    }
-
-    
     func displayTracks() {
         var doneTracks = false
         spotifyManager.getRecentPlayed { (tracks) in
@@ -206,33 +140,6 @@ class WriteEntryViewController:UIViewController, UITextFieldDelegate, UITextView
         // END: Placeholder text
     }
     
-    func textView(_ textView: UITextView, shouldChangeTextIn range: NSRange, replacementText text: String) -> Bool {
-        if(text == "\n") {
-            textView.resignFirstResponder()
-            return false
-        }
-        return true
-    }
-    
-    
-    // START: Placeholder text for entryTextView
-    let PLACEHOLDER_TEXT = "What's on your mind?"
-    
-    func textViewDidBeginEditing(_ textView: UITextView) {
-        if entryTextView.textColor == UIColor.lightGray {
-            entryTextView.text = nil
-            entryTextView.textColor = UIColor.black
-        }
-    }
-    
-    func textViewDidEndEditing(_ textView: UITextView) {
-        if entryTextView.text.isEmpty {
-            entryTextView.text = PLACEHOLDER_TEXT
-            entryTextView.textColor = UIColor.lightGray
-        }
-    }
-    // END: Placeholder text for entryTextView
-    
     @IBAction func clickAdd(_ sender: UIButton) {
         if entryTextView.text != PLACEHOLDER_TEXT {
             if let entry_text = entryTextView.text {
@@ -259,28 +166,22 @@ class WriteEntryViewController:UIViewController, UITextFieldDelegate, UITextView
                 return
         }
         
-        // 1
         let managedContext =
             appDelegate.persistentContainer.viewContext
         
-        // 2
+        // create CoreData representation of the new entry
         let entry_entity = EntryEntity(context: managedContext)
-        
-        // 3
         entry_entity.setValue(entry.entryText, forKeyPath: "text")
         entry_entity.setValue(entry.location, forKeyPath: "location")
         entry_entity.setValue(entry.entryDate, forKeyPath: "date")
-//        entry_entity.setValue(entry.entryDateString, forKey: "dateString")
-        //entry_entity.setValue(entry.relativeDate, forKeyPath: "relativeDate")
         
+        // load all the tracks associated with entry into CoreData
         var trackEntries = [NSObject]()
-        // to do: set songs
         for track in entry.associatedTracks{
             let request = NSFetchRequest<NSFetchRequestResult>(entityName: "TrackEntity")
             let predicate = NSPredicate(format: "trackName == %@", track.trackName)
             request.predicate = predicate
             request.fetchLimit = 1
-            let foundTracks = [NSObject]()
             do{
                 var foundTracks = try managedContext.fetch(request)
                 let count = try managedContext.count(for: request)
@@ -304,20 +205,16 @@ class WriteEntryViewController:UIViewController, UITextFieldDelegate, UITextView
                     trackObj.setValue(imageData, forKeyPath:"coverArt")
                     entry_entity.addToAssociatedTrack(trackObj)
                     trackObj.addToAssociatedEntry(entry_entity)
-//                    trackEntries.append(trackObj)
                 }
             }
             catch let error as NSError {
                 print("Could not fetch \(error), \(error.userInfo)")
             }
-
         }
-        
-        // 4
+    
         do {
             try managedContext.save()
             core_data_objs.insert(entry_entity, at: 0)
-            // MIGHT BREAK EVERYTHING!!!
             for trackObj in trackEntries{
                 core_data_objs.append(trackObj)
             }
@@ -327,6 +224,7 @@ class WriteEntryViewController:UIViewController, UITextFieldDelegate, UITextView
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        // keep track of entry text when go to choose music, not in core data yet because haven't saved
         if segue.identifier == "chooseMusicSegue" {
             if let drpvc = segue.destination as? DisplayRecentlyPlayedViewController{
                 drpvc.todays_tracks = todays_tracks
@@ -338,16 +236,101 @@ class WriteEntryViewController:UIViewController, UITextFieldDelegate, UITextView
                         drpvc.entryText = ""
                     }
                 }
-                //drpvc.selectedTracksString = selectedTracksString
             }
-        } else if segue.identifier == "showEntriesSegue" {
-            if let etvc = segue.destination as? EntryTabViewController{
-                etvc.newEntry = new_entry
+        }
+    }
+}
+
+extension WriteEntryViewController: CLLocationManagerDelegate{
+    //https://stackoverflow.com/questions/25296691/get-users-current-location-coordinates
+    func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
+        guard let _: CLLocationCoordinate2D = manager.location?.coordinate else { return }
+        lookUpCurrentLocation(completionHandler: {completionHandler in
+            if let completionHandler = completionHandler{
+                if let new_location = completionHandler.locality{
+                    self.location = new_location
+                }
             }
-        } else if segue.identifier == "backToAllEntriesFromSave" {
-            if let etvc = segue.destination as? EntryTabViewController{
-                etvc.newEntry = new_entry
+        }
+        )
+        if location != ""{
+            locationLabel.text = location
+        }
+    }
+    
+    //https://developer.apple.com/documentation/corelocation/converting_between_coordinates_and_user-friendly_place_names
+    func lookUpCurrentLocation(completionHandler: @escaping (CLPlacemark?)
+        -> Void ) {
+        // Use the last reported location.
+        if let lastLocation = self.locationManager.location {
+            let geocoder = CLGeocoder()
+            
+            // Look up the location and pass it to the completion handler
+            geocoder.reverseGeocodeLocation(lastLocation,
+                                            completionHandler: { (placemarks, error) in
+                                                if error == nil {
+                                                    let firstLocation = placemarks?[0]
+                                                    completionHandler(firstLocation)
+                                                }
+                                                else {
+                                                    // An error occurred during geocoding.
+                                                    completionHandler(nil)
+                                                }
+            })
+        }
+        else {
+            // No location was available.
+            completionHandler(nil)
+        }
+    }
+    
+    func loadLocation(){
+        self.locationManager.requestAlwaysAuthorization()
+        
+        // For use in foreground
+        self.locationManager.requestWhenInUseAuthorization()
+        
+        if CLLocationManager.locationServicesEnabled() {
+            locationManager.delegate = self
+            locationManager.desiredAccuracy = kCLLocationAccuracyNearestTenMeters
+            locationManager.requestAlwaysAuthorization()
+            locationManager.startUpdatingLocation()
+            if location != ""{
+                locationManager.stopUpdatingLocation()
+                locationLabel.text = location
             }
+        }
+    }
+}
+
+extension WriteEntryViewController: UITextFieldDelegate{
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
+        self.view.endEditing(true)
+        return false
+    }
+}
+
+extension WriteEntryViewController: UITextViewDelegate{
+    func textView(_ textView: UITextView, shouldChangeTextIn range: NSRange, replacementText text: String) -> Bool {
+        if(text == "\n") {
+            textView.resignFirstResponder()
+            return false
+        }
+        return true
+    }
+
+    func textViewDidBeginEditing(_ textView: UITextView) {
+        if entryTextView.textColor == UIColor.lightGray {
+            entryTextView.text = nil
+            entryTextView.textColor = UIColor.black
+        }
+    }
+    
+    func textViewDidEndEditing(_ textView: UITextView) {
+        if entryTextView.text.isEmpty {
+            entryTextView.text = PLACEHOLDER_TEXT
+            entryTextView.textColor = UIColor.lightGray
         }
     }
 }
