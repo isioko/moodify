@@ -16,6 +16,7 @@ class Entry {
     public var relativeDate: String
     public var entryDateString: String
     public var numAssociatedTracks: Int
+    
     init() {
         self.entryText = ""
         self.location = ""

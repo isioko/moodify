@@ -99,15 +99,16 @@ class NotificationViewController: UIViewController, UICollectionViewDataSource {
         let yesterday = today.addingTimeInterval(TimeInterval(-60*60*24))
         let yesterdayString = date_formatter.string(from: yesterday)
         
-        let todayString = date_formatter.string(from: today)
+        // only for testing purposes
+//        let todayString = date_formatter.string(from: today)
         
         filteredEntriesByDate = core_data_entries.filter({( entry_obj : NSObject) -> Bool in
             let entry = getEntryFromNSObject(NS_entry: entry_obj)
             let entryDateString = date_formatter.string(from: entry.entryDate)
             
             // Switch for testing to view today's entries
-            //            return entryDateString == yesterdayString
-            return entryDateString == todayString
+            return entryDateString == yesterdayString
+//            return entryDateString == todayString
         })
         
         numEntriesLabel.text = String(filteredEntriesByDate.count)

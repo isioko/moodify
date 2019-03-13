@@ -36,6 +36,7 @@ class EntryTabViewController: UIViewController, UICollectionViewDataSource {
             entryCollectionView.delegate = self
         }
     }
+    
     // search variables
     lazy var searchBar:UISearchBar = UISearchBar(frame: CGRect.zero)
     let searchController = UISearchController(searchResultsController: nil)
@@ -98,7 +99,7 @@ class EntryTabViewController: UIViewController, UICollectionViewDataSource {
                 
                 // Change cancel button color
                 let clearButton = textfield.value(forKey: "clearButton") as! UIButton
-                clearButton.setImage(UIImage(named: "xButton"), for: .normal)
+                clearButton.setImage(UIImage(named: "cancelButton"), for: .normal)
                 clearButton.tintColor = .white
             }
             
@@ -121,10 +122,12 @@ class EntryTabViewController: UIViewController, UICollectionViewDataSource {
         let yesterdayString = date_formatter.string(from: yesterday)
         // for testing
 //        let todayString = date_formatter.string(from: today)
+        
         filteredEntriesByDate = core_data_entries.filter({( entry_obj : NSObject) -> Bool in
             let entry = getEntryFromNSObject(NS_entry: entry_obj)
             let entryDateString = date_formatter.string(from: entry.entryDate)
             return entryDateString == yesterdayString
+            
             // for testing
 //            return entryDateString == todayString
         })
@@ -285,7 +288,7 @@ class EntryTabViewController: UIViewController, UICollectionViewDataSource {
                 searchObj.setValue(currentSearchString, forKeyPath:"searchString")
 
             }
-        }catch let error as NSError {
+        } catch let error as NSError {
             print("Could not fetch \(error), \(error.userInfo)")
         }
         do {

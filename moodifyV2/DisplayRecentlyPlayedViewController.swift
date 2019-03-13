@@ -52,7 +52,7 @@ class DisplayRecentlyPlayedViewController: UIViewController, UITableViewDataSour
         // check if user touched outside of Popup, if so exit out popup functionality
         if self.view.bounds.contains(touch_point){
             print("TOUCH IS IN BOUNDS OF POPUP")
-        }else{
+        } else {
             print("TOUCH IS NOT IN BOUNDS OF POPUP")
             performSegue(withIdentifier: "backToWriteEntrySegue", sender: self)
         }

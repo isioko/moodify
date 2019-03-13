@@ -103,9 +103,9 @@ class DisplayEntryViewController: UIViewController, UICollectionViewDataSource{
         
         do {
             core_data_objs = try managedContext.fetch(fetchRequest)
-            if core_data_objs.count >= 1{
-                print("SUCCESS")
-            }
+//            if core_data_objs.count >= 1 {
+//            print("SUCCESS")
+//            }
         } catch let error as NSError {
             print("Could not fetch. \(error), \(error.userInfo)")
         }
