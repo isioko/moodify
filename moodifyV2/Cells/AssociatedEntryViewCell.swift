@@ -25,11 +25,9 @@ class AssociatedEntryViewCell:UICollectionViewCell{
         locationLabel.text = entry.location
         locationImage.image = UIImage(named: "blackLocation")
         print("assoc tracks", entry.associatedTracks)
-        numTracksLabel.text = String(entry.associatedTracks.count)
-
         let numDays = getNumDays(date: entry.entryDate)
         let relativeDateForEntry = calculateRelativeDate(num_days: numDays)
-
+        numTracksLabel.text = String(entry.numAssociatedTracks)
         relativeDateLabel.text = relativeDateForEntry
     }
     

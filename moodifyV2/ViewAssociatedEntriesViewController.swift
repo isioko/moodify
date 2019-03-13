@@ -86,7 +86,7 @@ class ViewAssociatedEntriesViewController: UIViewController, UICollectionViewDat
         
         // add entries to datasource
         // TO DO: get tracks from Core Data so can display sorted
-        let track = getTrackFromNSObject(NS_track: core_data_objs[0] as! NSObject)
+        let track = getTrackFromNSObject(NS_track: core_data_objs[0] )
         sentimentAnalysisForSong(track_obj: track)
         assocEntriesCollectionView.reloadData()
         trackNameLabel.text = track.trackName
@@ -117,6 +117,7 @@ class ViewAssociatedEntriesViewController: UIViewController, UICollectionViewDat
         entry.entryDate = NS_entry.value(forKey: "date") as! Date
         entry.location = NS_entry.value(forKey: "location") as! String
         entry.entryText = NS_entry.value(forKey: "text") as! String
+        entry.numAssociatedTracks = NS_entry.value(forKey: "numAssociatedTracks") as! Int
         return entry
     }
 

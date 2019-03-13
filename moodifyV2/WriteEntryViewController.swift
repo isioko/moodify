@@ -154,6 +154,7 @@ class WriteEntryViewController:UIViewController {
         }
         
         new_entry.associatedTracks = selectedTracks
+        new_entry.numAssociatedTracks = selectedTracks.count
         save(entry: new_entry)
     }
     
@@ -174,7 +175,7 @@ class WriteEntryViewController:UIViewController {
         entry_entity.setValue(entry.entryText, forKeyPath: "text")
         entry_entity.setValue(entry.location, forKeyPath: "location")
         entry_entity.setValue(entry.entryDate, forKeyPath: "date")
-        
+        entry_entity.setValue(entry.numAssociatedTracks, forKeyPath: "numAssociatedTracks")
         // load all the tracks associated with entry into CoreData
         var trackEntries = [NSObject]()
         for track in entry.associatedTracks{

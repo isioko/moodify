@@ -15,14 +15,14 @@ class Entry {
     public var associatedTracks = [Track]()
     public var relativeDate: String
     public var entryDateString: String
-
+    public var numAssociatedTracks: Int
     init() {
         self.entryText = ""
         self.location = ""
         let date = Date()
         self.entryDate = date
         self.relativeDate = ""
-        
+        self.numAssociatedTracks = 0
         let date_formatter = DateFormatter()
         date_formatter.dateFormat = "yyyy/MM/dd"
         self.entryDateString = date_formatter.string(from: date)

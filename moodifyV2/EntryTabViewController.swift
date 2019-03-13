@@ -251,7 +251,7 @@ class EntryTabViewController: UIViewController, UICollectionViewDataSource {
         entry.entryDate = NS_entry.value(forKey: "date") as! Date
         entry.location = NS_entry.value(forKey: "location") as! String
         entry.entryText = NS_entry.value(forKey: "text") as! String
-        
+        entry.numAssociatedTracks = NS_entry.value(forKey: "numAssociatedTracks") as! Int
         let tracks_found = NS_entry.value(forKey: "associatedTrack") as! NSSet
         var tracks_assoc = [Track]()
         for track_entity in tracks_found{
