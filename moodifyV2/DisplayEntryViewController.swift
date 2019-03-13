@@ -117,7 +117,7 @@ class DisplayEntryViewController: UIViewController, UICollectionViewDelegate, UI
         
         let tracks_found = NS_entry.value(forKey: "associatedTrack") as! NSSet
         var tracks_assoc = [Track]()
-        for track_entity in tracks_found{
+        for track_entity in tracks_found {
             let track = getTrackFromNSObject(NS_track: track_entity as! NSObject)
             tracks_assoc.append(track)
         }

@@ -133,7 +133,7 @@ class EntryTabViewController: UIViewController, UICollectionViewDelegate, UIColl
         navigationItem.titleView = imageView
     }
     
-    func setUpSearchGraphics(){
+    func setUpSearchGraphics() {
         searchController.searchBar.tintColor = UIColor.white
         
         if let textfield = searchController.searchBar.value(forKey: "searchField") as? UITextField {
@@ -147,12 +147,18 @@ class EntryTabViewController: UIViewController, UICollectionViewDelegate, UIColl
                 // Rounded corner
                 backgroundview.layer.cornerRadius = 10;
                 backgroundview.clipsToBounds = true;
+                
+                // Change cancel button color
+                let clearButton = textfield.value(forKey: "clearButton") as! UIButton
+                clearButton.setImage(UIImage(named: "xButton"), for: .normal)
+                clearButton.tintColor = .white
             }
             
             // Change placeholder color to white
             let textfieldLabel = textfield.value(forKey: "placeholderLabel") as? UILabel
             textfieldLabel?.textColor = UIColor.white
         }
+        
         // Change search icon
         searchController.searchBar.setImage(UIImage(named: "searchBar"), for: .search, state: .normal)
         
@@ -384,7 +390,7 @@ class EntryTabViewController: UIViewController, UICollectionViewDelegate, UIColl
     }
     
     
-    func updateCoreDataForSearch(){
+    func updateCoreDataForSearch() {
         
         guard let appDelegate =
             UIApplication.shared.delegate as? AppDelegate else {
@@ -397,7 +403,7 @@ class EntryTabViewController: UIViewController, UICollectionViewDelegate, UIColl
         
         
         let request = NSFetchRequest<NSFetchRequestResult>(entityName: "SearchEntity")
-        do{
+        do {
             
             let count = try managedContext.count(for: request)
             var foundSearch = try managedContext.fetch(request)
@@ -418,7 +424,6 @@ class EntryTabViewController: UIViewController, UICollectionViewDelegate, UIColl
         }catch let error as NSError {
             print("Could not fetch \(error), \(error.userInfo)")
         }
-        
         
         do {
             try managedContext.save()

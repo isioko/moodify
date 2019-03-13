@@ -136,6 +136,15 @@ class ViewAssociatedEntriesViewController: UIViewController, UICollectionViewDel
         entry.entryDate = NS_entry.value(forKey: "date") as! Date
         entry.location = NS_entry.value(forKey: "location") as! String
         entry.entryText = NS_entry.value(forKey: "text") as! String
+        
+//        let tracks_found = NS_entry.value(forKey: "associatedTrack") as! NSSet
+//        var tracks_assoc = [Track]()
+//        for track_entity in tracks_found {
+//            let track = getTrackFromNSObject(NS_track: track_entity as! NSObject)
+//            tracks_assoc.append(track)
+//        }
+//        entry.associatedTracks = tracks_assoc
+
         return entry
     }
 
@@ -154,6 +163,7 @@ class ViewAssociatedEntriesViewController: UIViewController, UICollectionViewDel
             entries_assoc.append(entry)
             numEntries += 1
         }
+        
         numEntriesLabel.text = String(numEntries)
         numEntriesLabel.textAlignment = .left
         track.associatedEntries = entries_assoc

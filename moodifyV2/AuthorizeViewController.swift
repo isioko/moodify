@@ -18,6 +18,7 @@ class AuthorizeViewController: UIViewController{
     @IBOutlet weak var authorizeApp: UIButton!
     @IBOutlet weak var continueButton: UIButton!
     
+    @IBOutlet weak var deauthButton: UIButton!
     
     /* Triggers segue depending on whether "first" app launch or not.
      * "First launch" detected by whether or not any entries exist in CoreData*/
@@ -69,6 +70,8 @@ class AuthorizeViewController: UIViewController{
         } else {
             continueButton.isHidden = false
         }
+        
+        deauthButton.isHidden = true
     }
     
     override func viewDidAppear(_ animated: Bool) {
