@@ -9,6 +9,10 @@
     <entity name="MemoryEntity" representedClassName="MemoryEntity" syncable="YES" codeGenerationType="class">
         <attribute name="showBool" optional="YES" attributeType="Boolean" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
     </entity>
+    <entity name="SearchEntity" representedClassName="SearchEntity" syncable="YES" codeGenerationType="class">
+        <attribute name="entriesOnlyScopeBool" optional="YES" attributeType="Boolean" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="searchString" optional="YES" attributeType="String" syncable="YES"/>
+    </entity>
     <entity name="TrackEntity" representedClassName="TrackEntity" syncable="YES">
         <attribute name="artistName" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="coverArt" optional="YES" attributeType="Binary" syncable="YES"/>
@@ -17,7 +21,8 @@
     </entity>
     <elements>
         <element name="EntryEntity" positionX="-63" positionY="-18" width="128" height="105"/>
-        <element name="TrackEntity" positionX="-54" positionY="18" width="128" height="105"/>
         <element name="MemoryEntity" positionX="-63" positionY="36" width="128" height="60"/>
+        <element name="TrackEntity" positionX="-54" positionY="18" width="128" height="105"/>
+        <element name="SearchEntity" positionX="-63" positionY="36" width="128" height="75"/>
     </elements>
 </model>

@@ -15,6 +15,7 @@ class ViewAssociatedEntriesViewController: UIViewController, UICollectionViewDel
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return entries.count
     }
+    
 //    var track_to_display = TrackEntity()
     var track_to_display = Track.init()
     var core_data_objs: [NSObject] = []
@@ -26,6 +27,7 @@ class ViewAssociatedEntriesViewController: UIViewController, UICollectionViewDel
     
     
     let gradient = CAGradientLayer()
+    
 
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "assocEntryCell", for: indexPath) as! AssociatedEntryViewCell
@@ -153,6 +155,7 @@ class ViewAssociatedEntriesViewController: UIViewController, UICollectionViewDel
             numEntries += 1
         }
         numEntriesLabel.text = String(numEntries)
+        numEntriesLabel.textAlignment = .left
         track.associatedEntries = entries_assoc
         let data = NS_track.value(forKey: "coverArt") as! Data
         track.trackArtworkImage = UIImage(data: data)
@@ -181,5 +184,14 @@ class ViewAssociatedEntriesViewController: UIViewController, UICollectionViewDel
                 devc.entry_to_display = entry
             }
         }
+    }
+}
+
+extension ViewAssociatedEntriesViewController: UICollectionViewDelegateFlowLayout {
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        
+        let cell_width = collectionView.bounds.width
+        let cell_height: CGFloat = 105
+        return CGSize(width: cell_width, height: cell_height)
     }
 }

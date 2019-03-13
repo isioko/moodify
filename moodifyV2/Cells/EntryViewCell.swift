@@ -32,6 +32,7 @@ class EntryViewCell:UICollectionViewCell{
         locationLabel.text = entry.location
         locationImage.image = UIImage(named: "location-logo.png")
         numTracksLabel.text = String(entry.associatedTracks.count)
+        numTracksLabel.textAlignment = .left
         
         let numDays = getNumDays(date: entry.entryDate)
         let relativeDateForEntry = calculateRelativeDate(num_days: numDays)
