@@ -79,8 +79,13 @@ class EntryViewCell:UICollectionViewCell{
             return "SIX DAYS AGO"
         } else if num_days > 6 && num_days < 30 {
             return "THIS MONTH"
+        } else if num_days >= 30 && num_days < 60 {
+            return "LAST MONTH"
+        } else if num_days >= 60 && num_days < 90 {
+            return "TWO MONTHS AGO"
         } else {
-            return ""
+            var num = String(num_days/30)
+            return num + " MONTHS AGO"
         }
     }
 }
