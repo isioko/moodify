@@ -404,19 +404,49 @@ extension EntryTabViewController: UISearchControllerDelegate{
             // displays entries which have text that match search criteria
             filteredEntries = core_data_entries.filter({( entry_obj : NSObject) -> Bool in
                 let entry = getEntryFromNSObject(NS_entry: entry_obj)
-                return entry.entryText.lowercased().contains(searchText.lowercased())
+                // Zoe bug fixing attempt, works!
+                if let range = entry.entryText.lowercased().range(of: searchText.lowercased()) {
+                    let prefix = entry.entryText.lowercased()[..<range.lowerBound] // or str[str.startIndex..<range.lowerBound]
+                    // if substring ends with alphanumeric, discount it
+                    if prefix.count > 0 {
+                        return prefix.last == " "
+                    } else{
+                        return true
+                    }
+                } else {return false} //does not contain
+                //old code:
+                //return entry.entryText.lowercased().contains(searchText.lowercased())
             })
         } else {
             // displays entries which have songs that match search criteria
             filteredTracks = core_data_tracks.filter({( track_obj : NSObject) -> Bool in
                 let track = getTrackFromNSObject(NS_track: track_obj)
                 // filter on track name and artist name
-                return track.trackName.lowercased().contains(searchText.lowercased())
+                //FIXED
+                if let range = track.trackName.lowercased().range(of: searchText.lowercased()) {
+                    let prefix = track.trackName.lowercased()[..<range.lowerBound] // or str[str.startIndex..<range.lowerBound]
+                    // if substring ends with alphanumeric, discount it
+                    if prefix.count > 0 {
+                        return prefix.last == " "
+                    } else{
+                        return true
+                    }
+                } else {return false} //does not contain
+                //return track.trackName.lowercased().contains(searchText.lowercased())
             })
             // filter on artist name
             let filteredTracksByArtist = core_data_tracks.filter({( track_obj : NSObject) -> Bool in
                 let track = getTrackFromNSObject(NS_track: track_obj)
-                return track.artistName.lowercased().contains(searchText.lowercased())
+                if let range = track.artistName.lowercased().range(of: searchText.lowercased()) {
+                    let prefix = track.artistName.lowercased()[..<range.lowerBound] // or str[str.startIndex..<range.lowerBound]
+                    // if substring ends with alphanumeric, discount it
+                    if prefix.count > 0 {
+                        return prefix.last == " "
+                    } else{
+                        return true
+                    }
+                } else {return false} //does not contain
+                //return track.artistName.lowercased().contains(searchText.lowercased())
             })
             filteredTracks += filteredTracksByArtist
             filteredEntries.removeAll()
