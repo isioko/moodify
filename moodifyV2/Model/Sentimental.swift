@@ -145,12 +145,12 @@ public struct Sentimently {
         var score: Int = 0
         
         if let wordValue = wordSource[token.word as NSString] {
-            score = Int(wordValue as! NSNumber)
+            score = Int(truncating: wordValue as! NSNumber)
         }
         
         if token.hasWordStemValue() {
             if let stemValue = wordSource[token.wordStem! as NSString] {
-                let stemScore = Int(stemValue as! NSNumber)
+                let stemScore = Int(truncating: stemValue as! NSNumber)
                 if abs(stemScore) > abs(score) {
                     score = stemScore
                 }

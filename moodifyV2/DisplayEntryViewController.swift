@@ -10,33 +10,45 @@ import Foundation
 import UIKit
 import CoreData
 
-class DisplayEntryViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource{
+class DisplayEntryViewController: UIViewController, UICollectionViewDataSource{
     let gradient = CAGradientLayer()
     @IBOutlet weak var gradientView: UIView!
-    
     @IBOutlet weak var doneButton: UIButton!
-    @IBOutlet weak var entryTextView: UITextView!
-    
     public var entry_to_display = Entry.init()
     public var selectedTracks = [Track]()
     
     @IBOutlet weak var dateLabel: UILabel!
     @IBOutlet weak var locationLabel: UILabel!
     @IBOutlet weak var dateBubbleLabel: UILabel!
-    
+
+    @IBOutlet weak var entryTextView: UITextView!
     @IBOutlet weak var locationBubbleView: UIView!
     @IBOutlet weak var dateBubbleView: UIView!
     @IBOutlet weak var entryTextBubbleView: UIView!
     @IBOutlet weak var trackBubbleView: UIView!
-
     var core_data_objs: [NSObject] = []
+    // Collection View
+    @IBOutlet weak var trackCollectionView: UICollectionView! {
+        didSet {
+            trackCollectionView.dataSource = self
+            trackCollectionView.delegate = self
+        }
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(true)
+        loadCoreData()
+        initializeUI()
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         trackCollectionView.dataSource = self
         trackCollectionView.delegate = self
         trackCollectionView.reloadData()
-        
+    }
+    
+    func initializeUI(){
         entryTextView.text = entry_to_display.entryText
         
         let formatter = DateFormatter()
@@ -58,40 +70,8 @@ class DisplayEntryViewController: UIViewController, UICollectionViewDelegate, UI
         locationBubbleView.clipsToBounds = true
         trackBubbleView.layer.cornerRadius = 8
         trackBubbleView.clipsToBounds = true
-    }
-    
-    override func viewDidAppear(_ animated: Bool) {
-        super.viewDidAppear(true)
-        // CORE DATA
-        
-        //1
-        guard let appDelegate =
-            UIApplication.shared.delegate as? AppDelegate else {
-                return
-        }
-        
-        let managedContext =
-            appDelegate.persistentContainer.viewContext
-        
-        //2
-        let fetchRequest =
-            NSFetchRequest<NSManagedObject>(entityName: "EntryEntity")
-        fetchRequest.fetchLimit = 1
-        fetchRequest.predicate = NSPredicate(format: "date == %@", entry_to_display.entryDate as CVarArg)
 
-        //3
-        do {
-            core_data_objs = try managedContext.fetch(fetchRequest)
-            if core_data_objs.count >= 1{
-                print("SUCCESS")
-            }
-        } catch let error as NSError {
-            print("Could not fetch. \(error), \(error.userInfo)")
-        }
-        // end of core data
-        
-        // add tracks to datasource
-        entry_to_display = getEntryFromNSObject(NS_entry: core_data_objs[0] as! NSObject)
+        entry_to_display = getEntryFromNSObject(NS_entry: core_data_objs[0])
         trackCollectionView.reloadData()
         
         if entry_to_display.associatedTracks.count == 0 {
@@ -109,6 +89,28 @@ class DisplayEntryViewController: UIViewController, UICollectionViewDelegate, UI
         gradientView.addSubview(doneButton)
     }
     
+    func loadCoreData(){
+        guard let appDelegate =
+            UIApplication.shared.delegate as? AppDelegate else {
+                return
+        }
+        let managedContext =
+            appDelegate.persistentContainer.viewContext
+        let fetchRequest =
+            NSFetchRequest<NSManagedObject>(entityName: "EntryEntity")
+        fetchRequest.fetchLimit = 1
+        fetchRequest.predicate = NSPredicate(format: "date == %@", entry_to_display.entryDate as CVarArg)
+        
+        do {
+            core_data_objs = try managedContext.fetch(fetchRequest)
+//            if core_data_objs.count >= 1 {
+//            print("SUCCESS")
+//            }
+        } catch let error as NSError {
+            print("Could not fetch. \(error), \(error.userInfo)")
+        }
+    }
+    
     func getEntryFromNSObject(NS_entry:NSObject)->Entry {
         let entry = Entry()
         entry.entryDate = NS_entry.value(forKey: "date") as! Date
@@ -117,7 +119,7 @@ class DisplayEntryViewController: UIViewController, UICollectionViewDelegate, UI
         
         let tracks_found = NS_entry.value(forKey: "associatedTrack") as! NSSet
         var tracks_assoc = [Track]()
-        for track_entity in tracks_found{
+        for track_entity in tracks_found {
             let track = getTrackFromNSObject(NS_track: track_entity as! NSObject)
             tracks_assoc.append(track)
         }
@@ -125,7 +127,6 @@ class DisplayEntryViewController: UIViewController, UICollectionViewDelegate, UI
         return entry
     }
 
-    
     func getTrackFromNSObject(NS_track:NSObject)->Track {
         let track = Track()
         track.trackName = NS_track.value(forKey: "trackName") as! String
@@ -136,29 +137,13 @@ class DisplayEntryViewController: UIViewController, UICollectionViewDelegate, UI
         return track
     }
     
-    // Collection View
-    @IBOutlet weak var trackCollectionView: UICollectionView! {
-        didSet {
-            trackCollectionView.dataSource = self
-            trackCollectionView.delegate = self
-        }
-    }
-    
-    /* Collection View delegate functions */
-    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return entry_to_display.associatedTracks.count
-    }
-
     //Delete an entry. NOTE: makes use of isEqual function in Entry, which does not walk through tracks.
     // Improvement: add notification upon arriving back at entry tab view controller that an entry has been deleted.
     @IBAction func clickDelete(_ sender: UIButton) {
-        print("Clicked!")
-        
         guard let appDelegate =
             UIApplication.shared.delegate as? AppDelegate else {
                 return
         }
-        
         let context = appDelegate.persistentContainer.viewContext
         let fetchRequest = NSFetchRequest<NSManagedObject>(entityName: "EntryEntity")
         var core_data_entries: [NSObject] = []
@@ -178,14 +163,6 @@ class DisplayEntryViewController: UIViewController, UICollectionViewDelegate, UI
         }
     }
     
-    
-    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "displayTrackCollectionViewCell", for: indexPath) as! DisplayTrackCollectionViewCell
-        let track = entry_to_display.associatedTracks[indexPath.row]
-        cell.displayTrack(track: track)
-        return cell
-    }
-    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "showAssociatedEntriesSegue" {
             if let vaevc = segue.destination as? ViewAssociatedEntriesViewController {
@@ -199,15 +176,25 @@ class DisplayEntryViewController: UIViewController, UICollectionViewDelegate, UI
             }
         }
     }
-    
 }
 
 extension DisplayEntryViewController: UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        
         let cell_width = collectionView.bounds.width
         let cell_height: CGFloat = 105
         return CGSize(width: cell_width, height: cell_height)
     }
 }
 
+extension DisplayEntryViewController:UICollectionViewDelegate{
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "displayTrackCollectionViewCell", for: indexPath) as! DisplayTrackCollectionViewCell
+        let track = entry_to_display.associatedTracks[indexPath.row]
+        cell.displayTrack(track: track)
+        return cell
+    }
+
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return entry_to_display.associatedTracks.count
+    }
+}

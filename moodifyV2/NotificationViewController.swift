@@ -10,7 +10,7 @@ import Foundation
 import UIKit
 import CoreData
 
-class NotificationViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource {
+class NotificationViewController: UIViewController, UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return entries.count
     }
@@ -22,19 +22,6 @@ class NotificationViewController: UIViewController, UICollectionViewDelegate, UI
     var entries = [Entry]()
     var core_data_entries: [NSObject] = []
     var filteredEntriesByDate = [NSObject]()
-    
-    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "notifCell", for: indexPath) as! NotificationEntryViewCell
-        
-        // Format cells to be white and have rounded edges
-        cell.contentView.backgroundColor = UIColor.white
-        cell.contentView.layer.cornerRadius = 8.0
-        cell.contentView.layer.masksToBounds = true
-        
-        let entry_obj = entries[indexPath.row]
-        cell.displayContent(entry: entry_obj)
-        return cell
-    }
     
     override func viewDidAppear(_ animated: Bool) {
         popupView.layer.cornerRadius = 8.0
@@ -112,15 +99,16 @@ class NotificationViewController: UIViewController, UICollectionViewDelegate, UI
         let yesterday = today.addingTimeInterval(TimeInterval(-60*60*24))
         let yesterdayString = date_formatter.string(from: yesterday)
         
-        let todayString = date_formatter.string(from: today)
+        // only for testing purposes
+//        let todayString = date_formatter.string(from: today)
         
         filteredEntriesByDate = core_data_entries.filter({( entry_obj : NSObject) -> Bool in
             let entry = getEntryFromNSObject(NS_entry: entry_obj)
             let entryDateString = date_formatter.string(from: entry.entryDate)
             
             // Switch for testing to view today's entries
-            //            return entryDateString == yesterdayString
-            return entryDateString == todayString
+            return entryDateString == yesterdayString
+//            return entryDateString == todayString
         })
         
         numEntriesLabel.text = String(filteredEntriesByDate.count)
@@ -142,13 +130,10 @@ class NotificationViewController: UIViewController, UICollectionViewDelegate, UI
     }
     
     func updateCoreDataDoneLookingAtMemory(){
-        
         guard let appDelegate =
             UIApplication.shared.delegate as? AppDelegate else {
                 return
         }
-        
-        // 1
         let managedContext =
             appDelegate.persistentContainer.viewContext
         
@@ -172,18 +157,15 @@ class NotificationViewController: UIViewController, UICollectionViewDelegate, UI
         }catch let error as NSError {
             print("Could not fetch \(error), \(error.userInfo)")
         }
-        
-        
         do {
             try managedContext.save()
         } catch let error as NSError {
             print("Could not save. \(error), \(error.userInfo)")
         }
-
     }
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
-        var touch: UITouch? = touches.first
+        let touch: UITouch? = touches.first
         let touch_point = touch!.location(in: popupView)
         // check if user touched outside of Popup, if so exit out popup functionality
         if self.view.bounds.contains(touch_point){
@@ -207,23 +189,13 @@ class NotificationViewController: UIViewController, UICollectionViewDelegate, UI
                 devc.entry_to_display = entry_clicked
                 // leave memory notification view controller up in entry tab in future
             }
-//        } else if segue.identifier == "backToEntryTabFromPopUp" {
-//            if let nc = segue.destination as? UINavigationController {
-//                // permanently x out of notification view controller
-//                updateCoreDataDoneLookingAtMemory()
-//            }
         } else if segue.identifier == "backToEntryTabFromPopUp" {
             let date_formatter = DateFormatter()
             date_formatter.dateFormat = "yyyy/MM/dd"
-            
             let dateString = date_formatter.string(from: Date())
-            
             UserDefaults.standard.set(dateString, forKey: "lastClosedNotification")
-            
-            print("last closed set to", UserDefaults.standard.string(forKey: "lastClosedNotification"))
         }
     }
-
 }
 
 extension NotificationViewController: UICollectionViewDelegateFlowLayout {
@@ -232,5 +204,19 @@ extension NotificationViewController: UICollectionViewDelegateFlowLayout {
         let cell_width = collectionView.bounds.width
         let cell_height: CGFloat = 105
         return CGSize(width: cell_width, height: cell_height)
+    }
+}
+
+extension NotificationViewController: UICollectionViewDelegate{
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "notifCell", for: indexPath) as! NotificationEntryViewCell
+        // Format cells to be white and have rounded edges
+        cell.contentView.backgroundColor = UIColor.white
+        cell.contentView.layer.cornerRadius = 8.0
+        cell.contentView.layer.masksToBounds = true
+        
+        let entry_obj = entries[indexPath.row]
+        cell.displayContent(entry: entry_obj)
+        return cell
     }
 }

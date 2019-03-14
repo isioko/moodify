@@ -15,19 +15,20 @@ class AssociatedEntryViewCell:UICollectionViewCell{
     @IBOutlet weak var dateLabel: UILabel!
     @IBOutlet weak var locationLabel: UILabel!
     @IBOutlet weak var locationImage: UIImageView!
+    @IBOutlet weak var numTracksLabel: UILabel!
     
-    func displayContent(entry: Entry){
+    func displayContent(entry: Entry) {
         entryTextLabel.text = entry.entryText
         let formatter = DateFormatter()
         formatter.dateFormat = "MMMM dd, yyyy"
         dateLabel.text = formatter.string(from: entry.entryDate)
         locationLabel.text = entry.location
         locationImage.image = UIImage(named: "blackLocation")
-//        numTracksLabel.text = String(entry.associatedTracks.count)
 
         let numDays = getNumDays(date: entry.entryDate)
         let relativeDateForEntry = calculateRelativeDate(num_days: numDays)
-
+        
+        numTracksLabel.text = String(entry.numAssociatedTracks)
         relativeDateLabel.text = relativeDateForEntry
     }
     

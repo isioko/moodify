@@ -3,6 +3,7 @@
     <entity name="EntryEntity" representedClassName="EntryEntity" syncable="YES">
         <attribute name="date" optional="YES" attributeType="Date" usesScalarValueType="NO" syncable="YES"/>
         <attribute name="location" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="numAssociatedTracks" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
         <attribute name="text" optional="YES" attributeType="String" syncable="YES"/>
         <relationship name="associatedTrack" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="TrackEntity" inverseName="associatedEntry" inverseEntity="TrackEntity" syncable="YES"/>
     </entity>
@@ -20,9 +21,9 @@
         <relationship name="associatedEntry" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="EntryEntity" inverseName="associatedTrack" inverseEntity="EntryEntity" syncable="YES"/>
     </entity>
     <elements>
-        <element name="EntryEntity" positionX="-63" positionY="-18" width="128" height="105"/>
+        <element name="EntryEntity" positionX="-63" positionY="-18" width="128" height="120"/>
         <element name="MemoryEntity" positionX="-63" positionY="36" width="128" height="60"/>
-        <element name="TrackEntity" positionX="-54" positionY="18" width="128" height="105"/>
         <element name="SearchEntity" positionX="-63" positionY="36" width="128" height="75"/>
+        <element name="TrackEntity" positionX="-54" positionY="18" width="128" height="105"/>
     </elements>
 </model>

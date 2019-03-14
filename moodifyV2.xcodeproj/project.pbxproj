@@ -20,12 +20,10 @@
 		4C3C641A220AA9C800ED4364 /* Track.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C3C6419220AA9C800ED4364 /* Track.swift */; };
 		4C48A9BD2207C07C0073DF63 /* Entry.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C48A9BC2207C07C0073DF63 /* Entry.swift */; };
 		4C48A9C22207C1690073DF63 /* Sentimental.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C48A9C12207C1690073DF63 /* Sentimental.swift */; };
-		4C4B43FD22127ED00022DD3E /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C4B43FC22127ED00022DD3E /* Extensions.swift */; };
 		4C6B3DCE220BFA2800C79C61 /* AuthorizeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C6B3DCD220BFA2800C79C61 /* AuthorizeViewController.swift */; };
 		4C70D9E4220F59B200EA9E8B /* DisplayTrackCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C70D9E3220F59B200EA9E8B /* DisplayTrackCollectionViewCell.swift */; };
 		4CD4EBC4221131D6003BC69D /* Model.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 4CD4EBC2221131D6003BC69D /* Model.xcdatamodeld */; };
 		4CD7A9302207F3F700991F89 /* UIImageView+Download.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CD7A92F2207F3F700991F89 /* UIImageView+Download.swift */; };
-		4CF6E9A82208024000836FC6 /* HomePageTabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CF6E9A72208024000836FC6 /* HomePageTabBarViewController.swift */; };
 		4CF6E9AA220804DE00836FC6 /* EntryViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CF6E9A9220804DE00836FC6 /* EntryViewCell.swift */; };
 		4CF6E9AC220809A800836FC6 /* WriteEntryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CF6E9AB220809A800836FC6 /* WriteEntryViewController.swift */; };
 		4CF6E9B22208147F00836FC6 /* EntryTabViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CF6E9B12208147F00836FC6 /* EntryTabViewController.swift */; };
@@ -68,12 +66,10 @@
 		4C3C6419220AA9C800ED4364 /* Track.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Track.swift; sourceTree = "<group>"; };
 		4C48A9BC2207C07C0073DF63 /* Entry.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Entry.swift; sourceTree = "<group>"; };
 		4C48A9C12207C1690073DF63 /* Sentimental.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Sentimental.swift; sourceTree = "<group>"; };
-		4C4B43FC22127ED00022DD3E /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		4C6B3DCD220BFA2800C79C61 /* AuthorizeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthorizeViewController.swift; sourceTree = "<group>"; };
 		4C70D9E3220F59B200EA9E8B /* DisplayTrackCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DisplayTrackCollectionViewCell.swift; sourceTree = "<group>"; };
 		4CD4EBC3221131D6003BC69D /* Model.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Model.xcdatamodel; sourceTree = "<group>"; };
 		4CD7A92F2207F3F700991F89 /* UIImageView+Download.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImageView+Download.swift"; sourceTree = "<group>"; };
-		4CF6E9A72208024000836FC6 /* HomePageTabBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomePageTabBarViewController.swift; sourceTree = "<group>"; };
 		4CF6E9A9220804DE00836FC6 /* EntryViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EntryViewCell.swift; sourceTree = "<group>"; };
 		4CF6E9AB220809A800836FC6 /* WriteEntryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WriteEntryViewController.swift; sourceTree = "<group>"; };
 		4CF6E9B12208147F00836FC6 /* EntryTabViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EntryTabViewController.swift; sourceTree = "<group>"; };
@@ -181,11 +177,9 @@
 				4F3909622230A930000B9DEB /* TutorialFourthViewController.swift */,
 				4CD7A92F2207F3F700991F89 /* UIImageView+Download.swift */,
 				6A0C5FA62204179800666370 /* AppDelegate.swift */,
-				4CF6E9A72208024000836FC6 /* HomePageTabBarViewController.swift */,
 				4C3C6415220AA83E00ED4364 /* DisplayRecentlyPlayedViewController.swift */,
 				4C3C6413220A8E5600ED4364 /* DisplayEntryViewController.swift */,
 				4CF6E9B12208147F00836FC6 /* EntryTabViewController.swift */,
-				4C4B43FC22127ED00022DD3E /* Extensions.swift */,
 				6A0C5FA82204179800666370 /* ViewController.swift */,
 				4C6B3DCD220BFA2800C79C61 /* AuthorizeViewController.swift */,
 				4C37461A22191BCA003B90A7 /* ViewAssociatedEntriesViewController.swift */,
@@ -364,9 +358,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4C4B43FD22127ED00022DD3E /* Extensions.swift in Sources */,
 				4C37461D2219357F003B90A7 /* AssociatedEntryViewCell.swift in Sources */,
-				4CF6E9A82208024000836FC6 /* HomePageTabBarViewController.swift in Sources */,
 				4C48A9C22207C1690073DF63 /* Sentimental.swift in Sources */,
 				4F1C042922225B1D00334AF2 /* TutorialFirstViewController.swift in Sources */,
 				4C374615221915BA003B90A7 /* TrackEntity+CoreDataProperties.swift in Sources */,
