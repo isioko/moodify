@@ -29,6 +29,7 @@ class AssociatedEntryViewCell:UICollectionViewCell{
         let relativeDateForEntry = calculateRelativeDate(num_days: numDays)
         
         numTracksLabel.text = String(entry.numAssociatedTracks)
+        numTracksLabel.textAlignment = .left
         relativeDateLabel.text = relativeDateForEntry
     }
     

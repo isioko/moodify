@@ -30,6 +30,7 @@ class NotificationEntryViewCell: UICollectionViewCell {
 
         locationLabel.text = entry.location
         numTracksLabel.text = String(entry.associatedTracks.count)
+        numTracksLabel.textAlignment = .left
     }
     
     func getNumDays(date: Date) -> Int {
