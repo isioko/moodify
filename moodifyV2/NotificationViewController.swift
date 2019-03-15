@@ -129,7 +129,7 @@ class NotificationViewController: UIViewController, UICollectionViewDataSource {
         }
     }
     
-    func updateCoreDataDoneLookingAtMemory(){
+    func updateCoreDataDoneLookingAtMemory() {
         guard let appDelegate =
             UIApplication.shared.delegate as? AppDelegate else {
                 return
@@ -139,8 +139,7 @@ class NotificationViewController: UIViewController, UICollectionViewDataSource {
         
         
         let request = NSFetchRequest<NSFetchRequestResult>(entityName: "MemoryEntity")
-        do{
-            
+        do {
             let count = try managedContext.count(for: request)
             var foundMemory = try managedContext.fetch(request)
             
@@ -154,7 +153,7 @@ class NotificationViewController: UIViewController, UICollectionViewDataSource {
                 memoryObj.setValue(false, forKeyPath:"showBool")
                 
             }
-        }catch let error as NSError {
+        } catch let error as NSError {
             print("Could not fetch \(error), \(error.userInfo)")
         }
         do {
@@ -164,17 +163,17 @@ class NotificationViewController: UIViewController, UICollectionViewDataSource {
         }
     }
     
-    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
-        let touch: UITouch? = touches.first
-        let touch_point = touch!.location(in: popupView)
-        // check if user touched outside of Popup, if so exit out popup functionality
-        if self.view.bounds.contains(touch_point){
-            print("TOUCH IS IN BOUNDS OF POPUP")
-        }else{
-            print("TOUCH IS NOT IN BOUNDS OF POPUP")
-            performSegue(withIdentifier: "backToEntryTabFromPopUp", sender: self)
-        }
-    }
+//    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+//        let touch: UITouch? = touches.first
+//        let touch_point = touch!.location(in: popupView)
+//        // check if user touched outside of Popup, if so exit out popup functionality
+//        if self.view.bounds.contains(touch_point){
+//            print("TOUCH IS IN BOUNDS OF POPUP")
+//        }else{
+//            print("TOUCH IS NOT IN BOUNDS OF POPUP")
+//            performSegue(withIdentifier: "backToEntryTabFromPopUp", sender: self)
+//        }
+//    }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "showEntryFromMemorySegue" {

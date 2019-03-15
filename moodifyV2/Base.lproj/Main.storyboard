@@ -24,7 +24,7 @@
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="moodifyV2" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="moodify" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -71,7 +71,7 @@
         <!--Authorize View Controller-->
         <scene sceneID="aZp-Wg-xKm">
             <objects>
-                <viewController id="IOf-FR-uyr" customClass="AuthorizeViewController" customModule="moodifyV2" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="IOf-FR-uyr" customClass="AuthorizeViewController" customModule="moodify" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="OOH-cl-DPk">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -80,7 +80,7 @@
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7PF-3e-POH">
-                                        <rect key="frame" x="147" y="594" width="81" height="30"/>
+                                        <rect key="frame" x="148" y="590.66666666666663" width="79" height="37"/>
                                         <fontDescription key="fontDescription" name="Hind-Regular" family="Hind" pointSize="15"/>
                                         <state key="normal" title="Deauthorize">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -154,7 +154,7 @@
         <!--Tutorial Page One View Controller-->
         <scene sceneID="szb-By-BfO">
             <objects>
-                <viewController storyboardIdentifier="Tutorial Page One View Controller" title="Tutorial Page One View Controller" id="ID3-CU-KFe" customClass="TutorialFirstViewController" customModule="moodifyV2" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="Tutorial Page One View Controller" title="Tutorial Page One View Controller" id="ID3-CU-KFe" customClass="TutorialFirstViewController" customModule="moodify" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Jgh-YX-pyl">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -211,7 +211,7 @@
                 <swipeGestureRecognizer direction="left" id="Nzu-s1-eep">
                     <connections>
                         <action selector="handleSwipeWithRecognizer:" destination="ID3-CU-KFe" id="Rgn-kc-ypG"/>
-                        <segue destination="qh4-mY-EPU" kind="custom" customClass="SegueFromRight" customModule="moodifyV2" customModuleProvider="target" id="EEt-wu-0tb"/>
+                        <segue destination="qh4-mY-EPU" kind="custom" customClass="SegueFromRight" customModule="moodify" customModuleProvider="target" id="EEt-wu-0tb"/>
                     </connections>
                 </swipeGestureRecognizer>
             </objects>
@@ -220,7 +220,7 @@
         <!--Display Entry View Controller-->
         <scene sceneID="esV-uD-r9f">
             <objects>
-                <viewController id="QU1-nM-dcV" customClass="DisplayEntryViewController" customModule="moodifyV2" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="QU1-nM-dcV" customClass="DisplayEntryViewController" customModule="moodify" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" opaque="NO" contentMode="scaleToFill" id="L2z-EM-QbK">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -241,7 +241,7 @@
                                                     <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                                 </collectionViewFlowLayout>
                                                 <cells>
-                                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="displayTrackCollectionViewCell" id="Xoz-bJ-JU8" customClass="DisplayTrackCollectionViewCell" customModule="moodifyV2" customModuleProvider="target">
+                                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="displayTrackCollectionViewCell" id="Xoz-bJ-JU8" customClass="DisplayTrackCollectionViewCell" customModule="moodify" customModuleProvider="target">
                                                         <rect key="frame" x="-0.66666666666666663" y="0.0" width="331" height="116"/>
                                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
@@ -255,12 +255,12 @@
                                                                     </constraints>
                                                                 </imageView>
                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Startender" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="N1s-c7-P8N">
-                                                                    <rect key="frame" x="118.66666666666669" y="6.3333333333333321" width="207" height="20"/>
+                                                                    <rect key="frame" x="118.66666666666669" y="2.6666666666666661" width="207" height="27.333333333333336"/>
                                                                     <fontDescription key="fontDescription" name="Hind-SemiBold" family="Hind" pointSize="17"/>
                                                                     <nil key="highlightedColor"/>
                                                                 </label>
                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Panic!" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pHI-c4-UX1">
-                                                                    <rect key="frame" x="118.66666666666669" y="30" width="207" height="20"/>
+                                                                    <rect key="frame" x="118.66666666666669" y="26.333333333333336" width="207" height="27.333333333333336"/>
                                                                     <fontDescription key="fontDescription" name="Hind-Regular" family="Hind" pointSize="17"/>
                                                                     <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                     <nil key="highlightedColor"/>
@@ -365,7 +365,7 @@
                                         </constraints>
                                     </view>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Date" textAlignment="center" lineBreakMode="tailTruncation" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZRA-8T-utO" userLabel="Date Label">
-                                        <rect key="frame" x="161.33333333333334" y="53.000000000000007" width="52.333333333333343" height="29.333333333333336"/>
+                                        <rect key="frame" x="161.33333333333334" y="47.666666666666657" width="52.333333333333343" height="40.333333333333343"/>
                                         <fontDescription key="fontDescription" name="Hind-SemiBold" family="Hind" pointSize="25"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
@@ -392,7 +392,7 @@
                                         </state>
                                         <connections>
                                             <action selector="clickDelete:" destination="QU1-nM-dcV" eventType="touchUpInside" id="XaR-YC-bMB"/>
-                                            <segue destination="uqo-ot-EXU" kind="show" identifier="" customClass="SegueFromRight" customModule="moodifyV2" customModuleProvider="target" animates="NO" id="Kt8-03-4gy"/>
+                                            <segue destination="uqo-ot-EXU" kind="show" identifier="" customClass="SegueFromRight" customModule="moodify" customModuleProvider="target" animates="NO" id="Kt8-03-4gy"/>
                                         </connections>
                                     </button>
                                 </subviews>
@@ -454,7 +454,7 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4su-YD-Wjg" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <swipeGestureRecognizer direction="right" id="pHp-tm-R7v">
                     <connections>
-                        <segue destination="uqo-ot-EXU" kind="custom" customClass="SegueFromLeft" customModule="moodifyV2" customModuleProvider="target" id="M7a-X9-iQT"/>
+                        <segue destination="uqo-ot-EXU" kind="custom" customClass="SegueFromLeft" customModule="moodify" customModuleProvider="target" id="M7a-X9-iQT"/>
                     </connections>
                 </swipeGestureRecognizer>
             </objects>
@@ -463,7 +463,7 @@
         <!--View Associated Entries View Controller-->
         <scene sceneID="Mwe-1f-gpM">
             <objects>
-                <viewController id="jp0-Vd-qDB" customClass="ViewAssociatedEntriesViewController" customModule="moodifyV2" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="jp0-Vd-qDB" customClass="ViewAssociatedEntriesViewController" customModule="moodify" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="xcC-ur-D8N">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -475,13 +475,13 @@
                                         <rect key="frame" x="11.666666666666657" y="101.66666666666667" width="351.66666666666674" height="145.66666666666663"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Artist Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="r8T-4C-aYt">
-                                                <rect key="frame" x="148.66666666666669" y="53.666666666666671" width="192" height="20"/>
+                                                <rect key="frame" x="148.66666666666669" y="49.999999999999986" width="192" height="27.333333333333329"/>
                                                 <fontDescription key="fontDescription" name="Hind-Regular" family="Hind" pointSize="17"/>
                                                 <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Track Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ds3-P8-9Yg">
-                                                <rect key="frame" x="148.66666666666669" y="24.666666666666657" width="192" height="23.333333333333329"/>
+                                                <rect key="frame" x="148.66666666666669" y="20.000000000000004" width="192" height="32.333333333333343"/>
                                                 <fontDescription key="fontDescription" name="Hind-SemiBold" family="Hind" pointSize="20"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
@@ -499,7 +499,7 @@
                                                 </constraints>
                                             </imageView>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="3" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RN7-C7-3Id" userLabel="Num Entries Label">
-                                                <rect key="frame" x="327.33333333333331" y="113.66666666666667" width="13.333333333333314" height="17.666666666666671"/>
+                                                <rect key="frame" x="327.33333333333331" y="110.33333333333333" width="13.333333333333314" height="24.333333333333329"/>
                                                 <fontDescription key="fontDescription" name="Hind-Regular" family="Hind" pointSize="15"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
@@ -552,7 +552,7 @@
                                             <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                         </collectionViewFlowLayout>
                                         <cells>
-                                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="assocEntryCell" id="GXT-H5-aRb" customClass="AssociatedEntryViewCell" customModule="moodifyV2" customModuleProvider="target">
+                                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="assocEntryCell" id="GXT-H5-aRb" customClass="AssociatedEntryViewCell" customModule="moodify" customModuleProvider="target">
                                                 <rect key="frame" x="-1.6666666666666667" y="0.0" width="355" height="105"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
@@ -566,7 +566,7 @@
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="252" verticalHuggingPriority="251" text="RELATIVE DATE" textAlignment="natural" lineBreakMode="tailTruncation" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ViK-28-1Jg" userLabel="Relative Date Label">
-                                                            <rect key="frame" x="11" y="8.9999999999999982" width="144" height="21.333333333333329"/>
+                                                            <rect key="frame" x="11" y="8.9999999999999982" width="138.33333333333334" height="21.333333333333329"/>
                                                             <fontDescription key="fontDescription" name="Hind-SemiBold" family="Hind" pointSize="20"/>
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
@@ -578,13 +578,13 @@
                                                             </constraints>
                                                         </imageView>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Location" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="n4o-Ve-bMQ" userLabel="Location Label">
-                                                            <rect key="frame" x="29.666666666666657" y="85" width="276.33333333333337" height="14"/>
+                                                            <rect key="frame" x="29.666666666666657" y="82.333333333333329" width="276.33333333333337" height="19.333333333333329"/>
                                                             <fontDescription key="fontDescription" name="Hind-Regular" family="Hind" pointSize="12"/>
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Date" textAlignment="right" lineBreakMode="tailTruncation" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="X9e-8z-v5E" userLabel="Date Label">
-                                                            <rect key="frame" x="155" y="3.0000000000000018" width="181" height="26.666666666666671"/>
+                                                            <rect key="frame" x="149.33333333333337" y="3.0000000000000018" width="186.66666666666663" height="26.666666666666671"/>
                                                             <fontDescription key="fontDescription" name="Hind-Regular" family="Hind" pointSize="12"/>
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
@@ -596,7 +596,7 @@
                                                             </constraints>
                                                         </imageView>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="3" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5kw-SG-Xa4" userLabel="Num Tracks Label">
-                                                            <rect key="frame" x="330" y="78.333333333333329" width="17" height="14"/>
+                                                            <rect key="frame" x="330" y="75.666666666666671" width="17" height="19.333333333333329"/>
                                                             <fontDescription key="fontDescription" name="Hind-Regular" family="Hind" pointSize="12"/>
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
@@ -695,7 +695,7 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="pPv-zh-pKC" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <swipeGestureRecognizer direction="right" id="Ege-75-VW1">
                     <connections>
-                        <segue destination="QU1-nM-dcV" kind="show" identifier="doneWithViewingAssociationsSegue" customClass="SegueFromLeft" customModule="moodifyV2" customModuleProvider="target" id="kZu-Eh-mCM"/>
+                        <segue destination="QU1-nM-dcV" kind="show" identifier="doneWithViewingAssociationsSegue" customClass="SegueFromLeft" customModule="moodify" customModuleProvider="target" id="kZu-Eh-mCM"/>
                     </connections>
                 </swipeGestureRecognizer>
             </objects>
@@ -704,7 +704,7 @@
         <!--Entry Tab View Controller-->
         <scene sceneID="jkz-wv-zyf">
             <objects>
-                <viewController id="tXn-6T-E1W" customClass="EntryTabViewController" customModule="moodifyV2" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="tXn-6T-E1W" customClass="EntryTabViewController" customModule="moodify" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Tdn-xo-C9E">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -734,7 +734,7 @@
                                             <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                         </collectionViewFlowLayout>
                                         <cells>
-                                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="entryCell" id="fWx-qX-Fzo" customClass="EntryViewCell" customModule="moodifyV2" customModuleProvider="target">
+                                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="entryCell" id="fWx-qX-Fzo" customClass="EntryViewCell" customModule="moodify" customModuleProvider="target">
                                                 <rect key="frame" x="3.3333333333333335" y="0.0" width="345" height="105"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
@@ -754,7 +754,7 @@
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="Location" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gUX-ro-Gfr">
-                                                            <rect key="frame" x="29" y="78.333333333333329" width="266.66666666666669" height="14"/>
+                                                            <rect key="frame" x="29" y="75.666666666666671" width="266.66666666666669" height="19.333333333333329"/>
                                                             <fontDescription key="fontDescription" name="Hind-Regular" family="Hind" pointSize="12"/>
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
@@ -778,7 +778,7 @@
                                                             </constraints>
                                                         </imageView>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="3" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="d8k-0c-EsO" userLabel="Num Tracks Label">
-                                                            <rect key="frame" x="320.66666666666669" y="78.333333333333329" width="16.333333333333314" height="14"/>
+                                                            <rect key="frame" x="320.66666666666669" y="75.666666666666671" width="16.333333333333314" height="19.333333333333329"/>
                                                             <fontDescription key="fontDescription" name="Hind-Regular" family="Hind" pointSize="12"/>
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
@@ -862,7 +862,7 @@
         <!--Write Entry View Controller-->
         <scene sceneID="tyT-5E-7M7">
             <objects>
-                <viewController id="fEb-oX-jyH" customClass="WriteEntryViewController" customModule="moodifyV2" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="fEb-oX-jyH" customClass="WriteEntryViewController" customModule="moodify" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="0HL-JJ-1d7">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -1023,7 +1023,7 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2gI-g0-9b0" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <swipeGestureRecognizer direction="right" id="BSn-yf-5tI">
                     <connections>
-                        <segue destination="uqo-ot-EXU" kind="custom" customClass="SegueFromRight" customModule="moodifyV2" customModuleProvider="target" id="c4q-SJ-Saa"/>
+                        <segue destination="uqo-ot-EXU" kind="custom" customClass="SegueFromRight" customModule="moodify" customModuleProvider="target" id="c4q-SJ-Saa"/>
                     </connections>
                 </swipeGestureRecognizer>
             </objects>
@@ -1032,7 +1032,7 @@
         <!--Display Recently Played View Controller-->
         <scene sceneID="zss-kc-vuB">
             <objects>
-                <viewController modalPresentationStyle="overCurrentContext" id="HaK-so-nBx" customClass="DisplayRecentlyPlayedViewController" customModule="moodifyV2" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController modalPresentationStyle="overCurrentContext" id="HaK-so-nBx" customClass="DisplayRecentlyPlayedViewController" customModule="moodify" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="1dm-F5-QmF">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -1056,7 +1056,7 @@
                                                 <rect key="frame" x="10.666666666666657" y="46.333333333333343" width="328.33333333333337" height="494.33333333333326"/>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <prototypes>
-                                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="trackTableViewCell" rowHeight="55" id="Kfc-sa-ZvG" customClass="TrackTableViewCell" customModule="moodifyV2" customModuleProvider="target">
+                                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="trackTableViewCell" rowHeight="55" id="Kfc-sa-ZvG" customClass="TrackTableViewCell" customModule="moodify" customModuleProvider="target">
                                                         <rect key="frame" x="0.0" y="28" width="328.33333333333337" height="55"/>
                                                         <autoresizingMask key="autoresizingMask"/>
                                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Kfc-sa-ZvG" id="4EM-Ky-9Xo">
@@ -1169,7 +1169,7 @@
         <!--Tutorial Page Two View Controller-->
         <scene sceneID="yEj-qA-FPD">
             <objects>
-                <viewController storyboardIdentifier="Tutorial Page Two View Controller" title="Tutorial Page Two View Controller" id="qh4-mY-EPU" customClass="TutorialSecondViewController" customModule="moodifyV2" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="Tutorial Page Two View Controller" title="Tutorial Page Two View Controller" id="qh4-mY-EPU" customClass="TutorialSecondViewController" customModule="moodify" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="IXy-rH-5N5">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -1227,12 +1227,12 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="aDC-mt-hG4" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <swipeGestureRecognizer direction="left" id="ocH-KG-rK4">
                     <connections>
-                        <segue destination="Oqr-p5-i8h" kind="custom" customClass="SegueFromRight" customModule="moodifyV2" customModuleProvider="target" id="ifw-3b-8KV"/>
+                        <segue destination="Oqr-p5-i8h" kind="custom" customClass="SegueFromRight" customModule="moodify" customModuleProvider="target" id="ifw-3b-8KV"/>
                     </connections>
                 </swipeGestureRecognizer>
                 <swipeGestureRecognizer direction="right" id="0fW-Fv-StA">
                     <connections>
-                        <segue destination="ID3-CU-KFe" kind="custom" customClass="SegueFromLeft" customModule="moodifyV2" customModuleProvider="target" id="sKe-pV-3Ei"/>
+                        <segue destination="ID3-CU-KFe" kind="custom" customClass="SegueFromLeft" customModule="moodify" customModuleProvider="target" id="sKe-pV-3Ei"/>
                     </connections>
                 </swipeGestureRecognizer>
             </objects>
@@ -1241,7 +1241,7 @@
         <!--Tutorial Page Three View Controller-->
         <scene sceneID="zAG-NG-3NQ">
             <objects>
-                <viewController storyboardIdentifier="Tutorial Page Three View Controller" title="Tutorial Page Three View Controller" id="Oqr-p5-i8h" customClass="TutorialThirdViewController" customModule="moodifyV2" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="Tutorial Page Three View Controller" title="Tutorial Page Three View Controller" id="Oqr-p5-i8h" customClass="TutorialThirdViewController" customModule="moodify" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="jOJ-sd-ah9">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -1299,12 +1299,12 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Bf4-8Z-IFe" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <swipeGestureRecognizer direction="left" id="nmg-MG-dDb">
                     <connections>
-                        <segue destination="jhO-lN-2zy" kind="custom" customClass="SegueFromRight" customModule="moodifyV2" customModuleProvider="target" id="7OA-fd-KrW"/>
+                        <segue destination="jhO-lN-2zy" kind="custom" customClass="SegueFromRight" customModule="moodify" customModuleProvider="target" id="7OA-fd-KrW"/>
                     </connections>
                 </swipeGestureRecognizer>
                 <swipeGestureRecognizer direction="right" id="mBw-FJ-Ut6">
                     <connections>
-                        <segue destination="qh4-mY-EPU" kind="custom" customClass="SegueFromLeft" customModule="moodifyV2" customModuleProvider="target" id="Xnz-1o-NJS"/>
+                        <segue destination="qh4-mY-EPU" kind="custom" customClass="SegueFromLeft" customModule="moodify" customModuleProvider="target" id="Xnz-1o-NJS"/>
                     </connections>
                 </swipeGestureRecognizer>
             </objects>
@@ -1313,7 +1313,7 @@
         <!--Tutorial Page Four View Controller Scene-->
         <scene sceneID="zSy-lX-UeS">
             <objects>
-                <viewController title="Tutorial Page Four View Controller Scene" id="jhO-lN-2zy" customClass="TutorialFourthViewController" customModule="moodifyV2" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController title="Tutorial Page Four View Controller Scene" id="jhO-lN-2zy" customClass="TutorialFourthViewController" customModule="moodify" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="4K7-PA-WS0">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -1372,7 +1372,7 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="yFW-Qv-fte" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <swipeGestureRecognizer direction="right" id="aPf-EJ-ph8">
                     <connections>
-                        <segue destination="Oqr-p5-i8h" kind="custom" customClass="SegueFromLeft" customModule="moodifyV2" customModuleProvider="target" id="pJo-5t-rbY"/>
+                        <segue destination="Oqr-p5-i8h" kind="custom" customClass="SegueFromLeft" customModule="moodify" customModuleProvider="target" id="pJo-5t-rbY"/>
                     </connections>
                 </swipeGestureRecognizer>
                 <swipeGestureRecognizer direction="left" id="k37-wV-fH8"/>
@@ -1382,7 +1382,7 @@
         <!--Notification View Controller-->
         <scene sceneID="fCz-L1-4HB">
             <objects>
-                <viewController title="Notification View Controller" id="p9j-dc-FP8" customClass="NotificationViewController" customModule="moodifyV2" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController title="Notification View Controller" id="p9j-dc-FP8" customClass="NotificationViewController" customModule="moodify" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="v0M-OO-PdM">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -1441,7 +1441,7 @@
                                                     <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                                 </collectionViewFlowLayout>
                                                 <cells>
-                                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="notifCell" id="BLo-Ln-fQU" userLabel="Notification Cell" customClass="NotificationEntryViewCell" customModule="moodifyV2" customModuleProvider="target">
+                                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="notifCell" id="BLo-Ln-fQU" userLabel="Notification Cell" customClass="NotificationEntryViewCell" customModule="moodify" customModuleProvider="target">
                                                         <rect key="frame" x="10.333333333333334" y="0.0" width="309" height="105"/>
                                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
@@ -1449,37 +1449,37 @@
                                                             <autoresizingMask key="autoresizingMask"/>
                                                             <subviews>
                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="252" verticalHuggingPriority="251" text="RELATIVE DATE" textAlignment="natural" lineBreakMode="tailTruncation" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IQZ-hO-ifs" userLabel="Relative Date Label">
-                                                                    <rect key="frame" x="31.333333333333329" y="93.666666666666671" width="144" height="187.66666666666663"/>
+                                                                    <rect key="frame" x="9.6666666666666714" y="10" width="138.33333333333331" height="19.666666666666671"/>
                                                                     <fontDescription key="fontDescription" name="Hind-SemiBold" family="Hind" pointSize="20"/>
                                                                     <nil key="textColor"/>
                                                                     <nil key="highlightedColor"/>
                                                                 </label>
                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Entry Text" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="moo-jO-nYe" userLabel="Entry Text Label">
-                                                                    <rect key="frame" x="92" y="250" width="816" height="500"/>
+                                                                    <rect key="frame" x="28.333333333333329" y="26.333333333333343" width="252.33333333333337" height="52.333333333333343"/>
                                                                     <fontDescription key="fontDescription" name="Hind-Regular" family="Hind" pointSize="17"/>
                                                                     <nil key="highlightedColor"/>
                                                                 </label>
                                                                 <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="blackLocation" translatesAutoresizingMaskIntoConstraints="NO" id="W0Q-9B-nNI">
-                                                                    <rect key="frame" x="57.666666666666664" y="689.33333333333337" width="9.9999999999999929" height="246.33333333333337"/>
+                                                                    <rect key="frame" x="14.333333333333336" y="76.666666666666629" width="10" height="17.333333333333329"/>
                                                                 </imageView>
                                                                 <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="blackHeadphones" translatesAutoresizingMaskIntoConstraints="NO" id="jZq-Fo-kXU">
                                                                     <rect key="frame" x="268" y="81" width="19" height="16"/>
                                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                                 </imageView>
                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Location" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="e8h-dq-E30">
-                                                                    <rect key="frame" x="92" y="399.33333333333331" width="888" height="14"/>
+                                                                    <rect key="frame" x="28.333333333333343" y="33" width="272.66666666666663" height="19.333333333333329"/>
                                                                     <fontDescription key="fontDescription" name="Hind-Regular" family="Hind" pointSize="12"/>
                                                                     <nil key="textColor"/>
                                                                     <nil key="highlightedColor"/>
                                                                 </label>
                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="10" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vQY-Gb-vhE" userLabel="Number Tracks Label">
-                                                                    <rect key="frame" x="922" y="805.66666666666663" width="58" height="14"/>
+                                                                    <rect key="frame" x="285" y="75.666666666666629" width="16" height="19.333333333333329"/>
                                                                     <fontDescription key="fontDescription" name="Hind-Regular" family="Hind" pointSize="12"/>
                                                                     <nil key="textColor"/>
                                                                     <nil key="highlightedColor"/>
                                                                 </label>
                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Date" textAlignment="right" lineBreakMode="tailTruncation" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oBg-Q2-8cH" userLabel="Date Label">
-                                                                    <rect key="frame" x="175.33333333333331" y="113.33333333333333" width="789.33333333333348" height="148.33333333333337"/>
+                                                                    <rect key="frame" x="148" y="11.333333333333329" width="148.33333333333337" height="16.666666666666664"/>
                                                                     <fontDescription key="fontDescription" name="Hind-Regular" family="Hind" pointSize="12"/>
                                                                     <nil key="textColor"/>
                                                                     <nil key="highlightedColor"/>
@@ -1596,37 +1596,38 @@
         </scene>
     </scenes>
     <resources>
-        <image name="authButton" width="338" height="50"/>
-        <image name="backButton" width="36" height="23"/>
-        <image name="blackEntries" width="18" height="24"/>
-        <image name="blackHeadphones" width="24" height="20"/>
-        <image name="blackLocation" width="10" height="18"/>
-        <image name="blackThought" width="30" height="23"/>
-        <image name="blueCalIcon" width="41" height="48"/>
-        <image name="blueHeadphones" width="43" height="35"/>
-        <image name="blueLocation" width="22" height="39"/>
+        <image name="authButton" width="1014" height="150"/>
+        <image name="backButton" width="36.333332061767578" height="23.666666030883789"/>
+        <image name="blackEntries" width="18" height="24.333333969116211"/>
+        <image name="blackHeadphones" width="24.666666030883789" height="20.666666030883789"/>
+        <image name="blackLocation" width="10.666666984558105" height="18.333333969116211"/>
+        <image name="blackThought" width="30" height="23.666666030883789"/>
+        <image name="blueCalIcon" width="41" height="48.666667938232422"/>
+        <image name="blueHeadphones" width="43.666667938232422" height="35.666667938232422"/>
+        <image name="blueLocation" width="22.666666030883789" height="39"/>
         <image name="checkmark" width="37" height="37"/>
-        <image name="continue" width="93" height="50"/>
-        <image name="entriesIcon" width="34" height="45"/>
+        <image name="continue" width="93.333335876464844" height="50"/>
+        <image name="entriesIcon" width="34" height="45.666667938232422"/>
         <image name="getStartedButton" width="134" height="50"/>
         <image name="moodify-start-logo-01.png" width="1140" height="540"/>
         <image name="plusButton" width="94" height="94"/>
         <image name="saveIcon" width="32" height="40"/>
         <image name="skipTutorial" width="134" height="50"/>
-        <image name="trashCan" width="36" height="39"/>
+        <image name="trashCan" width="36.666667938232422" height="39.666667938232422"/>
         <image name="tutorialPageFour" width="312" height="648"/>
         <image name="tutorialPageOne" width="312" height="648"/>
         <image name="tutorialPageThree" width="312" height="648"/>
         <image name="tutorialPageTwo" width="312" height="648"/>
-        <image name="white thought" width="30" height="23"/>
-        <image name="xButton" width="27" height="27"/>
+        <image name="white thought" width="30" height="23.666666030883789"/>
+        <image name="xButton" width="27.333333969116211" height="27.333333969116211"/>
     </resources>
     <inferredMetricsTieBreakers>
+        <segue reference="XvY-0b-bjm"/>
         <segue reference="S62-3M-qzb"/>
         <segue reference="pJo-5t-rbY"/>
         <segue reference="Xnz-1o-NJS"/>
         <segue reference="fwe-Sq-vFa"/>
-        <segue reference="sDg-8x-Tes"/>
+        <segue reference="fna-Md-nNg"/>
         <segue reference="sKe-pV-3Ei"/>
         <segue reference="GLK-9K-bBw"/>
     </inferredMetricsTieBreakers>

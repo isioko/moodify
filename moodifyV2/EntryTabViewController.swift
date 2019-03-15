@@ -75,7 +75,7 @@ class EntryTabViewController: UIViewController, UICollectionViewDataSource {
         if currentSearchString != "" {
             searchController.isActive = true
             searchController.searchBar.text = currentSearchString
-            if !entriesOnlyScope{
+            if !entriesOnlyScope {
                 navigationItem.searchController!.searchBar.selectedScopeButtonIndex = 1
             }
             filterContentForSearchText(currentSearchString)
@@ -111,7 +111,7 @@ class EntryTabViewController: UIViewController, UICollectionViewDataSource {
         // Change search icon
         searchController.searchBar.setImage(UIImage(named: "searchBar"), for: .search, state: .normal)
         
-        searchController.searchBar.isTranslucent = true
+        searchController.searchBar.isTranslucent = false
     }
     
     func getYesterdaysEntries() {
@@ -219,7 +219,8 @@ class EntryTabViewController: UIViewController, UICollectionViewDataSource {
         navigationController?.navigationBar.setBackgroundImage(UIImage(), for: .default)
         navigationController?.navigationBar.shadowImage = UIImage()
         navigationController?.navigationBar.setBackgroundImage(UIImage(), for: UIBarMetrics.default)
-
+        navigationController?.navigationBar.setValue(true, forKey: "hidesShadow")
+                
         // change search bar settings
         searchController.searchBar.tintColor = UIColor.white
         searchController.searchBar.barTintColor = UIColor.white

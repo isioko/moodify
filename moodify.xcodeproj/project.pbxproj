@@ -79,7 +79,7 @@
 		4F1C042C22225E8700334AF2 /* TutorialThirdViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TutorialThirdViewController.swift; sourceTree = "<group>"; };
 		4F3909622230A930000B9DEB /* TutorialFourthViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TutorialFourthViewController.swift; sourceTree = "<group>"; };
 		5AF0F721221E8FB100EFE1DD /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
-		6A0C5FA32204179800666370 /* moodifyV2.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = moodifyV2.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		6A0C5FA32204179800666370 /* moodify.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = moodify.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6A0C5FA62204179800666370 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		6A0C5FA82204179800666370 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		6A0C5FAB2204179800666370 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -156,7 +156,7 @@
 		6A0C5FA42204179800666370 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				6A0C5FA32204179800666370 /* moodifyV2.app */,
+				6A0C5FA32204179800666370 /* moodify.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -229,9 +229,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		6A0C5FA22204179800666370 /* moodifyV2 */ = {
+		6A0C5FA22204179800666370 /* moodify */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 6A0C5FB52204179A00666370 /* Build configuration list for PBXNativeTarget "moodifyV2" */;
+			buildConfigurationList = 6A0C5FB52204179A00666370 /* Build configuration list for PBXNativeTarget "moodify" */;
 			buildPhases = (
 				64FE0C5813CFADC15E5F54FB /* [CP] Check Pods Manifest.lock */,
 				6A0C5F9F2204179800666370 /* Sources */,
@@ -243,9 +243,9 @@
 			);
 			dependencies = (
 			);
-			name = moodifyV2;
+			name = moodify;
 			productName = moodifyV2;
-			productReference = 6A0C5FA32204179800666370 /* moodifyV2.app */;
+			productReference = 6A0C5FA32204179800666370 /* moodify.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -263,7 +263,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 6A0C5F9E2204179800666370 /* Build configuration list for PBXProject "moodifyV2" */;
+			buildConfigurationList = 6A0C5F9E2204179800666370 /* Build configuration list for PBXProject "moodify" */;
 			compatibilityVersion = "Xcode 9.3";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -276,7 +276,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				6A0C5FA22204179800666370 /* moodifyV2 */,
+				6A0C5FA22204179800666370 /* moodify */,
 			);
 		};
 /* End PBXProject section */
@@ -537,13 +537,13 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 56DBRVF226;
+				DEVELOPMENT_TEAM = LVF4872BAN;
 				INFOPLIST_FILE = moodifyV2/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = edu.stanford.zpacalin;
+				PRODUCT_BUNDLE_IDENTIFIER = edu.stanford.iokojie;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -556,13 +556,13 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 56DBRVF226;
+				DEVELOPMENT_TEAM = LVF4872BAN;
 				INFOPLIST_FILE = moodifyV2/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = edu.stanford.zpacalin;
+				PRODUCT_BUNDLE_IDENTIFIER = edu.stanford.iokojie;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -572,7 +572,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		6A0C5F9E2204179800666370 /* Build configuration list for PBXProject "moodifyV2" */ = {
+		6A0C5F9E2204179800666370 /* Build configuration list for PBXProject "moodify" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				6A0C5FB32204179A00666370 /* Debug */,
@@ -581,7 +581,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		6A0C5FB52204179A00666370 /* Build configuration list for PBXNativeTarget "moodifyV2" */ = {
+		6A0C5FB52204179A00666370 /* Build configuration list for PBXNativeTarget "moodify" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				6A0C5FB62204179A00666370 /* Debug */,

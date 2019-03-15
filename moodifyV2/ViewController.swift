@@ -34,6 +34,7 @@ class ViewController: UIViewController {
         } else if !launchedBefore {
             print("First launch, setting UserDefault.")
             UserDefaults.standard.set(true, forKey: "launchedBefore")
+            spotifyManager.deauthorize()
             self.performSegue(withIdentifier: "loadAppSegue", sender: self)
         }
     }
