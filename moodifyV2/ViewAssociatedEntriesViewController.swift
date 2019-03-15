@@ -109,6 +109,7 @@ class ViewAssociatedEntriesViewController: UIViewController, UICollectionViewDat
         var ind = (score + 5)/2
         if ind < 0 {ind = 0}
         if ind > strings.count-1 {ind = strings.count-1}
+        if score == 0 {ind = 3} //don't round down on 0 entries
         sentiFace.image = images[ind]
     }
 
