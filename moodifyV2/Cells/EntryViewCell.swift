@@ -10,7 +10,7 @@ import Foundation
 import UIKit
 import SwipeCellKit
 
-class EntryViewCell:UICollectionViewCell{
+class EntryViewCell:UICollectionViewCell {
     static let reuseIdentifier = "entryCell"
     
     @IBOutlet weak var entryLabel: UILabel!

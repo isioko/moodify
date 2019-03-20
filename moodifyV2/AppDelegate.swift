@@ -16,9 +16,9 @@ import CoreData
 // The Spotify developer application object
 // Fill this with the data from the app you've set up on Spotify developer page
 fileprivate let application = SpotifyManager.SpotifyDeveloperApplication(
-    clientId:     "a9e85dbb91464cf08f68d59908cc496c",
-    clientSecret: "a77cbf757c9a435a9e7fec4aaabcfa97",
-    redirectUri:  "moodifyV2://spotify-login-callback"
+    clientId:     SpotifyAppInfo.clientId,
+    clientSecret: SpotifyAppInfo.clientSecret,
+    redirectUri:  SpotifyAppInfo.redirectUri
 )
 
 // The SpotifyKit helper object that will allow you to perform the queries

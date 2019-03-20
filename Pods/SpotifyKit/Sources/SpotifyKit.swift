@@ -526,6 +526,7 @@ public class SpotifyManager {
         request.addValue("application/json", forHTTPHeaderField: "Content-Type")
         request.addValue(auth, forHTTPHeaderField: "Authorization")
         
+        
         let task = URLSession.shared.dataTask(with: request) { data, response, error in
             guard error == nil else {
                 print(error!)

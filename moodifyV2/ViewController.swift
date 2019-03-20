@@ -13,6 +13,8 @@ class ViewController: UIViewController {
     @IBOutlet weak var gradientView: UIView!
     let gradient = CAGradientLayer()
     
+    let showTutorial = false
+    
     @IBOutlet weak var moodifyLogo: UIImageView!
     
     override func viewDidAppear(_ animated: Bool) {
@@ -26,6 +28,11 @@ class ViewController: UIViewController {
     
     @objc func timeToMoveOn() {
         let launchedBefore = UserDefaults.standard.bool(forKey: "launchedBefore")
+        
+        if launchedBefore && showTutorial {
+            self.performSegue(withIdentifier: "loadAppSegue", sender: self)
+        }
+        
         if launchedBefore && spotifyManager.isAuthorized() {
             print("Not first launch.")
             self.performSegue(withIdentifier: "straightToEntryTab", sender: self)

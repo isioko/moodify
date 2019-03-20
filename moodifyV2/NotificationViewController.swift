@@ -206,7 +206,7 @@ extension NotificationViewController: UICollectionViewDelegateFlowLayout {
     }
 }
 
-extension NotificationViewController: UICollectionViewDelegate{
+extension NotificationViewController: UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "notifCell", for: indexPath) as! NotificationEntryViewCell
         // Format cells to be white and have rounded edges
