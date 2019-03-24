@@ -9,7 +9,7 @@
 import Foundation
 
 class SpotifyAppInfo {
-    static let clientId     = "a9e85dbb91464cf08f68d59908cc496c"
-    static let clientSecret = "a77cbf757c9a435a9e7fec4aaabcfa97"
-    static let redirectUri  = "moodifyV2://spotify-login-callback"
+    static let clientId     = ""
+    static let clientSecret = ""
+    static let redirectUri  = ""
 }
